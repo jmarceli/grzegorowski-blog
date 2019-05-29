@@ -10,8 +10,21 @@ export const query = graphql`
       html
       excerpt
       timeToRead
+      rawMarkdownBody
       frontmatter {
+        image {
+          absolutePath
+          childImageSharp {
+            sizes {
+              srcSet
+              src
+              sizes
+              originalImg
+            }
+          }
+        }
         title
+        slug
         date
         tags
         date_created

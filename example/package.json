@@ -13,17 +13,20 @@
     "gatsby": "^2.7.3",
     "gatsby-plugin-amp": "^0.2.1",
     "gatsby-plugin-compile-es6-packages": "^1.1.0",
-    "gatsby-plugin-page-creator": "^2.0.13",
-    "gatsby-plugin-sharp": "^2.1.1",
+    "gatsby-plugin-sharp": "^2.1.2",
     "gatsby-remark-copy-linked-files": "^2.0.12",
-    "gatsby-remark-images": "^3.0.13",
     "gatsby-remark-prismjs": "^3.2.9",
     "gatsby-remark-responsive-iframe": "^2.1.1",
-    "gatsby-source-filesystem": "^2.0.37",
     "gatsby-transformer-remark": "^2.3.12",
     "gatsby-theme-test": "^1.0.0",
     "prismjs": "^1.16.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "gatsby-plugin-page-creator": "^2.0.13",
+    "gatsby-source-filesystem": "^2.0.37",
+    "gatsby-transformer-sharp": "^2.1.20",
+    "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-remark-images": "^3.0.14",
+    "react-helmet": "^5.2.1"
   }
 }

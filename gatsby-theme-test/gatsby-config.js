@@ -23,6 +23,7 @@ module.exports = themeOptions => ({
       },
     },
     "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -62,11 +63,12 @@ module.exports = themeOptions => ({
         // },
         canonicalBaseUrl: "http://localhost:8000/",
         components: [],
-        excludedPaths: [],
-        pathIdentifier: "",
-        relAmpHtmlPattern: "{{canonicalBaseUrl}}{{pathname}}",
+        excludedPaths: ["/", "/404*"],
+        pathIdentifier: "/amp/",
+        relAmpHtmlPattern: "{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}",
         useAmpClientIdApi: true,
       },
     },
+    "gatsby-plugin-react-helmet",
   ],
 });

@@ -6,18 +6,17 @@ export default ({ data }) => <PageHome data={data} />;
 
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }) {
       edges {
         node {
           id
           html
           rawMarkdownBody
           frontmatter {
-            # Assumes you're using title in your frontmatter.
             title
             excerpt
-            image
             slug
+            date
           }
         }
       }
