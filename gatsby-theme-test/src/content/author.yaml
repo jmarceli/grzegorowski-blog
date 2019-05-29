@@ -1,0 +1,8 @@
+- id: Ghost
+  avatar: avatars/ghost.png
+  bio: The professional publishing platform
+  twitter: TryGhost
+  facebook: ghost
+  website: https://ghost.org/
+  location: On a plane
+  profile_image: ./img/banner-772x250.png

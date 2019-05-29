@@ -3,10 +3,17 @@
   "version": "1.0.0",
   "private": true,
   "main": "index.js",
-  "author": "christopherbiscardi <chris@christopherbiscardi.com> (@chrisbiscardi)",
+  "author": "Jan Grzegorowski",
   "license": "MIT",
+  "scripts": {
+    "theme": "yarn workspace gatsby-theme-test",
+    "example": "yarn workspace example"
+  },
   "workspaces": [
-    "gatsby-theme-minimal",
+    "gatsby-theme-test",
     "example"
-  ]
+  ],
+  "devDependencies": {
+    "prettier": "^1.17.1"
+  }
 }
