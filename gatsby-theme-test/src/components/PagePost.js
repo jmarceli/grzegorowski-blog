@@ -53,7 +53,11 @@ export default function PagePost({ data }) {
           {data.frontmatter.date_created}
         </time>
       </header>
-      <div>{data.html}</div>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: data.html,
+        }}
+      />
     </article>
   );
 }

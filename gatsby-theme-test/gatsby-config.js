@@ -25,11 +25,11 @@ module.exports = themeOptions => ({
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-images`,
+            resolve: "gatsby-remark-images",
             options: {
               showCaptions: true,
               maxWidth: 840,
@@ -37,7 +37,7 @@ module.exports = themeOptions => ({
             },
           },
           {
-            resolve: `gatsby-remark-responsive-iframe`,
+            resolve: "gatsby-remark-responsive-iframe",
           },
           "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
@@ -45,7 +45,7 @@ module.exports = themeOptions => ({
       },
     },
     {
-      resolve: `gatsby-plugin-amp`,
+      resolve: "gatsby-plugin-amp",
       options: {
         // analytics: {
         //   type: 'gtag',
@@ -70,5 +70,11 @@ module.exports = themeOptions => ({
       },
     },
     "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-plugin-typography",
+      options: {
+        pathToConfigModule: path.join(__dirname, "src", "utils", "typography"),
+      },
+    },
   ],
 });
