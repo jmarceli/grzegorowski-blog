@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import PagePost from "../components/PagePost";
+import PagePost from "../components/PagePost/index";
 
 export default ({ data }) => <PagePost data={data.markdownRemark} />;
 

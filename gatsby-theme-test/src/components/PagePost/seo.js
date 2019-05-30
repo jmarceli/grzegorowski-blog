@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 
-export default function PagePost({ data }) {
+export default function SeoPost({ data }) {
   // see: https://developers.google.com/search/docs/data-types/article#type_definitions
   const schema = {
     type: "application/ld+json",
@@ -43,21 +43,8 @@ export default function PagePost({ data }) {
   };
 
   return (
-    <article>
-      <Helmet script={[schema]}>
-        <title>{data.frontmatter.title}</title>
-      </Helmet>
-      <header>
-        <h1>{data.frontmatter.title}</h1>
-        <time dateTime={data.frontmatter.date_created}>
-          {data.frontmatter.date_created}
-        </time>
-      </header>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: data.html,
-        }}
-      />
-    </article>
+    <Helmet script={[schema]}>
+      <title>{data.frontmatter.title}</title>
+    </Helmet>
   );
 }

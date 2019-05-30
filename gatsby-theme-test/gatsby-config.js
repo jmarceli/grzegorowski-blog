@@ -39,7 +39,18 @@ module.exports = themeOptions => ({
           {
             resolve: "gatsby-remark-responsive-iframe",
           },
-          "gatsby-remark-prismjs",
+          {
+            resolve: "gatsby-remark-prismjs",
+            options: {
+              // do not use Prism for inline <code/>
+              noInlineHighlight: false,
+              showLineNumbers: true,
+              aliases: {
+                text: "javascript",
+                js: "javascript",
+              },
+            },
+          },
           "gatsby-remark-copy-linked-files",
         ],
       },
@@ -75,6 +86,9 @@ module.exports = themeOptions => ({
       options: {
         pathToConfigModule: path.join(__dirname, "src", "utils", "typography"),
       },
+    },
+    {
+      resolve: `gatsby-plugin-sass`,
     },
   ],
 });

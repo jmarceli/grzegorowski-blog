@@ -1,0 +1,124 @@
+// .gatsby-highlight-code-line {
+//   background-color: #feb;
+//   display: block;
+//   margin-right: -1em;
+//   margin-left: -1em;
+//   padding-right: 1em;
+//   padding-left: 0.75em;
+//   border-left: 0.25em solid #f99;
+// }
+
+/**
+ * Add back the container background-color, border-radius, padding, margin
+ * and overflow that we removed from <pre>.
+ */
+// .gatsby-highlight {
+//   background-color: #fdf6e3;
+//   border-radius: 0.3em;
+//   margin: 0.5em 0;
+//   padding: 1em;
+//   overflow: auto;
+// }
+
+/**
+ * Remove the default PrismJS theme background-color, border-radius, margin,
+ * padding and overflow.
+ * 1. Make the element just wide enough to fit its content.
+ * 2. Always fill the visible space in .gatsby-highlight.
+ * 3. Adjust the position of the line numbers
+ */
+// .gatsby-highlight pre[class*="language-"] {
+//   background-color: transparent;
+//   margin: 0;
+//   padding: 0;
+//   overflow: initial;
+//   float: left; [> 1 <]
+//   min-width: 100%; [> 2 <]
+// }
+
+/**
+ * If you already use line highlighting
+ */
+
+// [> Adjust the position of the line numbers <]
+// .gatsby-highlight pre[class*="language-"].line-numbers {
+//   padding-left: 2.8em;
+// }
+
+/**
+ * If you only want to use line numbering
+ */
+
+// .gatsby-highlight {
+//   background-color: #fdf6e3;
+//   border-radius: 0.3em;
+//   margin: 0.5em 0;
+//   padding: 1em;
+//   overflow: auto;
+// }
+
+// .gatsby-highlight pre[class*="language-"].line-numbers {
+//   padding: 0;
+//   padding-left: 2.8em;
+//   overflow: initial;
+// }
+
+/** Fix background */
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  background: inherit;
+}
+
+/** Fix empty highlight lines */
+.gatsby-highlight-code-line:empty:after {
+  content: " ";
+}
+
+/** Adjust colors */
+pre[class*="language-"],
+code[class*="language-"] {
+  color: #5c6e74;
+}
+pre[class*="language-"] {
+  background: #fff;
+  border: 1px solid #d1d5da;
+  border-radius: 3px;
+}
+:not(pre) > code[class*="language-"] {
+  color: #db4c69;
+  background: #fff;
+}
+/** Format line numbers column */
+.line-numbers .line-numbers-rows {
+  margin: 1em 0 1em 12px;
+  border: none;
+  line-height: 1.5;
+}
+pre[class*="language-"].line-numbers {
+  padding-left: 40px;
+}
+.line-numbers-rows > span:before {
+  color: rgba(27, 31, 35, 0.3);
+}
+
+/** Line highlighting */
+.gatsby-highlight-code-line {
+  display: block;
+  background-color: #fffbdd;
+  margin-right: -10px;
+  padding-right: 10px;
+  margin-left: -4px;
+  padding-left: 4px;
+}
+
+// inline code style from Github
+// code {
+//   background-color: hsla(0, 0%, 0%, 0.04);
+//   border-radius: 3px;
+//   padding: 0;
+//   padding-top: 0.2em;
+//   padding-bottom: 0.2em;
+// }
