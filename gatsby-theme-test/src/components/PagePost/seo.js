@@ -24,7 +24,7 @@ export default function SeoPost({ data }) {
       description: data.frontmatter.meta_description || data.excerpt,
       datePublished: data.frontmatter.date_created,
       dateModified: data.frontmatter.date_updated,
-      image: [
+      image: data.frontmatter.image && [
         {
           "@type": "ImageObject",
           url: data.frontmatter.image.childImageSharp.sizes.originalImg,

@@ -19,6 +19,17 @@ const path = require("path");
 //   });
 // };
 
+exports.onCreateWebpackConfig = ({ actions }) => {
+  // setup path aliases so "src/test.js" will always point to the "./src/test.js" file
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        src: path.resolve(__dirname, "src"),
+      },
+    },
+  });
+};
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 

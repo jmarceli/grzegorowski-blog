@@ -63,6 +63,8 @@
 //   overflow: initial;
 // }
 
+$code-padding: 6px;
+
 /** Fix background */
 .token.operator,
 .token.entity,
@@ -98,16 +100,21 @@ pre[class*="language-"] {
   text-shadow: none;
 }
 
+pre[class*="language-"] {
+  padding: $code-padding;
+}
+
 /** Format line numbers column */
 .line-numbers .line-numbers-rows {
   // 1em - prism style for <pre> padding
-  padding: 1em 0 1em 12px;
-  border: none;
+  padding: $code-padding 0 $code-padding 12px;
+  border: 1px solid transparent;
   line-height: 1.5;
   background: #fcfcfc;
 }
 pre[class*="language-"].line-numbers {
   padding-left: 48px;
+  padding-right: 18px;
 }
 .line-numbers-rows > span:before {
   color: rgba(27, 31, 35, 0.3);
@@ -145,8 +152,19 @@ pre[class*="language-"].line-numbers {
   margin-bottom: 1.666rem;
 }
 
+// all code elements inline and non-inline
 code[class*="language-"],
 pre[class*="language-"] {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: scroll;
+  max-width: 100%;
   font-size: 0.6rem;
   -webkit-font-smoothing: antialiased;
+}
+
+// make non-inline code a block
+.gatsby-highlight code[class*="language-"],
+.gatsby-highlight pre[class*="language-"] {
+  display: block;
 }

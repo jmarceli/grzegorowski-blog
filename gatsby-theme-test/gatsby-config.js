@@ -90,5 +90,11 @@ module.exports = themeOptions => ({
     {
       resolve: `gatsby-plugin-sass`,
     },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      // options: {
+      // Add any options here
+      // },
+    },
   ],
 });

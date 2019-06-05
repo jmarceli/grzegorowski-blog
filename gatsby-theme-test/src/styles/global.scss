@@ -1,4 +1,27 @@
-// #___gatsby {
-// max-width: 900px;
-// margin: 0 auto;
-// }
+$bp-small: 600px;
+$bp-medium: 900px;
+$bp-large: 1040px;
+
+body {
+  color: #111;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+html {
+  font-size: 100%;
+
+  @media (min-width: $bp-small) {
+    font-size: 112.5%;
+  }
+  @media (min-width: $bp-medium) {
+    font-size: 120%;
+  }
+  @media (min-width: $bp-large) {
+    font-size: 120%;
+  }
+}
