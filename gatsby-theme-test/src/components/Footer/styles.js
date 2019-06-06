@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { ffSans, toEm } from "src/utils/typography";
 import {
   BP_SMALL,
   BP_MEDIUM,
@@ -11,12 +12,14 @@ import {
 } from "../variables";
 
 export const Wrapper = styled.header`
+  font-family: ${ffSans};
+  font-size: ${toEm(12)}rem;
   background: #000;
-  color: #fff;
+  color: #ccc;
 `;
 
 export const Container = styled.div`
-  padding: 12px 24px;
+  padding: 18px 24px 36px;
   margin: 0 auto;
   max-width: ${CONTENT_MAX_WIDTH}px;
 `;
