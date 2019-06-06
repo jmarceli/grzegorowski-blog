@@ -6,7 +6,8 @@ const Wrapper = styled.div`
   flex: 1 0 100%;
   border-radius: 5px;
   overflow: hidden; // ensures border-radius for sub-elements
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06),
+    1px 3px 8px rgba(39, 44, 49, 0.03);
   transition: transform 0.1s ease-in;
   transform: scale(1);
 

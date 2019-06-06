@@ -31,8 +31,8 @@ export const Content = styled.div`
 export const Tag = styled.h3`
   display: block;
   font-size: ${toEm(12)}rem;
-  margin-bottom: 0.8em;
-  color: #333;
+  margin-bottom: 6px;
+  color: #666;
 `;
 
 export const Title = styled.h2`

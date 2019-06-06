@@ -1,5 +1,5 @@
 import React from "react";
-import { Placeholder, Name, Wrapper, Container } from "./styles";
+import { Placeholder, Name, InnerName, Wrapper, Container } from "./styles";
 import Menu from "../Menu";
 
 export default function TopBar() {
@@ -13,7 +13,12 @@ export default function TopBar() {
       <Placeholder />
       <Wrapper>
         <Container>
-          <Name to="/">Site name</Name>
+          <Name to="/">
+            <InnerName>
+              Site name maybe a very very long text which will eventualy
+              overflow
+            </InnerName>
+          </Name>
           <Menu items={menuItems} />
         </Container>
       </Wrapper>

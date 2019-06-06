@@ -24,12 +24,12 @@ export const Header = styled.header`
 export const HeaderContent = styled.div`
   margin: 0 auto;
   max-width: ${CONTENT_MAX_WIDTH}px;
-  padding: 2em 0 1em;
+  padding: 2em 8px 1em;
 `;
 
 export const Title = styled.h1`
   text-align: center;
-  margin: 0 0 6px;
+  margin: 0 0 12px;
   font-weight: 600;
 `;
 
@@ -107,7 +107,7 @@ export const Content = styled.div`
   margin: -${CONTENT_OVERLAP_HEIGHT}px auto 0;
   background: #fff;
 
-  padding: 36px 12px 12px;
+  padding: 36px 8px 12px;
   @media (min-width: ${BP_SMALL}px) {
     padding: 36px 24px 12px;
   }

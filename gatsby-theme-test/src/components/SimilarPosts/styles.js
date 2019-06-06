@@ -20,8 +20,11 @@ export const Container = styled.div`
 `;
 
 export const List = styled.ul`
-  padding: 12px;
   margin: 0;
+  padding: 12px 0;
+  @media (min-width: ${BP_SMALL}px) {
+    padding: 12px;
+  }
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -31,5 +34,8 @@ export const List = styled.ul`
 export const Item = styled.li`
   display: flex;
   flex: 1 1 300px;
-  margin: 12px;
+  margin: 12px 8px;
+  @media (min-width: ${BP_SMALL}px) {
+    margin: 12px;
+  }
 `;

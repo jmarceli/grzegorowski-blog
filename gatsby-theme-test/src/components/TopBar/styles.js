@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { ffSans, toEm } from "src/utils/typography";
 import {
   BP_SMALL,
   BP_MEDIUM,
@@ -21,19 +22,30 @@ export const Wrapper = styled.header`
   width: 100%;
   background: #000;
   color: #fff;
+  font-family: ${ffSans};
+  font-size: ${toEm(12)}rem;
 `;
 
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 24px;
+  align-items: flex-start;
   height: 50px;
   margin: 0 auto;
   max-width: ${CONTENT_MAX_WIDTH}px;
 `;
 
 export const Name = styled(Link)`
-  padding: 12px;
-  margin: 0 0 0 -12px;
+  height: 100%;
+  padding: 0 24px;
+  max-width: 50vw;
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+`;
+
+export const InnerName = styled.div`
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 `;

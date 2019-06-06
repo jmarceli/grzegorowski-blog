@@ -2,6 +2,10 @@ $bp-small: 600px;
 $bp-medium: 900px;
 $bp-large: 1040px;
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   color: #111;
   -webkit-font-smoothing: antialiased;

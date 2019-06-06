@@ -1,27 +1,48 @@
 import styled from "styled-components";
+import { ffSans, toEm } from "src/utils/typography";
 import { Link } from "gatsby";
-import {
-  BP_SMALL,
-  BP_MEDIUM,
-  BP_LARGE,
-  CONTENT_MAX_WIDTH,
-  ARTICLE_OFFSET_TOP,
-  CONTENT_OVERLAP_HEIGHT,
-} from "../variables";
 
-export const Wrapper = styled.header`
+export const Wrapper = styled.nav`
   text-transform: uppercase;
+  font-size: ${toEm(12)}rem;
+  color: #fff;
+  flex: 1 0 auto;
+  height: 100%;
+  overflow: hidden;
+  max-width: 50vw;
+
+  &:hover {
+    color: #ccc;
+  }
+`;
+
+export const Scroller = styled.div`
+  box-sizing: content-box;
+  height: 100%;
+  padding-bottom: 40px;
+  overflow: scroll;
 `;
 
 export const Container = styled.ul`
-  display: inline-block;
+  height: 100%;
+  display: flex;
   margin: 0;
   pading: 0;
   list-style: none;
+  white-space: nowrap;
 `;
 
 export const Item = styled(Link)`
-  display: inline-block;
-  padding: 12px;
-  margin-right: -12px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+
+  &:last-child {
+    padding-right: 24px;
+  }
+
+  &:hover {
+    color: #fff;
+  }
 `;
