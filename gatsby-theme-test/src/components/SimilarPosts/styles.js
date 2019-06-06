@@ -34,6 +34,7 @@ export const List = styled.ul`
 export const Item = styled.li`
   display: flex;
   flex: 1 1 300px;
+  max-width: 600px;
   margin: 12px 8px;
   @media (min-width: ${BP_SMALL}px) {
     margin: 12px;

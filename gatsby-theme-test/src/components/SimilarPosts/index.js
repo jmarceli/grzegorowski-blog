@@ -25,6 +25,7 @@ export default function SimilarPosts({ siteName, mainTag, featuredPosts }) {
                 tag={post.tag}
                 url={post.url}
                 image={false}
+                timeToRead={post.timeToRead}
               >
                 {post.excerpt}
               </PostCard>

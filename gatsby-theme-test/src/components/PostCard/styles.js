@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import typography from "../../utils/typography";
 import { Link as GatsbyLink } from "gatsby";
-import { toEm } from "src/utils/typography";
+import { ffSans, toEm } from "src/utils/typography";
 
 export const Article = styled.article`
   display: flex;
@@ -16,7 +15,7 @@ export const Link = styled(GatsbyLink)`
 
 export const Thumbnail = styled.div`
   display: block;
-  height: 200px;
+  height: 250px;
   background: #000;
 `;
 
@@ -43,9 +42,20 @@ export const Title = styled.h2`
 `;
 
 export const Excerpt = styled.p`
+  flex: 1 0 auto;
   display: block;
   font-size: 0.7619rem;
   line-height: 1.4;
   margin: 0;
   font-size: ${toEm(14)}rem;
+`;
+
+export const TimeToRead = styled.div`
+  align-self: flex-end;
+  font-family: ${ffSans};
+  font-size: ${toEm(12)}rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #666;
+  margin-top: 6px;
 `;

@@ -54,6 +54,7 @@ const similarPosts = {
         "Integration tests with Jest, Selenium and BrowserStack - part 2 - multiple browsers",
       excerpt:
         "Running automatically tests for multiple browsers and OSes with BrowserStack service.",
+      timeToRead: 2,
     },
     {
       tag: "JAVASCRIPT",
@@ -62,6 +63,7 @@ const similarPosts = {
         "Time Series Admin - Electron-based alternative to Admin UI for InfluxDB",
       excerpt:
         "Release notes for Time Series Admin - an alternative to Admin UI and Chronograf interface for InfluxDB.",
+      timeToRead: 11,
     },
   ],
 };
