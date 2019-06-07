@@ -1,7 +1,18 @@
 const path = require("path");
 
 module.exports = themeOptions => ({
+  // mapping: {
+  //   "MarkdownRemark.frontmatter.tags": `TagsYaml`,
+  //   "MarkdownRemark.frontmatter.author": `AuthorsYaml`,
+  // },
   plugins: [
+    "gatsby-transformer-yaml",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: path.join(__dirname, "src", "content"),
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {

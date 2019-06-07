@@ -1,23 +1,4 @@
 const path = require("path");
-// const fs = require("fs");
-// const mkdirp = require("mkdirp");
-// const { reporter } = require("gatsby-cli");
-
-// exports.onPreBootstrap = ({ store, reporter }) => {
-//   const { program } = store.getState();
-
-//   const dirs = [
-//     path.join(program.directory, "src/pages"),
-//     path.join(program.directory, "src/posts")
-//   ];
-
-//   dirs.forEach(dir => {
-//     if (!fs.existsSync(dir)) {
-//       reporter.log(`creating the ${dir} directory`);
-//       mkdirp.sync(dir);
-//     }
-//   });
-// };
 
 exports.onCreateWebpackConfig = ({ actions }) => {
   // setup path aliases so "src/test.js" will always point to the "./src/test.js" file
@@ -35,12 +16,45 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     {
-      allMarkdownRemark(limit: 1000) {
+      allMarkdownRemark {
         edges {
           node {
             frontmatter {
               slug
+              tags
             }
+          }
+        }
+      }
+      allAuthorsYaml {
+        edges {
+          node {
+            id
+            profile_image
+            avatar {
+              absolutePath
+              childImageSharp {
+                sizes {
+                  srcSet
+                  src
+                  sizes
+                  originalImg
+                }
+              }
+            }
+          }
+        }
+      }
+      allTagsYaml {
+        edges {
+          node {
+            id
+            name
+            description
+            meta_title
+            meta_description
+            created_at
+            image
           }
         }
       }
@@ -76,6 +90,32 @@ exports.createPages = async ({ graphql, actions }) => {
     );
   });
 
+  // Author pages
+  result.data.allAuthorsYaml.edges.forEach(({ node }) => {
+    const author = node.id;
+    createPage({
+      path: `/author/${author}/`,
+      component: path.resolve(
+        path.join(__dirname, "src", "pages", "author.js"),
+      ),
+      context: {
+        author: node,
+      },
+    });
+  });
+
+  // Tag pages
+  result.data.allTagsYaml.edges.forEach(({ node }) => {
+    const tag = node.id;
+    createPage({
+      path: `/tag/${tag}/`,
+      component: path.resolve(path.join(__dirname, "src", "pages", "tag.js")),
+      context: {
+        tag: node,
+      },
+    });
+  });
+
   // Home page
   pagesPromises.push(
     createPage({
@@ -86,35 +126,4 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // wait for all pages until they are done
   await Promise.all(pagesPromises);
-
-  // Create tag pages
-  // const tagTemplate = path.resolve('./src/templates/tags.tsx');
-  // const tags = _.uniq(
-  //   _.flatten(
-  //     result.data.allMarkdownRemark.edges.map(edge => {
-  //       return _.castArray(_.get(edge, 'node.frontmatter.tags', []));
-  //     }),
-  //   ),
-  // );
-  // tags.forEach(tag => {
-  //   createPage({
-  //     path: `/tags/${_.kebabCase(tag)}/`,
-  //     component: tagTemplate,
-  //     context: {
-  //       tag,
-  //     },
-  //   });
-  // });
-
-  // // Create author pages
-  // const authorTemplate = path.resolve('./src/templates/author.tsx');
-  // result.data.allAuthorYaml.edges.forEach(edge => {
-  //   createPage({
-  //     path: `/author/${_.kebabCase(edge.node.id)}/`,
-  //     component: authorTemplate,
-  //     context: {
-  //       author: edge.node.id,
-  //     },
-  //   });
-  // });
 };
