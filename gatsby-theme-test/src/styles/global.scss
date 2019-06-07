@@ -9,6 +9,7 @@ $bp-large: 1040px;
 body {
   color: #111;
   -webkit-font-smoothing: antialiased;
+  min-width: 360px;
 }
 
 a {
