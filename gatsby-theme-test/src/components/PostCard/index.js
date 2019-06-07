@@ -14,10 +14,11 @@ import {
 } from "./styles";
 
 export default function PostCard({
+  size,
   title,
   tag,
-  url,
-  children,
+  slug,
+  excerpt,
   image,
   authorIcon,
   timeToRead,
@@ -25,14 +26,14 @@ export default function PostCard({
   return (
     <Tile>
       <Article>
-        <Link to={url} title={title}>
-          <Thumbnail>
+        <Link to={slug} title={title} large={size === "large"}>
+          <Thumbnail large={size === "large"}>
             {image && <img alt={title} title={title} src={image} />}
           </Thumbnail>
-          <Content>
+          <Content large={size === "large"}>
             <Tag>{tag}</Tag>
             <Title>{title}</Title>
-            <Excerpt>{children}</Excerpt>
+            <Excerpt>{excerpt}</Excerpt>
             <Footer>
               <Author>{authorIcon}</Author>
               <TimeToRead>{timeToRead} min read</TimeToRead>

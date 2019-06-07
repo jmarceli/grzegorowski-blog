@@ -1,6 +1,12 @@
 import React from "react";
-import { Placeholder, Name, InnerName, Wrapper, Container } from "./styles";
-import Menu from "../Menu";
+import {
+  Placeholder,
+  Wrapper,
+  Container,
+  Name,
+  InnerName,
+  MainMenu,
+} from "./styles";
 
 export default function TopBar() {
   const menuItems = [
@@ -19,7 +25,7 @@ export default function TopBar() {
               overflow
             </InnerName>
           </Name>
-          <Menu items={menuItems} />
+          <MainMenu items={menuItems} />
         </Container>
       </Wrapper>
     </>

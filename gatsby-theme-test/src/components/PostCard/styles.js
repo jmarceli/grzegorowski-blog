@@ -9,20 +9,20 @@ export const Article = styled.article`
 
 export const Link = styled(GatsbyLink)`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ large }) => (large ? "row" : "column")};
   flex: 1 0 100%;
 `;
 
 export const Thumbnail = styled.div`
-  display: block;
-  height: 250px;
-  background: #000;
+  display: flex;
+  flex: ${({ large }) => (large ? "1 0 auto" : "0 0 250px")};
+  background: #262626;
 `;
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  flex: 1 0 auto;
+  flex: ${({ large }) => (large ? "0 0 344px" : "1 0 auto")};
   background: #fff;
   padding: 20px;
 `;

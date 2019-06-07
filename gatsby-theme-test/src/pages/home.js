@@ -11,6 +11,7 @@ export const query = graphql`
         node {
           id
           html
+          timeToRead
           rawMarkdownBody
           frontmatter {
             title

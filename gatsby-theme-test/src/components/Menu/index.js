@@ -1,9 +1,9 @@
 import React from "react";
 import { Wrapper, Scroller, Container, Item } from "./styles";
 
-export default function Menu({ items }) {
+export default function Menu({ className, items }) {
   return (
-    <Wrapper>
+    <Wrapper className={className}>
       <Scroller>
         <Container>
           {items.map(item => (

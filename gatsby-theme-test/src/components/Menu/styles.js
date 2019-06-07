@@ -4,12 +4,12 @@ import { Link } from "gatsby";
 
 export const Wrapper = styled.nav`
   text-transform: uppercase;
+  font-family: ${ffSans};
   font-size: ${toEm(12)}rem;
   color: #fff;
   flex: 1 0 auto;
-  height: 100%;
+  height: 50px;
   overflow: hidden;
-  max-width: 50vw;
 
   &:hover {
     color: #ccc;

@@ -31,16 +31,16 @@ import {
 const similarPosts = {
   siteName: "— Blog name —",
   mainTag: {
-    url: "/javascript",
+    slug: "/javascript",
     label: "Javascript",
     posts: [
-      { url: "/r1", title: "React multiple event handlers performance" },
+      { slug: "/r1", title: "React multiple event handlers performance" },
       {
-        url: "/r2",
+        slug: "/r2",
         title: "React.PureComponent - different ways of writing event handlers",
       },
       {
-        url: "/r3",
+        slug: "/r3",
         title: "React.PureComponent - children vs custom properties",
       },
     ],
@@ -49,7 +49,7 @@ const similarPosts = {
   featuredPosts: [
     {
       tag: "FRONTEND",
-      url: "/i1",
+      slug: "/i1",
       title:
         "Integration tests with Jest, Selenium and BrowserStack - part 2 - multiple browsers",
       excerpt:
@@ -58,7 +58,7 @@ const similarPosts = {
     },
     {
       tag: "JAVASCRIPT",
-      url: "/j1",
+      slug: "/j1",
       title:
         "Time Series Admin - Electron-based alternative to Admin UI for InfluxDB",
       excerpt:

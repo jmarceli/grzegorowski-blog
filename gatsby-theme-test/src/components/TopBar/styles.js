@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
+import Menu from "../Menu";
 import { ffSans, toEm } from "src/utils/typography";
 import {
   BP_SMALL,
@@ -22,8 +23,6 @@ export const Wrapper = styled.header`
   width: 100%;
   background: #000;
   color: #fff;
-  font-family: ${ffSans};
-  font-size: ${toEm(12)}rem;
 `;
 
 export const Container = styled.div`
@@ -42,10 +41,16 @@ export const Name = styled(Link)`
   flex: 1 0 auto;
   display: flex;
   align-items: center;
+  font-family: ${ffSans};
+  font-size: ${toEm(12)}rem;
 `;
 
 export const InnerName = styled.div`
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+`;
+
+export const MainMenu = styled(Menu)`
+  max-width: 50vw;
 `;
