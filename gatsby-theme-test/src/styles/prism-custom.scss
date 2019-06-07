@@ -107,7 +107,7 @@ pre[class*="language-"] {
 /** Format line numbers column */
 .line-numbers .line-numbers-rows {
   // 1em - prism style for <pre> padding
-  padding: $code-padding 0 $code-padding 12px;
+  padding: $code-padding 0 0 12px;
   border: 1px solid transparent;
   line-height: 1.5;
   background: #fcfcfc;
