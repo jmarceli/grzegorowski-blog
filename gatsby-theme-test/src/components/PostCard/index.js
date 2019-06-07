@@ -35,7 +35,7 @@ export default function PostCard({
             }}
           />
           <Content large={size === "large"}>
-            <Tag>{tag}</Tag>
+            {tag && <Tag>{tag}</Tag>}
             <Title>{title}</Title>
             <Excerpt>{excerpt}</Excerpt>
             <Footer>

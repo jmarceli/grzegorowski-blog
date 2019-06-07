@@ -1,28 +1,39 @@
 import styled from "styled-components";
 import { Link as GatsbyLink } from "gatsby";
 import { ffSans, toEm } from "src/utils/typography";
+import { BP_SMALL, BP_MEDIUM, CONTENT_MAX_WIDTH } from "../variables";
 
 export const Article = styled.article`
   display: flex;
   flex: 1 0 100%;
+  width: 100%;
 `;
 
 export const Link = styled(GatsbyLink)`
   display: flex;
-  flex-direction: ${({ size }) => (size === "large" ? "row" : "column")};
   flex: 1 0 100%;
+  width: 100%;
+
+  flex-direction: column;
+  @media (min-width: ${BP_SMALL}px) {
+    flex-direction: ${({ size }) => (size === "large" ? "row" : "column")};
+  }
 `;
 
 export const Thumbnail = styled.div`
   display: flex;
-  flex: ${({ large }) => (large ? "1 0 auto" : "0 0 250px")};
+  flex: 0 0 250px;
+  @media (min-width: ${BP_SMALL}px) {
+    flex: ${({ large }) => (large ? "1 0 50%" : "0 0 250px")};
+  }
   background: #262626;
+  background-size: cover;
 `;
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  flex: ${({ large }) => (large ? "0 0 344px" : "1 0 auto")};
+  flex: ${({ large }) => (large ? "0 1 344px" : "1 1 auto")};
   background: #fff;
   padding: 20px;
 `;
@@ -46,19 +57,19 @@ export const Excerpt = styled.p`
   display: block;
   font-size: 0.7619rem;
   line-height: 1.4;
-  margin: 0;
+  margin: 0 0 18px;
   font-size: ${toEm(14)}rem;
 `;
 
 export const Footer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   font-family: ${ffSans};
   font-size: ${toEm(12)}rem;
   font-weight: 500;
   text-transform: uppercase;
   color: #666;
-  margin-top: 6px;
 `;
 
 export const Author = styled.div`
