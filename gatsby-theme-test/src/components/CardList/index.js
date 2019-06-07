@@ -15,12 +15,18 @@ const itemSize = index => {
 export default ({ posts }) => (
   <Container>
     <List>
-      {posts.map((edge, index) => (
-        <Item key={edge.node.id} size={itemSize(index)}>
+      {posts.map((post, index) => (
+        <Item key={post.node.id} size={itemSize(index)}>
           <PostCard
-            {...edge.node.frontmatter}
-            timeToRead={edge.node.timeToRead}
+            {...post.node.frontmatter}
+            timeToRead={post.node.timeToRead}
             size={itemSize(index)}
+            excerpt={post.node.excerpt}
+            image={
+              post.node.frontmatter.image &&
+              post.node.frontmatter.image.childImageSharp.sizes &&
+              post.node.frontmatter.image.childImageSharp.sizes.src
+            }
           />
         </Item>
       ))}

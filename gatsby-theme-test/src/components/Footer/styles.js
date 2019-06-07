@@ -1,15 +1,7 @@
 import styled from "styled-components";
 import { Link } from "gatsby";
 import { ffSans, toEm } from "src/utils/typography";
-import {
-  BP_SMALL,
-  BP_MEDIUM,
-  BP_LARGE,
-  CONTENT_MAX_WIDTH,
-  ARTICLE_OFFSET_TOP,
-  CONTENT_OVERLAP_HEIGHT,
-  TOP_OFFSET,
-} from "../variables";
+import { CONTENT_MAX_WIDTH } from "../variables";
 
 export const Wrapper = styled.header`
   font-family: ${ffSans};

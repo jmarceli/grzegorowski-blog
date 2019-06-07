@@ -9,7 +9,7 @@ export const Article = styled.article`
 
 export const Link = styled(GatsbyLink)`
   display: flex;
-  flex-direction: ${({ large }) => (large ? "row" : "column")};
+  flex-direction: ${({ size }) => (size === "large" ? "row" : "column")};
   flex: 1 0 100%;
 `;
 
@@ -36,7 +36,7 @@ export const Tag = styled.h3`
 
 export const Title = styled.h2`
   display: block;
-  font-size: ${toEm(16)}rem;
+  font-size: ${toEm(20)}rem;
   line-height: 1.2;
   margin-bottom: 0.6em;
 `;

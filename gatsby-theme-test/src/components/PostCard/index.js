@@ -26,10 +26,14 @@ export default function PostCard({
   return (
     <Tile>
       <Article>
-        <Link to={slug} title={title} large={size === "large"}>
-          <Thumbnail large={size === "large"}>
-            {image && <img alt={title} title={title} src={image} />}
-          </Thumbnail>
+        <Link to={"/" + slug} title={title} size={size}>
+          <Thumbnail
+            large={size === "large"}
+            style={{
+              backgroundImage: "url(" + image + ")",
+              backgroundPosition: "center center",
+            }}
+          />
           <Content large={size === "large"}>
             <Tag>{tag}</Tag>
             <Title>{title}</Title>
