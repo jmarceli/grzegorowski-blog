@@ -27,6 +27,7 @@ export default ({ posts }) => (
               post.node.frontmatter.image.childImageSharp.sizes &&
               post.node.frontmatter.image.childImageSharp.sizes.src
             }
+            tag={post.node.frontmatter.tags && post.node.frontmatter.tags[0]}
           />
         </Item>
       ))}

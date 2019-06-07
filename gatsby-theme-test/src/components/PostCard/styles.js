@@ -43,6 +43,7 @@ export const Tag = styled.h3`
   font-size: ${toEm(12)}rem;
   margin-bottom: 6px;
   color: #666;
+  text-transform: uppercase;
 `;
 
 export const Title = styled.h2`
