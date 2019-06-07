@@ -21,9 +21,19 @@ export const Scroller = styled.div`
   height: 100%;
   padding-bottom: 40px;
   overflow: scroll;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
 `;
 
-export const Container = styled.ul`
+export const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
+
+export const List = styled.ul`
   height: 100%;
   display: flex;
   margin: 0;
