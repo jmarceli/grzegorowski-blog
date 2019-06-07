@@ -8,6 +8,8 @@ import {
   Tag,
   Title,
   Excerpt,
+  Footer,
+  Author,
   TimeToRead,
 } from "./styles";
 
@@ -17,6 +19,7 @@ export default function PostCard({
   url,
   children,
   image,
+  authorIcon,
   timeToRead,
 }) {
   return (
@@ -30,7 +33,10 @@ export default function PostCard({
             <Tag>{tag}</Tag>
             <Title>{title}</Title>
             <Excerpt>{children}</Excerpt>
-            <TimeToRead>{timeToRead} min read</TimeToRead>
+            <Footer>
+              <Author>{authorIcon}</Author>
+              <TimeToRead>{timeToRead} min read</TimeToRead>
+            </Footer>
           </Content>
         </Link>
       </Article>

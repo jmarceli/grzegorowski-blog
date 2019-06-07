@@ -50,12 +50,28 @@ export const Excerpt = styled.p`
   font-size: ${toEm(14)}rem;
 `;
 
-export const TimeToRead = styled.div`
-  align-self: flex-end;
+export const Footer = styled.div`
+  display: flex;
+  justify-content: space-between;
   font-family: ${ffSans};
   font-size: ${toEm(12)}rem;
   font-weight: 500;
   text-transform: uppercase;
   color: #666;
   margin-top: 6px;
+`;
+
+export const Author = styled.div`
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+`;
+
+export const TimeToRead = styled.div`
+  font-family: ${ffSans};
+  font-size: ${toEm(12)}rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #666;
 `;
