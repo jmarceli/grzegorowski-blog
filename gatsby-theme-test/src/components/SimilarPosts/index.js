@@ -13,17 +13,17 @@ export default function SimilarPosts({ siteName, mainTag, featuredPosts }) {
             <SummaryCard
               siteName={siteName}
               title={mainTag.label}
-              url={mainTag.url}
+              slug={mainTag.slug}
               posts={mainTag.posts}
               postsTotal={mainTag.postsTotal}
             />
           </Item>
           {featuredPosts.map(post => (
-            <Item key={post.url}>
+            <Item key={post.slug}>
               <PostCard
                 title={post.title}
                 tag={post.tag}
-                url={post.url}
+                slug={post.slug}
                 image={false}
                 timeToRead={post.timeToRead}
               >

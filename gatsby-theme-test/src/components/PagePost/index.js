@@ -5,23 +5,11 @@ import dayjs from "dayjs";
 import PageLayout from "../PageLayout";
 import SimilarPosts from "../SimilarPosts";
 import {
-  BP_SMALL,
-  BP_MEDIUM,
-  BP_LARGE,
-  CONTENT_MAX_WIDTH,
-  ARTICLE_OFFSET_TOP,
-  CONTENT_OVERLAP_HEIGHT,
-} from "../variables";
-import {
   Header,
   HeaderContent,
   Title,
   Subtitle,
   Divider,
-  AuthorInfo,
-  Photo,
-  Name,
-  Info,
   TopImage,
   HeaderImage,
   Main,
@@ -31,16 +19,16 @@ import {
 const similarPosts = {
   siteName: "— Blog name —",
   mainTag: {
-    slug: "/javascript",
+    slug: "javascript",
     label: "Javascript",
     posts: [
-      { slug: "/r1", title: "React multiple event handlers performance" },
+      { slug: "r1", title: "React multiple event handlers performance" },
       {
-        slug: "/r2",
+        slug: "r2",
         title: "React.PureComponent - different ways of writing event handlers",
       },
       {
-        slug: "/r3",
+        slug: "r3",
         title: "React.PureComponent - children vs custom properties",
       },
     ],
@@ -49,7 +37,7 @@ const similarPosts = {
   featuredPosts: [
     {
       tag: "FRONTEND",
-      slug: "/i1",
+      slug: "i1",
       title:
         "Integration tests with Jest, Selenium and BrowserStack - part 2 - multiple browsers",
       excerpt:
@@ -58,7 +46,7 @@ const similarPosts = {
     },
     {
       tag: "JAVASCRIPT",
-      slug: "/j1",
+      slug: "j1",
       title:
         "Time Series Admin - Electron-based alternative to Admin UI for InfluxDB",
       excerpt:
@@ -87,7 +75,7 @@ export default function PagePost({ data }) {
                 tags.map(tag => (
                   <React.Fragment key={tag}>
                     <Divider>/</Divider>
-                    <Link to={`tag/${tag}`}>{tag}</Link>
+                    <Link to={`/tag/${tag}`}>{tag}</Link>
                   </React.Fragment>
                 ))}
             </Subtitle>

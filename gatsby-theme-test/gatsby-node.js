@@ -22,6 +22,7 @@ exports.createPages = async ({ graphql, actions }) => {
             frontmatter {
               slug
               tags
+              author
             }
           }
         }
@@ -99,7 +100,7 @@ exports.createPages = async ({ graphql, actions }) => {
         path.join(__dirname, "src", "pages", "author.js"),
       ),
       context: {
-        author: node,
+        author: node.id,
       },
     });
   });
@@ -111,7 +112,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/tag/${tag}/`,
       component: path.resolve(path.join(__dirname, "src", "pages", "tag.js")),
       context: {
-        tag: node,
+        tag: node.id,
       },
     });
   });

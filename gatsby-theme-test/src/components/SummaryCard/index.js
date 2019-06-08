@@ -11,21 +11,21 @@ import {
   Item,
 } from "./styles";
 
-export default function PostCard({ siteName, title, url, posts, postsTotal }) {
+export default function PostCard({ siteName, title, slug, posts, postsTotal }) {
   return (
     <Tile>
       <Content>
         <TopLine>
           <SiteName>{siteName}</SiteName>
-          <LinkTop to={url} title={title}>
+          <LinkTop to={"/" + slug} title={title}>
             <Title>{title}</Title>
           </LinkTop>
         </TopLine>
         {posts.length > 0 && (
           <List>
             {posts.map(post => (
-              <Item key={post.url}>
-                <Link to={post.url} title={post.title}>
+              <Item key={post.slug}>
+                <Link to={"/" + post.slug} title={post.title}>
                   {post.title}
                 </Link>
               </Item>

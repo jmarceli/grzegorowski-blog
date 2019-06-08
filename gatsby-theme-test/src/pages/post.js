@@ -5,7 +5,7 @@ import PagePost from "../components/PagePost/index";
 export default ({ data }) => <PagePost data={data.markdownRemark} />;
 
 export const query = graphql`
-  query($slug: String) {
+  query($slug: String, $author: String, $tags: [String]) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       excerpt
@@ -30,7 +30,19 @@ export const query = graphql`
         date_created
         date_updated
         featured
-        author
+      }
+    }
+    authorsYaml(id: { eq: $author }) {
+      id
+      profile_image
+    }
+    allTagsYaml(filter: { id: { in: $tags } }) {
+      edges {
+        node {
+          id
+          name
+          image
+        }
       }
     }
   }

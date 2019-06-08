@@ -30,7 +30,7 @@ export default function PostCard({
           <Thumbnail
             large={size === "large"}
             style={{
-              backgroundImage: "url(" + image + ")",
+              backgroundImage: "slug(" + image + ")",
               backgroundPosition: "center center",
             }}
           />

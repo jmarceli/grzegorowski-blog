@@ -12,7 +12,7 @@ export default function SeoPost({ data }) {
         "@type": "Organization",
         logo: {
           type: "ImageObject",
-          url: "https://grzegorowski.com/favicon.ico",
+          slug: "https://grzegorowski.com/favicon.ico",
         },
         name: "Jan Grzegorowski",
       },
@@ -27,7 +27,7 @@ export default function SeoPost({ data }) {
       image: data.frontmatter.image && [
         {
           "@type": "ImageObject",
-          url: data.frontmatter.image.childImageSharp.sizes.originalImg,
+          slug: data.frontmatter.image.childImageSharp.sizes.originalImg,
         },
       ],
       mainEntityOfPage: {

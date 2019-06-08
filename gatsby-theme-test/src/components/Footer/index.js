@@ -1,6 +1,5 @@
 import React from "react";
 import { Wrapper, Container, Name } from "./styles";
-import Menu from "../Menu";
 
 export default function Footer() {
   return (

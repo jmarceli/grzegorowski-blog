@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link as GatsbyLink } from "gatsby";
 import { ffSans, toEm } from "src/utils/typography";
-import { BP_SMALL, BP_MEDIUM, CONTENT_MAX_WIDTH } from "../variables";
+import { BP_SMALL } from "../variables";
 
 export const Article = styled.article`
   display: flex;

@@ -5,9 +5,9 @@ import Menu from "../Menu";
 import { Header, Content } from "./styles";
 
 const menuItems = [
-  { label: "Home", url: "/" },
-  { label: "Contact", url: "/contact" },
-  { label: "Cookies", url: "/cookies" },
+  { label: "Home", slug: "/" },
+  { label: "Contact", slug: "/contact" },
+  { label: "Cookies", slug: "/cookies" },
 ];
 
 export default ({ data }) => (

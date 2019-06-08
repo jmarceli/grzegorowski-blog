@@ -2,15 +2,7 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import Menu from "../Menu";
 import { ffSans, toEm } from "src/utils/typography";
-import {
-  BP_SMALL,
-  BP_MEDIUM,
-  BP_LARGE,
-  CONTENT_MAX_WIDTH,
-  ARTICLE_OFFSET_TOP,
-  CONTENT_OVERLAP_HEIGHT,
-  TOP_OFFSET,
-} from "../variables";
+import { CONTENT_MAX_WIDTH, TOP_OFFSET } from "../variables";
 
 export const Placeholder = styled.div`
   height: ${TOP_OFFSET}px;

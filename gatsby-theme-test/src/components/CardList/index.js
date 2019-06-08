@@ -1,6 +1,6 @@
 import React from "react";
 import PostCard from "../PostCard";
-import { Wrapper, Container, List, Item } from "./styles";
+import { Container, List, Item } from "./styles";
 
 const itemSize = index => {
   if (index % 6 === 0) {

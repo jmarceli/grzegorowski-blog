@@ -8,7 +8,7 @@ export default function Menu({ className, items }) {
         <Container>
           <List>
             {items.map(item => (
-              <Item key={item.label} to={item.url}>
+              <Item key={item.label} to={"/" + item.slug}>
                 {item.label}
               </Item>
             ))}

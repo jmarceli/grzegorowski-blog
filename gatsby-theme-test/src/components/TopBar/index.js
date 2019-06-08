@@ -10,9 +10,9 @@ import {
 
 export default function TopBar() {
   const menuItems = [
-    { label: "Home", url: "/" },
-    { label: "Contact", url: "/contact" },
-    { label: "Cookies", url: "/cookies" },
+    { label: "Home", slug: "/" },
+    { label: "Contact", slug: "/contact" },
+    { label: "Cookies", slug: "/cookies" },
   ];
   return (
     <>
