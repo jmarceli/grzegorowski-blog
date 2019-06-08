@@ -28,6 +28,7 @@ export const Thumbnail = styled.div`
   }
   background: #262626;
   background-size: cover;
+  background-position: center center;
 `;
 
 export const Content = styled.div`
