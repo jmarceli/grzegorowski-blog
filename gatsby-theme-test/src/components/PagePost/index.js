@@ -75,7 +75,7 @@ export default function PagePost({ data }) {
                 tags.map(tag => (
                   <React.Fragment key={tag}>
                     <Divider>/</Divider>
-                    <Link to={`/tag/${tag}`}>{tag}</Link>
+                    <Link to={`/tag/${tag.toLowerCase()}`}>{tag}</Link>
                   </React.Fragment>
                 ))}
             </Subtitle>

@@ -95,7 +95,7 @@ exports.createPages = async ({ graphql, actions }) => {
   result.data.allAuthorsYaml.edges.forEach(({ node }) => {
     const author = node.id;
     createPage({
-      path: `/author/${author}/`,
+      path: `/author/${author}`,
       component: path.resolve(
         path.join(__dirname, "src", "pages", "author.js"),
       ),
@@ -109,7 +109,7 @@ exports.createPages = async ({ graphql, actions }) => {
   result.data.allTagsYaml.edges.forEach(({ node }) => {
     const tag = node.id;
     createPage({
-      path: `/tag/${tag}/`,
+      path: `/tag/${tag}`,
       component: path.resolve(path.join(__dirname, "src", "pages", "tag.js")),
       context: {
         tag: node.id,
