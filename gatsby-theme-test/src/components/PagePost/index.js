@@ -16,66 +16,34 @@ import {
   Content,
 } from "./styles";
 
-const similarPosts = {
-  siteName: "— Blog name —",
-  mainTag: {
-    slug: "javascript",
-    label: "Javascript",
-    posts: [
-      { slug: "r1", title: "React multiple event handlers performance" },
-      {
-        slug: "r2",
-        title: "React.PureComponent - different ways of writing event handlers",
-      },
-      {
-        slug: "r3",
-        title: "React.PureComponent - children vs custom properties",
-      },
-    ],
-    postsTotal: 16,
-  },
-  featuredPosts: [
-    {
-      tag: "FRONTEND",
-      slug: "i1",
-      title:
-        "Integration tests with Jest, Selenium and BrowserStack - part 2 - multiple browsers",
-      excerpt:
-        "Running automatically tests for multiple browsers and OSes with BrowserStack service.",
-      timeToRead: 2,
-    },
-    {
-      tag: "JAVASCRIPT",
-      slug: "j1",
-      title:
-        "Time Series Admin - Electron-based alternative to Admin UI for InfluxDB",
-      excerpt:
-        "Release notes for Time Series Admin - an alternative to Admin UI and Chronograf interface for InfluxDB.",
-      timeToRead: 11,
-    },
-  ],
-};
-
-export default function PagePost({ data }) {
-  const date = dayjs(data.frontmatter.date_created);
-  const tags = data.frontmatter.tags || [];
+export default function PagePost({
+  post,
+  similarPosts,
+  author,
+  tags,
+  tagPosts,
+}) {
+  const frontmatter = post.frontmatter;
+  const date = dayjs(frontmatter.date_created);
+  const mainTag =
+    tags && tags.find(({ node }) => node.name === post.frontmatter.tags[0]);
   return (
     <PageLayout>
       <article>
-        <SeoPost data={data} />
+        <SeoPost data={post} />
 
         <Header>
           <HeaderContent>
-            <Title>{data.frontmatter.title}</Title>
+            <Title>{frontmatter.title}</Title>
             <Subtitle>
-              <time dateTime={data.frontmatter.date_created}>
+              <time dateTime={frontmatter.date_created}>
                 {date.format("DD MMMM YYYY")}
               </time>
               {tags.length > 0 &&
-                tags.map(tag => (
-                  <React.Fragment key={tag}>
+                tags.map(({ node: tag }) => (
+                  <React.Fragment key={tag.id}>
                     <Divider>/</Divider>
-                    <Link to={`/tag/${tag.toLowerCase()}`}>{tag}</Link>
+                    <Link to={`/tag/${tag.id}`}>{tag.name}</Link>
                   </React.Fragment>
                 ))}
             </Subtitle>
@@ -83,12 +51,12 @@ export default function PagePost({ data }) {
         </Header>
 
         <TopImage>
-          {data.frontmatter.image && (
+          {frontmatter.image && (
             <HeaderImage
-              title={data.frontmatter.title}
-              alt={data.frontmatter.title}
-              srcSet={data.frontmatter.image.childImageSharp.sizes.srcSet}
-              src={data.frontmatter.image.childImageSharp.sizes.src}
+              title={frontmatter.title}
+              alt={frontmatter.title}
+              srcSet={frontmatter.image.childImageSharp.sizes.srcSet}
+              src={frontmatter.image.childImageSharp.sizes.src}
             />
           )}
         </TopImage>
@@ -97,16 +65,17 @@ export default function PagePost({ data }) {
           <Content>
             <div
               dangerouslySetInnerHTML={{
-                __html: data.html,
+                __html: post.html,
               }}
             />
           </Content>
         </Main>
 
         <SimilarPosts
-          mainTag={similarPosts.mainTag}
-          siteName={similarPosts.siteName}
-          featuredPosts={similarPosts.featuredPosts}
+          tag={mainTag.node}
+          tagPosts={tagPosts}
+          siteName={"— Blog name —"}
+          similarPosts={similarPosts}
         />
       </article>
     </PageLayout>

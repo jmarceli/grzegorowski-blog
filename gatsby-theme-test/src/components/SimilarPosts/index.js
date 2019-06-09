@@ -4,7 +4,12 @@ import SummaryCard from "../SummaryCard";
 import { Wrapper, Container, List, Item } from "./styles";
 
 // TODO: seo similar
-export default function SimilarPosts({ siteName, mainTag, featuredPosts }) {
+export default function SimilarPosts({
+  siteName,
+  tag,
+  tagPosts,
+  similarPosts,
+}) {
   return (
     <Wrapper>
       <Container>
@@ -12,23 +17,25 @@ export default function SimilarPosts({ siteName, mainTag, featuredPosts }) {
           <Item key="tag-summary">
             <SummaryCard
               siteName={siteName}
-              title={mainTag.label}
-              slug={mainTag.slug}
-              posts={mainTag.posts}
-              postsTotal={mainTag.postsTotal}
+              title={tag.name}
+              slug={tag.id}
+              posts={tagPosts.edges}
+              postsTotal={tagPosts.totalCount}
             />
           </Item>
-          {featuredPosts.map(post => (
-            <Item key={post.slug}>
+          {similarPosts.map(({ node }) => (
+            <Item key={node.frontmatter.slug}>
               <PostCard
-                title={post.title}
-                tag={post.tag}
-                slug={post.slug}
-                image={false}
-                timeToRead={post.timeToRead}
-              >
-                {post.excerpt}
-              </PostCard>
+                title={node.frontmatter.title}
+                tag={node.frontmatter.tags && node.frontmatter.tags[0]}
+                slug={node.frontmatter.slug}
+                image={
+                  node.frontmatter.image &&
+                  node.frontmatter.image.childImageSharp.sizes.src
+                }
+                timeToRead={node.timeToRead}
+                excerpt={node.excerpt}
+              />
             </Item>
           ))}
         </List>

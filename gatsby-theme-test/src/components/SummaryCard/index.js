@@ -12,6 +12,8 @@ import {
 } from "./styles";
 
 export default function PostCard({ siteName, title, slug, posts, postsTotal }) {
+  // all current post to a total number of posts in selected tag
+  const allPostsNumber = postsTotal + 1;
   return (
     <Tile>
       <Content>
@@ -23,20 +25,21 @@ export default function PostCard({ siteName, title, slug, posts, postsTotal }) {
         </TopLine>
         {posts.length > 0 && (
           <List>
-            {posts.map(post => (
-              <Item key={post.slug}>
-                <Link to={"/" + post.slug} title={post.title}>
-                  {post.title}
+            {posts.map(({ node }) => (
+              <Item key={node.frontmatter.slug}>
+                <Link
+                  to={"/" + node.frontmatter.slug}
+                  title={node.frontmatter.title}
+                >
+                  {node.frontmatter.title}
                 </Link>
               </Item>
             ))}
-            {postsTotal > 1 && (
-              <Item>
-                <Link to={"/all"} title={"See all"}>
-                  See all {postsTotal} posts
-                </Link>
-              </Item>
-            )}
+            <Item>
+              <Link to={"/tag/" + slug} title={"See all"}>
+                See all {allPostsNumber} posts
+              </Link>
+            </Item>
           </List>
         )}
       </Content>

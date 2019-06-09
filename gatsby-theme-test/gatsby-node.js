@@ -16,7 +16,14 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     {
-      allMarkdownRemark {
+      allMarkdownRemark(
+        sort: {fields: [frontmatter___date], order: DESC}, 
+        ${
+          process.env.NODE_ENV === "production"
+            ? "filter: {frontmatter: {draft: {ne: true}}}"
+            : ""
+        }
+      ) {
         edges {
           node {
             frontmatter {
@@ -84,6 +91,7 @@ exports.createPages = async ({ graphql, actions }) => {
         ),
         context: {
           ...node.frontmatter,
+          mainTag: node.frontmatter.tags[0],
           prev,
           next,
         },
@@ -112,7 +120,7 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/tag/${tag}`,
       component: path.resolve(path.join(__dirname, "src", "pages", "tag.js")),
       context: {
-        tag: node.id,
+        tag,
       },
     });
   });
