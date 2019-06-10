@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { GatsbyImageSharpFixed } from "gatsby-image";
+// eslint-disable-next-line no-unused-vars
+import { GatsbyImageSharpFixed, GatsbyImageSharpFluid } from "gatsby-image";
 import PagePost from "../components/PagePost/index";
 
 export default ({ data }) => (
@@ -25,12 +26,8 @@ export const query = graphql`
         image {
           absolutePath
           childImageSharp {
-            fluid {
-              aspectRatio
-              srcSet
-              src
-              sizes
-              originalImg
+            fluid(maxWidth: 1920) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -86,7 +83,7 @@ export const query = graphql`
           location
           avatar {
             childImageSharp {
-              fixed(width: 50, height: 50) {
+              fixed(width: 60, height: 60) {
                 ...GatsbyImageSharpFixed
               }
             }

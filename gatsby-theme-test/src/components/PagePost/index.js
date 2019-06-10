@@ -32,7 +32,7 @@ export default function PagePost({
   const author = authors.edges.find(
     ({ node }) => node.id === frontmatter.author,
   );
-  console.log(author);
+
   return (
     <PageLayout>
       <article>
@@ -61,8 +61,9 @@ export default function PagePost({
             <HeaderImage
               title={frontmatter.title}
               alt={frontmatter.title}
-              srcSet={frontmatter.image.childImageSharp.fluid.srcSet}
-              src={frontmatter.image.childImageSharp.fluid.src}
+              fluid={frontmatter.image.childImageSharp.fluid}
+              objectFit="cover"
+              objectPosition="50% 50%"
             />
           )}
         </TopImage>

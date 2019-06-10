@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Img from "gatsby-image";
 import { ffSans, toEm } from "src/utils/typography";
 import {
   BP_SMALL,
@@ -8,7 +9,7 @@ import {
   ARTICLE_OFFSET_TOP,
   CONTENT_OVERLAP_HEIGHT,
   TOP_OFFSET,
-  COLOR_PRIMARY
+  COLOR_PRIMARY,
 } from "../variables";
 
 export const Header = styled.header`
@@ -81,7 +82,7 @@ export const TopImage = styled.div`
   z-index: -1;
 `;
 
-export const HeaderImage = styled.img`
+export const HeaderImage = styled(Img)`
   z-index: -1;
   min-width: 100%;
   min-height: 100%;
