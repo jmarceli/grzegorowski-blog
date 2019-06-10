@@ -1,6 +1,6 @@
 import React from "react";
-import PostCard from "../PostCard";
-import SummaryCard from "../SummaryCard";
+import CardPost from "../CardPost";
+import CardSummary from "../CardSummary";
 import { Wrapper, Container, List, Item } from "./styles";
 
 // TODO: seo similar
@@ -15,7 +15,7 @@ export default function SimilarPosts({
       <Container>
         <List>
           <Item key="tag-summary">
-            <SummaryCard
+            <CardSummary
               siteName={siteName}
               title={tag.name}
               slug={tag.id}
@@ -25,7 +25,7 @@ export default function SimilarPosts({
           </Item>
           {similarPosts.map(({ node }) => (
             <Item key={node.frontmatter.slug}>
-              <PostCard
+              <CardPost
                 title={node.frontmatter.title}
                 tag={node.frontmatter.tags && node.frontmatter.tags[0]}
                 slug={node.frontmatter.slug}

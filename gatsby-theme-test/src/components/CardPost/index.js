@@ -13,7 +13,7 @@ import {
   TimeToRead,
 } from "./styles";
 
-export default function PostCard({
+export default function CardPost({
   size,
   title,
   tag,

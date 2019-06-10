@@ -11,7 +11,7 @@ import {
   Item,
 } from "./styles";
 
-export default function PostCard({ siteName, title, slug, posts, postsTotal }) {
+export default function CardPost({ siteName, title, slug, posts, postsTotal }) {
   // all current post to a total number of posts in selected tag
   const allPostsNumber = postsTotal + 1;
   return (

@@ -88,7 +88,7 @@ export const query = graphql`
     tagPosts: allMarkdownRemark(
       filter: { frontmatter: { tags: { in: [$mainTag] }, slug: { ne: $slug } } }
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 3
+      limit: 4
     ) {
       edges {
         node {

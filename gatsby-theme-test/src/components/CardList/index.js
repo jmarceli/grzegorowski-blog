@@ -1,5 +1,5 @@
 import React from "react";
-import PostCard from "../PostCard";
+import CardPost from "../CardPost";
 import { Container, List, Item } from "./styles";
 
 const itemSize = index => {
@@ -17,7 +17,7 @@ export default ({ posts }) => (
     <List>
       {posts.map((post, index) => (
         <Item key={post.node.id} size={itemSize(index)}>
-          <PostCard
+          <CardPost
             {...post.node.frontmatter}
             timeToRead={post.node.timeToRead}
             size={itemSize(index)}
