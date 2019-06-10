@@ -8,6 +8,7 @@ import {
   ARTICLE_OFFSET_TOP,
   CONTENT_OVERLAP_HEIGHT,
   TOP_OFFSET,
+  COLOR_PRIMARY
 } from "../variables";
 
 export const Header = styled.header`
@@ -34,7 +35,7 @@ export const Title = styled.h1`
 `;
 
 export const Subtitle = styled.div`
-  color: #3eb0ef;
+  color: ${COLOR_PRIMARY};
   font-size: ${toEm(14)}rem;
   font-weight: 600;
   font-family: ${ffSans};
@@ -100,7 +101,7 @@ export const Main = styled.div`
   background: #fff;
 `;
 
-export const Content = styled.div`
+export const Container = styled.div`
   position: relative;
   width: 100%;
   max-width: ${CONTENT_MAX_WIDTH}px;
@@ -138,7 +139,9 @@ export const Content = styled.div`
       transform: rotate(2deg);
     }
   }
+`;
 
+export const Content = styled.div`
   a {
     border-bottom: 1px solid #111;
   }

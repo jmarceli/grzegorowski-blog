@@ -31,7 +31,7 @@ export default function SimilarPosts({
                 slug={node.frontmatter.slug}
                 image={
                   node.frontmatter.image &&
-                  node.frontmatter.image.childImageSharp.sizes.src
+                  node.frontmatter.image.childImageSharp.fluid.src
                 }
                 timeToRead={node.timeToRead}
                 excerpt={node.excerpt}

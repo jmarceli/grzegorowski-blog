@@ -27,7 +27,7 @@ export default function SeoPost({ data }) {
       image: data.frontmatter.image && [
         {
           "@type": "ImageObject",
-          slug: data.frontmatter.image.childImageSharp.sizes.originalImg,
+          slug: data.frontmatter.image.childImageSharp.fluid.originalImg,
         },
       ],
       mainEntityOfPage: {

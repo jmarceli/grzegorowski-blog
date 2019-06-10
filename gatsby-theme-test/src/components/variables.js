@@ -5,3 +5,5 @@ export const CONTENT_MAX_WIDTH = 1080;
 export const ARTICLE_OFFSET_TOP = 600;
 export const CONTENT_OVERLAP_HEIGHT = 150;
 export const TOP_OFFSET = 50;
+
+export const COLOR_PRIMARY = "#3eb0ef"; // blue

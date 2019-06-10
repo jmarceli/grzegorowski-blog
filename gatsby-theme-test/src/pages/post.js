@@ -1,29 +1,32 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { GatsbyImageSharpFixed } from "gatsby-image";
 import PagePost from "../components/PagePost/index";
 
 export default ({ data }) => (
   <PagePost
     post={data.post}
     similarPosts={data.similarPosts && data.similarPosts.edges}
-    author={data.author}
+    authors={data.authors}
     tags={data.tags && data.tags.edges}
     tagPosts={data.tagPosts}
   />
 );
 
 export const query = graphql`
-  query($slug: String, $author: String, $tags: [String], $mainTag: String) {
+  query($slug: String, $tags: [String], $mainTag: String) {
     post: markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       excerpt
       timeToRead
       rawMarkdownBody
       frontmatter {
+        author
         image {
           absolutePath
           childImageSharp {
-            sizes {
+            fluid {
+              aspectRatio
               srcSet
               src
               sizes
@@ -57,10 +60,12 @@ export const query = graphql`
             date_created
             date_updated
             featured
+            author
             image {
               absolutePath
               childImageSharp {
-                sizes {
+                fluid {
+                  aspectRatio
                   srcSet
                   src
                   sizes
@@ -72,9 +77,22 @@ export const query = graphql`
         }
       }
     }
-    author: authorsYaml(id: { eq: $author }) {
-      id
-      profile_image
+    authors: allAuthorsYaml {
+      edges {
+        node {
+          bio
+          id
+          website
+          location
+          avatar {
+            childImageSharp {
+              fixed(width: 50, height: 50) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
+        }
+      }
     }
     tags: allTagsYaml(filter: { name: { in: $tags } }) {
       edges {

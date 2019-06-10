@@ -18,11 +18,12 @@ export const query = graphql`
           avatar {
             absolutePath
             childImageSharp {
-              sizes {
+              fluid {
                 srcSet
                 src
                 sizes
                 originalImg
+                aspectRatio
               }
             }
           }

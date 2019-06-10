@@ -24,8 +24,8 @@ export default ({ posts }) => (
             excerpt={post.node.excerpt}
             image={
               post.node.frontmatter.image &&
-              post.node.frontmatter.image.childImageSharp.sizes &&
-              post.node.frontmatter.image.childImageSharp.sizes.src
+              post.node.frontmatter.image.childImageSharp.fluid &&
+              post.node.frontmatter.image.childImageSharp.fluid.src
             }
             tag={post.node.frontmatter.tags && post.node.frontmatter.tags[0]}
           />

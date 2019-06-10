@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import SeoPost from "./seo";
 import dayjs from "dayjs";
 import PageLayout from "../PageLayout";
+import Author from "../Author";
 import SimilarPosts from "../SimilarPosts";
 import {
   Header,
@@ -13,13 +14,14 @@ import {
   TopImage,
   HeaderImage,
   Main,
+  Container,
   Content,
 } from "./styles";
 
 export default function PagePost({
   post,
   similarPosts,
-  author,
+  authors,
   tags,
   tagPosts,
 }) {
@@ -27,6 +29,10 @@ export default function PagePost({
   const date = dayjs(frontmatter.date_created);
   const mainTag =
     tags && tags.find(({ node }) => node.name === post.frontmatter.tags[0]);
+  const author = authors.edges.find(
+    ({ node }) => node.id === frontmatter.author,
+  );
+  console.log(author);
   return (
     <PageLayout>
       <article>
@@ -55,20 +61,21 @@ export default function PagePost({
             <HeaderImage
               title={frontmatter.title}
               alt={frontmatter.title}
-              srcSet={frontmatter.image.childImageSharp.sizes.srcSet}
-              src={frontmatter.image.childImageSharp.sizes.src}
+              srcSet={frontmatter.image.childImageSharp.fluid.srcSet}
+              src={frontmatter.image.childImageSharp.fluid.src}
             />
           )}
         </TopImage>
 
         <Main>
-          <Content>
-            <div
+          <Container>
+            <Content
               dangerouslySetInnerHTML={{
                 __html: post.html,
               }}
             />
-          </Content>
+            <Author author={author && author.node} />
+          </Container>
         </Main>
 
         <SimilarPosts

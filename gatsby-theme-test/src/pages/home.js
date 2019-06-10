@@ -27,7 +27,8 @@ export const query = graphql`
             image {
               absolutePath
               childImageSharp {
-                sizes {
+                fluid {
+                  aspectRatio
                   srcSet
                   src
                   sizes
