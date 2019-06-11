@@ -1,5 +1,6 @@
 import React from "react";
-import { Wrapper, Scroller, Container, List, Item } from "./styles";
+import { Wrapper, Scroller, Container, List, Item, Link } from "./styles";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Menu({ className, items }) {
   return (
@@ -8,15 +9,28 @@ export default function Menu({ className, items }) {
         <Container>
           <List>
             {items.map(item => (
-              <Item key={item.label} to={"/" + item.slug}>
-                {item.label}
+              <Item key={item.label}>
+                <Link to={"/" + item.slug}>{item.label}</Link>
               </Item>
             ))}
           </List>
           <List>
-            <Item to="https://facebook.com">f</Item>
-            <Item to="https://twitter.com">t</Item>
-            <Item to="https://google.com">r</Item>
+            <Item>
+              <Link to="https://facebook.com">
+                <FontAwesomeIcon
+                  icon={["fab", "facebook-f"]}
+                  size="sm"
+                />
+              </Link>
+            </Item>
+            <Item>
+              <Link to="https://twitter.com">
+                <FontAwesomeIcon
+                  icon={["fab", "twitter"]}
+                  size="sm"
+                />
+              </Link>
+            </Item>
           </List>
         </Container>
       </Scroller>

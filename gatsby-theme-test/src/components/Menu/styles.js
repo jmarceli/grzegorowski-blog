@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { ffSans, toEm } from "src/utils/typography";
-import { Link } from "gatsby";
+import { Link as GatsbyLink } from "gatsby";
 
 export const Wrapper = styled.nav`
   text-transform: uppercase;
@@ -31,6 +31,7 @@ export const Container = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  height: 100%;
 `;
 
 export const List = styled.ul`
@@ -42,17 +43,22 @@ export const List = styled.ul`
   white-space: nowrap;
 `;
 
-export const Item = styled(Link)`
+export const Item = styled.li`
   height: 100%;
   display: flex;
   align-items: center;
-  padding: 0 12px;
+  margin: 0;
 
   &:last-child {
-    padding-right: 24px;
+    padding-right: 12px;
   }
 
   &:hover {
     color: #fff;
   }
+`;
+
+export const Link = styled(GatsbyLink)`
+  display: flex;
+  padding: 12px;
 `;
