@@ -14,15 +14,17 @@ export default function SimilarPosts({
     <Wrapper>
       <Container>
         <List>
-          <Item key="tag-summary">
-            <CardSummary
-              siteName={siteName}
-              title={tag.name}
-              slug={tag.id}
-              posts={tagPosts.edges}
-              postsTotal={tagPosts.totalCount}
-            />
-          </Item>
+          {tagPosts.edges.length > 0 && (
+            <Item key="tag-summary">
+              <CardSummary
+                siteName={siteName}
+                title={tag.name}
+                slug={tag.id}
+                posts={tagPosts.edges}
+                postsTotal={tagPosts.totalCount}
+              />
+            </Item>
+          )}
           {similarPosts.map(({ node }) => (
             <Item key={node.frontmatter.slug}>
               <CardPost

@@ -79,12 +79,14 @@ export default function PagePost({
           </Container>
         </Main>
 
-        <SimilarPosts
-          tag={mainTag.node}
-          tagPosts={tagPosts}
-          siteName={"— Blog name —"}
-          similarPosts={similarPosts}
-        />
+        {(tagPosts.edges.length > 0 || similarPosts.length > 0) && (
+          <SimilarPosts
+            tag={mainTag.node}
+            tagPosts={tagPosts}
+            siteName={"— Blog name —"}
+            similarPosts={similarPosts}
+          />
+        )}
       </article>
     </PageLayout>
   );
