@@ -53,7 +53,9 @@ export const Item = styled.li`
   }
 
   margin: 0;
-  min-height: ${({ size }) => (size === "large" ? "400" : "460")}px;
+  @media (min-width: ${BP_SMALL}px) {
+    min-height: ${({ size }) => (size === "large" ? "400" : "460")}px;
+  }
 
   padding: 12px 8px;
   @media (min-width: ${BP_SMALL}px) {

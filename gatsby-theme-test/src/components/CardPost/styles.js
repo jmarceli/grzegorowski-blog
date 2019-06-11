@@ -35,7 +35,10 @@ export const Thumbnail = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  flex: ${({ large }) => (large ? "0 1 344px" : "1 1 auto")};
+  flex: 1 0 auto;
+  @media (min-width: ${BP_SMALL}px) {
+    flex: ${({ large }) => (large ? "0 1 344px" : "1 1 auto")};
+  }
   background: #fff;
   padding: 20px;
 `;
