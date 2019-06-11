@@ -37,7 +37,11 @@ export const Info = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+
   margin-left: 12px;
+  @media (min-width: ${BP_SMALL}px) {
+    margin-left: 16px;
+  }
 `;
 
 export const Name = styled.div`
