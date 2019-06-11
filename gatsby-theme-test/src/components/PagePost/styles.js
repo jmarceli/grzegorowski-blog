@@ -12,6 +12,10 @@ import {
   COLOR_PRIMARY,
 } from "../variables";
 
+export const Wrapper = styled.article`
+  width: 100%;
+`;
+
 export const Header = styled.header`
   font-size: 1rem;
   background: #fff;
@@ -74,12 +78,14 @@ export const Info = styled.div`
 
 export const TopImage = styled.div`
   position: fixed;
+  left: 0;
   top: ${ARTICLE_OFFSET_TOP}px;
   margin-top: -${ARTICLE_OFFSET_TOP}px;
   width: 100%;
   height: ${ARTICLE_OFFSET_TOP}px;
   overflow: hidden;
   z-index: -1;
+  background: #090a0b;
 `;
 
 export const HeaderImage = styled(Img)`

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link as GatsbyLink } from "gatsby";
+import Img from "gatsby-image";
 import { ffSans, toEm } from "src/utils/typography";
 import { BP_SMALL } from "../variables";
 
@@ -78,7 +79,13 @@ export const Author = styled.div`
   height: 30px;
   width: 30px;
   border-radius: 50%;
+  overflow: hidden;
   border: 1px solid #ccc;
+`;
+
+export const Avatar = styled(Img)`
+  width: 100%;
+  height: 100%;
 `;
 
 export const TimeToRead = styled.div`

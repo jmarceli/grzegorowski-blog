@@ -10,14 +10,26 @@ const menuItems = [
   { label: "Cookies", slug: "/cookies" },
 ];
 
-export default ({ data }) => (
-  <div>
-    <HomeHeader />
-    <Content>
-      <Header>
-        <Menu items={menuItems} />
-      </Header>
-      <CardList posts={data.allMarkdownRemark.edges} />
-    </Content>
-  </div>
-);
+export default ({ posts, authors }) => {
+  const postsWithAuthors = posts.map(({ node }) => {
+    const author = authors.find(
+      ({ node: author }) => author.id === node.frontmatter.author,
+    );
+    return {
+      ...node,
+      author: author && author.node,
+    };
+  });
+
+  return (
+    <div>
+      <HomeHeader />
+      <Content>
+        <Header>
+          <Menu items={menuItems} />
+        </Header>
+        <CardList posts={postsWithAuthors} />
+      </Content>
+    </div>
+  );
+};

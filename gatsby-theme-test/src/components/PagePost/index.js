@@ -6,6 +6,7 @@ import PageLayout from "../PageLayout";
 import Author from "../Author";
 import SimilarPosts from "../SimilarPosts";
 import {
+  Wrapper,
   Header,
   HeaderContent,
   Title,
@@ -35,7 +36,7 @@ export default function PagePost({
 
   return (
     <PageLayout>
-      <article>
+      <Wrapper>
         <SeoPost data={post} />
 
         <Header>
@@ -87,7 +88,7 @@ export default function PagePost({
             similarPosts={similarPosts}
           />
         )}
-      </article>
+      </Wrapper>
     </PageLayout>
   );
 }

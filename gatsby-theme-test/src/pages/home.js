@@ -1,8 +1,12 @@
 import React from "react";
 import PageHome from "../components/PageHome";
+// eslint-disable-next-line no-unused-vars
+import { GatsbyImageSharpFixed, GatsbyImageSharpFluid } from "gatsby-image";
 import { graphql } from "gatsby";
 
-export default ({ data }) => <PageHome data={data} />;
+export default ({ data }) => (
+  <PageHome posts={data.allMarkdownRemark.edges} authors={data.authors.edges} />
+);
 
 export const query = graphql`
   query {
@@ -27,13 +31,26 @@ export const query = graphql`
             image {
               absolutePath
               childImageSharp {
-                fluid {
-                  aspectRatio
-                  srcSet
-                  src
-                  sizes
-                  originalImg
+                fluid(maxWidth: 600) {
+                  ...GatsbyImageSharpFluid
                 }
+              }
+            }
+          }
+        }
+      }
+    }
+    authors: allAuthorsYaml {
+      edges {
+        node {
+          bio
+          id
+          website
+          location
+          avatar {
+            childImageSharp {
+              fixed(width: 30, height: 30) {
+                ...GatsbyImageSharpFixed
               }
             }
           }

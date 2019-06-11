@@ -10,6 +10,7 @@ import {
   Excerpt,
   Footer,
   Author,
+  Avatar,
   TimeToRead,
 } from "./styles";
 
@@ -20,7 +21,7 @@ export default function CardPost({
   slug,
   excerpt,
   image,
-  authorIcon,
+  author,
   timeToRead,
 }) {
   return (
@@ -38,7 +39,20 @@ export default function CardPost({
             <Title>{title}</Title>
             <Excerpt>{excerpt}</Excerpt>
             <Footer>
-              <Author>{authorIcon}</Author>
+              {author && (
+                <Author>
+                  <Avatar
+                    fixed={
+                      author.avatar &&
+                      author.avatar.childImageSharp &&
+                      author.avatar.childImageSharp.fixed
+                    }
+                    objectFit="cover"
+                    objectPosition="50% 50%"
+                    alt={author.id}
+                  />
+                </Author>
+              )}
               <TimeToRead>{timeToRead} min read</TimeToRead>
             </Footer>
           </Content>

@@ -16,18 +16,19 @@ export default ({ posts }) => (
   <Container>
     <List>
       {posts.map((post, index) => (
-        <Item key={post.node.id} size={itemSize(index)}>
+        <Item key={post.id} size={itemSize(index)}>
           <CardPost
-            {...post.node.frontmatter}
-            timeToRead={post.node.timeToRead}
+            {...post.frontmatter}
+            timeToRead={post.timeToRead}
             size={itemSize(index)}
-            excerpt={post.node.excerpt}
+            excerpt={post.excerpt}
             image={
-              post.node.frontmatter.image &&
-              post.node.frontmatter.image.childImageSharp.fluid &&
-              post.node.frontmatter.image.childImageSharp.fluid.src
+              post.frontmatter.image &&
+              post.frontmatter.image.childImageSharp.fluid &&
+              post.frontmatter.image.childImageSharp.fluid.src
             }
-            tag={post.node.frontmatter.tags && post.node.frontmatter.tags[0]}
+            tag={post.frontmatter.tags && post.frontmatter.tags[0]}
+            author={post.author}
           />
         </Item>
       ))}
