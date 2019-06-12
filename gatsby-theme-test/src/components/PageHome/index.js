@@ -1,6 +1,7 @@
 import React from "react";
 import CardList from "../CardList";
 import HomeHeader from "../HomeHeader";
+import PageLayout from "../PageLayout";
 import Menu from "../Menu";
 import { Header, Content } from "./styles";
 
@@ -22,7 +23,7 @@ export default ({ posts, authors }) => {
   });
 
   return (
-    <div>
+    <PageLayout>
       <HomeHeader />
       <Content>
         <Header>
@@ -30,6 +31,6 @@ export default ({ posts, authors }) => {
         </Header>
         <CardList posts={postsWithAuthors} />
       </Content>
-    </div>
+    </PageLayout>
   );
 };

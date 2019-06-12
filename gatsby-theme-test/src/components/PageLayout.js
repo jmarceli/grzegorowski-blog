@@ -12,13 +12,14 @@ const Wrapper = styled.div`
 const Main = styled.main`
   display: flex;
   flex: 1 0 auto;
+  flex-direction: column;
   justify-content: center;
 `;
 
-export default function PageLayout({ children }) {
+export default function PageLayout({ children, singlePage }) {
   return (
     <Wrapper>
-      <TopBar />
+      {singlePage && <TopBar />}
       <Main>{children}</Main>
       <Footer />
     </Wrapper>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { CONTENT_MAX_WIDTH } from "../variables";
+import { CONTENT_MAX_WIDTH, CONTENT_OVERLAP_HEIGHT } from "../variables";
 
 export const Header = styled.div`
   padding: 0 12px;
@@ -8,6 +8,6 @@ export const Header = styled.div`
 
 export const Content = styled.div`
   display: block;
-  margin: -150px auto 0;
+  margin: -${CONTENT_OVERLAP_HEIGHT}px auto 0;
   max-width: ${CONTENT_MAX_WIDTH}px;
 `;

@@ -35,7 +35,7 @@ export default function PagePost({
   );
 
   return (
-    <PageLayout>
+    <PageLayout singlePage>
       <Wrapper>
         <SeoPost data={post} />
 
