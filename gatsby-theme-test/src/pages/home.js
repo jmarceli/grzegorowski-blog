@@ -12,6 +12,7 @@ export const query = graphql`
   query {
     allMarkdownRemark(
       sort: { fields: [frontmatter___date_created], order: DESC }
+      filter: { frontmatter: { draft: { ne: true } } }
     ) {
       edges {
         node {

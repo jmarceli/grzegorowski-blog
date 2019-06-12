@@ -42,7 +42,13 @@ export const query = graphql`
     }
     similarPosts: allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: $tags }, slug: { ne: $slug } } }
+      filter: {
+        frontmatter: {
+          draft: { ne: true }
+          tags: { in: $tags }
+          slug: { ne: $slug }
+        }
+      }
       limit: 5
     ) {
       edges {
@@ -101,7 +107,13 @@ export const query = graphql`
       }
     }
     tagPosts: allMarkdownRemark(
-      filter: { frontmatter: { tags: { in: [$mainTag] }, slug: { ne: $slug } } }
+      filter: {
+        frontmatter: {
+          draft: { ne: true }
+          tags: { in: [$mainTag] }
+          slug: { ne: $slug }
+        }
+      }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 4
     ) {
