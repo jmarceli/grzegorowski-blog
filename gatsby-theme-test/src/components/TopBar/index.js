@@ -1,4 +1,5 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 import {
   Placeholder,
   Wrapper,
@@ -9,25 +10,35 @@ import {
 } from "./styles";
 
 export default function TopBar() {
-  const menuItems = [
-    { label: "Home", slug: "/" },
-    { label: "Contact", slug: "/contact" },
-    { label: "Cookies", slug: "/cookies" },
-  ];
+  const {
+    site: { siteMetadata },
+  } = useStaticQuery(query);
+
   return (
     <>
       <Placeholder />
       <Wrapper>
         <Container>
           <Name to="/">
-            <InnerName>
-              Site name maybe a very very long text which will eventualy
-              overflow
-            </InnerName>
+            <InnerName>{siteMetadata.title}</InnerName>
           </Name>
-          <MainMenu items={menuItems} />
+          <MainMenu items={siteMetadata.mainMenu} />
         </Container>
       </Wrapper>
     </>
   );
 }
+
+const query = graphql`
+  {
+    site {
+      siteMetadata {
+        title
+        mainMenu {
+          label
+          slug
+        }
+      }
+    }
+  }
+`;

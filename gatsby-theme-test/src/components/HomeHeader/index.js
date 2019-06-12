@@ -1,14 +1,29 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 import { Wrapper, Container, Title, Description } from "./styles";
 
-export default () => (
-  <Wrapper>
-    <Container>
-      <Title>Full-stack developer blog by Jan Grzegorowski</Title>
-      <Description>
-        Tutorials and articles created during everyday work as a full-stack
-        developer
-      </Description>
-    </Container>
-  </Wrapper>
-);
+export default function HomeHeader() {
+  const {
+    site: { siteMetadata },
+  } = useStaticQuery(query);
+
+  return (
+    <Wrapper>
+      <Container>
+        <Title>{siteMetadata.title}</Title>
+        <Description>{siteMetadata.description}</Description>
+      </Container>
+    </Wrapper>
+  );
+}
+
+const query = graphql`
+  {
+    site {
+      siteMetadata {
+        title
+        description
+      }
+    }
+  }
+`;

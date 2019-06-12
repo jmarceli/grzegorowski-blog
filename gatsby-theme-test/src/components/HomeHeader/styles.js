@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { ffSans, toEm } from "src/utils/typography";
 import { CONTENT_OVERLAP_HEIGHT } from "../variables";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.header`
   padding-bottom: ${CONTENT_OVERLAP_HEIGHT}px;
   min-height: 250px;
   height: 30vh;

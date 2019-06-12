@@ -1,17 +1,16 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 import CardList from "../CardList";
 import HomeHeader from "../HomeHeader";
 import PageLayout from "../PageLayout";
 import Menu from "../Menu";
 import { Header, Content } from "./styles";
 
-const menuItems = [
-  { label: "Home", slug: "/" },
-  { label: "Contact", slug: "/contact" },
-  { label: "Cookies", slug: "/cookies" },
-];
+export default function PageHome({ posts, authors }) {
+  const {
+    site: { siteMetadata },
+  } = useStaticQuery(query);
 
-export default ({ posts, authors }) => {
   const postsWithAuthors = posts.map(({ node }) => {
     const author = authors.find(
       ({ node: author }) => author.id === node.frontmatter.author,
@@ -27,10 +26,23 @@ export default ({ posts, authors }) => {
       <HomeHeader />
       <Content>
         <Header>
-          <Menu items={menuItems} />
+          <Menu items={siteMetadata.mainMenu} />
         </Header>
         <CardList posts={postsWithAuthors} />
       </Content>
     </PageLayout>
   );
-};
+}
+
+const query = graphql`
+  {
+    site {
+      siteMetadata {
+        mainMenu {
+          label
+          slug
+        }
+      }
+    }
+  }
+`;
