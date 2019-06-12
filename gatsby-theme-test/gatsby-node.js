@@ -115,12 +115,11 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Tag pages
   result.data.allTagsYaml.edges.forEach(({ node }) => {
-    const tag = node.id;
     createPage({
-      path: `/tag/${tag}`,
+      path: `/tag/${node.id}`,
       component: path.resolve(path.join(__dirname, "src", "pages", "tag.js")),
       context: {
-        tag,
+        tag: node.name,
       },
     });
   });
