@@ -61,7 +61,5 @@ export const Item = styled.li`
   @media (min-width: ${BP_SMALL}px) {
     padding: 12px;
   }
-  &:first-child {
-    padding: 6px;
-  }
+  ${({ featured }) => (featured ? "padding: 6px;" : "")}
 `;

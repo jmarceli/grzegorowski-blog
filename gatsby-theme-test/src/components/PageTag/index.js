@@ -18,10 +18,10 @@ export default function PageTag({ posts, tag, authors }) {
   console.log(posts, authors, postsWithAuthors);
 
   return (
-    <PageLayout>
+    <PageLayout singlePage>
       <HomeHeader title={tag.name} description={tag.description} />
       <Content>
-        <CardList posts={postsWithAuthors} />
+        <CardList posts={postsWithAuthors} allEven />
       </Content>
     </PageLayout>
   );

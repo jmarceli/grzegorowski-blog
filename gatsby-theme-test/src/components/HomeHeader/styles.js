@@ -4,7 +4,7 @@ import { CONTENT_OVERLAP_HEIGHT } from "../variables";
 
 export const Wrapper = styled.header`
   padding-bottom: ${CONTENT_OVERLAP_HEIGHT}px;
-  min-height: 250px;
+  min-height: 400px;
   height: 30vh;
   background: #090a0b;
   color: #fff;

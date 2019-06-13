@@ -34,7 +34,8 @@ export const Name = styled(Link)`
   display: flex;
   align-items: center;
   font-family: ${ffSans};
-  font-size: ${toEm(12)}rem;
+  font-size: ${toEm(14)}rem;
+  font-weight: 600;
 `;
 
 export const InnerName = styled.div`
