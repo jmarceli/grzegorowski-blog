@@ -14,5 +14,9 @@ module.exports = {
       linkedin: "",
     },
     copyrights: "Jan Grzegorowski",
+    pages: {
+      homepage: "homepage.md",
+      cookies: "cookies.md",
+    },
   },
 };

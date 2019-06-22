@@ -13,13 +13,6 @@ module.exports = themeOptions => ({
         path: path.join(__dirname, "src", "content"),
       },
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "posts",
-        path: path.join(__dirname, "src", "posts"),
-      },
-    },
     // {
     //   resolve: "gatsby-plugin-page-creator",
     //   options: {

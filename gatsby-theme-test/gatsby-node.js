@@ -16,13 +16,14 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const result = await graphql(`
     {
-      allMarkdownRemark(
+      posts: allMarkdownRemark(
         sort: {fields: [frontmatter___date], order: DESC}, 
+        filter: { fileAbsolutePath: { regex: "/src/content/posts/" }
         ${
           process.env.NODE_ENV === "production"
-            ? "filter: {frontmatter: {draft: {ne: true}}}"
+            ? ", frontmatter: { draft: { ne: true } }"
             : ""
-        }
+        }},
       ) {
         edges {
           node {
@@ -31,6 +32,24 @@ exports.createPages = async ({ graphql, actions }) => {
               tags
               author
             }
+          }
+        }
+      }
+      pages: allMarkdownRemark(
+        sort: {fields: [frontmatter___date], order: DESC}, 
+        filter: { fileAbsolutePath: { regex: "/src/content/pages/" }
+        ${
+          process.env.NODE_ENV === "production"
+            ? ", frontmatter: { draft: { ne: true } }"
+            : ""
+        }},
+      ) {
+        edges {
+          node {
+            frontmatter {
+              slug
+            }
+            fileAbsolutePath
           }
         }
       }
@@ -66,6 +85,14 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      site {
+        siteMetadata {
+          pages {
+            homepage
+            cookies
+          }
+        }
+      }
     }
   `);
 
@@ -77,8 +104,8 @@ exports.createPages = async ({ graphql, actions }) => {
   // Resolve page promises in parallel (using Promise.all)
   const pagesPromises = [];
 
-  // Post pages
-  result.data.allMarkdownRemark.edges.forEach(({ node }, index, posts) => {
+  // Posts
+  result.data.posts.edges.forEach(({ node }, index, posts) => {
     const slug = node.frontmatter.slug;
     const prev = index === 0 ? null : posts[index - 1].node;
     const next = index === posts.length - 1 ? null : posts[index + 1].node;
@@ -87,16 +114,43 @@ exports.createPages = async ({ graphql, actions }) => {
       createPage({
         path: slug,
         component: path.resolve(
-          path.join(__dirname, "src", "pages", "post.js"),
+          path.join(__dirname, "src", "templates", "post.js"),
         ),
         context: {
           ...node.frontmatter,
-          mainTag: node.frontmatter.tags[0],
+          mainTag: (node.frontmatter.tags && node.frontmatter.tags[0]) || "",
           prev,
           next,
         },
       }),
     );
+  });
+
+  // Pages
+  result.data.pages.edges.forEach(({ node }, index, posts) => {
+    if (/homepage.md/.test(node.fileAbsolutePath)) {
+      // Home page
+      pagesPromises.push(
+        createPage({
+          path: "/",
+          component: path.resolve(
+            path.join(__dirname, "src", "templates", "home.js"),
+          ),
+          context: node.frontmatter,
+        }),
+      );
+    } else {
+      // Other pages
+      pagesPromises.push(
+        createPage({
+          path: node.frontmatter.slug,
+          component: path.resolve(
+            path.join(__dirname, "src", "templates", "page.js"),
+          ),
+          context: node.frontmatter,
+        }),
+      );
+    }
   });
 
   // Author pages
@@ -105,7 +159,7 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `/author/${author}`,
       component: path.resolve(
-        path.join(__dirname, "src", "pages", "author.js"),
+        path.join(__dirname, "src", "templates", "author.js"),
       ),
       context: {
         author: node.id,
@@ -117,20 +171,14 @@ exports.createPages = async ({ graphql, actions }) => {
   result.data.allTagsYaml.edges.forEach(({ node }) => {
     createPage({
       path: `/tag/${node.id}`,
-      component: path.resolve(path.join(__dirname, "src", "pages", "tag.js")),
+      component: path.resolve(
+        path.join(__dirname, "src", "templates", "tag.js"),
+      ),
       context: {
         tag: node.name,
       },
     });
   });
-
-  // Home page
-  pagesPromises.push(
-    createPage({
-      path: "/",
-      component: path.resolve(path.join(__dirname, "src", "pages", "home.js")),
-    }),
-  );
 
   // wait for all pages until they are done
   await Promise.all(pagesPromises);
