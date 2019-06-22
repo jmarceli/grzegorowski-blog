@@ -2,20 +2,14 @@ import React from "react";
 import { graphql } from "gatsby";
 // eslint-disable-next-line no-unused-vars
 import { GatsbyImageSharpFixed, GatsbyImageSharpFluid } from "gatsby-image";
-import PagePost from "../components/PagePost/index";
+import PageStatic from "../components/PageStatic/index";
 
 export default ({ data }) => (
-  <PagePost
-    post={data.post}
-    similarPosts={data.similarPosts && data.similarPosts.edges}
-    authors={data.authors}
-    tags={data.tags && data.tags.edges}
-    tagPosts={data.tagPosts}
-  />
+  <PageStatic post={data.post} authors={data.authors} />
 );
 
 export const query = graphql`
-  query($slug: String, $tags: [String], $mainTag: String) {
+  query($slug: String) {
     post: markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       excerpt
@@ -40,46 +34,6 @@ export const query = graphql`
         featured
       }
     }
-    similarPosts: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: {
-        frontmatter: {
-          draft: { ne: true }
-          tags: { in: $tags }
-          slug: { ne: $slug }
-        }
-      }
-      limit: 5
-    ) {
-      edges {
-        node {
-          timeToRead
-          excerpt
-          frontmatter {
-            title
-            slug
-            date
-            tags
-            date_created
-            date_updated
-            featured
-            author
-            image {
-              absolutePath
-              childImageSharp {
-                fluid {
-                  aspectRatio
-                  srcSet
-                  src
-                  sizes
-                  originalImg
-                }
-              }
-            }
-          }
-        }
-      }
-    }
     authors: allAuthorsYaml {
       edges {
         node {
@@ -96,38 +50,6 @@ export const query = graphql`
           }
         }
       }
-    }
-    tags: allTagsYaml(filter: { name: { in: $tags } }) {
-      edges {
-        node {
-          id
-          name
-          image
-        }
-      }
-    }
-    tagPosts: allMarkdownRemark(
-      filter: {
-        frontmatter: {
-          draft: { ne: true }
-          tags: { in: [$mainTag] }
-          slug: { ne: $slug }
-        }
-      }
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 4
-    ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            slug
-            date
-            featured
-          }
-        }
-      }
-      totalCount
     }
   }
 `;
