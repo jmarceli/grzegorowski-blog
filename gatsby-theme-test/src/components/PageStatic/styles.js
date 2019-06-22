@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Img from "gatsby-image";
-import { ffSans, toEm } from "src/utils/typography";
 import {
   BP_SMALL,
   BP_MEDIUM,
@@ -9,7 +8,6 @@ import {
   ARTICLE_OFFSET_TOP,
   CONTENT_OVERLAP_HEIGHT,
   TOP_OFFSET,
-  COLOR_PRIMARY,
 } from "../variables";
 
 export const Wrapper = styled.article`
@@ -37,19 +35,6 @@ export const Title = styled.h1`
   text-align: center;
   margin: 0 0 12px;
   font-weight: 600;
-`;
-
-export const Subtitle = styled.div`
-  color: ${COLOR_PRIMARY};
-  font-size: ${toEm(14)}rem;
-  font-weight: 600;
-  font-family: ${ffSans};
-  text-transform: uppercase;
-`;
-
-export const Divider = styled.span`
-  color: #333;
-  margin: 0 6px;
 `;
 
 export const AuthorInfo = styled.div`

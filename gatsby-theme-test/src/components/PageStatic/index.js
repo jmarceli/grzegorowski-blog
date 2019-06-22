@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import SeoPost from "./seo";
 import PageLayout from "../PageLayout";
 import Author from "../Author";
@@ -8,8 +7,6 @@ import {
   Header,
   HeaderContent,
   Title,
-  Subtitle,
-  Divider,
   TopImage,
   HeaderImage,
   Main,

@@ -7,7 +7,6 @@ import Menu from "../Menu";
 import { Header, Content } from "./styles";
 
 export default function PageHome({ data, posts, authors }) {
-  console.log(data);
   const {
     site: { siteMetadata },
   } = useStaticQuery(query);
