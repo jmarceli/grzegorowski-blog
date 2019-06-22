@@ -5,12 +5,40 @@ import { GatsbyImageSharpFixed, GatsbyImageSharpFluid } from "gatsby-image";
 import { graphql } from "gatsby";
 
 export default ({ data }) => (
-  <PageHome posts={data.allMarkdownRemark.edges} authors={data.authors.edges} />
+  <PageHome
+    data={data.page}
+    posts={data.posts.edges}
+    authors={data.authors.edges}
+  />
 );
 
 export const query = graphql`
-  query {
-    allMarkdownRemark(
+  query($slug: String) {
+    page: markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+      html
+      excerpt
+      timeToRead
+      rawMarkdownBody
+      frontmatter {
+        author
+        image {
+          absolutePath
+          childImageSharp {
+            fluid(maxWidth: 1920) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        title
+        slug
+        date
+        tags
+        date_created
+        date_updated
+        featured
+      }
+    }
+    posts: allMarkdownRemark(
       sort: { fields: [frontmatter___date_created], order: DESC }
       filter: { frontmatter: { draft: { ne: true } } }
     ) {

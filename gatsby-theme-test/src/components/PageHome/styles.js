@@ -7,6 +7,8 @@ export const Header = styled.div`
 `;
 
 export const Content = styled.div`
+  position: relative;
+  z-index: 1;
   display: block;
   margin: -${CONTENT_OVERLAP_HEIGHT}px auto 0;
   max-width: ${CONTENT_MAX_WIDTH}px;

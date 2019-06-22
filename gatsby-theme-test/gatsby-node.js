@@ -127,30 +127,26 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   // Pages
-  result.data.pages.edges.forEach(({ node }, index, posts) => {
-    if (/homepage.md/.test(node.fileAbsolutePath)) {
-      // Home page
-      pagesPromises.push(
-        createPage({
-          path: "/",
-          component: path.resolve(
-            path.join(__dirname, "src", "templates", "home.js"),
+  result.data.pages.edges.forEach(({ node }) => {
+    const slug = node.frontmatter.slug;
+    // Static pages e.g. home page and cookies page
+    pagesPromises.push(
+      createPage({
+        path: slug,
+        component: path.resolve(
+          path.join(
+            __dirname,
+            "src",
+            "templates",
+            // TODO: make it layout dependant instead of quasi magic slug related condition
+            slug === "/" ? "home.js" : "page.js",
           ),
-          context: node.frontmatter,
-        }),
-      );
-    } else {
-      // Other pages
-      pagesPromises.push(
-        createPage({
-          path: node.frontmatter.slug,
-          component: path.resolve(
-            path.join(__dirname, "src", "templates", "page.js"),
-          ),
-          context: node.frontmatter,
-        }),
-      );
-    }
+        ),
+        context: {
+          slug,
+        },
+      }),
+    );
   });
 
   // Author pages
