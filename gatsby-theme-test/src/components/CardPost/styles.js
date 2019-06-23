@@ -22,15 +22,22 @@ export const Link = styled(GatsbyLink)`
   }
 `;
 
-export const Thumbnail = styled.div`
+export const Thumbnail = styled(Img)`
   display: flex;
   flex: 0 0 250px;
   @media (min-width: ${BP_SMALL}px) {
     flex: ${({ large }) => (large ? "1 0 50%" : "0 0 250px")};
   }
   background: #262626;
-  background-size: cover;
-  background-position: center center;
+`;
+
+export const NoThumbnail = styled.div`
+  display: flex;
+  flex: 0 0 250px;
+  @media (min-width: ${BP_SMALL}px) {
+    flex: ${({ large }) => (large ? "1 0 50%" : "0 0 250px")};
+  }
+  background: #262626;
 `;
 
 export const Content = styled.div`

@@ -31,8 +31,7 @@ export default ({ posts, allEven }) => (
             excerpt={node.excerpt}
             image={
               node.frontmatter.image &&
-              node.frontmatter.image.childImageSharp.fluid &&
-              node.frontmatter.image.childImageSharp.fluid.src
+              node.frontmatter.image.childImageSharp.fluid
             }
             tag={node.frontmatter.tags && node.frontmatter.tags[0]}
             author={node.author}

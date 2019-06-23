@@ -4,6 +4,7 @@ import {
   Article,
   Link,
   Thumbnail,
+  NoThumbnail,
   Content,
   Tag,
   Title,
@@ -28,12 +29,16 @@ export default function CardPost({
     <Tile>
       <Article>
         <Link to={"/" + slug} title={title} size={size}>
-          <Thumbnail
-            large={size === "large"}
-            style={{
-              backgroundImage: image ? "url(" + image + ")" : undefined,
-            }}
-          />
+          {image ? (
+            <Thumbnail
+              large={size === "large"}
+              fluid={image}
+              objectFit="cover"
+              objectPosition="50% 50%"
+            />
+          ) : (
+            <NoThumbnail large={size === "large"} />
+          )}
           <Content large={size === "large"}>
             {tag && <Tag>{tag}</Tag>}
             <Title>{title}</Title>

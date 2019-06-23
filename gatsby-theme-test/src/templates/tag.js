@@ -49,7 +49,14 @@ export const query = graphql`
       id
       name
       description
-      image
+      image {
+        absolutePath
+        childImageSharp {
+          fluid(maxWidth: 1920) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       meta_description
       meta_title
       created_at

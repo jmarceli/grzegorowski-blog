@@ -3,27 +3,27 @@
   meta_title: null
   description: The largest CMS on the Internet
   meta_description: null
-  image: img/babel.jpg
-  created_at: '2017-03-19T00:57:37.000Z'
-  updated_at: '2018-05-07T02:00:00.000Z'
+  image: ./posts/img/babel.jpg
+  created_at: "2017-03-19T00:57:37.000Z"
+  updated_at: "2018-05-07T02:00:00.000Z"
   visibility: public
 - id: ghost-tag
   name: Ghost
   meta_title: null
   description: A small blogging platform
   meta_description: null
-  image: img/babel.jpg
-  created_at: '2017-03-19T06:25:45.000Z'
-  updated_at: '2018-03-18T21:35:30.000Z'
+  image: ./posts/img/babel.jpg
+  created_at: "2017-03-19T06:25:45.000Z"
+  updated_at: "2018-03-18T21:35:30.000Z"
   visibility: public
 - id: hostings
   name: Hostings
   meta_title: null
   description: Common hosting related tasks
   meta_description: null
-  image: /content/images/2017/03/pexels-photo-325229.jpeg
-  created_at: '2017-03-19T02:24:02.000Z'
-  updated_at: '2017-06-28T11:41:35.000Z'
+  image: ./posts/img/pexels-photo-325229.jpeg
+  created_at: "2017-03-19T02:24:02.000Z"
+  updated_at: "2017-06-28T11:41:35.000Z"
   visibility: public
 - id: mac
   name: mac
@@ -31,17 +31,17 @@
   description: OS X configuration and tools
   meta_description: null
   image: /content/images/2017/03/pexels-photo-92903.jpeg
-  created_at: '2017-03-19T04:42:08.000Z'
-  updated_at: '2018-04-02T23:11:34.000Z'
+  created_at: "2017-03-19T04:42:08.000Z"
+  updated_at: "2018-04-02T23:11:34.000Z"
   visibility: public
 - id: javascript
   name: Javascript
   meta_title: null
   description: The most popular scripting language
   meta_description: null
-  image: /content/images/2017/06/code-583073_1280.jpg
-  created_at: '2017-03-27T09:36:54.000Z'
-  updated_at: '2018-08-17T01:06:38.000Z'
+  image: ./img/code-583073_1280.jpg
+  created_at: "2017-03-27T09:36:54.000Z"
+  updated_at: "2018-08-17T01:06:38.000Z"
   visibility: public
 - id: frontend
   name: Frontend
@@ -50,8 +50,8 @@
   meta_description: null
   image: >-
     https://images.unsplash.com/photo-1508780782742-40849069dee8?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ&s=24c4948faab6d88d7133b7d755e5ae17
-  created_at: '2017-03-23T19:56:20.000Z'
-  updated_at: '2018-06-15T15:43:09.000Z'
+  created_at: "2017-03-23T19:56:20.000Z"
+  updated_at: "2018-06-15T15:43:09.000Z"
   visibility: public
 - id: github-libraries
   name: Github libraries
@@ -59,8 +59,8 @@
   description: Libraries available on the Github
   meta_description: null
   image: /content/images/2017/03/pexels-photo-325229.jpeg
-  created_at: '2017-03-20T22:56:20.000Z'
-  updated_at: '2017-06-28T11:42:22.000Z'
+  created_at: "2017-03-20T22:56:20.000Z"
+  updated_at: "2017-06-28T11:42:22.000Z"
   visibility: public
 - id: acf
   name: ACF
@@ -69,8 +69,8 @@
   meta_description: null
   image: >-
     https://images.unsplash.com/photo-1494059980473-813e73ee784b?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ&s=9fdab1a5e303b06cfecf931f069fa3e9
-  created_at: '2017-03-23T10:24:55.000Z'
-  updated_at: '2018-05-07T02:01:05.000Z'
+  created_at: "2017-03-23T10:24:55.000Z"
+  updated_at: "2018-05-07T02:01:05.000Z"
   visibility: public
 - id: wordpress-plugins
   name: Wordpress plugins
@@ -78,8 +78,8 @@
   description: Wordpress Plugins for website developers
   meta_description: null
   image: /content/images/2017/03/pexels-photo-325229.jpeg
-  created_at: '2017-03-28T13:29:13.000Z'
-  updated_at: '2017-06-11T11:42:59.000Z'
+  created_at: "2017-03-28T13:29:13.000Z"
+  updated_at: "2017-06-11T11:42:59.000Z"
   visibility: public
 - id: ruby
   name: Ruby
@@ -88,8 +88,8 @@
   meta_description: null
   image: >-
     https://images.unsplash.com/photo-1514585244145-1847f938a1df?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ&s=3a9ea7b9ed04fa4ce41334090be873e2
-  created_at: '2017-03-31T00:12:51.000Z'
-  updated_at: '2018-05-07T01:59:11.000Z'
+  created_at: "2017-03-31T00:12:51.000Z"
+  updated_at: "2018-05-07T01:59:11.000Z"
   visibility: public
 - id: rails
   name: Rails
@@ -97,8 +97,8 @@
   description: The fantastic framework for Ruby language
   meta_description: null
   image: /content/images/2017/06/rails-train-path-straight.jpg
-  created_at: '2017-03-30T22:12:51.000Z'
-  updated_at: '2018-03-19T02:01:16.000Z'
+  created_at: "2017-03-30T22:12:51.000Z"
+  updated_at: "2018-03-19T02:01:16.000Z"
   visibility: public
 - id: tools
   name: Web developer toolset
@@ -109,8 +109,8 @@
     deployment tools.
   image: >-
     https://images.unsplash.com/photo-1501516069922-a9982bd6f3bd?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ&s=ed3da2bcde124fa38fa476ba818e10ca
-  created_at: '2017-05-17T10:05:38.000Z'
-  updated_at: '2018-08-11T01:23:46.000Z'
+  created_at: "2017-05-17T10:05:38.000Z"
+  updated_at: "2018-08-11T01:23:46.000Z"
   visibility: public
 - id: ios
   name: iOS
@@ -118,8 +118,8 @@
   description: The operating system of the iPhone
   meta_description: null
   image: /content/images/2017/06/iphone-6-458150_1280.jpg
-  created_at: '2017-05-13T12:31:51.000Z'
-  updated_at: '2018-04-02T23:36:24.000Z'
+  created_at: "2017-05-13T12:31:51.000Z"
+  updated_at: "2018-04-02T23:36:24.000Z"
   visibility: public
 - id: webpack
   name: Webpack
@@ -127,8 +127,8 @@
   description: The coolest frontend building tool
   meta_description: null
   image: /content/images/2017/03/pexels-photo-325229.jpeg
-  created_at: '2017-05-12T10:49:47.000Z'
-  updated_at: '2017-06-11T11:47:24.000Z'
+  created_at: "2017-05-12T10:49:47.000Z"
+  updated_at: "2017-06-11T11:47:24.000Z"
   visibility: public
 - id: backend
   name: Backend
@@ -137,8 +137,8 @@
   meta_description: The invisible part of your application.
   image: >-
     https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ&s=59773981c4a4762fe474590959ddf064
-  created_at: '2017-05-24T12:43:54.000Z'
-  updated_at: '2018-09-20T10:18:43.000Z'
+  created_at: "2017-05-24T12:43:54.000Z"
+  updated_at: "2018-09-20T10:18:43.000Z"
   visibility: public
 - id: vim
   name: Vim
@@ -150,8 +150,8 @@
     A set of articles about Vim editor in everyday development. How to customize
     it and use all of its power.
   image: /content/images/2017/03/pexels-photo-325229.jpeg
-  created_at: '2017-05-29T20:24:58.000Z'
-  updated_at: '2018-08-11T01:23:46.000Z'
+  created_at: "2017-05-29T20:24:58.000Z"
+  updated_at: "2018-08-11T01:23:46.000Z"
   visibility: public
 - id: docker
   name: Docker
@@ -160,8 +160,8 @@
   meta_description: null
   image: >-
     https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ&s=2a42149bdadb9808b62d87f71f08dab1
-  created_at: '2017-06-04T14:04:08.000Z'
-  updated_at: '2018-05-14T16:46:43.000Z'
+  created_at: "2017-06-04T14:04:08.000Z"
+  updated_at: "2018-05-14T16:46:43.000Z"
   visibility: public
 - id: capistrano
   name: Capistrano
@@ -169,8 +169,8 @@
   description: Deployment automation tool
   meta_description: null
   image: /content/images/2017/03/pexels-photo-325229.jpeg
-  created_at: '2017-06-10T14:22:15.000Z'
-  updated_at: '2017-06-11T11:48:02.000Z'
+  created_at: "2017-06-10T14:22:15.000Z"
+  updated_at: "2017-06-11T11:48:02.000Z"
   visibility: public
 - id: meteor
   name: meteor
@@ -178,8 +178,8 @@
   description: null
   meta_description: null
   image: /content/images/2017/03/pexels-photo-325229.jpeg
-  created_at: '2017-07-14T15:08:53.000Z'
-  updated_at: '2017-07-14T15:08:53.000Z'
+  created_at: "2017-07-14T15:08:53.000Z"
+  updated_at: "2017-07-14T15:08:53.000Z"
   visibility: public
 - id: php
   name: php
@@ -187,8 +187,8 @@
   description: null
   meta_description: null
   image: /content/images/2017/03/pexels-photo-325229.jpeg
-  created_at: '2017-08-17T17:45:14.000Z'
-  updated_at: '2017-08-17T17:45:14.000Z'
+  created_at: "2017-08-17T17:45:14.000Z"
+  updated_at: "2017-08-17T17:45:14.000Z"
   visibility: public
 - id: graphql
   name: graphql
@@ -196,15 +196,14 @@
   description: null
   meta_description: null
   image: /content/images/2017/03/pexels-photo-325229.jpeg
-  created_at: '2018-05-05T16:34:52.000Z'
-  updated_at: '2018-05-05T14:34:55.000Z'
+  created_at: "2018-05-05T16:34:52.000Z"
+  updated_at: "2018-05-05T14:34:55.000Z"
   visibility: public
 - id: react
   name: React
   meta_title: null
   description: Notes about ReactJS development.
   meta_description: null
-  image: null
-  created_at: '2019-02-23T14:57:35.000Z'
-  updated_at: '2019-02-23T13:05:07.000Z'
+  created_at: "2019-02-23T14:57:35.000Z"
+  updated_at: "2019-02-23T13:05:07.000Z"
   visibility: public

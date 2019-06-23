@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Img from "gatsby-image";
 import { ffSans, toEm } from "src/utils/typography";
-import { CONTENT_OVERLAP_HEIGHT } from "../variables";
 
 export const Wrapper = styled.header`
   position: relative;

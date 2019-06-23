@@ -67,12 +67,8 @@ export const query = graphql`
             image {
               absolutePath
               childImageSharp {
-                fluid {
-                  aspectRatio
-                  srcSet
-                  src
-                  sizes
-                  originalImg
+                fluid(maxWidth: 600, maxHeight: 300) {
+                  ...GatsbyImageSharpFluid
                 }
               }
             }
@@ -102,7 +98,6 @@ export const query = graphql`
         node {
           id
           name
-          image
         }
       }
     }

@@ -19,7 +19,11 @@ export default function PageTag({ posts, tag, authors }) {
 
   return (
     <PageLayout singlePage>
-      <HomeHeader title={tag.name} description={tag.description} />
+      <HomeHeader
+        background={tag.image.childImageSharp.fluid}
+        title={tag.name}
+        description={tag.description}
+      />
       <Content>
         <CardList posts={postsWithAuthors} allEven />
       </Content>

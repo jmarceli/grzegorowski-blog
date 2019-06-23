@@ -27,6 +27,17 @@ export const Background = styled(Img)`
   width: 100%;
 `;
 
+export const NoBackground = styled.div`
+  position: absolute !important;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: #000;
+`;
+
 export const Container = styled.div`
   padding: 12px 24px;
   max-width: 900px;
