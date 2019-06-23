@@ -47,9 +47,9 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             frontmatter {
+              layout
               slug
             }
-            fileAbsolutePath
           }
         }
       }
@@ -82,14 +82,6 @@ exports.createPages = async ({ graphql, actions }) => {
             meta_description
             created_at
             image
-          }
-        }
-      }
-      site {
-        siteMetadata {
-          pages {
-            homepage
-            cookies
           }
         }
       }
@@ -126,10 +118,9 @@ exports.createPages = async ({ graphql, actions }) => {
     );
   });
 
-  // Pages
+  // Pages - static pages e.g. home page and cookies page
   result.data.pages.edges.forEach(({ node }) => {
     const slug = node.frontmatter.slug;
-    // Static pages e.g. home page and cookies page
     pagesPromises.push(
       createPage({
         path: slug,
@@ -138,8 +129,7 @@ exports.createPages = async ({ graphql, actions }) => {
             __dirname,
             "src",
             "templates",
-            // TODO: make it layout dependant instead of quasi magic slug related condition
-            slug === "/" ? "home.js" : "page.js",
+            `${node.frontmatter.layout}.js`,
           ),
         ),
         context: {

@@ -1,5 +1,7 @@
 ---
-title: Home
+layout: home
+title: Full-stack developer blog by Jan Grzegorowski
+excerpt: Tutorials and articles created during everyday work as a full-stack developer
 slug: "/"
 meta_description: null
 meta_title: null

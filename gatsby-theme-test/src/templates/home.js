@@ -16,7 +16,6 @@ export const query = graphql`
   query($slug: String) {
     page: markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
-      excerpt
       timeToRead
       rawMarkdownBody
       frontmatter {
@@ -30,6 +29,7 @@ export const query = graphql`
           }
         }
         title
+        excerpt
         slug
         date
         tags

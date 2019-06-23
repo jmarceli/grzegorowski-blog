@@ -2,8 +2,6 @@ module.exports = {
   __experimentalThemes: [{ resolve: "gatsby-theme-test", options: {} }],
   siteMetadata: {
     title: "Full-stack developer blog by Jan Grzegorowski",
-    description:
-      "Tutorials and articles created during everyday work as a full-stack developer",
     mainMenu: [
       { label: "Home", slug: "/" },
       { label: "Contact", slug: "/contact" },
@@ -14,9 +12,5 @@ module.exports = {
       linkedin: "",
     },
     copyrights: "Jan Grzegorowski",
-    pages: {
-      homepage: "homepage.md",
-      cookies: "cookies.md",
-    },
   },
 };

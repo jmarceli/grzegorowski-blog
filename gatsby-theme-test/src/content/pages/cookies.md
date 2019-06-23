@@ -1,20 +1,20 @@
 ---
-layout: post
-author: Ghost
+layout: page
 title: Cookies info
-excerpt: Information about cookies usage.
+excerpt: Information about cookies usage
+slug: cookies
 meta_description: null
 meta_title: null
-slug: cookies
-date: '2017-05-18T06:56:00.000Z'
-date_created: '2018-10-21T20:26:06.000Z'
-date_updated: '2018-10-17T09:10:19.000Z'
+date: "2017-05-18T06:56:00.000Z"
+date_created: "2018-10-21T20:26:06.000Z"
+date_updated: "2018-10-17T09:10:19.000Z"
 image: >-
   ./img/photo-1533484233570-04117342ee36.jpg
 featured: false
 draft: false
 tags: []
 ---
+
 This site uses cookies like most other sites on the Internet.
 
 Cookies on this site are generated and used by:

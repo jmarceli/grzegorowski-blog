@@ -50,7 +50,7 @@ export default function PagePost({ post, authors }) {
                 __html: post.html,
               }}
             />
-            <Author author={author && author.node} />
+            {author && <Author author={author && author.node} />}
           </Container>
         </Main>
       </Wrapper>

@@ -8,7 +8,9 @@ import { Header, Content } from "./styles";
 
 export default function PageHome({ data, posts, authors }) {
   const {
-    site: { siteMetadata },
+    site: {
+      siteMetadata: { mainMenu },
+    },
   } = useStaticQuery(query);
 
   const postsWithAuthors = posts.map(({ node }) => {
@@ -24,13 +26,13 @@ export default function PageHome({ data, posts, authors }) {
   return (
     <PageLayout>
       <HomeHeader
-        title={siteMetadata.title}
-        description={siteMetadata.description}
+        title={data.frontmatter.title}
+        description={data.frontmatter.excerpt}
         background={data.frontmatter.image.childImageSharp.fluid}
       />
       <Content>
         <Header>
-          <Menu items={siteMetadata.mainMenu} />
+          <Menu items={mainMenu} />
         </Header>
         <CardList posts={postsWithAuthors} />
       </Content>
@@ -42,8 +44,6 @@ const query = graphql`
   {
     site {
       siteMetadata {
-        title
-        description
         mainMenu {
           label
           slug
