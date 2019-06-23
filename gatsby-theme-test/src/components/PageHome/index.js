@@ -18,8 +18,10 @@ export default function PageHome({ data, posts, authors }) {
       ({ node: author }) => author.id === node.frontmatter.author,
     );
     return {
-      ...node,
-      author: author && author.node,
+      node: {
+        ...node,
+        author: author && author.node,
+      },
     };
   });
 

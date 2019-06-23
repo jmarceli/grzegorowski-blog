@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: ImmutableJS .toJS() vs .toArray()
 excerpt: >-
   Be careful with ImmutableJS and use .toArray() method rather than .toJS() if

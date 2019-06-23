@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Traefik - Nginx replacement for Docker based deployment
 excerpt: null
 meta_description: null

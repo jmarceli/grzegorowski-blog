@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: How to restore selected files from Time Machine backup
 excerpt: null
 meta_description: >-

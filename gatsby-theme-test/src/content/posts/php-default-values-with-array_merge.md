@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: PHP default values with array_merge
 excerpt: null
 meta_description: null

@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Grafana Docker container and Google Analytics
 excerpt: null
 meta_description: >-

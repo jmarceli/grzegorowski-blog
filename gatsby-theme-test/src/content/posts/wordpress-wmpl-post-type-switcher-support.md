@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Wordpress WMPL Post Type Switcher support
 excerpt: null
 meta_description: >-

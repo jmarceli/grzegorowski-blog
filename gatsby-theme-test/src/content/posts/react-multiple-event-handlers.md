@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: React multiple event handlers performance
 excerpt: >-
   How to bind event handlers for multiple React components. Does a shared

@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: graphql-yoga import .graphql files
 excerpt: >-
   How to ensure modularization of .graphql files when working with graphql-yoga

@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: 'Publishing NPM package with Rollup, Babel, Flow, Jest and ESLint'
 excerpt: >-
   Description of tools used to publish modern NPM Javascript package - Rollup,

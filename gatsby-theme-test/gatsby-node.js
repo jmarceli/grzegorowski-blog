@@ -57,18 +57,6 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             id
-            profile_image
-            avatar {
-              absolutePath
-              childImageSharp {
-                sizes {
-                  srcSet
-                  src
-                  sizes
-                  originalImg
-                }
-              }
-            }
           }
         }
       }
@@ -81,7 +69,6 @@ exports.createPages = async ({ graphql, actions }) => {
             meta_title
             meta_description
             created_at
-            image
           }
         }
       }

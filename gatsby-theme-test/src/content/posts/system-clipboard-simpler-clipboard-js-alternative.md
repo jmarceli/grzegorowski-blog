@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: system-clipboard  - simpler clipboard.js alternative
 excerpt: null
 meta_description: null

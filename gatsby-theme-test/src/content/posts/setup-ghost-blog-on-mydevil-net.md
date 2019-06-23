@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Setup Ghost blog on Mydevil.net
 excerpt: null
 meta_description: null

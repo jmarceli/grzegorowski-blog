@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Duplicati backup filters configuration
 excerpt: How to configure custom backup filters in Duplicati application
 meta_description: null

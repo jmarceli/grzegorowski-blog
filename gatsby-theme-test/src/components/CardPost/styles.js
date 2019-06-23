@@ -14,6 +14,7 @@ export const Link = styled(GatsbyLink)`
   display: flex;
   flex: 1 0 100%;
   width: 100%;
+  border: none;
 
   flex-direction: column;
   @media (min-width: ${BP_SMALL}px) {

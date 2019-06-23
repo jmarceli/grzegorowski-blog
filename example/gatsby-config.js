@@ -4,7 +4,7 @@ module.exports = {
     title: "Full-stack developer blog by Jan Grzegorowski",
     mainMenu: [
       { label: "Home", slug: "/" },
-      { label: "Contact", slug: "/contact" },
+      { label: "Contact", slug: "/author/ghost" },
       { label: "Cookies", slug: "/cookies" },
     ],
     socialMedia: {

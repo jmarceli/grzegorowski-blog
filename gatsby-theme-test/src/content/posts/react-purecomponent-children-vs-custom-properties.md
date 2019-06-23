@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: React.PureComponent - children vs custom properties
 excerpt: >-
   Is there any catch in using children property with React.PureComponent? It can

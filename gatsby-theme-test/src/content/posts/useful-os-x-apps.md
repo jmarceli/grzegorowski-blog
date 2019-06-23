@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Useful OS X Apps
 excerpt: null
 meta_description: null

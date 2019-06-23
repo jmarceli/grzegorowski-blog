@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Vim regex examples
 excerpt: >-
   A list of Vim regex examples which might be useful for code/text refactoring.

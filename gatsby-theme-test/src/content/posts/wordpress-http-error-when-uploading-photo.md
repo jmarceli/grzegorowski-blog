@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Wordpress HTTP error when uploading a photo
 excerpt: null
 meta_description: >-

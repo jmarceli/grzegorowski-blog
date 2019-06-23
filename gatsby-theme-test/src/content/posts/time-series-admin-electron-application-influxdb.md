@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Time Series Admin - Electron-based alternative to Admin UI for InfluxDB
 excerpt: >-
   Release notes for Time Series Admin - an alternative to Admin UI and

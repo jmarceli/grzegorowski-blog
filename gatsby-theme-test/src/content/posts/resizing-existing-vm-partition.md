@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Resizing existing VM partition
 excerpt: How to resize existing vagrant disk using vagrant-disksize plugin.
 meta_description: null

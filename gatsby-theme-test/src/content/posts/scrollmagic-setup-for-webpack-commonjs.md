@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: ScrollMagic setup for Webpack (a CommonJS setup)
 excerpt: null
 meta_description: >-

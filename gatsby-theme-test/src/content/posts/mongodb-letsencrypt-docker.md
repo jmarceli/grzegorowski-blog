@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: MongoDB + Letsencrypt + Docker
 excerpt: null
 meta_description: null

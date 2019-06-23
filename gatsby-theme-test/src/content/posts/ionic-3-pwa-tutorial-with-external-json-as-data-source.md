@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Ionic 3 PWA tutorial with external JSON as data source
 excerpt: null
 meta_description: null

@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Grafana and InfluxDB with Let's Encrypt SSL on Docker
 excerpt: null
 meta_description: >-

@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Fullstack GraphQL with ApolloGraphql - first impressions
 excerpt: null
 meta_description: null

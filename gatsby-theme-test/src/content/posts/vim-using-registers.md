@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Vim registers - how to use Vim multiple clipboards feature
 excerpt: null
 meta_description: >-

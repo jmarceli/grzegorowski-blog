@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Mac OS X upgrade - is it safe for your tools
 excerpt: null
 meta_description: >-

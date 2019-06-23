@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Docker with Xdebug a final guide with troubleshooting tips
 excerpt: null
 meta_description: >-

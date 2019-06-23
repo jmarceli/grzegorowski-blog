@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Custom Mac OS X screenshots location and format
 excerpt: null
 meta_description: null

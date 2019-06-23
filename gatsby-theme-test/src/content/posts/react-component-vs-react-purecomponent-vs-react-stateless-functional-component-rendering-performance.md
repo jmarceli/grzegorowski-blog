@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: >-
   React.Component vs React.PureComponent vs React Stateless Functional Component
   rendering performance

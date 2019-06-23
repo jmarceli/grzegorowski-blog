@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Wordpress rewrite rules and pagination
 excerpt: null
 meta_description: >-

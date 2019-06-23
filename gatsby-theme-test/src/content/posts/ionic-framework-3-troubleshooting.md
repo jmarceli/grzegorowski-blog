@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Ionic Framework 3 - troubleshooting
 excerpt: ''
 meta_description: >-

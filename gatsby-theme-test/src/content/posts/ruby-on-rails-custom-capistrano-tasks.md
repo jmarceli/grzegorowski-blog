@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Ruby on Rails custom Capistrano tasks
 excerpt: null
 meta_description: >-

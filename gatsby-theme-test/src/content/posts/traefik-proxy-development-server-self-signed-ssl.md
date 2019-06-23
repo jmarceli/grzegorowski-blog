@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Traefik - proxy development server with self-signed SSL certificate
 excerpt: >-
   Setup Docker Traefik container to proxy requests and serve your local content

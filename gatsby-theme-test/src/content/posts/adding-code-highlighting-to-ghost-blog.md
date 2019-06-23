@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Adding code highlighting to Ghost blog
 excerpt: null
 meta_description: null

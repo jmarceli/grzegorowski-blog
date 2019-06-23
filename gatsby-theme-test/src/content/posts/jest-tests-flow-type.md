@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Running Jest tests with Flow typed Javascript files
 excerpt: How to support Flow type checking in Jest testing framework.
 meta_description: >-

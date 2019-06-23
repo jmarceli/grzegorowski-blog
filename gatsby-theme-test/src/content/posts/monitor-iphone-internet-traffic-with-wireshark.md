@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Monitor iPhone network traffic with Wireshark
 excerpt: null
 meta_description: null

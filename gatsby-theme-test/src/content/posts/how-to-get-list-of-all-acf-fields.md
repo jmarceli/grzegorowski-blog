@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: How to get list of all ACF fields?
 excerpt: null
 meta_description: null

@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Adding new partition to the existing Vagrant VM
 excerpt: null
 meta_description: >-

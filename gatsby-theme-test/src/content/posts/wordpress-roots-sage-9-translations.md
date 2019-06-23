@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Wordpress Roots Sage 9 translations
 excerpt: null
 meta_description: >-

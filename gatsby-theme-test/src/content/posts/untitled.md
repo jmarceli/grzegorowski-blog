@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Graphql-yoga authorization
 excerpt: null
 meta_description: null

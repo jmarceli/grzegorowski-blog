@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Wordpress developer checklists
 excerpt: null
 meta_description: null

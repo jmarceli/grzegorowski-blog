@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: >-
   Integration tests with Jest, Selenium and BrowserStack - part 2 - multiple
   browsers

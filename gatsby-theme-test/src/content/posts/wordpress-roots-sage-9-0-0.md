@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Roots Sage 9.0.0 - error Command failed with exit code 2
 excerpt: null
 meta_description: null

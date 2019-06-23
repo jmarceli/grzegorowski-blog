@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Free image sources for commercial and non-commercial use
 excerpt: null
 meta_description: >-

@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: >-
   RabbitMQ amqplib - "Error: Channel closed by server: 406 (PRECONDITION-FAILED)
   with message "PRECONDITION_FAILED - unknown delivery tag 1"

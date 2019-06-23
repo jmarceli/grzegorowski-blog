@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Docker for Mac OS X
 excerpt: null
 meta_description: >-

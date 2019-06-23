@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: How to backup and restore InfluxDB which runs inside Docker container
 excerpt: null
 meta_description: >-

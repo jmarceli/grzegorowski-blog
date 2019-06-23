@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Rails number_to_currency change locale defaults
 excerpt: null
 meta_description: null

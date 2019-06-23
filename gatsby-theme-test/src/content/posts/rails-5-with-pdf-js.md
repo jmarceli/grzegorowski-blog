@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Rails 5 with PDF.js
 excerpt: null
 meta_description: A short tutorial about using pdfjs_viewer-rails gem with Rails 5 application.

@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Wordpess theme responsive images
 excerpt: null
 meta_description: null

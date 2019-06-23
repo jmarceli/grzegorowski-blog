@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Hands on Ghost
 excerpt: null
 meta_description: null

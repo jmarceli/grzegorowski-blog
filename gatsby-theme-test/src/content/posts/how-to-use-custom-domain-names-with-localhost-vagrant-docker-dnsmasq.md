@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: DNSmasq for custom development domain name
 excerpt: null
 meta_description: >-

@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: DNS configuration to delegate only website to other hosting
 excerpt: null
 meta_description: >-

@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: iOS simulator SSL certificates problems
 excerpt: >-
   Mac OS X iOS simulator problem with SSL secured connections when using

@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Cross-domain cookie sharing
 excerpt: null
 meta_description: null

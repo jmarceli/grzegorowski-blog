@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Meteor node-simple-schema and Meteor.users collection
 excerpt: null
 meta_description: >-

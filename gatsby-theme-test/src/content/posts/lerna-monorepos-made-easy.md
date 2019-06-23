@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Lerna and Yarn workspaces - monorepos made easier
 excerpt: null
 meta_description: null

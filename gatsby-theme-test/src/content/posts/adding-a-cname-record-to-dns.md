@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Adding a CNAME record to the DNS
 excerpt: null
 meta_description: >-

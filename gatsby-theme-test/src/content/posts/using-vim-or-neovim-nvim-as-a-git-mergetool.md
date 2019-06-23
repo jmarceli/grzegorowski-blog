@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Using Vim or NeoVim as a git mergetool
 excerpt: >-
   Using Vim or NeoVim as a Git mergetool with a nice 3 windows view instead of

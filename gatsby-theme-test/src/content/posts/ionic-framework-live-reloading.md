@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Ionic Framework - ionic-app-scripts live reload shows old content
 excerpt: >-
   A solution for live reload "bug" while using ionic-app-scripts which causes

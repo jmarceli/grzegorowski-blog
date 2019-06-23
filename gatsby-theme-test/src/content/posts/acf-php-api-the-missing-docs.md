@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: ACF PHP API the missing docs
 excerpt: null
 meta_description: >-

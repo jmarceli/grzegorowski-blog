@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Apollo Link State migration from Redux
 excerpt: null
 meta_description: null

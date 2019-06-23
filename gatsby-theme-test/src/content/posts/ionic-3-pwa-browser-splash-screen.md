@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Ionic 3 browser splash screen / preloader
 excerpt: >-
   Tutorial about creating a splash screen / preloader for browser based Ionic 3

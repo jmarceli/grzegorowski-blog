@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Useful Bash commands
 excerpt: null
 meta_description: >-

@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Flow type checking for Axios
 excerpt: >-
   How you may use Flow type checking with popular Axios library. An example of

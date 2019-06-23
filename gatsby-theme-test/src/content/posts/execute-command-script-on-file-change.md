@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Track file changes and automate script execution
 excerpt: null
 meta_description: >-

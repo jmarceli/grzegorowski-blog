@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Ionic 3 Framework - setFocus on opened modal input
 excerpt: null
 meta_description: null

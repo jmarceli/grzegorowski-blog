@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: React.PureComponent - with state
 excerpt: null
 meta_description: null

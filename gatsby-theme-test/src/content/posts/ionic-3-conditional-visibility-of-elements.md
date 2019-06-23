@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Ionic 3 show/hide content based on screen size
 excerpt: >-
   How to add CSS classes hidden-xs, hidden-sm to Ionic 3 Framework in order to

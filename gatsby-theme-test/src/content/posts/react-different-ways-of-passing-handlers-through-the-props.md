@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: React.PureComponent - different ways of writing event handlers
 excerpt: >-
   Which handler implementation should be used with React.PureComponent to avoid

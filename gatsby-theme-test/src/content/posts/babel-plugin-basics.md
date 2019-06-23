@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Babel plugin basics
 excerpt: null
 meta_description: null

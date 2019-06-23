@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: iPhone 6s iOS 10.3.1 Unable to Verify Update
 excerpt: null
 meta_description: >-

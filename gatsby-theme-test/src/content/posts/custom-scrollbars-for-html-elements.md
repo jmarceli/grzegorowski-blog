@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Custom scrollbars for HTML elements
 excerpt: null
 meta_description: null

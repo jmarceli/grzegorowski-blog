@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: How to run Jest tests with Rewire plugin
 excerpt: >-
   How to make rewire work with Jest based test suite. Use babel-plugin-rewire to

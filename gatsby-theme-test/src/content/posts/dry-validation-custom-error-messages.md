@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Dry-validation custom error messages
 excerpt: dry-validation with custom error messages
 meta_description: null

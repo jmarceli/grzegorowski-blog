@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Docker and Vdebug for PHP debugging
 excerpt: null
 meta_description: >-

@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Restic backups with Backblaze B2
 excerpt: >-
   How to configure and use Backblaze B2 with Restic backup tool. Description

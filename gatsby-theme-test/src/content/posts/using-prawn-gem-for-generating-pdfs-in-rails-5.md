@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Generate PDF with Prawn gem in Rails 5 application
 excerpt: null
 meta_description: >-

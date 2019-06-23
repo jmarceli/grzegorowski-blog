@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Docker Private Registry - Harbor with Let's encrypt
 excerpt: null
 meta_description: null

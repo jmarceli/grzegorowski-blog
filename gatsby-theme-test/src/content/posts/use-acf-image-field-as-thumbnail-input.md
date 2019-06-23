@@ -1,6 +1,6 @@
 ---
 layout: post
-author: Ghost
+author: ghost
 title: Use ACF image field as thumbnail input
 excerpt: null
 meta_description: null
