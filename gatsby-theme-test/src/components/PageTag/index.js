@@ -20,7 +20,7 @@ export default function PageTag({ posts, tag, authors }) {
   return (
     <PageLayout singlePage>
       <HomeHeader
-        background={tag.image.childImageSharp.fluid}
+        background={tag.image && tag.image.childImageSharp.fluid}
         title={tag.name}
         description={tag.description}
       />
