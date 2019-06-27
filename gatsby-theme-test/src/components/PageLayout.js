@@ -16,10 +16,10 @@ const Main = styled.main`
   justify-content: center;
 `;
 
-export default function PageLayout({ children, singlePage }) {
+export default function PageLayout({ children, singlePage, opaque }) {
   return (
     <Wrapper>
-      {singlePage && <TopBar />}
+      {singlePage && <TopBar opaque={opaque} />}
       <Main>{children}</Main>
       <Footer />
     </Wrapper>

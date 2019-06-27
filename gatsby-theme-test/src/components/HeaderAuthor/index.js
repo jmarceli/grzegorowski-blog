@@ -7,7 +7,7 @@ import {
   Container,
   Title,
   Contact,
-  Email,
+  Posts,
   Accounts,
   Account,
 } from "./styles";
@@ -17,7 +17,6 @@ export default function HeaderAuthor({
   avatar,
   title,
   postsNumber,
-  email,
   links,
 }) {
   return (
@@ -32,22 +31,16 @@ export default function HeaderAuthor({
         <Avatar fixed={avatar} alt={title} />
         <Title>{title}</Title>
         <Contact>
-          <div>
+          <Posts>
             <FontAwesomeIcon icon={["fas", "signal"]} size="sm" /> {postsNumber}
             posts
-          </div>
-          <Email href={`mailto: ${email}`}>
-            <FontAwesomeIcon icon={["far", "envelope"]} size="sm" /> show email
-            address
-          </Email>
-        </Contact>
-        <Accounts>
+          </Posts>
           {links.map(link => (
             <Account href={link.url}>
               <FontAwesomeIcon icon={link.icon} size="sm" /> {link.name}
             </Account>
           ))}
-        </Accounts>
+        </Contact>
       </Container>
     </Wrapper>
   );

@@ -3,18 +3,7 @@ import SeoPost from "./seo";
 import PageLayout from "../PageLayout";
 import HeaderAuthor from "../HeaderAuthor";
 import CardList from "../CardList";
-import Author from "../Author";
-import {
-  Wrapper,
-  Header,
-  HeaderContent,
-  Title,
-  TopImage,
-  HeaderImage,
-  Main,
-  Container,
-  Content,
-} from "./styles";
+import { Content, Container } from "./styles";
 
 export default function PageAuthor({ data, posts }) {
   return (
@@ -24,11 +13,12 @@ export default function PageAuthor({ data, posts }) {
         background={data.profile_image.childImageSharp.fluid}
         avatar={data.avatar.childImageSharp.fixed}
         postsNumber={posts.length}
-        email={data.email}
         links={data.links}
       />
       <Content>
-        <CardList posts={posts} allEven />
+        <Container>
+          <CardList posts={posts} allEven />
+        </Container>
       </Content>
     </PageLayout>
   );

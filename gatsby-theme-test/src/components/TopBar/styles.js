@@ -13,7 +13,7 @@ export const Wrapper = styled.header`
   top: 0;
   z-index: 1000;
   width: 100%;
-  background: #000;
+  background: ${({ opaque }) => (opaque ? "#000" : "none")};
   color: #fff;
 `;
 

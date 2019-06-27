@@ -21,7 +21,7 @@ export default function PagePost({ post, authors }) {
   );
 
   return (
-    <PageLayout singlePage>
+    <PageLayout singlePage opaque>
       <Wrapper>
         <SeoPost data={post} />
 

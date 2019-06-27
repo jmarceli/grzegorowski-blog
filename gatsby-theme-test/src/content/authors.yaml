@@ -1,6 +1,5 @@
 - id: ghost
   name: Ghost
-  email: test@test.com
   avatar: avatars/ghost.png
   bio: The professional publishing platform
   twitter: TryGhost

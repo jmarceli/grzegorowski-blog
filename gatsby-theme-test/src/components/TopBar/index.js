@@ -9,15 +9,15 @@ import {
   MainMenu,
 } from "./styles";
 
-export default function TopBar() {
+export default function TopBar({ opaque }) {
   const {
     site: { siteMetadata },
   } = useStaticQuery(query);
 
   return (
     <>
-      <Placeholder />
-      <Wrapper>
+      {opaque && <Placeholder />}
+      <Wrapper opaque={opaque}>
         <Container>
           <Name to="/">
             <InnerName>{siteMetadata.title}</InnerName>

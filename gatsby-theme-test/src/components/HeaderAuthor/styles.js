@@ -49,16 +49,12 @@ export const Contact = styled.div`
   margin-top: 12px;
   display: flex;
   justify-content: center;
+  max-width: 100%;
+  padding: 0 24px;
 `;
 
-export const Email = styled.a`
-  color: inherit;
+export const Posts = styled.div`
   margin-left: 20px;
-`;
-
-export const Accounts = styled.div`
-  margin-top: 12px;
-  display: flex;
   justify-content: center;
 `;
 
