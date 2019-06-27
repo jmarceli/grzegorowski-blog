@@ -15,7 +15,11 @@ export const query = graphql`
       name
       bio
       location
-      website
+      links {
+        name
+        url
+        icon
+      }
       email
       profile_image {
         absolutePath

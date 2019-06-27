@@ -18,6 +18,7 @@ export default function HeaderAuthor({
   title,
   postsNumber,
   email,
+  links,
 }) {
   return (
     <Wrapper>
@@ -41,13 +42,11 @@ export default function HeaderAuthor({
           </Email>
         </Contact>
         <Accounts>
-          <Account href="https://stackoverflow.com">
-            <FontAwesomeIcon icon={["fab", "stack-overflow"]} size="sm" /> Stack
-            Overflow
-          </Account>
-          <Account href="https://github.com">
-            <FontAwesomeIcon icon={["fab", "github"]} size="sm" /> Github
-          </Account>
+          {links.map(link => (
+            <Account href={link.url}>
+              <FontAwesomeIcon icon={link.icon} size="sm" /> {link.name}
+            </Account>
+          ))}
         </Accounts>
       </Container>
     </Wrapper>

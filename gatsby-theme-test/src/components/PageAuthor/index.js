@@ -25,6 +25,7 @@ export default function PageAuthor({ data, posts }) {
         avatar={data.avatar.childImageSharp.fixed}
         postsNumber={posts.length}
         email={data.email}
+        links={data.links}
       />
       <Content>
         <CardList posts={posts} allEven />
