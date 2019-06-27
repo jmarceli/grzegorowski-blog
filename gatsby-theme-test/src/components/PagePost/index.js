@@ -76,7 +76,7 @@ export default function PagePost({
                 __html: post.html,
               }}
             />
-            <Author author={author && author.node} />
+            {author && author.node && <Author author={author.node} />}
           </Container>
         </Main>
 
