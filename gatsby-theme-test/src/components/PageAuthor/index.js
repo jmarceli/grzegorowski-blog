@@ -1,5 +1,4 @@
 import React from "react";
-import SeoPost from "./seo";
 import PageLayout from "../PageLayout";
 import HeaderAuthor from "../HeaderAuthor";
 import CardList from "../CardList";

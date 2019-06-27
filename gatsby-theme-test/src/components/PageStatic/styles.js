@@ -99,6 +99,7 @@ export const Container = styled.div`
   max-width: ${CONTENT_MAX_WIDTH}px;
   margin: -${CONTENT_OVERLAP_HEIGHT}px auto 0;
   background: #fff;
+  flex: 1 0 auto;
 
   padding: 36px 8px 12px;
   @media (min-width: ${BP_SMALL}px) {

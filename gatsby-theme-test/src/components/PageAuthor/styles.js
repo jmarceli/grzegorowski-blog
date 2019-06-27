@@ -1,13 +1,5 @@
 import styled from "styled-components";
-import Img from "gatsby-image";
-import {
-  BP_SMALL,
-  BP_MEDIUM,
-  BP_LARGE,
-  CONTENT_MAX_WIDTH,
-  ARTICLE_OFFSET_TOP,
-  TOP_OFFSET,
-} from "../variables";
+import { BP_SMALL, BP_MEDIUM, CONTENT_MAX_WIDTH } from "../variables";
 
 export const Container = styled.div`
   position: relative;

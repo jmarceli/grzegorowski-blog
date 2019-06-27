@@ -20,7 +20,6 @@ export const query = graphql`
         url
         icon
       }
-      email
       profile_image {
         absolutePath
         childImageSharp {

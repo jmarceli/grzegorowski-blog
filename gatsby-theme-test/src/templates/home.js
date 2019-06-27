@@ -40,7 +40,9 @@ export const query = graphql`
     }
     posts: allMarkdownRemark(
       sort: { fields: [frontmatter___date_created], order: DESC }
-      filter: { frontmatter: { draft: { ne: true } } }
+      filter: {
+        frontmatter: { draft: { ne: true }, layout: { nin: ["page", "home"] } }
+      }
     ) {
       edges {
         node {

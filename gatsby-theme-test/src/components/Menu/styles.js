@@ -62,3 +62,8 @@ export const Link = styled(GatsbyLink)`
   display: flex;
   padding: 12px;
 `;
+
+export const ExternalLink = styled.a`
+  display: flex;
+  padding: 12px;
+`;

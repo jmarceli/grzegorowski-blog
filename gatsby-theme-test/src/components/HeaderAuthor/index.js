@@ -8,7 +8,6 @@ import {
   Title,
   Contact,
   Posts,
-  Accounts,
   Account,
 } from "./styles";
 
@@ -36,7 +35,7 @@ export default function HeaderAuthor({
             posts
           </Posts>
           {links.map(link => (
-            <Account href={link.url}>
+            <Account key={link.url} href={link.url}>
               <FontAwesomeIcon icon={link.icon} size="sm" /> {link.name}
             </Account>
           ))}
