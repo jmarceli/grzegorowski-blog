@@ -1,6 +1,6 @@
 const path = require("path");
 
-module.exports = themeOptions => ({
+module.exports = ({ sourcePath }) => ({
   // mapping: {
   //   "MarkdownRemark.frontmatter.tags": `TagsYaml`,
   //   "MarkdownRemark.frontmatter.author": `AuthorsYaml`,
@@ -10,7 +10,7 @@ module.exports = themeOptions => ({
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        path: path.join(__dirname, "src", "content"),
+        path: sourcePath,
       },
     },
     // {

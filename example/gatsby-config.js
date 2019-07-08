@@ -1,5 +1,12 @@
+const path = require("path");
+
 module.exports = {
-  __experimentalThemes: [{ resolve: "gatsby-theme-test", options: {} }],
+  __experimentalThemes: [
+    {
+      resolve: "gatsby-theme-test",
+      options: { sourcePath: path.join(__dirname, "content") },
+    },
+  ],
   siteMetadata: {
     title: "Full-stack developer blog by Jan Grzegorowski",
     mainMenu: [
