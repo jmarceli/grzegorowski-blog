@@ -48,9 +48,9 @@ export default function CardPost({
                 <Author>
                   <Avatar
                     fixed={
-                      author.avatar &&
-                      author.avatar.childImageSharp &&
-                      author.avatar.childImageSharp.fixed
+                      author.cover_image &&
+                      author.cover_image.childImageSharp &&
+                      author.cover_image.childImageSharp.fixed
                     }
                     objectFit="cover"
                     objectPosition="50% 50%"

@@ -10,7 +10,7 @@ export default function PageAuthor({ data, posts }) {
       <HeaderAuthor
         title={data.name}
         background={data.profile_image.childImageSharp.fluid}
-        avatar={data.avatar.childImageSharp.fixed}
+        cover_image={data.cover_image.childImageSharp.fixed}
         postsNumber={posts.length}
         links={data.links}
       />

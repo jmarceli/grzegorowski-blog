@@ -8,7 +8,7 @@ export default function Author({ author }) {
         to={"/author/" + author.id}
         title={`Read more posts by ${author.id}`}
       >
-        <Photo fixed={author.avatar.childImageSharp.fixed} />
+        <Photo fixed={author.cover_image.childImageSharp.fixed} />
         <Info>
           <Name>{author.id}</Name>
           <About>{author.bio}</About>

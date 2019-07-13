@@ -28,7 +28,7 @@ export const query = graphql`
           }
         }
       }
-      avatar {
+      cover_image {
         absolutePath
         childImageSharp {
           fixed(width: 100, height: 100) {
@@ -56,7 +56,7 @@ export const query = graphql`
             date_created
             date_updated
             author
-            image {
+            feature_image {
               absolutePath
               childImageSharp {
                 fluid(maxWidth: 600) {

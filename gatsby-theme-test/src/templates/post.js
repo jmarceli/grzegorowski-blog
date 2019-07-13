@@ -23,7 +23,7 @@ export const query = graphql`
       rawMarkdownBody
       frontmatter {
         author
-        image {
+        feature_image {
           absolutePath
           childImageSharp {
             fluid(maxWidth: 1920) {
@@ -64,7 +64,7 @@ export const query = graphql`
             date_updated
             featured
             author
-            image {
+            feature_image {
               absolutePath
               childImageSharp {
                 fluid(maxWidth: 600, maxHeight: 300) {
@@ -83,7 +83,7 @@ export const query = graphql`
           id
           website
           location
-          avatar {
+          cover_image {
             childImageSharp {
               fixed(width: 60, height: 60) {
                 ...GatsbyImageSharpFixed
