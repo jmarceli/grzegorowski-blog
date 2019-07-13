@@ -4,7 +4,7 @@ module.exports = {
   __experimentalThemes: [
     {
       resolve: "gatsby-theme-test",
-      options: { sourcePath: path.join(__dirname, "content") },
+      options: { contentPath: path.join(__dirname, "content") },
     },
   ],
   siteMetadata: {
