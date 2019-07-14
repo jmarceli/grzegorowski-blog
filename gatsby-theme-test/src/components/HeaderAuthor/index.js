@@ -13,7 +13,7 @@ import {
 
 export default function HeaderAuthor({
   background,
-  cover_image,
+  profileImage,
   title,
   postsNumber,
   links,
@@ -27,7 +27,7 @@ export default function HeaderAuthor({
         alt="Title"
       />
       <Container>
-        <Avatar fixed={cover_image} alt={title} />
+        <Avatar fixed={profileImage} alt={title} />
         <Title>{title}</Title>
         <Contact>
           <Posts>

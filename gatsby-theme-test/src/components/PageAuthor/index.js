@@ -9,8 +9,8 @@ export default function PageAuthor({ data, posts }) {
     <PageLayout singlePage>
       <HeaderAuthor
         title={data.name}
-        background={data.profile_image.childImageSharp.fluid}
-        cover_image={data.cover_image.childImageSharp.fixed}
+        background={data.cover_image.childImageSharp.fluid}
+        profileImage={data.profile_image.childImageSharp.fixed}
         postsNumber={posts.length}
         links={data.links}
       />

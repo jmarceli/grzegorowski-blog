@@ -20,7 +20,7 @@ export const query = graphql`
         url
         icon
       }
-      profile_image {
+      cover_image {
         absolutePath
         childImageSharp {
           fluid(maxWidth: 1920) {
@@ -28,7 +28,7 @@ export const query = graphql`
           }
         }
       }
-      cover_image {
+      profile_image {
         absolutePath
         childImageSharp {
           fixed(width: 100, height: 100) {
