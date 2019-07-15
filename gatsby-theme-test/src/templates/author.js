@@ -4,13 +4,17 @@ import PageAuthor from "../components/PageAuthor";
 import { GatsbyImageSharpFixed, GatsbyImageSharpFluid } from "gatsby-image";
 import { graphql } from "gatsby";
 
-export default ({ data }) => (
-  <PageAuthor data={data.author} posts={data.posts.edges} />
-);
+// TODO: disable root page for authors
+export default ({ data, pageContext }) =>
+  pageContext.author_slug ? (
+    <PageAuthor data={data.author} posts={data.posts.edges} />
+  ) : (
+    <div>Err</div>
+  );
 
 export const query = graphql`
-  query($author: String) {
-    author: authorsYaml(id: { eq: $author }) {
+  query($author_slug: String) {
+    author: authorsYaml(slug: { eq: $author_slug }) {
       id
       name
       bio
@@ -39,7 +43,9 @@ export const query = graphql`
     }
     posts: allMarkdownRemark(
       sort: { fields: [frontmatter___date_created], order: DESC }
-      filter: { frontmatter: { draft: { ne: true }, author: { eq: $author } } }
+      filter: {
+        frontmatter: { draft: { ne: true }, author: { eq: $author_slug } }
+      }
     ) {
       edges {
         node {

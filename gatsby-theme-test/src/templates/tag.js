@@ -13,10 +13,12 @@ export default ({ data }) => (
 );
 
 export const query = graphql`
-  query($tag: String) {
+  query($tag_slug: String) {
     posts: allMarkdownRemark(
       sort: { fields: [frontmatter___date_created], order: DESC }
-      filter: { frontmatter: { draft: { ne: true }, tags: { in: [$tag] } } }
+      filter: {
+        frontmatter: { draft: { ne: true }, tags: { in: [$tag_slug] } }
+      }
     ) {
       edges {
         node {
@@ -45,7 +47,7 @@ export const query = graphql`
         }
       }
     }
-    tag: tagsYaml(name: { eq: $tag }) {
+    tag: tagsYaml(slug: { eq: $tag_slug }) {
       id
       name
       description

@@ -24,10 +24,10 @@ export default function SeoPost({ data }) {
       description: data.frontmatter.meta_description || data.excerpt,
       datePublished: data.frontmatter.date_created,
       dateModified: data.frontmatter.date_updated,
-      image: data.frontmatter.image && [
+      image: data.frontmatter.feature_image && [
         {
           "@type": "ImageObject",
-          slug: data.frontmatter.image.childImageSharp.fluid.originalImg,
+          slug: data.frontmatter.feature_image.childImageSharp.fluid.originalImg,
         },
       ],
       mainEntityOfPage: {

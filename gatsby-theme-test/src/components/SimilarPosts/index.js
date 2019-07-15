@@ -1,4 +1,5 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 import CardPost from "../CardPost";
 import CardSummary from "../CardSummary";
 import { Wrapper, Container, List, Item } from "./styles";
@@ -10,6 +11,10 @@ export default function SimilarPosts({
   tagPosts,
   similarPosts,
 }) {
+  const {
+    site: { siteMetadata },
+  } = useStaticQuery(query);
+
   return (
     <Wrapper>
       <Container>
@@ -17,9 +22,9 @@ export default function SimilarPosts({
           {tagPosts.edges.length > 0 && (
             <Item key="tag-summary">
               <CardSummary
-                siteName={siteName}
+                siteName={siteMetadata.title}
                 title={tag.name}
-                slug={tag.id}
+                slug={tag.slug}
                 posts={tagPosts.edges}
                 postsTotal={tagPosts.totalCount}
               />
@@ -32,8 +37,8 @@ export default function SimilarPosts({
                 tag={node.frontmatter.tags && node.frontmatter.tags[0]}
                 slug={node.frontmatter.slug}
                 image={
-                  node.frontmatter.image &&
-                  node.frontmatter.image.childImageSharp.fluid
+                  node.frontmatter.feature_image &&
+                  node.frontmatter.feature_image.childImageSharp.fluid
                 }
                 timeToRead={node.timeToRead}
                 excerpt={node.excerpt}
@@ -45,3 +50,13 @@ export default function SimilarPosts({
     </Wrapper>
   );
 }
+
+const query = graphql`
+  {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;

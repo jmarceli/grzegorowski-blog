@@ -29,9 +29,9 @@ export default function PagePost({
   const frontmatter = post.frontmatter;
   const date = dayjs(frontmatter.date_created);
   const mainTag =
-    tags && tags.find(({ node }) => node.name === post.frontmatter.tags[0]);
+    tags && tags.find(({ node }) => node.slug === post.frontmatter.tags[0]);
   const author = authors.edges.find(
-    ({ node }) => node.id === frontmatter.author,
+    ({ node }) => node.slug === frontmatter.author,
   );
 
   return (
@@ -48,9 +48,9 @@ export default function PagePost({
               </time>
               {tags.length > 0 &&
                 tags.map(({ node: tag }) => (
-                  <React.Fragment key={tag.id}>
+                  <React.Fragment key={tag.slug}>
                     <Divider>/</Divider>
-                    <Link to={`/tag/${tag.id}`}>{tag.name}</Link>
+                    <Link to={`/tag/${tag.slug}`}>{tag.name}</Link>
                   </React.Fragment>
                 ))}
             </Subtitle>
@@ -58,11 +58,11 @@ export default function PagePost({
         </Header>
 
         <TopImage>
-          {frontmatter.image && (
+          {frontmatter.feature_image && (
             <HeaderImage
               title={frontmatter.title}
               alt={frontmatter.title}
-              fluid={frontmatter.image.childImageSharp.fluid}
+              fluid={frontmatter.feature_image.childImageSharp.fluid}
               objectFit="cover"
               objectPosition="50% 50%"
             />
@@ -84,7 +84,6 @@ export default function PagePost({
           <SimilarPosts
             tag={mainTag.node}
             tagPosts={tagPosts}
-            siteName={"— Blog name —"}
             similarPosts={similarPosts}
           />
         )}

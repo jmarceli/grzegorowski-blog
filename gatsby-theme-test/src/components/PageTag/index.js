@@ -7,7 +7,7 @@ import { Content } from "./styles";
 export default function PageTag({ posts, tag, authors }) {
   const postsWithAuthors = posts.map(({ node }) => {
     const author = authors.find(
-      ({ node: author }) => author.id === node.frontmatter.author,
+      ({ node: author }) => author.slug === node.frontmatter.author,
     );
     return {
       node: {

@@ -11,7 +11,7 @@ module.exports = {
     title: "Full-stack developer blog by Jan Grzegorowski",
     mainMenu: [
       { label: "Home", slug: "/" },
-      { label: "Contact", slug: "/author/ghost" },
+      { label: "Contact", slug: "/author/jan" },
       { label: "Cookies", slug: "/cookies" },
     ],
     socialMedia: {

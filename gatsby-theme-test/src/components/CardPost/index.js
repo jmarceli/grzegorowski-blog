@@ -54,7 +54,7 @@ export default function CardPost({
                     }
                     objectFit="cover"
                     objectPosition="50% 50%"
-                    alt={author.id}
+                    alt={author.name}
                   />
                 </Author>
               )}

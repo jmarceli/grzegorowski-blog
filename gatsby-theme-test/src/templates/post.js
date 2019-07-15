@@ -81,6 +81,7 @@ export const query = graphql`
         node {
           bio
           id
+          slug
           website
           location
           cover_image {
@@ -93,11 +94,12 @@ export const query = graphql`
         }
       }
     }
-    tags: allTagsYaml(filter: { name: { in: $tags } }) {
+    tags: allTagsYaml(filter: { slug: { in: $tags } }) {
       edges {
         node {
           id
           name
+          slug
         }
       }
     }

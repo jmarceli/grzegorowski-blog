@@ -16,9 +16,8 @@ import {
 
 export default function PagePost({ post, authors }) {
   const frontmatter = post.frontmatter;
-  const author = authors.edges.find(
-    ({ node }) => node.id === frontmatter.author,
-  );
+  const author =
+    authors && authors.edges.find(({ node }) => node.id === frontmatter.author);
 
   return (
     <PageLayout singlePage opaque>
@@ -32,11 +31,11 @@ export default function PagePost({ post, authors }) {
         </Header>
 
         <TopImage>
-          {frontmatter.image && (
+          {frontmatter.feature_image && (
             <HeaderImage
               title={frontmatter.title}
               alt={frontmatter.title}
-              fluid={frontmatter.image.childImageSharp.fluid}
+              fluid={frontmatter.feature_image.childImageSharp.fluid}
               objectFit="cover"
               objectPosition="50% 50%"
             />

@@ -11,14 +11,15 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   });
 };
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }, pluginOptions) => {
+  const { contentPath } = pluginOptions;
   const { createPage } = actions;
 
   const result = await graphql(`
     {
       posts: allMarkdownRemark(
         sort: {fields: [frontmatter___date], order: DESC}, 
-        filter: { fileAbsolutePath: { regex: "/src/content/posts/" }
+        filter: { fileAbsolutePath: { regex: "/content/posts/" }
         ${
           process.env.NODE_ENV === "production"
             ? ", frontmatter: { draft: { ne: true } }"
@@ -37,7 +38,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
       pages: allMarkdownRemark(
         sort: {fields: [frontmatter___date], order: DESC}, 
-        filter: { fileAbsolutePath: { regex: "/src/content/pages/" }
+        filter: { fileAbsolutePath: { regex: "/content/pages/" }
         ${
           process.env.NODE_ENV === "production"
             ? ", frontmatter: { draft: { ne: true } }"
@@ -57,6 +58,7 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             id
+            slug
           }
         }
       }
@@ -64,6 +66,7 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             id
+            slug
             name
             description
             meta_title
@@ -128,27 +131,36 @@ exports.createPages = async ({ graphql, actions }) => {
 
   // Author pages
   result.data.allAuthorsYaml.edges.forEach(({ node }) => {
-    const author = node.id;
+    const author = node.slug;
+    if (!author) {
+      console.warn("Skipping empty AUTHOR page creation", node);
+      return;
+    }
     createPage({
       path: `/author/${author}`,
       component: path.resolve(
         path.join(__dirname, "src", "templates", "author.js"),
       ),
       context: {
-        author: node.id,
+        author_slug: author,
       },
     });
   });
 
   // Tag pages
   result.data.allTagsYaml.edges.forEach(({ node }) => {
+    const tag = node.slug;
+    if (!tag) {
+      console.warn("Skipping empty TAG page creation", node);
+      return;
+    }
     createPage({
-      path: `/tag/${node.id}`,
+      path: `/tag/${tag}`,
       component: path.resolve(
         path.join(__dirname, "src", "templates", "tag.js"),
       ),
       context: {
-        tag: node.name,
+        tag_slug: tag,
       },
     });
   });

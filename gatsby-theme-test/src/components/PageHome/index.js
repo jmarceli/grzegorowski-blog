@@ -15,7 +15,7 @@ export default function PageHome({ data, posts, authors }) {
 
   const postsWithAuthors = posts.map(({ node }) => {
     const author = authors.find(
-      ({ node: author }) => author.id === node.frontmatter.author,
+      ({ node: author }) => author.slug === node.frontmatter.author,
     );
     return {
       node: {
@@ -30,7 +30,7 @@ export default function PageHome({ data, posts, authors }) {
       <HomeHeader
         title={data.frontmatter.title}
         description={data.frontmatter.excerpt}
-        background={data.frontmatter.image.childImageSharp.fluid}
+        background={data.frontmatter.feature_image.childImageSharp.fluid}
       />
       <Content>
         <Header>
