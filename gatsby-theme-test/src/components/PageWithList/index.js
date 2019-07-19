@@ -1,13 +1,13 @@
 import React from "react";
 import CardList from "../CardList";
-import HomeHeader from "../HomeHeader";
+import Header from "../Header";
 import PageLayout from "../PageLayout";
 import { Content } from "./styles";
 
 export default function PageWithList({ main, cardList }) {
   return (
     <PageLayout singlePage>
-      <HomeHeader
+      <Header
         background={main.image}
         title={main.title}
         description={main.description}

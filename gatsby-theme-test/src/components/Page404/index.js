@@ -1,10 +1,11 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import PageLayout from "../PageLayout";
-import HeaderTitle from "../HeaderTitle";
+import Header from "../Header";
 import CardList from "../CardList";
 import Menu from "../Menu";
-import { Header, Content, LinkHomepage } from "./styles";
+import { Content, LinkHomepage } from "./styles";
+import { getPostCards } from "../../utils/mappers";
 
 export default function Page404({ posts, authors }) {
   const {
@@ -13,25 +14,15 @@ export default function Page404({ posts, authors }) {
     },
   } = useStaticQuery(query);
 
-  const postsWithAuthors = posts.map(({ node }) => {
-    const author = authors.find(
-      ({ node: author }) => author.slug === node.frontmatter.author,
-    );
-    return {
-      node: {
-        ...node,
-        author: author && author.node,
-      },
-    };
-  });
+  const cards = getPostCards(posts, authors);
 
   return (
     <PageLayout singlePage opaque>
-      <HeaderTitle title="404" description="Page not found">
+      <Header banner title="404" description="Page not found">
         <LinkHomepage to="/">Go to the front page →</LinkHomepage>
-      </HeaderTitle>
+      </Header>
       <Content>
-        <CardList posts={postsWithAuthors} allEven />
+        <CardList cards={cards} allEven />
       </Content>
     </PageLayout>
   );

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { CONTENT_MAX_WIDTH, CONTENT_OVERLAP_HEIGHT } from "../variables";
 
-export const Header = styled.div`
+export const MenuWrapper = styled.div`
   padding: 0 12px;
   margin: 0 0 -12px;
 `;

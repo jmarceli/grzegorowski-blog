@@ -1,10 +1,10 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import CardList from "../CardList";
-import HomeHeader from "../HomeHeader";
+import Header from "../Header";
 import PageLayout from "../PageLayout";
 import Menu from "../Menu";
-import { Header, Content } from "./styles";
+import { MenuWrapper, Content } from "./styles";
 import { getPostCards } from "../../utils/mappers";
 
 export default function PageHome({ data, posts, authors }) {
@@ -18,15 +18,15 @@ export default function PageHome({ data, posts, authors }) {
 
   return (
     <PageLayout>
-      <HomeHeader
+      <Header
         title={data.frontmatter.title}
         description={data.frontmatter.excerpt}
         background={data.frontmatter.feature_image.childImageSharp.fluid}
       />
       <Content>
-        <Header>
+        <MenuWrapper>
           <Menu items={mainMenu} />
-        </Header>
+        </MenuWrapper>
         <CardList cards={cards} />
       </Content>
     </PageLayout>

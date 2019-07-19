@@ -1,13 +1,18 @@
 import styled from "styled-components";
 import Img from "gatsby-image";
 import { ffSans, toEm } from "src/utils/typography";
+import { CONTENT_OVERLAP_HEIGHT } from "../variables";
 
 export const Wrapper = styled.header`
   position: relative;
-  min-height: 400px;
+  padding-top: ${({ withTopBar }) => (withTopBar ? 0 : 50)}px;
+  padding-bottom: ${({ withTopBar }) =>
+    withTopBar ? 0 : CONTENT_OVERLAP_HEIGHT}px;
+  min-height: ${({ withTopBar, large }) =>
+    withTopBar ? 450 : large ? 600 : 400}px;
   height: 30vh;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.6);
+  color: ${({ white }) => (white ? "#aaa" : "#fff")};
+  background: ${({ white }) => (white ? "#fff" : "rgba(0, 0, 0, 0.6)")};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,6 +30,17 @@ export const Background = styled(Img)`
   width: 100%;
 `;
 
+export const NoBackground = styled.div`
+  position: absolute !important;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: ${({ white }) => (white ? "#fff" : "#000")};
+`;
+
 export const Container = styled.div`
   padding: 12px 24px;
   max-width: 900px;
@@ -40,29 +56,14 @@ export const Avatar = styled(Img)`
 
 export const Title = styled.h1`
   font-family: ${ffSans};
-  font-size: ${toEm(24)}rem;
+  font-size: ${({ large }) => toEm(large ? 128 : 24)}rem;
   font-weight: 600;
   margin: 12px 0;
 `;
 
-export const Contact = styled.div`
-  margin-top: 12px;
-  display: flex;
-  justify-content: center;
-  max-width: 100%;
-  padding: 0 24px;
-`;
-
-export const Posts = styled.div`
-  margin-left: 20px;
-  justify-content: center;
-`;
-
-export const Account = styled.a`
-  display: block;
-  margin-left: 20px;
-
-  &:first-child {
-    margin-left: 0;
-  }
+export const Description = styled.h2`
+  font-family: ${ffSans};
+  font-size: ${toEm(16)}rem;
+  font-weight: 400;
+  margin: 0;
 `;
