@@ -136,15 +136,17 @@ exports.createPages = async ({ graphql, actions }, pluginOptions) => {
       console.warn("Skipping empty AUTHOR page creation", node);
       return;
     }
-    createPage({
-      path: `/author/${author}`,
-      component: path.resolve(
-        path.join(__dirname, "src", "templates", "author.js"),
-      ),
-      context: {
-        author_slug: author,
-      },
-    });
+    pagesPromises.push(
+      createPage({
+        path: `/author/${author}`,
+        component: path.resolve(
+          path.join(__dirname, "src", "templates", "author.js"),
+        ),
+        context: {
+          author_slug: author,
+        },
+      }),
+    );
   });
 
   // Tag pages
@@ -154,16 +156,28 @@ exports.createPages = async ({ graphql, actions }, pluginOptions) => {
       console.warn("Skipping empty TAG page creation", node);
       return;
     }
-    createPage({
-      path: `/tag/${tag}`,
-      component: path.resolve(
-        path.join(__dirname, "src", "templates", "tag.js"),
-      ),
-      context: {
-        tag_slug: tag,
-      },
-    });
+    pagesPromises.push(
+      createPage({
+        path: `/tag/${tag}`,
+        component: path.resolve(
+          path.join(__dirname, "src", "templates", "tag.js"),
+        ),
+        context: {
+          tag_slug: tag,
+        },
+      }),
+    );
   });
+
+  // 404 page
+  pagesPromises.push(
+    createPage({
+      path: `/404`,
+      component: path.resolve(
+        path.join(__dirname, "src", "templates", "404.js"),
+      ),
+    }),
+  );
 
   // wait for all pages until they are done
   await Promise.all(pagesPromises);

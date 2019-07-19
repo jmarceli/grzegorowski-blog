@@ -1,25 +1,21 @@
 import React from "react";
-import { graphql } from "gatsby";
 // eslint-disable-next-line no-unused-vars
 import { GatsbyImageSharpFixed, GatsbyImageSharpFluid } from "gatsby-image";
-import PageTag from "../components/PageTag";
+import { graphql } from "gatsby";
+import Page404 from "../components/Page404";
 
-// TODO: disable root page for tags
 export default ({ data }) => (
-  <PageTag
-    posts={data.posts.edges}
-    tag={data.tag}
-    authors={data.authors.edges}
-  />
+  <Page404 posts={data.posts.edges} authors={data.authors.edges} />
 );
 
 export const query = graphql`
-  query($tag_slug: String) {
+  {
     posts: allMarkdownRemark(
       sort: { fields: [frontmatter___date_created], order: DESC }
       filter: {
-        frontmatter: { draft: { ne: true }, tags: { in: [$tag_slug] } }
+        frontmatter: { draft: { ne: true }, layout: { nin: ["page", "home"] } }
       }
+      limit: 9
     ) {
       edges {
         node {
@@ -39,7 +35,7 @@ export const query = graphql`
             feature_image {
               absolutePath
               childImageSharp {
-                fluid(maxWidth: 600) {
+                fluid(maxWidth: 600, maxHeight: 300) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -47,24 +43,6 @@ export const query = graphql`
           }
         }
       }
-    }
-    tag: tagsYaml(slug: { eq: $tag_slug }) {
-      id
-      name
-      description
-      feature_image {
-        absolutePath
-        childImageSharp {
-          fluid(maxWidth: 1920) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      meta_description
-      meta_title
-      created_at
-      updated_at
-      visibility
     }
     authors: allAuthorsYaml {
       edges {
