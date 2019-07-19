@@ -79,14 +79,15 @@ export const query = graphql`
     authors: allAuthorsYaml {
       edges {
         node {
-          bio
           id
           slug
+          name
+          bio
           website
           location
-          cover_image {
+          profile_image {
             childImageSharp {
-              fixed(width: 60, height: 60) {
+              fixed(width: 30, height: 30) {
                 ...GatsbyImageSharpFixed
               }
             }

@@ -2,16 +2,44 @@ import React from "react";
 import { graphql } from "gatsby";
 // eslint-disable-next-line no-unused-vars
 import { GatsbyImageSharpFixed, GatsbyImageSharpFluid } from "gatsby-image";
-import PageTag from "../components/PageTag";
+import PageWithList from "../components/PageWithList";
+import { getPostCards } from "../utils/mappers";
 
-// TODO: disable root page for tags
-export default ({ data }) => (
-  <PageTag
-    posts={data.posts.edges}
-    tag={data.tag}
-    authors={data.authors.edges}
-  />
-);
+export default ({ data, pageContext }) => {
+  if (!pageContext.tag_slug) {
+    const allTags = data.tags.edges.map(({ node }) => ({
+      id: node.id,
+      slug: `tag/${node.slug}`,
+      title: node.name,
+      image:
+        node && node.feature_image && node.feature_image.childImageSharp.fluid,
+      excerpt: node.description,
+    }));
+
+    return (
+      <PageWithList
+        main={{ title: "All tags", description: "List of all tags" }}
+        cardList={allTags}
+      />
+    );
+  }
+
+  const cards = getPostCards(data.posts.edges, data.authors.edges);
+
+  return (
+    <PageWithList
+      cardList={cards}
+      main={{
+        image:
+          data.tag.feature_image &&
+          data.tag.feature_image.childImageSharp.fluid,
+        title: data.tag.name,
+        description: data.tag.description,
+      }}
+      authors={data.authors.edges}
+    />
+  );
+};
 
 export const query = graphql`
   query($tag_slug: String) {
@@ -66,14 +94,37 @@ export const query = graphql`
       updated_at
       visibility
     }
+    tags: allTagsYaml {
+      edges {
+        node {
+          id
+          slug
+          name
+          description
+          meta_title
+          meta_description
+          created_at
+          feature_image {
+            absolutePath
+            childImageSharp {
+              fluid(maxWidth: 600) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
     authors: allAuthorsYaml {
       edges {
         node {
-          bio
           id
+          slug
+          name
+          bio
           website
           location
-          cover_image {
+          profile_image {
             childImageSharp {
               fixed(width: 30, height: 30) {
                 ...GatsbyImageSharpFixed

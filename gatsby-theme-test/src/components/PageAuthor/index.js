@@ -3,8 +3,11 @@ import PageLayout from "../PageLayout";
 import HeaderAuthor from "../HeaderAuthor";
 import CardList from "../CardList";
 import { Content, Container } from "./styles";
+import { getPostCards } from "../../utils/mappers";
 
 export default function PageAuthor({ data, posts }) {
+  const cards = getPostCards(posts, [{ node: data }]);
+
   return (
     <PageLayout singlePage>
       <HeaderAuthor
@@ -16,7 +19,7 @@ export default function PageAuthor({ data, posts }) {
       />
       <Content>
         <Container>
-          <CardList posts={posts} allEven />
+          <CardList cards={cards} allEven />
         </Container>
       </Content>
     </PageLayout>

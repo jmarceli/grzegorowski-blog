@@ -1,23 +1,17 @@
 import React from "react";
 import { Wrapper, Container, Photo, Info, Name, About, More } from "./styles";
 
-export default function Author({ author }) {
+export default function Author({ slug, name, image, bio }) {
   return (
     <Wrapper>
-      <Container
-        to={"/author/" + author.slug}
-        title={`Read more posts by ${author.name}`}
-      >
-        <Photo fixed={author.cover_image.childImageSharp.fixed} />
+      <Container to={"/author/" + slug} title={`Read more posts by ${name}`}>
+        <Photo fixed={image} />
         <Info>
-          <Name>{author.name}</Name>
-          <About>{author.bio}</About>
+          <Name>{name}</Name>
+          <About>{bio}</About>
         </Info>
       </Container>
-      <More
-        to={"/author/" + author.slug}
-        title={`Read more posts by ${author.name}`}
-      >
+      <More to={"/author/" + slug} title={`Read more posts by ${name}`}>
         Read More
       </More>
     </Wrapper>

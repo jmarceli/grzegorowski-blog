@@ -5,6 +5,7 @@ import HomeHeader from "../HomeHeader";
 import PageLayout from "../PageLayout";
 import Menu from "../Menu";
 import { Header, Content } from "./styles";
+import { getPostCards } from "../../utils/mappers";
 
 export default function PageHome({ data, posts, authors }) {
   const {
@@ -13,17 +14,7 @@ export default function PageHome({ data, posts, authors }) {
     },
   } = useStaticQuery(query);
 
-  const postsWithAuthors = posts.map(({ node }) => {
-    const author = authors.find(
-      ({ node: author }) => author.slug === node.frontmatter.author,
-    );
-    return {
-      node: {
-        ...node,
-        author: author && author.node,
-      },
-    };
-  });
+  const cards = getPostCards(posts, authors);
 
   return (
     <PageLayout>
@@ -36,7 +27,7 @@ export default function PageHome({ data, posts, authors }) {
         <Header>
           <Menu items={mainMenu} />
         </Header>
-        <CardList posts={postsWithAuthors} />
+        <CardList cards={cards} />
       </Content>
     </PageLayout>
   );

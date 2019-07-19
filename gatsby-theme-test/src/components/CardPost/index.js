@@ -43,23 +43,21 @@ export default function CardPost({
             {tag && <Tag>{tag}</Tag>}
             <Title>{title}</Title>
             <Excerpt>{excerpt}</Excerpt>
-            <Footer>
-              {author && (
-                <Author>
-                  <Avatar
-                    fixed={
-                      author.cover_image &&
-                      author.cover_image.childImageSharp &&
-                      author.cover_image.childImageSharp.fixed
-                    }
-                    objectFit="cover"
-                    objectPosition="50% 50%"
-                    alt={author.name}
-                  />
-                </Author>
-              )}
-              <TimeToRead>{timeToRead} min read</TimeToRead>
-            </Footer>
+            {(author || timeToRead) && (
+              <Footer>
+                {author && (
+                  <Author>
+                    <Avatar
+                      fixed={author.image}
+                      objectFit="cover"
+                      objectPosition="50% 50%"
+                      alt={author.name}
+                    />
+                  </Author>
+                )}
+                {timeToRead && <TimeToRead>{timeToRead} min read</TimeToRead>}
+              </Footer>
+            )}
           </Content>
         </Link>
       </Article>

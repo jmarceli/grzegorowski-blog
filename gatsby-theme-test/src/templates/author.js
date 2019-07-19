@@ -1,16 +1,30 @@
 import React from "react";
+import { graphql } from "gatsby";
 import PageAuthor from "../components/PageAuthor";
+import PageWithList from "../components/PageWithList";
 // eslint-disable-next-line no-unused-vars
 import { GatsbyImageSharpFixed, GatsbyImageSharpFluid } from "gatsby-image";
-import { graphql } from "gatsby";
 
-// TODO: disable root page for authors
-export default ({ data, pageContext }) =>
-  pageContext.author_slug ? (
-    <PageAuthor data={data.author} posts={data.posts.edges} />
-  ) : (
-    <div>Err</div>
-  );
+export default ({ data, pageContext }) => {
+  if (!pageContext.author_slug) {
+    const allAuthors = data.authors.edges.map(({ node }) => ({
+      id: node.id,
+      slug: `author/${node.slug}`,
+      title: node.name,
+      image: node && node.cover_image && node.cover_image.childImageSharp.fluid,
+      excerpt: node.bio,
+    }));
+
+    return (
+      <PageWithList
+        main={{ title: "All authors", description: "List of all authors" }}
+        cardList={allAuthors}
+      />
+    );
+  }
+
+  return <PageAuthor data={data.author} posts={data.posts.edges} />;
+};
 
 export const query = graphql`
   query($author_slug: String) {
@@ -37,6 +51,24 @@ export const query = graphql`
         childImageSharp {
           fixed(width: 100, height: 100) {
             ...GatsbyImageSharpFixed
+          }
+        }
+      }
+    }
+    authors: allAuthorsYaml {
+      edges {
+        node {
+          id
+          slug
+          name
+          bio
+          cover_image {
+            absolutePath
+            childImageSharp {
+              fluid(maxWidth: 600) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
         }
       }

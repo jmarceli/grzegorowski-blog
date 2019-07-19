@@ -76,7 +76,14 @@ export default function PagePost({
                 __html: post.html,
               }}
             />
-            {author && author.node && <Author author={author.node} />}
+            {author && author.node && (
+              <Author
+                slug={author.node.slug}
+                name={author.node.name}
+                bio={author.node.bio}
+                image={author.node.profile_image.childImageSharp.fixed}
+              />
+            )}
           </Container>
         </Main>
 
@@ -85,6 +92,7 @@ export default function PagePost({
             tag={mainTag.node}
             tagPosts={tagPosts}
             similarPosts={similarPosts}
+            authors={authors.edges}
           />
         )}
       </Wrapper>

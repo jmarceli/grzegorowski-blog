@@ -28,7 +28,6 @@ export const Thumbnail = styled(Img)`
   @media (min-width: ${BP_SMALL}px) {
     flex: ${({ large }) => (large ? "1 0 50%" : "0 0 250px")};
   }
-  background: #262626;
 `;
 
 export const NoThumbnail = styled.div`
@@ -91,7 +90,7 @@ export const Author = styled.div`
   width: 30px;
   border-radius: 50%;
   overflow: hidden;
-  border: 1px solid #ccc;
+  border: 1px solid #eee;
 `;
 
 export const Avatar = styled(Img)`

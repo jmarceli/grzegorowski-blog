@@ -15,26 +15,24 @@ const itemSize = (index, even = false) => {
   return "small";
 };
 
-export default ({ posts, allEven }) => (
+export default ({ cards, allEven }) => (
   <Container>
     <List>
-      {posts.map(({ node }, index) => (
+      {cards.map((card, index) => (
         <Item
-          key={node.id}
+          key={card.id}
           size={itemSize(index, allEven)}
           featured={!allEven && index === 0}
         >
           <CardPost
-            {...node.frontmatter}
-            timeToRead={node.timeToRead}
+            title={card.title}
+            slug={card.slug}
+            timeToRead={card.timeToRead}
             size={itemSize(index, allEven)}
-            excerpt={node.excerpt}
-            image={
-              node.frontmatter.feature_image &&
-              node.frontmatter.feature_image.childImageSharp.fluid
-            }
-            tag={node.frontmatter.tags && node.frontmatter.tags[0]}
-            author={node.author}
+            excerpt={card.excerpt}
+            image={card.image}
+            tag={card.tag}
+            author={card.author}
           />
         </Item>
       ))}

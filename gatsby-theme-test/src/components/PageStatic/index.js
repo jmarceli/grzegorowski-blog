@@ -14,7 +14,7 @@ import {
   Content,
 } from "./styles";
 
-export default function PagePost({ post, authors }) {
+export default function PageStatic({ post, authors }) {
   const frontmatter = post.frontmatter;
   const author =
     authors && authors.edges.find(({ node }) => node.id === frontmatter.author);

@@ -10,6 +10,7 @@ export default function SimilarPosts({
   tag,
   tagPosts,
   similarPosts,
+  authors,
 }) {
   const {
     site: { siteMetadata },
@@ -30,21 +31,37 @@ export default function SimilarPosts({
               />
             </Item>
           )}
-          {similarPosts.map(({ node }) => (
-            <Item key={node.frontmatter.slug}>
-              <CardPost
-                title={node.frontmatter.title}
-                tag={node.frontmatter.tags && node.frontmatter.tags[0]}
-                slug={node.frontmatter.slug}
-                image={
-                  node.frontmatter.feature_image &&
-                  node.frontmatter.feature_image.childImageSharp.fluid
-                }
-                timeToRead={node.timeToRead}
-                excerpt={node.excerpt}
-              />
-            </Item>
-          ))}
+          {similarPosts.map(({ node }) => {
+            const author = authors.find(
+              ({ node: author }) => author.slug === node.frontmatter.author,
+            );
+
+            return (
+              <Item key={node.frontmatter.slug}>
+                <CardPost
+                  title={node.frontmatter.title}
+                  tag={node.frontmatter.tags && node.frontmatter.tags[0]}
+                  slug={node.frontmatter.slug}
+                  image={
+                    node.frontmatter.feature_image &&
+                    node.frontmatter.feature_image.childImageSharp.fluid
+                  }
+                  timeToRead={node.timeToRead}
+                  excerpt={node.excerpt}
+                  author={
+                    author &&
+                    author.node && {
+                      name: author.node.name,
+                      image:
+                        author.node.profile_image &&
+                        author.node.profile_image.childImageSharp &&
+                        author.node.profile_image.childImageSharp.fixed,
+                    }
+                  }
+                />
+              </Item>
+            );
+          })}
         </List>
       </Container>
     </Wrapper>
