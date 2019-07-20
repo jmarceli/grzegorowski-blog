@@ -96,3 +96,92 @@ export function schemaArticle(data, author) {
     },
   ];
 }
+
+export function schemaPerson(data) {
+  // see: https://developers.google.com/search/docs/data-types/article#type_definitions
+  return [
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "http://schema.org",
+        "@type": "Person",
+        name: data.name,
+        url: data.url,
+        image: data.image && {
+          "@type": "ImageObject",
+          url: "https://grzegorowski.com/" + data.image,
+        },
+        nationality: "Polish",
+        alumniOf: [
+          {
+            "@type": "CollegeOrUniversity",
+            name: "Warsaw University of Technology",
+            sameAs: [
+              "https://en.wikipedia.org/wiki/Warsaw_University_of_Technology",
+              "https://www.pw.edu.pl/engpw",
+            ],
+          },
+        ],
+        gender: "Male",
+        description: "Full-stack developer",
+        jobTitle: "Senior Software Engineer",
+        worksFor: [
+          {
+            "@type": "Organization",
+            name: "Equinix Inc.",
+            sameAs: [
+              "https://www.equinix.com/",
+              "https://www.linkedin.com/company/equinix/",
+              "https://twitter.com/equinix",
+            ],
+          },
+        ],
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Warsaw",
+          addressCountry: "Poland",
+        },
+      }),
+    },
+  ];
+}
+
+export function schemaWebsite(data, author) {
+  // see: https://developers.google.com/search/docs/data-types/article#type_definitions
+  return [
+    {
+      type: "application/ld+json",
+      innerHTML: JSON.stringify({
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        url: data.url,
+        headline: data.headline,
+        description: data.description,
+        publisher: author && {
+          "@type": "Organization",
+          logo: {
+            type: "ImageObject",
+            url: "https://grzegorowski.com/favicon.ico",
+          },
+          name: author,
+        },
+        author: author && {
+          "@type": "Person",
+          name: author,
+        },
+        datePublished: data.datePublished,
+        dateModified: data.dateModified,
+        image: data.image && [
+          {
+            "@type": "ImageObject",
+            url: "https://grzegorowski.com/" + data.image,
+          },
+        ],
+        copyrightHolder: author,
+        copyrightYear: data.copyrightYear,
+        creator: author,
+        inLanguage: "en",
+      }),
+    },
+  ];
+}

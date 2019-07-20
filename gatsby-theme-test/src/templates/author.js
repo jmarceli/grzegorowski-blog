@@ -30,6 +30,7 @@ export const query = graphql`
   query($author_slug: String) {
     author: authorsYaml(slug: { eq: $author_slug }) {
       id
+      slug
       name
       bio
       location
@@ -40,6 +41,7 @@ export const query = graphql`
       }
       cover_image {
         absolutePath
+        relativePath
         childImageSharp {
           fluid(maxWidth: 1920) {
             ...GatsbyImageSharpFluid
@@ -48,6 +50,7 @@ export const query = graphql`
       }
       profile_image {
         absolutePath
+        relativePath
         childImageSharp {
           fixed(width: 100, height: 100) {
             ...GatsbyImageSharpFixed
@@ -63,6 +66,7 @@ export const query = graphql`
           name
           bio
           cover_image {
+            relativePath
             absolutePath
             childImageSharp {
               fluid(maxWidth: 600) {
@@ -95,6 +99,7 @@ export const query = graphql`
             date_updated
             author
             feature_image {
+              relativePath
               absolutePath
               childImageSharp {
                 fluid(maxWidth: 600) {

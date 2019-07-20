@@ -1,16 +1,28 @@
 import React from "react";
+import Helmet from "react-helmet";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PageLayout from "../PageLayout";
 import Header from "../Header";
 import CardList from "../CardList";
 import { Contact, Posts, Account, Content, Container } from "./styles";
 import { getPostCards } from "../../utils/mappers";
+import { schemaPerson } from "../../utils/seo";
 
 export default function PageAuthor({ data, posts }) {
   const cards = getPostCards(posts, [{ node: data }]);
 
   return (
     <PageLayout singlePage>
+      <Helmet
+        script={schemaPerson({
+          name: data.name,
+          image: data.profile_image.relativePath,
+          url: "https://www.grzegorowski.com/" + data.slug,
+        })}
+      >
+        <title>{data.name}</title>
+      </Helmet>
+
       <Header
         withTopBar
         title={data.name}
