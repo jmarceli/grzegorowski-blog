@@ -1,10 +1,11 @@
 import React from "react";
 import { Link } from "gatsby";
-import SeoPost from "./seo";
+import Helmet from "react-helmet";
 import dayjs from "dayjs";
 import PageLayout from "../PageLayout";
 import Author from "../Author";
 import SimilarPosts from "../SimilarPosts";
+import { schemaBlogPosting } from "../../utils/seo";
 import {
   Wrapper,
   Header,
@@ -37,7 +38,11 @@ export default function PagePost({
   return (
     <PageLayout singlePage opaque>
       <Wrapper>
-        <SeoPost data={post} />
+        <Helmet
+          script={schemaBlogPosting(post, author.node && author.node.name)}
+        >
+          <title>{frontmatter.title}</title>
+        </Helmet>
 
         <Header>
           <HeaderContent>

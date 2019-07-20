@@ -25,6 +25,8 @@ export const query = graphql`
         author
         feature_image {
           absolutePath
+          relativePath
+          publicURL
           childImageSharp {
             fluid(maxWidth: 1920) {
               ...GatsbyImageSharpFluid
@@ -66,6 +68,7 @@ export const query = graphql`
             author
             feature_image {
               absolutePath
+              relativePath
               childImageSharp {
                 fluid(maxWidth: 600, maxHeight: 300) {
                   ...GatsbyImageSharpFluid
@@ -86,6 +89,7 @@ export const query = graphql`
           website
           location
           profile_image {
+            relativePath
             childImageSharp {
               fixed(width: 30, height: 30) {
                 ...GatsbyImageSharpFixed

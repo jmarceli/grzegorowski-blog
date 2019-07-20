@@ -7,9 +7,6 @@ import {
   Container,
   Title,
   Description,
-  Contact,
-  Posts,
-  Account,
 } from "./styles";
 
 export default function Header({
