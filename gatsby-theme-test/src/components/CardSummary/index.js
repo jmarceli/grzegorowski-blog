@@ -19,7 +19,7 @@ export default function CardPost({ siteName, title, slug, posts, postsTotal }) {
       <Content>
         <TopLine>
           <SiteName>{siteName}</SiteName>
-          <LinkTop to={"/" + slug} title={title}>
+          <LinkTop to={"/tag/" + slug} title={title}>
             <Title>{title}</Title>
           </LinkTop>
         </TopLine>

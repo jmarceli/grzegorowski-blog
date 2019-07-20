@@ -19,6 +19,7 @@ export const query = graphql`
         author
         feature_image {
           absolutePath
+          relativePath
           childImageSharp {
             fluid(maxWidth: 1920) {
               ...GatsbyImageSharpFluid
@@ -37,8 +38,9 @@ export const query = graphql`
     authors: allAuthorsYaml {
       edges {
         node {
-          bio
           id
+          slug
+          bio
           name
           website
           location

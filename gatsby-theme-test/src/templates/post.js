@@ -96,6 +96,14 @@ export const query = graphql`
               }
             }
           }
+          profile_image_large: profile_image {
+            relativePath
+            childImageSharp {
+              fixed(width: 60, height: 60) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
         }
       }
     }

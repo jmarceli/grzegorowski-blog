@@ -1,7 +1,7 @@
 import React from "react";
-import SeoPost from "./seo";
+import Helmet from "react-helmet";
 import PageLayout from "../PageLayout";
-import Author from "../Author";
+import { schemaArticle } from "../../utils/seo";
 import {
   Wrapper,
   Header,
@@ -17,12 +17,20 @@ import {
 export default function PageStatic({ post, authors }) {
   const frontmatter = post.frontmatter;
   const author =
-    authors && authors.edges.find(({ node }) => node.id === frontmatter.author);
+    authors &&
+    authors.edges.find(({ node }) => node.slug === frontmatter.author);
 
   return (
     <PageLayout singlePage opaque>
       <Wrapper>
-        <SeoPost data={post} />
+        <Helmet
+          script={schemaArticle(
+            post,
+            author && author.node && author.node.name,
+          )}
+        >
+          <title>{frontmatter.title}</title>
+        </Helmet>
 
         <Header>
           <HeaderContent>
@@ -49,7 +57,6 @@ export default function PageStatic({ post, authors }) {
                 __html: post.html,
               }}
             />
-            {author && <Author author={author && author.node} />}
           </Container>
         </Main>
       </Wrapper>

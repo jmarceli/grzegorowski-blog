@@ -39,7 +39,10 @@ export default function PagePost({
     <PageLayout singlePage opaque>
       <Wrapper>
         <Helmet
-          script={schemaBlogPosting(post, author.node && author.node.name)}
+          script={schemaBlogPosting(
+            post,
+            author && author.node && author.node.name,
+          )}
         >
           <title>{frontmatter.title}</title>
         </Helmet>
@@ -85,8 +88,8 @@ export default function PagePost({
               <Author
                 slug={author.node.slug}
                 name={author.node.name}
+                image={author.node.profile_image_large.childImageSharp.fixed}
                 bio={author.node.bio}
-                image={author.node.profile_image.childImageSharp.fixed}
               />
             )}
           </Container>

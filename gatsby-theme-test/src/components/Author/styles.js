@@ -27,8 +27,8 @@ export const Photo = styled(Img)`
   width: 50px;
   height: 50px;
   @media (min-width: ${BP_SMALL}px) {
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
   }
 `;
 
