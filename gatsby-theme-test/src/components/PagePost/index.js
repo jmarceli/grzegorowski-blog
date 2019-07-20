@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import { Disqus } from "gatsby-plugin-disqus";
 import Helmet from "react-helmet";
 import dayjs from "dayjs";
 import PageLayout from "../PageLayout";
@@ -18,6 +19,8 @@ import {
   Main,
   Container,
   Content,
+  Comments,
+  CommentsContainer,
 } from "./styles";
 
 export default function PagePost({
@@ -34,6 +37,11 @@ export default function PagePost({
   const author = authors.edges.find(
     ({ node }) => node.slug === frontmatter.author,
   );
+  let disqusConfig = {
+    url: `https://www.grzegorowski.com/${frontmatter.slug}`,
+    identifier: frontmatter.slug,
+    title: frontmatter.title,
+  };
 
   return (
     <PageLayout singlePage opaque>
@@ -94,6 +102,12 @@ export default function PagePost({
             )}
           </Container>
         </Main>
+
+        <Comments>
+          <CommentsContainer>
+            <Disqus config={disqusConfig} />
+          </CommentsContainer>
+        </Comments>
 
         {(tagPosts.edges.length > 0 || similarPosts.length > 0) && (
           <SimilarPosts

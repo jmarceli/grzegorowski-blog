@@ -156,3 +156,20 @@ export const Content = styled.div`
     border-bottom: none;
   }
 `;
+
+export const Comments = styled.div`
+  background: #fff;
+`;
+
+export const CommentsContainer = styled.div`
+  max-width: ${CONTENT_MAX_WIDTH}px;
+  margin: 0 auto;
+
+  padding: 36px 8px 12px;
+  @media (min-width: ${BP_SMALL}px) {
+    padding: 36px 24px 12px;
+  }
+  @media (min-width: ${BP_MEDIUM}px) {
+    padding: 36px 48px 12px;
+  }
+`;
