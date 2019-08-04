@@ -55,31 +55,6 @@ module.exports = ({ contentPath }) => ({
         ],
       },
     },
-    {
-      resolve: "gatsby-plugin-amp",
-      options: {
-        // analytics: {
-        //   type: 'gtag',
-        //   dataCredentials: 'include',
-        //   config: {
-        //     vars: {
-        //       gtag_id: <GA_TRACKING_ID>,
-        //       config: {
-        //         <GA_TRACKING_ID>: {
-        //           page_location: '{{pathname}}'
-        //         },
-        //       },
-        //     },
-        //   },
-        // },
-        canonicalBaseUrl: "http://localhost:9000/",
-        components: [],
-        excludedPaths: ["/404*", "/"],
-        pathIdentifier: "/amp/",
-        relAmpHtmlPattern: "{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}",
-        useAmpClientIdApi: true,
-      },
-    },
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-typography",
