@@ -30,12 +30,20 @@ export const Header = styled.header`
 export const HeaderContent = styled.div`
   margin: 0 auto;
   max-width: ${CONTENT_MAX_WIDTH}px;
-  padding: 2em 8px 1em;
+  padding: 1em 8px 1em;
+`;
+
+export const DateCreated = styled.time`
+  color: #666;
+  font-size: ${toEm(12)}rem;
+  font-weight: 600;
+  font-family: ${ffSans};
+  text-transform: uppercase;
 `;
 
 export const Title = styled.h1`
   text-align: center;
-  margin: 0 0 12px;
+  margin: 12px 0;
   font-weight: 600;
 `;
 

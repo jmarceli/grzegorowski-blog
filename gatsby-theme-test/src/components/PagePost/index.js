@@ -1,28 +1,27 @@
-import React from "react";
+import dayjs from "dayjs";
 import { Link } from "gatsby";
 import { Disqus } from "gatsby-plugin-disqus";
-import Helmet from "react-helmet";
-import dayjs from "dayjs";
-import PageLayout from "../PageLayout";
-import Author from "../Author";
-import SimilarPosts from "../SimilarPosts";
-import { schemaBlogPosting } from "../../utils/seo";
+import React from "react";
 import { AmpContext } from "../../utils/ampContext";
-
+import Author from "../Author";
+import PageLayout from "../PageLayout";
+import SimilarPosts from "../SimilarPosts";
+import Seo from "../Seo";
 import {
-  Wrapper,
-  Header,
-  HeaderContent,
-  Title,
-  Subtitle,
-  Divider,
-  TopImage,
-  HeaderImage,
-  Main,
-  Container,
-  Content,
   Comments,
   CommentsContainer,
+  Container,
+  Content,
+  Divider,
+  Header,
+  HeaderContent,
+  HeaderImage,
+  Main,
+  Subtitle,
+  Title,
+  TopImage,
+  Wrapper,
+  DateCreated,
 } from "./styles";
 
 // Create DOM document if not in browser environment (e.g. rendering pages with Node)
@@ -80,26 +79,19 @@ export default function PagePost({
   return (
     <PageLayout singlePage opaque>
       <Wrapper>
-        <Helmet
-          script={schemaBlogPosting(
-            post,
-            author && author.node && author.node.name,
-          )}
-        >
-          <title>{frontmatter.title}</title>
-        </Helmet>
+        <Seo data={post} author={author} />
 
         <Header>
           <HeaderContent>
+            <DateCreated dateTime={frontmatter.date_created}>
+              {date.format("DD MMMM YYYY")}
+            </DateCreated>
             <Title>{frontmatter.title}</Title>
             <Subtitle>
-              <time dateTime={frontmatter.date_created}>
-                {date.format("DD MMMM YYYY")}
-              </time>
               {tags.length > 0 &&
-                tags.map(({ node: tag }) => (
+                tags.map(({ node: tag }, index) => (
                   <React.Fragment key={tag.slug}>
-                    <Divider>/</Divider>
+                    {index !== 0 && <Divider>/</Divider>}
                     <Link to={`/tag/${tag.slug}`}>{tag.name}</Link>
                   </React.Fragment>
                 ))}

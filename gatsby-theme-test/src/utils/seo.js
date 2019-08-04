@@ -1,4 +1,4 @@
-export function schemaBlogPosting(data, author) {
+export function schemaBlogPosting(data, authorName) {
   // see: https://developers.google.com/search/docs/data-types/article#type_definitions
   return [
     {
@@ -12,38 +12,36 @@ export function schemaBlogPosting(data, author) {
             type: "ImageObject",
             url: "https://grzegorowski.com/favicon.ico",
           },
-          name: author,
+          name: authorName,
         },
         author: {
           "@type": "Person",
-          name: author,
+          name: authorName,
         },
-        headline: data.frontmatter.meta_title || data.frontmatter.title,
-        description: data.frontmatter.meta_description || data.excerpt,
-        datePublished: data.frontmatter.date_created,
-        dateModified: data.frontmatter.date_updated,
-        keywords: data.frontmatter.tags && data.frontmatter.tags.join(", "),
-        image: data.frontmatter.feature_image && [
+        headline: data.headline,
+        description: data.description,
+        datePublished: data.datePublished,
+        dateModified: data.dateModified,
+        keywords: data.keywords,
+        image: data.imageUrl && [
           {
             "@type": "ImageObject",
-            url:
-              "https://grzegorowski.com/" +
-              data.frontmatter.feature_image.relativePath,
+            url: data.imageUrl,
           },
         ],
         mainEntityOfPage: {
           "@type": "WebPage",
           "@id": "https://grzegorowski.com/",
         },
-        articleBody: data.rawMarkdownBody,
+        articleBody: data.articleBody,
         copyrightHolder: {
           "@type": "Person",
-          name: author,
+          name: authorName,
         },
-        copyrightYear: data.frontmatter.date_created,
+        copyrightYear: data.copyrightYear,
         creator: {
           "@type": "Person",
-          name: author,
+          name: authorName,
         },
         inLanguage: "en",
       }),
