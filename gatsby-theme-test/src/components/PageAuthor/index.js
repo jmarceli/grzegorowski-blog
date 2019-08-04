@@ -34,11 +34,10 @@ export default function PageAuthor({ data, posts }) {
           <Contact>
             <Posts>
               <FontAwesomeIcon icon={["fas", "signal"]} size="sm" />{" "}
-              {posts.length}
-              posts
+              {posts.length}&nbsp;posts
             </Posts>
             {data.links.map(link => (
-              <Account key={link.url} href={link.url}>
+              <Account key={link.url} href={link.url} target="_blank">
                 <FontAwesomeIcon icon={link.icon} size="sm" /> {link.name}
               </Account>
             ))}
