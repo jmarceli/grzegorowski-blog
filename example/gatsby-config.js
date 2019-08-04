@@ -8,6 +8,7 @@ module.exports = {
     },
   ],
   siteMetadata: {
+    siteUrl: "https://www.grzegorowski.com",
     title: "Full-stack developer blog by Jan Grzegorowski",
     mainMenu: [
       { label: "Home", slug: "/" },
@@ -20,4 +21,12 @@ module.exports = {
     },
     copyrights: "Jan Grzegorowski",
   },
+  plugins: [
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        exclude: ["/cookies"],
+      },
+    },
+  ],
 };
