@@ -43,6 +43,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1 0 auto;
+  z-index: 1;
   @media (min-width: ${BP_SMALL}px) {
     flex: ${({ large }) => (large ? "0 1 344px" : "1 1 auto")};
   }

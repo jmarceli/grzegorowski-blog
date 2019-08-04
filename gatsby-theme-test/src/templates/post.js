@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { graphql } from "gatsby";
 // eslint-disable-next-line no-unused-vars
 import { GatsbyImageSharpFixed, GatsbyImageSharpFluid } from "gatsby-image";
 import PagePost from "../components/PagePost/index";
+import { AmpContext } from "../utils/ampContext";
 
-export default ({ data }) => (
-  <PagePost
-    post={data.post}
-    similarPosts={data.similarPosts && data.similarPosts.edges}
-    authors={data.authors}
-    tags={data.tags && data.tags.edges}
-    tagPosts={data.tagPosts}
-  />
-);
+export default ({ data, pageContext }) => {
+  const ampContext = useContext(AmpContext);
+  ampContext.setIsAmp(pageContext.isAmp);
+
+  return (
+    <PagePost
+      post={data.post}
+      similarPosts={data.similarPosts && data.similarPosts.edges}
+      authors={data.authors}
+      tags={data.tags && data.tags.edges}
+      tagPosts={data.tagPosts}
+    />
+  );
+};
 
 export const query = graphql`
   query($slug: String, $tags: [String], $mainTag: String) {
@@ -30,6 +36,11 @@ export const query = graphql`
           childImageSharp {
             fluid(maxWidth: 1920) {
               ...GatsbyImageSharpFluid
+              src
+            }
+            sizes {
+              presentationHeight
+              presentationWidth
             }
           }
         }

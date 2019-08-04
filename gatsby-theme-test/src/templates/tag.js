@@ -4,8 +4,12 @@ import { graphql } from "gatsby";
 import { GatsbyImageSharpFixed, GatsbyImageSharpFluid } from "gatsby-image";
 import PageWithList from "../components/PageWithList";
 import { getPostCards } from "../utils/mappers";
+import { AmpContext } from "../utils/ampContext";
 
 export default ({ data, pageContext }) => {
+  const ampContext = React.useContext(AmpContext);
+  ampContext.setIsAmp(pageContext.isAmp);
+
   if (!pageContext.tag_slug) {
     const allTags = data.tags.edges.map(({ node }) => ({
       id: node.id,

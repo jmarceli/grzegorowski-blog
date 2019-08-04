@@ -1,7 +1,7 @@
 const path = require("path");
 
 exports.onCreateWebpackConfig = ({ actions }) => {
-  // setup path aliases so "src/test.js" will always point to the "./src/test.js" file
+  // setup path aliases, so "src/test.js" will always point to the "./src/test.js" file
   actions.setWebpackConfig({
     resolve: {
       alias: {
@@ -106,6 +106,23 @@ exports.createPages = async ({ graphql, actions }, pluginOptions) => {
         },
       }),
     );
+
+    // AMP pages for posts
+    pagesPromises.push(
+      createPage({
+        path: `${slug}/amp/`,
+        component: path.resolve(
+          path.join(__dirname, "src", "templates", "post.js"),
+        ),
+        context: {
+          ...node.frontmatter,
+          mainTag: (node.frontmatter.tags && node.frontmatter.tags[0]) || "",
+          prev,
+          next,
+          isAmp: true,
+        },
+      }),
+    );
   });
 
   // Pages - static pages e.g. home page and cookies page
@@ -172,7 +189,7 @@ exports.createPages = async ({ graphql, actions }, pluginOptions) => {
   // 404 page
   pagesPromises.push(
     createPage({
-      path: `/404`,
+      path: `^\/?404\/?$`,
       component: path.resolve(
         path.join(__dirname, "src", "templates", "404.js"),
       ),

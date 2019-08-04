@@ -32,7 +32,9 @@ export default function PageHome({ data, posts, authors }) {
             headline: data.frontmatter.title,
             datePublished: data.frontmatter.date_published,
             dateModified: data.frontmatter.date_modified,
-            image: data.frontmatter.feature_image.relativePath,
+            image:
+              data.frontmatter.feature_image &&
+              data.frontmatter.feature_image.relativePath,
           },
           author && author.node && author.node.name,
         )}
@@ -43,7 +45,11 @@ export default function PageHome({ data, posts, authors }) {
       <Header
         title={data.frontmatter.title}
         description={data.frontmatter.excerpt}
-        background={data.frontmatter.feature_image.childImageSharp.fluid}
+        background={
+          data.frontmatter.feature_image &&
+          data.frontmatter.feature_image.childImageSharp &&
+          data.frontmatter.feature_image.childImageSharp.fluid
+        }
       />
       <Content>
         <MenuWrapper>

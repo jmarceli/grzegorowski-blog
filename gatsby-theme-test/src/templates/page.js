@@ -3,10 +3,14 @@ import { graphql } from "gatsby";
 // eslint-disable-next-line no-unused-vars
 import { GatsbyImageSharpFixed, GatsbyImageSharpFluid } from "gatsby-image";
 import PageStatic from "../components/PageStatic/index";
+import { AmpContext } from "../utils/ampContext";
 
-export default ({ data }) => (
-  <PageStatic post={data.post} authors={data.authors} />
-);
+export default ({ data, pageContext }) => {
+  const ampContext = React.useContext(AmpContext);
+  ampContext.setIsAmp(pageContext.isAmp);
+
+  return <PageStatic post={data.post} authors={data.authors} />;
+};
 
 export const query = graphql`
   query($slug: String) {

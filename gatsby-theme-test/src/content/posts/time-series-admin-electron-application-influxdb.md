@@ -10,9 +10,9 @@ meta_description: >-
   an Electron based application for InfluxDB administration and querying.
 meta_title: null
 slug: time-series-admin-electron-application-influxdb
-date: '2018-10-14T06:44:00.000Z'
-date_created: '2018-11-04T18:31:42.000Z'
-date_updated: '2018-10-20T17:40:52.000Z'
+date: "2018-10-14T06:44:00.000Z"
+date_created: "2018-11-04T18:31:42.000Z"
+date_updated: "2018-10-20T17:40:52.000Z"
 image: >-
   ./img/photo-1504639725590-34d0984388bd.jpg
 featured: false
@@ -21,12 +21,14 @@ tags:
   - Javascript
   - Web developer toolset
 ---
+
 InfluxDB turns out to be a good solution for a time series data which happens to be the cornerstone of my current job. As (probably) every database it has it's pros and cons, but the most annoying thing for me as a developer was lack of a proper administration tool to work with.
 Until now...
 <br/>
+
 <div style="text-align: center">
     <a href="https://timeseriesadmin.github.io/" style="box-shadow: none; display: inline-block;">
-      <img src="/content/images/2018/10/icon.png" alt="Time Series Admin logo - administrator UI for InfluxDB" width=128 height=128 style="width:128px;height:128px;display:inline-block" />
+      <img src="./img/timeseries-admin-icon.png" alt="Time Series Admin logo - administrator UI for InfluxDB" width=128 height=128 style="width:128px;height:128px;display:inline-block" />
       <h3>Time Series Admin</h3>
     </a>
 </div>
@@ -70,7 +72,7 @@ Here are some reasons which justifies existence of Time Series Admin as an admin
 
 General idea was to create a tool (admin UI) which will work through InfluxDB HTTP API allowing for easy query execution and database management/exploration.
 
-Time Series Admin is aimed primarily at developers/users who have at least base knowledge about [InfluxQL] (https://docs.influxdata.com/influxdb/v1.6/query_language/).
+Time Series Admin is aimed primarily at developers/users who have at least base knowledge about [InfluxQL](https://docs.influxdata.com/influxdb/v1.6/query_language/).
 Thanks to the "Explorer" panel even without any knowledge you may reason about database internals in a human friendly way.
 
 ![Time Series Admin - browse through InfluxDB database](./img/timeseriesadmin--panel-explorer.png)

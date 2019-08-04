@@ -3,10 +3,14 @@ import React from "react";
 import { GatsbyImageSharpFixed, GatsbyImageSharpFluid } from "gatsby-image";
 import { graphql } from "gatsby";
 import Page404 from "../components/Page404";
+import { AmpContext } from "../utils/ampContext";
 
-export default ({ data }) => (
-  <Page404 posts={data.posts.edges} authors={data.authors.edges} />
-);
+export default ({ data, pageContext }) => {
+  const ampContext = React.useContext(AmpContext);
+  ampContext.setIsAmp(pageContext.isAmp);
+
+  return <Page404 posts={data.posts.edges} authors={data.authors.edges} />;
+};
 
 export const query = graphql`
   {

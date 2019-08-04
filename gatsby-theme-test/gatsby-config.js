@@ -1,10 +1,6 @@
 const path = require("path");
 
 module.exports = ({ contentPath }) => ({
-  // mapping: {
-  //   "MarkdownRemark.frontmatter.tags": `TagsYaml`,
-  //   "MarkdownRemark.frontmatter.author": `AuthorsYaml`,
-  // },
   plugins: [
     "gatsby-transformer-yaml",
     {
@@ -76,9 +72,9 @@ module.exports = ({ contentPath }) => ({
         //     },
         //   },
         // },
-        canonicalBaseUrl: "http://localhost:8000/",
+        canonicalBaseUrl: "http://localhost:9000/",
         components: [],
-        excludedPaths: ["/", "/404*"],
+        excludedPaths: ["/404*", "/"],
         pathIdentifier: "/amp/",
         relAmpHtmlPattern: "{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}",
         useAmpClientIdApi: true,

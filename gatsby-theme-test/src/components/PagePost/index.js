@@ -7,6 +7,8 @@ import PageLayout from "../PageLayout";
 import Author from "../Author";
 import SimilarPosts from "../SimilarPosts";
 import { schemaBlogPosting } from "../../utils/seo";
+import { AmpContext } from "../../utils/ampContext";
+
 import {
   Wrapper,
   Header,
@@ -22,6 +24,28 @@ import {
   Comments,
   CommentsContainer,
 } from "./styles";
+
+// Create DOM document if not in browser environment (e.g. rendering pages with Node)
+const getDocument = () => {
+  if (typeof document === "undefined") {
+    // eslint-disable-next-line no-eval
+    const JSDOM = eval('require("jsdom")').JSDOM;
+    const DOM = new JSDOM();
+    return DOM.window.document;
+  }
+  return document;
+};
+
+// AMP has it's own preloading and background-image with base64 encoding breaks AMP compilancy
+const removePlaceholderImages = htmlString => {
+  const document = getDocument();
+  const body = document.createElement("div");
+  body.innerHTML = htmlString;
+  body.querySelectorAll(".gatsby-resp-image-background-image").forEach(el => {
+    el.style.backgroundImage = "";
+  });
+  return body.outerHTML;
+};
 
 export default function PagePost({
   post,
@@ -42,6 +66,16 @@ export default function PagePost({
     identifier: frontmatter.slug,
     title: frontmatter.title,
   };
+  const ampContext = React.useContext(AmpContext);
+
+  const featureImage =
+    frontmatter &&
+    frontmatter.feature_image &&
+    frontmatter.feature_image.childImageSharp;
+
+  const htmlBody = ampContext.isAmp
+    ? removePlaceholderImages(post.html)
+    : post.html;
 
   return (
     <PageLayout singlePage opaque>
@@ -74,22 +108,33 @@ export default function PagePost({
         </Header>
 
         <TopImage>
-          {frontmatter.feature_image && (
-            <HeaderImage
-              title={frontmatter.title}
-              alt={frontmatter.title}
-              fluid={frontmatter.feature_image.childImageSharp.fluid}
-              objectFit="cover"
-              objectPosition="50% 50%"
-            />
-          )}
+          {featureImage &&
+            featureImage.fluid &&
+            (ampContext.isAmp ? (
+              <amp-img
+                src={featureImage.fluid.src}
+                srcSet={featureImage.fluid.srcSet}
+                alt={frontmatter.title}
+                width={featureImage.fluid.aspectRatio}
+                height="1"
+                layout="responsive"
+              />
+            ) : (
+              <HeaderImage
+                title={frontmatter.title}
+                alt={frontmatter.title}
+                fluid={featureImage.fluid}
+                objectFit="cover"
+                objectPosition="50% 50%"
+              />
+            ))}
         </TopImage>
 
         <Main>
           <Container>
             <Content
               dangerouslySetInnerHTML={{
-                __html: post.html,
+                __html: htmlBody,
               }}
             />
             {author && author.node && (
@@ -109,7 +154,7 @@ export default function PagePost({
           </CommentsContainer>
         </Comments>
 
-        {(tagPosts.edges.length > 0 || similarPosts.length > 0) && (
+        {mainTag && (tagPosts.edges.length > 0 || similarPosts.length > 0) && (
           <SimilarPosts
             tag={mainTag.node}
             tagPosts={tagPosts}

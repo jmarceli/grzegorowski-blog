@@ -4,8 +4,12 @@ import PageAuthor from "../components/PageAuthor";
 import PageWithList from "../components/PageWithList";
 // eslint-disable-next-line no-unused-vars
 import { GatsbyImageSharpFixed, GatsbyImageSharpFluid } from "gatsby-image";
+import { AmpContext } from "../utils/ampContext";
 
 export default ({ data, pageContext }) => {
+  const ampContext = React.useContext(AmpContext);
+  ampContext.setIsAmp(pageContext.isAmp);
+
   if (!pageContext.author_slug) {
     const allAuthors = data.authors.edges.map(({ node }) => ({
       id: node.id,

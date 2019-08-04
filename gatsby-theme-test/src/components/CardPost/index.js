@@ -1,5 +1,6 @@
 import React from "react";
 import Tile from "../Tile";
+import { AmpContext } from "../../utils/ampContext";
 import {
   Article,
   Link,
@@ -25,17 +26,31 @@ export default function CardPost({
   author,
   timeToRead,
 }) {
+  const { isAmp } = React.useContext(AmpContext);
+  const url = "/" + slug + (isAmp ? "/amp/" : "");
+
   return (
     <Tile>
       <Article>
-        <Link to={"/" + slug} title={title} size={size}>
+        <Link to={url} title={title} size={size}>
           {image ? (
-            <Thumbnail
-              large={size === "large"}
-              fluid={image}
-              objectFit="cover"
-              objectPosition="50% 50%"
-            />
+            isAmp ? (
+              <amp-img
+                src={image.src}
+                srcSet={image.srcSet}
+                alt={title}
+                width={image.aspectRatio}
+                height="1"
+                layout="responsive"
+              />
+            ) : (
+              <Thumbnail
+                large={size === "large"}
+                fluid={image}
+                objectFit="cover"
+                objectPosition="50% 50%"
+              />
+            )
           ) : (
             <NoThumbnail large={size === "large"} />
           )}
@@ -47,12 +62,23 @@ export default function CardPost({
               <Footer>
                 {author && (
                   <Author>
-                    <Avatar
-                      fixed={author.image}
-                      objectFit="cover"
-                      objectPosition="50% 50%"
-                      alt={author.name}
-                    />
+                    {isAmp ? (
+                      <amp-img
+                        src={author.image.src}
+                        srcSet={author.image.srcSet}
+                        alt={author.name}
+                        width={author.image.width}
+                        height={author.image.height}
+                        layout="fixed"
+                      />
+                    ) : (
+                      <Avatar
+                        fixed={author.image}
+                        objectFit="cover"
+                        objectPosition="50% 50%"
+                        alt={author.name}
+                      />
+                    )}
                   </Author>
                 )}
                 {timeToRead && <TimeToRead>{timeToRead} min read</TimeToRead>}
