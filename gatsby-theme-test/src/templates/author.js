@@ -52,11 +52,20 @@ export const query = graphql`
           }
         }
       }
-      profile_image {
+      profile_image_large: profile_image {
         absolutePath
         relativePath
         childImageSharp {
           fixed(width: 100, height: 100) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      profile_image {
+        absolutePath
+        relativePath
+        childImageSharp {
+          fixed(width: 30, height: 30) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -84,7 +93,11 @@ export const query = graphql`
     posts: allMarkdownRemark(
       sort: { fields: [frontmatter___date_created], order: DESC }
       filter: {
-        frontmatter: { draft: { ne: true }, author: { eq: $author_slug } }
+        frontmatter: {
+          layout: { eq: "post" }
+          draft: { ne: true }
+          author: { eq: $author_slug }
+        }
       }
     ) {
       edges {

@@ -16,7 +16,7 @@ export default function PageAuthor({ data, posts }) {
         data={{
           frontmatter: {
             title: data.name,
-            feature_image: data.profile_image,
+            feature_image: data.profile_image_large,
             excerpt: data.bio,
           },
         }}
@@ -28,7 +28,7 @@ export default function PageAuthor({ data, posts }) {
         title={data.name}
         description={data.bio}
         background={data.cover_image.childImageSharp.fluid}
-        profileImage={data.profile_image.childImageSharp.fixed}
+        profileImage={data.profile_image_large.childImageSharp.fixed}
       >
         {posts.length && data.links && data.links.length && (
           <Contact>
