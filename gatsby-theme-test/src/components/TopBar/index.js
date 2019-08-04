@@ -22,7 +22,10 @@ export default function TopBar({ opaque }) {
           <Name to="/">
             <InnerName>{siteMetadata.title}</InnerName>
           </Name>
-          <MainMenu items={siteMetadata.mainMenu} />
+          <MainMenu
+            items={siteMetadata.mainMenu}
+            socialMedia={siteMetadata.socialMedia}
+          />
         </Container>
       </Wrapper>
     </>
@@ -37,6 +40,11 @@ const query = graphql`
         mainMenu {
           label
           slug
+        }
+        socialMedia {
+          name
+          url
+          icon
         }
       }
     }

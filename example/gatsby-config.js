@@ -15,10 +15,18 @@ module.exports = {
       { label: "Contact", slug: "/author/jan" },
       { label: "Cookies", slug: "/cookies" },
     ],
-    socialMedia: {
-      facebook: "",
-      linkedin: "",
-    },
+    socialMedia: [
+      {
+        name: "LinkedIn",
+        url: "https://www.linkedin.com/in/jan-grzegorowski/",
+        icon: ["fab", "linkedin-in"],
+      },
+      {
+        name: "Twitter",
+        url: "https://twitter.com/jangrzegorowski/",
+        icon: ["fab", "twitter"],
+      },
+    ],
     copyrights: "Jan Grzegorowski",
   },
   plugins: [
