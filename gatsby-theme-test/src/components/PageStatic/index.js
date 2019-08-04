@@ -1,7 +1,5 @@
 import React from "react";
-import Helmet from "react-helmet";
 import PageLayout from "../PageLayout";
-import { schemaArticle } from "../../utils/seo";
 import {
   Wrapper,
   Header,
@@ -13,6 +11,7 @@ import {
   Container,
   Content,
 } from "./styles";
+import Seo from "../Seo";
 
 export default function PageStatic({ post, authors }) {
   const frontmatter = post.frontmatter;
@@ -22,16 +21,9 @@ export default function PageStatic({ post, authors }) {
 
   return (
     <PageLayout singlePage opaque>
-      <Wrapper>
-        <Helmet
-          script={schemaArticle(
-            post,
-            author && author.node && author.node.name,
-          )}
-        >
-          <title>{frontmatter.title}</title>
-        </Helmet>
+      <Seo data={post} author={author} contentType="article" />
 
+      <Wrapper>
         <Header>
           <HeaderContent>
             <Title>{frontmatter.title}</Title>

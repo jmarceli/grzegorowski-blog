@@ -1,5 +1,4 @@
 import React from "react";
-import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import CardList from "../CardList";
 import Header from "../Header";
@@ -7,7 +6,7 @@ import PageLayout from "../PageLayout";
 import Menu from "../Menu";
 import { MenuWrapper, Content } from "./styles";
 import { getPostCards } from "../../utils/mappers";
-import { schemaWebsite } from "../../utils/seo";
+import Seo from "../Seo";
 
 export default function PageHome({ data, posts, authors }) {
   const {
@@ -24,23 +23,7 @@ export default function PageHome({ data, posts, authors }) {
 
   return (
     <PageLayout>
-      <Helmet
-        script={schemaWebsite(
-          {
-            url: "https://www.grzegorowski.com",
-            description: data.frontmatter.excerpt,
-            headline: data.frontmatter.title,
-            datePublished: data.frontmatter.date_published,
-            dateModified: data.frontmatter.date_modified,
-            image:
-              data.frontmatter.feature_image &&
-              data.frontmatter.feature_image.relativePath,
-          },
-          author && author.node && author.node.name,
-        )}
-      >
-        <title>{data.frontmatter.title}</title>
-      </Helmet>
+      <Seo data={data} author={author} contentType="website" />
 
       <Header
         title={data.frontmatter.title}

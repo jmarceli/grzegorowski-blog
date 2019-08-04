@@ -1,12 +1,19 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { schemaBlogPosting } from "../../utils/seo";
+import {
+  schemaBlogPosting,
+  schemaWebsite,
+  schemaPerson,
+  schemaArticle,
+} from "../../utils/seo";
 
-// TODO: create Seo for each content type
-export default function Seo({ data, author }) {
+export default function Seo({ data, author, contentType }) {
   const seoData = {
     headline: data.frontmatter.meta_title || data.frontmatter.title,
-    description: data.frontmatter.meta_description || data.excerpt,
+    description:
+      data.frontmatter.meta_description ||
+      data.frontmatter.excerpt ||
+      data.excerpt,
     datePublished: data.frontmatter.date_created,
     dateModified: data.frontmatter.date_updated,
     keywords: data.frontmatter.tags && data.frontmatter.tags.join(", "),
@@ -17,8 +24,22 @@ export default function Seo({ data, author }) {
     copyrightYear: data.frontmatter.date_created,
     author: author && author.node && author.node.name,
   };
+
+  const schema =
+    contentType === "website"
+      ? schemaWebsite({ ...seoData, url: "https://www.grzegorowski.com" })
+      : contentType === "author"
+      ? schemaPerson({
+          name: seoData.headline,
+          imageUrl: seoData.imageUrl,
+          url: "https://www.grzegorowski.com/" + data.slug,
+        })
+      : contentType === "article"
+      ? schemaArticle(seoData)
+      : schemaBlogPosting(seoData);
+
   return (
-    <Helmet script={schemaBlogPosting(seoData)}>
+    <Helmet script={schema}>
       <title>{seoData.headline}</title>
       <meta name="description" content={seoData.description} />
       {seoData.author && <meta name="author" content={seoData.author} />}

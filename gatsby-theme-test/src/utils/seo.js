@@ -49,7 +49,7 @@ export function schemaBlogPosting(data, authorName) {
   ];
 }
 
-export function schemaArticle(data, author) {
+export function schemaArticle(data, authorName) {
   // see: https://developers.google.com/search/docs/data-types/article#type_definitions
   return [
     {
@@ -57,28 +57,27 @@ export function schemaArticle(data, author) {
       innerHTML: JSON.stringify({
         "@context": "http://schema.org",
         "@type": "Article", // "Article",
-        publisher: author && {
+        publisher: authorName && {
           "@type": "Organization",
           logo: {
             type: "ImageObject",
             url: "https://grzegorowski.com/favicon.ico",
           },
-          name: author,
+          name: authorName,
         },
-        author: author && {
+        author: authorName && {
           "@type": "Person",
-          name: author,
+          name: authorName,
         },
-        headline: data.frontmatter.meta_title || data.frontmatter.title,
-        description: data.frontmatter.meta_description || data.excerpt,
-        datePublished: data.frontmatter.date_created,
-        dateModified: data.frontmatter.date_updated,
-        image: data.frontmatter.feature_image && [
+        headline: data.headline,
+        description: data.description,
+        datePublished: data.datePublished,
+        dateModified: data.dateModified,
+        keywords: data.keywords,
+        image: data.imageUrl && [
           {
             "@type": "ImageObject",
-            url:
-              "https://grzegorowski.com/" +
-              data.frontmatter.feature_image.relativePath,
+            url: data.imageUrl,
           },
         ],
         mainEntityOfPage: {
@@ -86,9 +85,9 @@ export function schemaArticle(data, author) {
           "@id": "https://grzegorowski.com/",
         },
         articleBody: data.rawMarkdownBody,
-        copyrightHolder: author,
-        copyrightYear: data.frontmatter.date_created,
-        creator: author,
+        copyrightHolder: authorName,
+        copyrightYear: data.copyrightYear,
+        creator: authorName,
         inLanguage: "en",
       }),
     },
@@ -105,9 +104,9 @@ export function schemaPerson(data) {
         "@type": "Person",
         name: data.name,
         url: data.url,
-        image: data.image && {
+        image: data.imageUrl && {
           "@type": "ImageObject",
-          url: "https://grzegorowski.com/" + data.image,
+          url: data.imageUrl,
         },
         nationality: "Polish",
         alumniOf: [
@@ -144,7 +143,7 @@ export function schemaPerson(data) {
   ];
 }
 
-export function schemaWebsite(data, author) {
+export function schemaWebsite(data, authorName) {
   // see: https://developers.google.com/search/docs/data-types/article#type_definitions
   return [
     {
@@ -155,29 +154,29 @@ export function schemaWebsite(data, author) {
         url: data.url,
         headline: data.headline,
         description: data.description,
-        publisher: author && {
+        publisher: authorName && {
           "@type": "Organization",
           logo: {
             type: "ImageObject",
             url: "https://grzegorowski.com/favicon.ico",
           },
-          name: author,
+          name: authorName,
         },
-        author: author && {
+        author: authorName && {
           "@type": "Person",
-          name: author,
+          name: authorName,
         },
         datePublished: data.datePublished,
         dateModified: data.dateModified,
-        image: data.image && [
+        image: data.imageUrl && [
           {
             "@type": "ImageObject",
-            url: "https://grzegorowski.com/" + data.image,
+            url: data.imageUrl,
           },
         ],
-        copyrightHolder: author,
+        copyrightHolder: authorName,
         copyrightYear: data.copyrightYear,
-        creator: author,
+        creator: authorName,
         inLanguage: "en",
       }),
     },
