@@ -105,14 +105,17 @@ export const TopImage = styled.div`
 `;
 
 export const HeaderImage = styled(Img)`
-  z-index: -1;
   min-width: 100%;
   min-height: 100%;
   max-width: none;
-  transform: translateX(-50%) translateY(-50%);
-  position: relative;
-  left: 50%;
-  top: 50%;
+
+  @media (min-width: ${BP_SMALL}px) {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    z-index: -1;
+    transform: translateX(-50%) translateY(-50%);
+  }
 `;
 
 export const Main = styled.div`

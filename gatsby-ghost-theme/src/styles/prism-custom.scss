@@ -1,3 +1,5 @@
+$bp-small: 600px;
+
 // .gatsby-highlight-code-line {
 //   background-color: #feb;
 //   display: block;
@@ -101,20 +103,28 @@ pre[class*="language-"] {
 }
 
 pre[class*="language-"] {
-  padding: $code-padding;
+  // top and bottom padding is applied in <code> tag selector
+  padding: 0 $code-padding;
 }
 
 /** Format line numbers column */
 .line-numbers .line-numbers-rows {
+  padding: $code-padding 0 0 8px;
   // 1em - prism style for <pre> padding
-  padding: $code-padding 0 0 12px;
+  @media (min-width: $bp-small) {
+    padding: $code-padding 0 0 12px;
+  }
   border: 1px solid transparent;
   line-height: 1.5;
   background: #fcfcfc;
 }
 pre[class*="language-"].line-numbers {
-  padding-left: 48px;
+  padding-left: 32px;
   padding-right: 18px;
+
+  @media (min-width: $bp-small) {
+    padding-left: 48px;
+  }
 }
 .line-numbers-rows > span:before {
   color: rgba(27, 31, 35, 0.3);
@@ -164,7 +174,16 @@ pre[class*="language-"] {
 }
 
 // make non-inline code a block
-.gatsby-highlight code[class*="language-"],
 .gatsby-highlight pre[class*="language-"] {
   display: block;
+}
+
+.gatsby-highlight code[class*="language-"] {
+  display: block;
+  // avoid hiding code behind horizontal scrollbar (if present)
+  padding: $code-padding 0 20px;
+
+  @media (min-width: $bp-small) {
+    padding: $code-padding 0;
+  }
 }
