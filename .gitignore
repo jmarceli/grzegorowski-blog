@@ -1,6 +1,5 @@
 .cache
-public
 node_modules
 gatsby-theme-ghost-blog
-example/content
-example/content-BACKUP
+blog/.cache
+blog/public

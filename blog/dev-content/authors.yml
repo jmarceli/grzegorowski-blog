@@ -1,0 +1,25 @@
+- id: "1"
+  slug: jan
+  name: Jan Grzegorowski
+  bio: Full-stack developer currently working with React / Java stack at Equinix
+  email: grzegorowski@gmail.com
+  meta_title: ""
+  meta_description: ""
+  cover_image: img/background.jpg
+  profile_image: avatar/photo-mini.jpg
+  created_at: "2018-10-07T06:58:31.000Z"
+  updated_at: "2019-03-30T21:49:08.000Z"
+  visibility: public
+  locale: ""
+  location: ""
+  status: active
+  twitter: ""
+  facebook: ""
+  website: ""
+  links:
+    - name: Github
+      url: https://github.com/jmarceli
+      icon: ["fab", "github"]
+    - name: Stack Overflow
+      url: https://stackoverflow.com/users/2041318/jmarceli
+      icon: ["fab", "stack-overflow"]

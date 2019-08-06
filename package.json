@@ -6,12 +6,17 @@
   "author": "Jan Grzegorowski",
   "license": "MIT",
   "scripts": {
-    "theme": "yarn workspace gatsby-theme-test",
-    "example": "yarn workspace example"
+    "theme": "yarn workspace gatsby-ghost-theme",
+    "blog": "yarn workspace blog",
+    "serve": "serve blog/public/",
+    "build:dev": "CONFIG_ENV=development yarn blog build",
+    "build:stag": "CONFIG_ENV=staging yarn blog build",
+    "build:prod": "CONFIG_ENV=production yarn blog build",
+    "clean": "yarn blog clean"
   },
   "workspaces": [
-    "gatsby-theme-test",
-    "example"
+    "gatsby-ghost-theme",
+    "blog"
   ],
   "devDependencies": {
     "prettier": "^1.17.1"
