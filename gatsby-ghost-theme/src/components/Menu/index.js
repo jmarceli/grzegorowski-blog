@@ -28,7 +28,11 @@ export default function Menu({ className, items, socialMedia }) {
             <List>
               {socialMedia.map(social => (
                 <Item key={social.name}>
-                  <ExternalLink href={social.url} target="_blank">
+                  <ExternalLink
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener"
+                  >
                     <FontAwesomeIcon icon={social.icon} size="sm" />
                   </ExternalLink>
                 </Item>
