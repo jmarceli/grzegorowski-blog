@@ -1,6 +1,5 @@
-import styled from "styled-components";
-import Img from "gatsby-image";
 import { Link } from "gatsby";
+import styled from "styled-components";
 import { ffSans, toEm } from "src/utils/typography";
 import { BP_SMALL, COLOR_PRIMARY } from "../variables";
 
@@ -22,14 +21,12 @@ export const Container = styled(Link)`
   color: #000;
 `;
 
-export const Photo = styled(Img)`
+export const Photo = styled.div`
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  @media (min-width: ${BP_SMALL}px) {
-    width: 30px;
-    height: 30px;
-  }
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  flex-shrink: 0;
 `;
 
 export const Info = styled.div`
@@ -53,7 +50,8 @@ export const Name = styled.div`
 export const About = styled.div`
   padding: 0;
   color: #666;
-  font-size: ${toEm(16)}rem;
+  margin-top: 4px;
+  font-size: ${toEm(13)}rem;
   line-height: 1.2;
 `;
 

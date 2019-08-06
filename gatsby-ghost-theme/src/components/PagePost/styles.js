@@ -20,11 +20,13 @@ export const Header = styled.header`
   font-size: 1rem;
   background: #fff;
   text-align: center;
-  position: absolute;
   z-index: 100;
-  top: ${TOP_OFFSET}px;
-  left: 0;
   width: 100%;
+  @media (min-width: ${BP_SMALL}px) {
+    position: absolute;
+    top: ${TOP_OFFSET}px;
+    left: 0;
+  }
 `;
 
 export const HeaderContent = styled.div`
@@ -45,6 +47,10 @@ export const Title = styled.h1`
   text-align: center;
   margin: 12px 0;
   font-weight: 600;
+  font-size: ${toEm(26)}rem;
+  @media (min-width: ${BP_SMALL}px) {
+    font-size: ${toEm(32)}rem;
+  }
 `;
 
 export const Subtitle = styled.div`
@@ -85,15 +91,17 @@ export const Info = styled.div`
 `;
 
 export const TopImage = styled.div`
-  position: fixed;
-  left: 0;
-  top: ${ARTICLE_OFFSET_TOP}px;
-  margin-top: -${ARTICLE_OFFSET_TOP}px;
   width: 100%;
-  height: ${ARTICLE_OFFSET_TOP}px;
   overflow: hidden;
   z-index: -1;
   background: #090a0b;
+  @media (min-width: ${BP_SMALL}px) {
+    position: fixed;
+    top: ${ARTICLE_OFFSET_TOP}px;
+    left: 0;
+    margin-top: -${ARTICLE_OFFSET_TOP}px;
+    height: ${ARTICLE_OFFSET_TOP}px;
+  }
 `;
 
 export const HeaderImage = styled(Img)`
@@ -109,22 +117,25 @@ export const HeaderImage = styled(Img)`
 
 export const Main = styled.div`
   position: relative;
-  margin-top: ${ARTICLE_OFFSET_TOP}px;
   z-index: 100;
   display: flex;
   width: 100%;
   background: #fff;
+  @media (min-width: ${BP_SMALL}px) {
+    margin-top: ${ARTICLE_OFFSET_TOP}px;
+  }
 `;
 
 export const Container = styled.div`
   position: relative;
   width: 100%;
   max-width: ${CONTENT_MAX_WIDTH}px;
-  margin: -${CONTENT_OVERLAP_HEIGHT}px auto 0;
+  margin: 0px auto;
   background: #fff;
 
   padding: 36px 8px 12px;
   @media (min-width: ${BP_SMALL}px) {
+    margin: -${CONTENT_OVERLAP_HEIGHT}px auto 0;
     padding: 36px 24px 12px;
   }
   @media (min-width: ${BP_MEDIUM}px) {
