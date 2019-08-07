@@ -174,6 +174,7 @@ export const Content = styled.div`
   a {
     border-bottom: 1px solid #111;
   }
+  a.gatsby-resp-image-link,
   .gatsby-resp-image-figure a {
     border-bottom: none;
   }
