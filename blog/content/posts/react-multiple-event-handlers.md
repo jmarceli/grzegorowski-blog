@@ -8,9 +8,9 @@ excerpt: >-
 meta_description: null
 meta_title: null
 slug: react-multiple-event-handlers
-date: '2019-03-13T08:38:18.000Z'
-date_created: '2019-03-09T19:49:23.000Z'
-date_updated: '2019-03-13T22:58:17.000Z'
+date: "2019-03-13T08:38:18.000Z"
+date_created: "2019-03-09T19:49:23.000Z"
+date_updated: "2019-03-13T22:58:17.000Z"
 feature_image: >-
   img/photo-1514388479888-50b7cef280ed.jpg
 featured: false
@@ -20,6 +20,7 @@ tags:
   - javascript
   - frontend
 ---
+
 How to bind handlers in React to multiple similar elements e.g. buttons on list?
 Is it any better to use one handler and identify clicked elements (like it was in jQuery days) than binding them to each element?
 Is it an "expensive" operation to bind an event handler in React?
@@ -33,8 +34,7 @@ I will try to show the difference between those two approaches.
 
 ## Example
 
-There were 1000 fairly simple React components in this example.
-Each component act as a button and shows its ID in the browser console in response to click event.
+Each component is a button which shows its ID in the browser console in response to click event.
 
 <iframe src="https://codesandbox.io/embed/6lo82zrlzw?fontsize=14&view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
@@ -42,11 +42,13 @@ In order to measure perfomance go to https://6lo82zrlzw.codesandbox.io/ and open
 
 ## Description
 
+In each case there were 1000 fairly simple React components rendered and measured.
+
 There are two types of components in this example:
 
 - Regular - standard React.Component
 - Pure - React.PureComponent
--
+
 And four ways of providing element context/information to event handler:
 
 - Arrow - wrapping event handler in arrow function, data as an argument
@@ -58,7 +60,8 @@ Here are the results from Google DevTools Performance tab.
 
 ![react-handlers-performance](img/react-handlers-performance.png)
 
-I've executed 17 re-renders and calculated avarage rendering time for each components list. Non of this re-renders was an initial render. Numbers from perfomance tab looks as follows (lower number is better):
+I've calculated average rendering time from 17 full page re-renders. Non of this re-renders was an initial render.
+Numbers from perfomance tab looks as follows (lower number is better).
 
 - 17 ms RegularArrow
 - 17 ms RegularSingleHandler
@@ -69,7 +72,8 @@ I've executed 17 re-renders and calculated avarage rendering time for each compo
 - **64 ms** RegularMethodList
 - **73 ms** PureArrow
 
-Avarage render time of each components list as a bar chart
+Avarage render time of each components list as a bar chart.
+
 ![react-multiple-handlers](img/react-multiple-handlers.svg)
 <small><sup>Chart rendered with <a href="https://www.amcharts.com/">amCharts 4</a> library</sup></small>
 
@@ -79,9 +83,203 @@ Surprising is the fact that **RegularMethodList** is second slowest way of event
 
 What surprises me about this test is the fact that there is no benefit from having a single handler attached to parent component as it will be beneficial in the jQuery times.
 
-
 ## Links
 
 - https://docs.google.com/document/d/1CvAClvFfyA5R-PhYUmn5OOQtYMH4h6I0nSsKchNAySU/edit# - official Google docs about data export from DevTools Performance tab
 - https://www.amcharts.com/ - charting library used to render bar chart with rendering times
 - https://ymm959qlxv.codesandbox.io/ - Google Chrome Performance tab visualizer app (source code: https://codesandbox.io/s/ymm959qlxv)
+
+## Source code
+
+```js
+import React from "react";
+import ReactDOM from "react-dom";
+
+import "./styles.css";
+
+// handlers
+
+const handleClickShared = event => {
+  const target = event.target.closest("[data-id]");
+  const id = target.getAttribute("data-id");
+  console.log(id);
+};
+
+const handleClickById = event => {
+  const target = event.currentTarget;
+  const id = target.getAttribute("data-id");
+  console.log(id);
+};
+
+const handleClickRegular = id => {
+  console.log(id);
+};
+
+// Regular components - not Pure
+
+const RegularSingleHandler = ({ cells }) => (
+  <div onClick={handleClickShared}>
+    {cells.map((cell, i) => (
+      <div key={cell} data-id={cell}>
+        <div>RegularSingleHandler {cell}</div>
+      </div>
+    ))}
+  </div>
+);
+
+const RegularWithId = ({ cells }) => (
+  <div>
+    {cells.map((cell, i) => (
+      <div key={cell} data-id={cell} onClick={handleClickById}>
+        <div>RegularWithId {cell}</div>
+      </div>
+    ))}
+  </div>
+);
+
+const RegularArrow = ({ cells }) => (
+  <div>
+    {cells.map((cell, i) => (
+      <div key={cell} onClick={() => handleClickRegular(cell)}>
+        <div>RegularArrow {cell}</div>
+      </div>
+    ))}
+  </div>
+);
+
+class RegularMethod extends React.Component {
+  handleClick = () => {
+    const { onClick, id } = this.props;
+    onClick(id);
+  };
+  render() {
+    return (
+      <div onClick={this.handleClick}>
+        <div>
+          {this.props.label} {this.props.id}
+        </div>
+      </div>
+    );
+  }
+}
+
+const RegularMethodList = ({ cells }) => (
+  <div>
+    {cells.map(cell => (
+      <RegularMethod
+        key={cell}
+        id={cell}
+        label="RegularMethod"
+        onClick={handleClickRegular}
+      />
+    ))}
+  </div>
+);
+
+// Pure components
+
+class Pure extends React.PureComponent {
+  render() {
+    return (
+      <div onClick={this.props.onClick} data-id={this.props.id}>
+        <div>
+          {this.props.label} {this.props.id}
+        </div>
+      </div>
+    );
+  }
+}
+
+const PureSingleHandler = ({ cells }) => (
+  <div onClick={handleClickShared}>
+    {cells.map((cell, i) => (
+      <Pure key={cell} id={cell} label="PureSingleHandler" />
+    ))}
+  </div>
+);
+
+const PureWithId = ({ cells }) => (
+  <div>
+    {cells.map((cell, i) => (
+      <Pure key={cell} id={cell} label="PureWithId" onClick={handleClickById} />
+    ))}
+  </div>
+);
+
+const PureArrow = ({ cells }) => (
+  <div>
+    {cells.map((cell, i) => (
+      <Pure
+        key={cell}
+        id={cell}
+        label="PureArrow"
+        onClick={() => handleClickRegular(cell)}
+      />
+    ))}
+  </div>
+);
+
+class PureMethod extends React.PureComponent {
+  handleClick = () => {
+    const { onClick, id } = this.props;
+    onClick(id);
+  };
+  render() {
+    return (
+      <div onClick={this.handleClick}>
+        <div>
+          {this.props.label} {this.props.id}
+        </div>
+      </div>
+    );
+  }
+}
+
+const PureMethodList = ({ cells }) => (
+  <div>
+    {cells.map((cell, i) => (
+      <PureMethod
+        key={cell}
+        id={cell}
+        label="PureMethod"
+        onClick={handleClickRegular}
+      />
+    ))}
+  </div>
+);
+
+//
+// Tests
+//
+
+const cells = new Array(1000).fill("a").map((cell, index) => cell + index);
+
+class App extends React.Component {
+  state = { data: "" };
+
+  triggerRerender = event => {
+    this.setState(() => ({ data: "" }));
+  };
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.triggerRerender}>Rerender</button>
+        <div className="App">
+          <RegularArrow cells={cells} />
+          <RegularWithId cells={cells} />
+          <RegularSingleHandler cells={cells} />
+          <RegularMethodList cells={cells} />
+          <PureArrow cells={cells} />
+          <PureWithId cells={cells} />
+          <PureSingleHandler cells={cells} />
+          <PureMethodList cells={cells} />
+        </div>
+      </div>
+    );
+  }
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
+```
