@@ -21,7 +21,6 @@ export default ({ data, pageContext }) => {
 export const query = graphql`
   query($slug: String) {
     page: markdownRemark(frontmatter: { slug: { eq: $slug } }) {
-      html
       timeToRead
       frontmatter {
         author
@@ -53,9 +52,7 @@ export const query = graphql`
       edges {
         node {
           id
-          html
           timeToRead
-          rawMarkdownBody
           excerpt
           frontmatter {
             title

@@ -103,7 +103,6 @@ export const query = graphql`
       edges {
         node {
           id
-          html
           timeToRead
           excerpt
           frontmatter {
