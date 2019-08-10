@@ -14,6 +14,7 @@ export default function PageAuthor({ data, posts }) {
     <PageLayout singlePage>
       <Seo
         data={{
+          slug: data.slug,
           frontmatter: {
             title: data.name,
             feature_image: data.profile_image_large,
