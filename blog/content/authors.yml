@@ -1,7 +1,7 @@
 - id: "1"
   slug: jan
   name: Jan Grzegorowski
-  bio: ""
+  bio: Full-stack developer currently working with React / Java stack at Equinix
   email: grzegorowski@gmail.com
   meta_title: ""
   meta_description: ""
@@ -18,8 +18,8 @@
   website: ""
   links:
     - name: Github
-      url: https://github.com/
+      url: https://github.com/jmarceli
       icon: ["fab", "github"]
     - name: Stack Overflow
-      url: https://stackoverflow.com/
+      url: https://stackoverflow.com/users/2041318/jmarceli
       icon: ["fab", "stack-overflow"]
