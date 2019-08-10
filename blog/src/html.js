@@ -12,8 +12,6 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no"
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://www.google-analytics.com" />
-        <link rel="preconnect" href="https://www.googletagmanager.com" />
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
