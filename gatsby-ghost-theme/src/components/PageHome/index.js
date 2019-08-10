@@ -23,7 +23,7 @@ export default function PageHome({ data, posts, authors }) {
 
   return (
     <PageLayout>
-      <Seo data={data} author={author.name} contentType="website" />
+      <Seo data={data} author={author} contentType="website" />
 
       <Header
         title={data.frontmatter.title}

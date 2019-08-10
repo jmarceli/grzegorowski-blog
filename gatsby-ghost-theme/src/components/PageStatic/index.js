@@ -21,7 +21,7 @@ export default function PageStatic({ post, authors }) {
 
   return (
     <PageLayout singlePage opaque>
-      <Seo data={post} author={author.name} contentType="article" />
+      <Seo data={post} author={author} contentType="article" />
 
       <Wrapper>
         <Header>

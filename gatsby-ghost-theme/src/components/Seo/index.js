@@ -24,10 +24,14 @@ export default function Seo({ data, author, contentType }) {
     copyrightYear: data.frontmatter.date_created,
     author: author && author.node && author.node.name,
   };
+  console.log("seoData", seoData);
 
   const schema =
     contentType === "website"
-      ? schemaWebsite({ ...seoData, url: "https://www.grzegorowski.com" })
+      ? schemaWebsite(
+          { ...seoData, url: "https://www.grzegorowski.com" },
+          seoData.author,
+        )
       : contentType === "author"
       ? schemaPerson({
           name: seoData.headline,
@@ -35,8 +39,8 @@ export default function Seo({ data, author, contentType }) {
           url: "https://www.grzegorowski.com/" + data.slug,
         })
       : contentType === "article"
-      ? schemaArticle(seoData)
-      : schemaBlogPosting(seoData);
+      ? schemaArticle(seoData, seoData.author)
+      : schemaBlogPosting(seoData, seoData.author);
 
   return (
     <Helmet script={schema}>

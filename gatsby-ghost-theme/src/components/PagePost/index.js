@@ -80,7 +80,7 @@ export default function PagePost({
 
   return (
     <PageLayout singlePage opaque>
-      <Seo data={post} author={author.name} />
+      <Seo data={post} author={author} />
 
       <Wrapper>
         <Header>
