@@ -12,9 +12,9 @@ meta_description: >-
   Selenium-based Javascript cross-browser compatibility tests with Jest.
 meta_title: null
 slug: integration-tests-with-jest-selenium-and-browserstack
-date: '2018-10-30T09:29:00.000Z'
-date_created: '2018-11-20T10:58:51.000Z'
-date_updated: '2018-11-04T18:01:19.000Z'
+date: "2018-10-30T09:29:00.000Z"
+date_created: "2018-11-20T10:58:51.000Z"
+date_updated: "2018-11-04T18:01:19.000Z"
 feature_image: >-
   img/photo-1513611771808-7e8ab7f1dec6.jpg
 featured: false
@@ -23,6 +23,7 @@ tags:
   - javascript
   - tools
 ---
+
 Although there is much useful information on the official BrowserStack website, you will certainly have a lot of questions when you run tests for the first time. I will try to explain how to deal with it based on a simple example which uses Jest and Selenium.
 
 **There is no problem in running [Jest](https://jestjs.io) with BrowserStack, despite the lack of documentation or examples.**
@@ -38,43 +39,44 @@ It seems that it is quite simple and typical task.
 Here is an example of a basic Selenium test powered by Jest. It will be used to show how to integrate existing code with [BrowserStack Automate](https://www.browserstack.com/docs?product=automate) testing service.
 
 **test/local.test.js**
+
 ```javascript
-import { Builder, By, until } from 'selenium-webdriver';
-import firefox from 'selenium-webdriver/firefox';
-import path from 'path';
+import { Builder, By, until } from "selenium-webdriver";
+import firefox from "selenium-webdriver/firefox";
+import path from "path";
 
 const getElementById = async (driver, id, timeout = 2000) => {
   const el = await driver.wait(until.elementLocated(By.id(id)), timeout);
   return await driver.wait(until.elementIsVisible(el), timeout);
 };
 
-describe('webdriver', () => {
+describe("webdriver", () => {
   let driver;
 
   beforeAll(async () => {
     const options = new firefox.Options();
     options.headless();
     driver = new Builder()
-      .forBrowser('firefox')
+      .forBrowser("firefox")
       .setFirefoxOptions(options)
       .build();
 
     // eslint-disable-next-line no-undef
-    await driver.get('file://' + path.join(__dirname, 'test.html'));
+    await driver.get("file://" + path.join(__dirname, "test.html"));
   });
 
   afterAll(async () => {
     await driver.quit();
   });
 
-  test('test', async () => {
-    const btn = await getElementById(driver, 'test-button');
+  test("test", async () => {
+    const btn = await getElementById(driver, "test-button");
     await btn.click();
 
-    const output = await getElementById(driver, 'output');
-    const outputVal = await output.getAttribute('value');
+    const output = await getElementById(driver, "output");
+    const outputVal = await output.getAttribute("value");
 
-    expect(outputVal).toEqual('Something');
+    expect(outputVal).toEqual("Something");
   });
 });
 ```
@@ -82,32 +84,38 @@ describe('webdriver', () => {
 As you can see, this is a simple example in which after clicking on **#myBtn** we expect to have **Something** as value of the **#output** input HTML element. Here's tested code.
 
 **test/jest-selenium-browserstack-example.js**
+
 ```javascript
-var JestSeleniumBrowserStackExample = (function (exports) {
-  'use strict';
+var JestSeleniumBrowserStackExample = (function(exports) {
+  "use strict";
 
   var write = function write(elementId) {
     var el = document.getElementById(elementId);
-    el.value = 'Something';
+    el.value = "Something";
   };
 
   exports.write = write;
 
   return exports;
-
-}({}));
+})({});
 ```
 
 Here is a local HTML file used for testing in browser.
 
 **test/test.html**
+
 ```html
 <html>
   <head>
-    <script src="./jest-selenium-browserstack-example.js" type="text/javascript"></script>
+    <script
+      src="./jest-selenium-browserstack-example.js"
+      type="text/javascript"
+    ><\/script>
   </head>
   <body>
-    <button onClick='JestSeleniumBrowserStackExample.write("output")' id="copy">write</button>
+    <button onClick='JestSeleniumBrowserStackExample.write("output")' id="copy">
+      write
+    </button>
     <input id="output" value="not working" />
   </body>
 </html>
@@ -150,13 +158,13 @@ Here is an example:
 ```javascript
 // for more options check https://www.browserstack.com/automate/capabilities
 const capabilities = {
-  build: require('../package.json').version,
-  project: 'jest-selenium-browserstack-example',
-  browserName: 'chrome',
-  os: 'Windows',
-  'browserstack.local': true,
-  'browserstack.user': '[YOUR_BROWSERSTACK_USERNAME]',
-  'browserstack.key': '[YOUR_BROWSERSTACK_KEY]',
+  build: require("../package.json").version,
+  project: "jest-selenium-browserstack-example",
+  browserName: "chrome",
+  os: "Windows",
+  "browserstack.local": true,
+  "browserstack.user": "[YOUR_BROWSERSTACK_USERNAME]",
+  "browserstack.key": "[YOUR_BROWSERSTACK_KEY]",
 };
 ```
 
@@ -164,7 +172,7 @@ With the above configuration, you will run tests using the Google Chrome browser
 
 ```javascript
 driver = new webdriver.Builder()
-  .usingServer('http://hub-cloud.browserstack.com/wd/hub')
+  .usingServer("http://hub-cloud.browserstack.com/wd/hub")
   .withCapabilities(capabilities)
   .build();
 ```
@@ -172,7 +180,7 @@ driver = new webdriver.Builder()
 Remember to import the Selenium webdriver before using the above code.
 
 ```javascript
-import webdriver from 'selenium-webdriver';
+import webdriver from "selenium-webdriver";
 ```
 
 All this is described on the [official documentation pages](https://www.browserstack.com/automate/node).
@@ -180,16 +188,17 @@ All this is described on the [official documentation pages](https://www.browsers
 The last important thing is to replace:
 
 ```javascript
-await driver.get('file://' + path.join(__dirname, 'test.html'));
+await driver.get("file://" + path.join(__dirname, "test.html"));
 ```
 
 with:
 
 ```javascript
 await driver.get(
-`http://${capabilities['browserstack.user']}.browserstack.com/test.html`
+  `http://${capabilities["browserstack.user"]}.browserstack.com/test.html`,
 );
 ```
+
 Because local files are not directly available in the Browser Stack, you can access them only through a webserver (which serves files from **BrowserStackLocal** `--folder`). This makes sense if you think about running tests on multiple OSes because thanks to this webserver you don't have to copy files from one machine to the other, all you have to do is access the internal URL.
 
 At this stage, if you manually connect to BrowserStack using `./BroserStackLocal --key [bs_key] --folder $(pwd)` executed in the same folder as the test files, you should be able to completet all tests.
@@ -213,7 +222,6 @@ Let's continue with examples.
 Here is how you may wrap `start` and `stop` methods from **browserstack-local-nodejs** to make them work with my beloved async/await syntax.
 
 ```javascript
-
 const connect = async () =>
   new Promise((resolve, reject) => {
     local.start(BrowserStackLocalArgs, error => {
@@ -247,7 +255,7 @@ and set approperiate args for executable with:
 
 ```javascript
 const BrowserStackLocalArgs = {
-  key: '[YOUR_BROWSERSTACK_KEY]',
+  key: "[YOUR_BROWSERSTACK_KEY]",
   // verbose: true,
   onlyAutomate: true,
   // eslint-disable-next-line
@@ -260,40 +268,38 @@ You should do this **before** running the webdriver.
 Here's how `beforeAll()` looks like for your tests:
 
 ```javascript
-  beforeAll(async () => {
-    try {
-      // BrowserStackLocal has to be ready before webdriver initialization
-      await start();
-      driver = new webdriver.Builder()
-        .usingServer('http://hub-cloud.browserstack.com/wd/hub')
-        .withCapabilities(capabilities)
-        .build();
+beforeAll(async () => {
+  try {
+    // BrowserStackLocal has to be ready before webdriver initialization
+    await start();
+    driver = new webdriver.Builder()
+      .usingServer("http://hub-cloud.browserstack.com/wd/hub")
+      .withCapabilities(capabilities)
+      .build();
 
-      await driver.get(
-        `http://${
-          capabilities['browserstack.user']
-        }.browserstack.com/test.html`,
-      );
-    } catch (error) {
-      console.error('connetion error', error);
-    }
-    // IMPORTANT! Selenium and Browserstack needs more time than regular Jest
-  }, 10000);
+    await driver.get(
+      `http://${capabilities["browserstack.user"]}.browserstack.com/test.html`,
+    );
+  } catch (error) {
+    console.error("connetion error", error);
+  }
+  // IMPORTANT! Selenium and Browserstack needs more time than regular Jest
+}, 10000);
 ```
 
 The tests should not require any changes. Remember about disconnecting from BrowserStack after finishing tests.
 You can do it with:
 
 ```javascript
-  afterAll(async () => {
-    try {
-      await driver.quit(); // ~ 11 s !
-      await stop(); // ~ 3 s
-    } catch (error) {
-      console.error('disconnection error', error);
-    }
-    // IMPORTANT! Selenium and Browserstack needs a lot of time!
-  }, 20000);
+afterAll(async () => {
+  try {
+    await driver.quit(); // ~ 11 s !
+    await stop(); // ~ 3 s
+  } catch (error) {
+    console.error("disconnection error", error);
+  }
+  // IMPORTANT! Selenium and Browserstack needs a lot of time!
+}, 20000);
 ```
 
 > NOTE! At least in my case the disconnection after testing takes really long, which is why I set 20 seconds as a `afterAll` timeout.
@@ -310,10 +316,10 @@ In the part 2 of this "series" I will present a way to run tests for many browse
 
 ## Sources
 
-https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/index.html - Selenium documentation
-https://github.com/Hyddan/se-runner-browserstack-example#readme - first inspiration for automated tests with BrowserStack
-https://github.com/browserstack/browserstack-local-nodejs - finally a working example of BrowserStack integration
-https://www.browserstack.com/automate/node - useful official NodeJS documentation
-https://blog.evantahler.com/testing-javascript-applications-with-selenium-async-await-and-jest-7580ed074f2b - nice setup of Jest and Selenium without BrowserStack
-https://www.browserstack.com/local-testing#modifiers - BrowserStackLocal argument list
-https://github.com/Hyddan/se-runner - one of the inspirations (uses Grunt and Jasmine)
+- https://seleniumhq.github.io/selenium/docs/api/javascript/module/selenium-webdriver/index.html - Selenium documentation
+- https://github.com/Hyddan/se-runner-browserstack-example#readme - first inspiration for automated tests with BrowserStack
+- https://github.com/browserstack/browserstack-local-nodejs - finally a working example of BrowserStack integration
+- https://www.browserstack.com/automate/node - useful official NodeJS documentation
+- https://blog.evantahler.com/testing-javascript-applications-with-selenium-async-await-and-jest-7580ed074f2b - nice setup of Jest and Selenium without BrowserStack
+- https://www.browserstack.com/local-testing#modifiers - BrowserStackLocal argument list
+- https://github.com/Hyddan/se-runner - one of the inspirations (uses Grunt and Jasmine)
