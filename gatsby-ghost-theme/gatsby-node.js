@@ -83,119 +83,109 @@ exports.createPages = async ({ graphql, actions }, pluginOptions) => {
     throw new Error(result.errors);
   }
 
-  // Resolve page promises in parallel (using Promise.all)
-  const pagesPromises = [];
-
   // Posts
-  result.data.posts.edges.forEach(({ node }, index, posts) => {
+  const posts = result.data.posts.edges;
+  for (let index = 0; index < posts.length; index++) {
+    // for in is not used becuase when "in" is used "index" was a string...
+    const { node } = posts[index];
     const slug = node.frontmatter.slug;
     const prev = index === 0 ? null : posts[index - 1].node;
     const next = index === posts.length - 1 ? null : posts[index + 1].node;
 
-    pagesPromises.push(
-      createPage({
-        path: slug,
-        component: path.resolve(
-          path.join(__dirname, "src", "templates", "post.js"),
-        ),
-        context: {
-          ...node.frontmatter,
-          mainTag: (node.frontmatter.tags && node.frontmatter.tags[0]) || "",
-          prev,
-          next,
-        },
-      }),
-    );
+    // All createPage() should be synchronized with await to avoid parallel file writing issues
+    await createPage({
+      path: slug,
+      component: path.resolve(
+        path.join(__dirname, "src", "templates", "post.js"),
+      ),
+      context: {
+        ...node.frontmatter,
+        mainTag: (node.frontmatter.tags && node.frontmatter.tags[0]) || "",
+        prev,
+        next,
+      },
+    });
 
     // AMP pages for posts
-    pagesPromises.push(
-      createPage({
-        path: `${slug}/amp/`,
-        component: path.resolve(
-          path.join(__dirname, "src", "templates", "post.js"),
-        ),
-        context: {
-          ...node.frontmatter,
-          mainTag: (node.frontmatter.tags && node.frontmatter.tags[0]) || "",
-          prev,
-          next,
-          isAmp: true,
-        },
-      }),
-    );
-  });
+    await createPage({
+      path: `${slug}/amp/`,
+      component: path.resolve(
+        path.join(__dirname, "src", "templates", "post.js"),
+      ),
+      context: {
+        ...node.frontmatter,
+        mainTag: (node.frontmatter.tags && node.frontmatter.tags[0]) || "",
+        prev,
+        next,
+        isAmp: true,
+      },
+    });
+  }
 
   // Pages - static pages e.g. home page and cookies page
-  result.data.pages.edges.forEach(({ node }) => {
+  // result.data.pages.edges.forEach(({ node }) => {
+  for ({ node } of result.data.pages.edges) {
+    // const { node } = result.data.pages.edges[index];
     const slug = node.frontmatter.slug;
-    pagesPromises.push(
-      createPage({
-        path: slug,
-        component: path.resolve(
-          path.join(
-            __dirname,
-            "src",
-            "templates",
-            `${node.frontmatter.layout}.js`,
-          ),
+
+    await createPage({
+      path: slug,
+      component: path.resolve(
+        path.join(
+          __dirname,
+          "src",
+          "templates",
+          `${node.frontmatter.layout}.js`,
         ),
-        context: {
-          slug,
-        },
-      }),
-    );
-  });
+      ),
+      context: {
+        slug,
+      },
+    });
+  }
 
   // Author pages
-  result.data.allAuthorsYaml.edges.forEach(({ node }) => {
+  for ({ node } of result.data.allAuthorsYaml.edges) {
     const author = node.slug;
     if (!author) {
       console.warn("Skipping empty AUTHOR page creation", node);
       return;
     }
-    pagesPromises.push(
-      createPage({
-        path: `/author/${author}`,
-        component: path.resolve(
-          path.join(__dirname, "src", "templates", "author.js"),
-        ),
-        context: {
-          author_slug: author,
-        },
-      }),
-    );
-  });
+    await createPage({
+      path: `/author/${author}`,
+      component: path.resolve(
+        path.join(__dirname, "src", "templates", "author.js"),
+      ),
+      context: {
+        author_slug: author,
+      },
+    });
+  }
 
   // Tag pages
-  result.data.allTagsYaml.edges.forEach(({ node }) => {
+  for ({ node } of result.data.allTagsYaml.edges) {
     const tag = node.slug;
     if (!tag) {
       console.warn("Skipping empty TAG page creation", node);
       return;
     }
-    pagesPromises.push(
-      createPage({
-        path: `/tag/${tag}`,
-        component: path.resolve(
-          path.join(__dirname, "src", "templates", "tag.js"),
-        ),
-        context: {
-          tag_slug: tag,
-        },
-      }),
-    );
-  });
+    await createPage({
+      path: `/tag/${tag}`,
+      component: path.resolve(
+        path.join(__dirname, "src", "templates", "tag.js"),
+      ),
+      context: {
+        tag_slug: tag,
+      },
+    });
+  }
 
   // 404 page
-  pagesPromises.push(
-    createPage({
-      path: `^\/?404\/?$`,
-      component: path.resolve(
-        path.join(__dirname, "src", "templates", "404.js"),
-      ),
-    }),
-  );
+  await createPage({
+    path: `^\/?404\/?$`,
+    component: path.resolve(path.join(__dirname, "src", "templates", "404.js")),
+  });
 
-  // wait for all pages until they are done
-  await Promise.all(pagesPromises);
+  // WARNING! While this approach seems to be quite performant there might be some race conditions
+  // so to make it more reliable there is a slight chance that these promises should be executed synchronously
 };
