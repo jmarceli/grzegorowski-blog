@@ -8,9 +8,8 @@
   "scripts": {
     "theme": "yarn workspace gatsby-ghost-theme",
     "blog": "yarn workspace blog",
+    "develop": "yarn blog develop",
     "serve": "serve blog/public/",
-    "build:dev": "CONFIG_ENV=development yarn blog build",
-    "build:stag": "CONFIG_ENV=staging yarn blog build",
     "build:prod": "CONFIG_ENV=production yarn blog build",
     "clean": "yarn blog clean",
     "upgrade": "ncu --packageFile blog/package.json"
