@@ -84,7 +84,6 @@ export function schemaArticle(data, authorName) {
           "@type": "WebPage",
           "@id": "https://grzegorowski.com/",
         },
-        articleBody: data.rawMarkdownBody,
         copyrightHolder: authorName,
         copyrightYear: data.copyrightYear,
         creator: authorName,

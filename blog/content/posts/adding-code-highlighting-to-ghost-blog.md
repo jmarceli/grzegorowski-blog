@@ -38,7 +38,7 @@ JS should be places inside _Blog Footer_:
 <script
   type="text/javascript"
   src="//cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"
-><\/script>
+></script>
 ```
 
 Now when core files are in place you should think for a while about languages that are going to be used. Language-specific files should be placed in the _Blog Footer_ section of your _Code Injection_ tab below the Prism.js core.
@@ -48,19 +48,19 @@ In this example I will add _PHP_, _CSS_, _HTML_ and _JS_ support:
 <script
   type="text/javascript"
   src="//cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-php.min.js"
-><\/script>
+></script>
 <script
   type="text/javascript"
   src="//cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-css.min.js"
-><\/script>
+></script>
 <script
   type="text/javascript"
   src="//cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-html.min.js"
-><\/script>
+></script>
 <script
   type="text/javascript"
   src="//cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-js.min.js"
-><\/script>
+></script>
 ```
 
 As you may noticed the CDN path for every language is generic, so you should be able to just guess it if you need some more urls. Just to make sure you may also check official CDN files list at https://cdnjs.com/libraries/prism

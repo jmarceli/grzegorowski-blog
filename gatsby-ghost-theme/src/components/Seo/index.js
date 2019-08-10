@@ -20,7 +20,6 @@ export default function Seo({ data, author, contentType }) {
     imageUrl:
       data.frontmatter.feature_image &&
       "https://grzegorowski.com/" + data.frontmatter.feature_image.relativePath,
-    articleBody: data.rawMarkdownBody,
     copyrightYear: data.frontmatter.date_created,
     author: author && author.node && author.node.name,
   };

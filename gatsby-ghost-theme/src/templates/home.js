@@ -23,7 +23,6 @@ export const query = graphql`
     page: markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
       timeToRead
-      rawMarkdownBody
       frontmatter {
         author
         feature_image {

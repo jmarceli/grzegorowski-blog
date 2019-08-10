@@ -58,7 +58,6 @@ export const query = graphql`
           id
           html
           timeToRead
-          rawMarkdownBody
           excerpt
           frontmatter {
             title

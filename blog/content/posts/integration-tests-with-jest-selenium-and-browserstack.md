@@ -110,7 +110,7 @@ Here is a local HTML file used for testing in browser.
     <script
       src="./jest-selenium-browserstack-example.js"
       type="text/javascript"
-    ><\/script>
+    ></script>
   </head>
   <body>
     <button onClick='JestSeleniumBrowserStackExample.write("output")' id="copy">

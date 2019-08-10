@@ -26,7 +26,6 @@ export const query = graphql`
       html
       excerpt
       timeToRead
-      rawMarkdownBody
       frontmatter {
         author
         feature_image {
