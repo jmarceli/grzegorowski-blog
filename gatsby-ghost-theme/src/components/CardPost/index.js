@@ -47,6 +47,7 @@ export default function CardPost({
               <Thumbnail
                 large={size === "large"}
                 fluid={image}
+                alt={title}
                 objectFit="cover"
                 objectPosition="50% 50%"
               />
