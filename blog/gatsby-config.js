@@ -1,4 +1,8 @@
 const path = require("path");
+const app = {
+  name: "Full-stack developer blog by Jan Grzegorowski",
+  author: "Jan Grzegorowski",
+};
 
 require("dotenv").config({
   path: `.env.${process.env.CONFIG_ENV || "development"}`,
@@ -21,7 +25,7 @@ module.exports = {
   ],
   siteMetadata: {
     siteUrl: config.siteUrl,
-    title: "Full-stack developer blog by Jan Grzegorowski",
+    title: app.name,
     mainMenu: [
       { label: "Home", slug: "/" },
       { label: "Contact", slug: "/author/jan" },
@@ -39,7 +43,7 @@ module.exports = {
         icon: ["fab", "twitter"],
       },
     ],
-    copyrights: "Jan Grzegorowski",
+    copyrights: app.author,
   },
   plugins: [
     {
@@ -105,29 +109,29 @@ module.exports = {
         logo: path.join(__dirname, config.contentPath, "img", "favicon.png"),
 
         // WebApp Manifest Configuration
-        // appName: null, // Inferred with your package.json
-        // appDescription: null,
-        // developerName: null,
-        // developerURL: null,
-        // dir: 'auto',
-        // lang: 'en-US',
-        // background: '#fff',
-        // theme_color: '#fff',
-        // display: 'standalone',
-        // orientation: 'any',
-        // start_url: '/?homescreen=1',
+        appName: app.name,
+        appDescription: null,
+        developerName: app.author,
+        developerURL: "https://www.grzegorowski.com",
+        dir: "auto",
+        lang: "en-US",
+        background: "#fff",
+        theme_color: "#3eb0ef",
+        display: "standalone",
+        orientation: "any",
+        start_url: "/",
         // version: '1.0',
 
-        // icons: {
-        //   android: true,
-        //   appleIcon: true,
-        //   appleStartup: true,
-        //   coast: false,
-        //   favicons: true,
-        //   firefox: true,
-        //   yandex: false,
-        //   windows: false
-        // }
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          firefox: true,
+          yandex: false,
+          windows: true,
+        },
       },
     },
   ],

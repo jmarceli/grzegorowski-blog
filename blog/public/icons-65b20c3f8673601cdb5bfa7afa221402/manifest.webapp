@@ -1,0 +1,14 @@
+{
+  "version": "1.0",
+  "name": "Full-stack developer blog by Jan Grzegorowski",
+  "description": null,
+  "icons": {
+    "60": "/icons-65b20c3f8673601cdb5bfa7afa221402/firefox_app_60x60.png",
+    "128": "/icons-65b20c3f8673601cdb5bfa7afa221402/firefox_app_128x128.png",
+    "512": "/icons-65b20c3f8673601cdb5bfa7afa221402/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": "Jan Grzegorowski",
+    "url": "https://www.grzegorowski.com"
+  }
+}

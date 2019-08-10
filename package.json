@@ -13,7 +13,7 @@
     "build:prod": "CONFIG_ENV=production yarn blog build",
     "clean": "yarn blog clean",
     "upgrade": "ncu --packageFile blog/package.json",
-    "publish": "yarn build:prod && yarn gh-pages --dist blog/public --dotfiles --repo https://github.com/jmarceli/grzegorowski-blog.git"
+    "release": "yarn gh-pages --dist blog/public --dotfiles --repo https://github.com/jmarceli/grzegorowski-blog.git"
   },
   "workspaces": [
     "gatsby-ghost-theme",

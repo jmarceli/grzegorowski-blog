@@ -24,7 +24,6 @@ export default function Seo({ data, author, contentType }) {
     copyrightYear: data.frontmatter.date_created,
     author: author && author.node && author.node.name,
   };
-  console.log("seoData", seoData);
 
   const schema =
     contentType === "website"
