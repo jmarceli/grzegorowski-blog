@@ -5,12 +5,12 @@ title: Grafana and InfluxDB with Let's Encrypt SSL on Docker
 excerpt: null
 meta_description: >-
   Secure your Grafana - Influx setup using free Let's Encrypt SSL certificate
-  with auto-renewal support. 
+  with auto-renewal support.
 meta_title: Grafana Influx Let's Encrypt SSL on Docker
 slug: grafana-with-lets-encrypt-ssl-on-docker
-date: '2018-03-12T07:59:41.000Z'
-date_created: '2018-02-05T22:37:16.000Z'
-date_updated: '2018-09-15T12:47:40.000Z'
+date: "2018-03-12T07:59:41.000Z"
+date_created: "2018-02-05T22:37:16.000Z"
+date_updated: "2018-09-15T12:47:40.000Z"
 feature_image: img/grafanadashboard-1.png
 featured: false
 draft: false
@@ -18,9 +18,21 @@ tags:
   - docker
   - backend
 ---
+
+## Deprecation warning
+
+This is now deprecated!
+
+Please head to [Secure Docker Grafana container with SSL through Traefik proxy](/secure-docker-grafana-container-with-ssl-through-traefik-proxy) which is far more accurate and functional.
+
+Despite "deprecation" you may find here some useful information.
+
+## Deprecated article
+
 It seems extremely easy to do if you know all required Docker containers, but it's not so obvious if you are not a fluent Docker user.
 
 ## Update!
+
 Despite the fact that LE will automatically regenerate certificate files there is no way (which I'm aware of) to trigger Influx container restart in order to use regenerated certificate files. The only workaround is setting `REUSE_PRIVATE_KEYS=true` environment variable for **letsencrypt** container. See updated post for more details.
 
 Here is what it takes to create SSL secured **Grafana + InfluxDB** Docker setup:
@@ -30,7 +42,7 @@ Here is what it takes to create SSL secured **Grafana + InfluxDB** Docker setup:
 - Nginx-proxy (https://hub.docker.com/r/jwilder/nginx-proxy/)
 - Let's Encrypt Nginx-proxy companion (https://hub.docker.com/r/jrcs/letsencrypt-nginx-proxy-companion/)
 
-The additional benefit of this setup is certificate autogeneration and auto-renewal (no more worries/downtime related to expired Let's Encrypt certificate.
+The additional benefit of this setup is certificate auto-generation and auto-renewal (no more worries/downtime related to expired Let's Encrypt certificate.
 
 Required tools:
 
@@ -38,11 +50,12 @@ Required tools:
 - docker-compose (https://docs.docker.com/compose/install/ eases multi-container setup and removal operations)
 
 ## Spoiler
+
 Create **docker-compose.yml** file with the content similar to the example below and execute **docker-compose up -d** command in the directory where your **yml** file is saved.
 Here is the example content of **docker-compose.yml** with some comments related to the required modifications/adjustments (don't worry about the file length, feel free to skip this section and continue reading starting from Architecture description):
 
 ```yaml
-version: '2'
+version: "2"
 
 services:
   grafana:
@@ -131,7 +144,7 @@ volumes:
 
 That's all. Just replace:
 
-- **YOUR.DOMAIN.TEST**  - appropriate domain name
+- **YOUR.DOMAIN.TEST** - appropriate domain name
 - **YOUR.EMAIL@ADDRESS.TEST** - your email address
 - **SECURE_USERNAME** - some username
 - **SECURE_PASS** - secure password for the user
@@ -142,12 +155,12 @@ As an "extra" benefit the Nginx ensures [HSTS headers](https://en.wikipedia.org/
 
 ## Architecture
 
-As we know by default Docker creates it's own subnetwork for running containers and communication between them. Here is how it looks in the above example.
+As we know by default Docker creates it's own sub-network for running containers and communication between them. Here is how it looks in the above example.
 
 ![Influx-Grafana-Let's Encrypt SSL](img/influx-grafna-ssl-2.svg)
 
 **NOTE 1: Influx URL**.
-Inside Grafana data sources panel you will have to define your Influx URL using a fully qualified domain name ([FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) e.g. https://YOUR.DOMAIN.TEST:8086) and not internal Docker subnetwork alias e.g. influx. This is due to the fact that SSL certificate will work with Influx only if it is accessed through the URL for which certificate was requested.
+Inside Grafana data sources panel you will have to define your Influx URL using a fully qualified domain name ([FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) e.g. https://YOUR.DOMAIN.TEST:8086) and not internal Docker sub-network alias e.g. influx. This is due to the fact that SSL certificate will work with Influx only if it is accessed through the URL for which certificate was requested.
 
 **NOTE 2: Grafana port**. In this setup Grafana still uses its default 3000 port, the redirection from 80 and 443 ports is handled by the Nginx proxy server.
 
@@ -171,7 +184,7 @@ They are used (in this setup) just to mark which container is the Nginx proxy in
 
 ### /var/run/docker.sock:/var/run/docker.sock:ro
 
-That's a tricky one. The **docker.sock** allows the container to work with [Docker Engine API](https://docs.docker.com/engine/api/v1.36/). It is used by the **jwilder/nginx-proxy** to do its **VIRTUAL_...** env variables magic. The docker API works similar to any JSON based HTTP API, but it is exposed on **docker.sock** socket.
+That's a tricky one. The **docker.sock** allows the container to work with [Docker Engine API](https://docs.docker.com/engine/api/v1.36/). It is used by the **jwilder/nginx-proxy** to do its **VIRTUAL\_...** env variables magic. The docker API works similar to any JSON based HTTP API, but it is exposed on **docker.sock** socket.
 
 ### :ro and :rw suffixes
 
@@ -182,7 +195,7 @@ I think it's an obvious one but to cover "everything" I can say that those are f
 There are 3 kinds of "paths" used in this setup:
 
 - absolute paths like **/var/run/docker.sock:...** which points to the host system internal files
-- relative paths e.g. ***./letsencrypt/certs:...** which are a handy way of storing/sharing container files with the host system
+- relative paths e.g. **\*./letsencrypt/certs:...** which are a handy way of storing/sharing container files with the host system
 - volumes dirs **influx-data:...** these are used for ensuring data persistence ensured by the Docker
 
 ### cert files
@@ -196,7 +209,7 @@ This option passed to the letsencrypt container via environment variables allows
 ## Footnotes
 
 That's all for now. I'd be happy to answer some questions. I hope to be able to explain everything about this or similar setup.
-For testing SSL configuration you may use https://www.ssllabs.com/ssltest (thanks to @Kjetil Mjøs who remid me about this tool in one of his comments). The expected overall grade is **A+**.
+For testing SSL configuration you may use https://www.ssllabs.com/ssltest (thanks to @Kjetil Mjøs who reminds me about this tool in one of his comments). The expected overall grade is **A+**.
 
 ## Question: How to add another Grafana instance on separate (sub)domain?
 
@@ -204,36 +217,39 @@ It should be fairly easy, just point your new (sub)domain at your existing Docke
 
 ```yaml
 #... existing docker-compose.yml content omitted for brevity
-  grafana2: # just for clarification: this is a service name
-    image: grafana/grafana:5.0.0 # or probably any other version
-    container_name: grafana2
-    restart: always
-    environment:
-      - VIRTUAL_HOST=ANOTHER.DOMAIN.TEST # adjust to match your domain name
-      - VIRTUAL_PROTO=https
-      - VIRTUAL_PORT=3000
-      - LETSENCRYPT_HOST=ANOTHER.DOMAIN.TEST # adjust to match your domain name
-      - LETSENCRYPT_EMAIL=YOUR.EMAIL@ADDRESS.TEST # adjust to match your email
+grafana2: # just for clarification: this is a service name
+  image: grafana/grafana:5.0.0 # or probably any other version
+  container_name: grafana2
+  restart: always
+  environment:
+    - VIRTUAL_HOST=ANOTHER.DOMAIN.TEST # adjust to match your domain name
+    - VIRTUAL_PROTO=https
+    - VIRTUAL_PORT=3000
+    - LETSENCRYPT_HOST=ANOTHER.DOMAIN.TEST # adjust to match your domain name
+    - LETSENCRYPT_EMAIL=YOUR.EMAIL@ADDRESS.TEST # adjust to match your email
 
-      - GF_SERVER_CERT_FILE=/etc/letsencrypt/certs/ANOTHER.DOMAIN.TEST.crt # adjust to match your domain name
-      - GF_SERVER_CERT_KEY=/etc/letsencrypt/certs/ANOTHER.DOMAIN.TEST.key # adjust to match your domain name
-      - GF_SERVER_PROTOCOL=https
+    - GF_SERVER_CERT_FILE=/etc/letsencrypt/certs/ANOTHER.DOMAIN.TEST.crt # adjust to match your domain name
+    - GF_SERVER_CERT_KEY=/etc/letsencrypt/certs/ANOTHER.DOMAIN.TEST.key # adjust to match your domain name
+    - GF_SERVER_PROTOCOL=https
 
-      - GF_SERVER_DOMAIN=ANOTHER.DOMAIN.TEST # adjust to match your domain name
-      - GF_SECURITY_ADMIN_USER=SECURE_USERNAME # adjust to create Grafana admin account
-      - GF_SECURITY_ADMIN_PASSWORD=SECURE_PASS # adjust to set Grafana admin password
-    volumes:
-      - ./letsencrypt/certs:/etc/letsencrypt/certs:ro
+    - GF_SERVER_DOMAIN=ANOTHER.DOMAIN.TEST # adjust to match your domain name
+    - GF_SECURITY_ADMIN_USER=SECURE_USERNAME # adjust to create Grafana admin account
+    - GF_SECURITY_ADMIN_PASSWORD=SECURE_PASS # adjust to set Grafana admin password
+  volumes:
+    - ./letsencrypt/certs:/etc/letsencrypt/certs:ro
 
-      - grafana2-data:/var/lib/grafana
+    - grafana2-data:/var/lib/grafana
 ```
+
 Notable changes compared to direct "copy/paste" of existing **grafana** service:
+
 - please remember to change service name and **container_name** to make them different from existing ones (**grafana2** in this example)
-- every **YOUR.DOMAIN.TEST** is replaced with **ANOTHER.DOMAIN.TEST** (it might be **any** domain name which is pointed at your host, not necessarly a subdomain with common root domain e.g. **MYDOMAIN.TEST** will work as well)
+- every **YOUR.DOMAIN.TEST** is replaced with **ANOTHER.DOMAIN.TEST** (it might be **any** domain name which is pointed at your host, not necessarily a subdomain with common root domain e.g. **MYDOMAIN.TEST** will work as well)
 - as you may noticed **LETSENCRYPT_EMAIL** doesn't require any changes as you may use one email for multiple domains
 - in **volumes** section please remember to change **grafana-data** to any other volume (**grafana2-data** in my example), in other case your Grafana instances will share files (you probably don't want that)
 
 You should also add volume mapping for a new Grafana instance at the end of **docker-compose.yml** (which was modified before) in **volumes** section append:
+
 ```yaml
 #... existing docker-compose.yml content omitted for brevity
 volumes:
@@ -244,8 +260,10 @@ volumes:
 
 That's it.
 Now execute:
+
 ```bash
 docker-compose up -d
 docker-compose restart
 ```
+
 Docker should now run two independent Grafana instances on different (sub)domains.

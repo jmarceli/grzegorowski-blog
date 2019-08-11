@@ -36,7 +36,7 @@ Each component is a button which shows its ID in the browser console in response
 
 <iframe src="https://codesandbox.io/embed/6lo82zrlzw?fontsize=14&view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
-In order to measure perfomance go to https://6lo82zrlzw.codesandbox.io/ and open Chrome DevTool Performance tab.
+In order to measure performance go to https://6lo82zrlzw.codesandbox.io/ and open Chrome DevTool Performance tab.
 
 ## Description
 
@@ -59,7 +59,7 @@ Here are the results from Google DevTools Performance tab.
 ![react-handlers-performance](img/react-handlers-performance.png)
 
 I've calculated average rendering time from 17 full page re-renders. Non of this re-renders was an initial render.
-Numbers from perfomance tab looks as follows (lower number is better).
+Numbers from performance tab looks as follows (lower number is better).
 
 - 17 ms RegularArrow
 - 17 ms RegularSingleHandler
@@ -70,12 +70,12 @@ Numbers from perfomance tab looks as follows (lower number is better).
 - **64 ms** RegularMethodList
 - **73 ms** PureArrow
 
-Avarage render time of each components list as a bar chart.
+Average render time of each components list as a bar chart.
 
 ![react-multiple-handlers](img/react-multiple-handlers.svg)
 <small><sup>Chart rendered with <a href="https://www.amcharts.com/">amCharts 4</a> library</sup></small>
 
-It is not a big suprise that **PureArrow** component was the slowest one, as for each re-render shallow equality comparison has to be executed and in each case component has to be re-rendered due to the fact that arrow function creates new handler function during rendering.
+It is not a big surprise that **PureArrow** component was the slowest one, as for each re-render shallow equality comparison has to be executed and in each case component has to be re-rendered due to the fact that arrow function creates new handler function during rendering.
 
 Surprising is the fact that **RegularMethodList** is second slowest way of event handling. I guess that that is due to the large overhead required for new component initialization, and on each re-render new component has to be created.
 
