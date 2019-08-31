@@ -45,7 +45,6 @@ export const query = graphql`
         }
         title
         slug
-        date
         tags
         date_created
         date_updated
@@ -53,7 +52,7 @@ export const query = graphql`
       }
     }
     similarPosts: allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___date_created], order: DESC }
       filter: {
         frontmatter: {
           draft: { ne: true }
@@ -70,7 +69,6 @@ export const query = graphql`
           frontmatter {
             title
             slug
-            date
             tags
             date_created
             date_updated
@@ -134,7 +132,7 @@ export const query = graphql`
           slug: { ne: $slug }
         }
       }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___date_created], order: DESC }
       limit: 4
     ) {
       edges {
@@ -142,7 +140,7 @@ export const query = graphql`
           frontmatter {
             title
             slug
-            date
+            date_created
             featured
           }
         }

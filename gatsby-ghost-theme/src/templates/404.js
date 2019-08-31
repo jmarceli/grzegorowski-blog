@@ -29,7 +29,6 @@ export const query = graphql`
           frontmatter {
             title
             slug
-            date
             tags
             date_created
             date_updated
