@@ -10,9 +10,8 @@ meta_description: >-
   with self-signed SSL certificate.
 meta_title: null
 slug: traefik-proxy-development-server-self-signed-ssl
-date: '2018-11-07T05:25:00.000Z'
-date_created: '2018-11-29T04:08:02.000Z'
-date_updated: '2018-11-08T00:16:57.000Z'
+date_created: "2018-11-07T19:08:02.000Z"
+date_updated: "2018-11-08T18:16:57.000Z"
 feature_image: >-
   img/photo-1512168203104-3910bc2bcd54.jpg
 featured: false
@@ -21,6 +20,7 @@ tags:
   - backend
   - tools
 ---
+
 You want to check how (or if) your application works with SSL encryption without exposing it to the Internet? Use a self-signed SSL certificate with the Traefik proxy server inside the intranet (or other LAN with restricted access).
 
 **TLDR;** Clone this repo and adjust content of **traefik.toml** file https://github.com/jmarceli/traefik-self-signed-ssl-proxy
@@ -132,7 +132,7 @@ Useful information:
 With **traefik.toml** in place it's time to go to the Docker configuration. The simplest (at least for me) solution is to write the **docker-compose.yml** file. Here's how it can look.
 
 ```yaml
-version: '3'
+version: "3"
 
 services:
   traefik:
@@ -227,6 +227,7 @@ Because I did not find such an example when I needed it.
 After some adjustment, you can use this configuration in production with Let's Encrypt SSL certificate instead of self-signed. I'm going to write something about it later and link it here.
 
 ## Sources
+
 https://tools.ietf.org/html/rfc7568 - SSLv3 deprecation in favour of TLS 1.2
 https://stackoverflow.com/questions/35110146/can-anyone-explain-docker-sock/35110344 - info about docker.sock
 https://hub.docker.com/_/traefik/ - Traefik Docker image
