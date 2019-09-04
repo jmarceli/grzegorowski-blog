@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://www.grzegorowski.com/custom-jest-transformer</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.grzegorowski.com/custom-jest-transformer/amp/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.grzegorowski.com/traefik-proxy-development-server-self-signed-ssl</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.grzegorowski.com/traefik-proxy-development-server-self-signed-ssl/amp/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/secure-docker-grafana-container-with-ssl-through-traefik-proxy</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/secure-docker-grafana-container-with-ssl-through-traefik-proxy/amp/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/react-multiple-event-handlers</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -8,8 +12,6 @@
 <url> <loc>https://www.grzegorowski.com/react-different-ways-of-passing-handlers-through-the-props/amp/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/react-purecomponent-children-vs-custom-properties</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/react-purecomponent-children-vs-custom-properties/amp/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.grzegorowski.com/traefik-proxy-development-server-self-signed-ssl</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.grzegorowski.com/traefik-proxy-development-server-self-signed-ssl/amp/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/integration-tests-with-jest-selenium-and-browserstack-part-2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/integration-tests-with-jest-selenium-and-browserstack-part-2/amp/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/integration-tests-with-jest-selenium-and-browserstack</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
