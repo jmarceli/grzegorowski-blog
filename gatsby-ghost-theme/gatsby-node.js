@@ -18,7 +18,7 @@ exports.createPages = async ({ graphql, actions }, pluginOptions) => {
   const result = await graphql(`
     {
       posts: allMarkdownRemark(
-        sort: {fields: [frontmatter___date], order: DESC}, 
+        sort: {fields: [frontmatter___date_created], order: DESC}, 
         filter: { fileAbsolutePath: { regex: "/content/posts/" }
         ${
           process.env.NODE_ENV === "production"
