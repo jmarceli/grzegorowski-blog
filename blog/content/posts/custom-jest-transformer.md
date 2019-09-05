@@ -80,10 +80,10 @@ and
 **src/input.csv**
 
 ```csv
-col1, col2, col3;
-1, 2, 3;
-11, 12, 13;
-21, 22, 23;
+col1, col2, col3
+1, 2, 3
+11, 12, 13
+21, 22, 23
 ```
 
 Now we should be able to run `webpack -d --mode development` and `node dist/bundle.js`.
