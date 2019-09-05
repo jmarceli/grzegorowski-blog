@@ -8,7 +8,6 @@ meta_description: >-
   Analytics UA code.
 meta_title: Grafana Docker container and Google Analytics
 slug: docker-grafana-google-analytics
-date: '2017-12-20T12:44:47.000Z'
 date_created: '2017-12-20T12:39:48.000Z'
 date_updated: '2017-12-29T23:30:35.000Z'
 feature_image: img/docker-containers.jpg

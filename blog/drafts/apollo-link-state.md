@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: apollo-link-state
-date: null
 date_created: '2018-08-10T12:20:44.000Z'
 date_updated: '2018-08-09T22:10:10.000Z'
 feature_image: null

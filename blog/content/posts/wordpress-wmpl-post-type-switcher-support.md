@@ -8,7 +8,6 @@ meta_description: >-
   post type for all translations in one click.
 meta_title: null
 slug: wordpress-wmpl-post-type-switcher-support
-date: '2017-10-05T19:28:00.000Z'
 date_created: '2017-10-05T19:28:03.000Z'
 date_updated: '2017-10-05T19:40:21.000Z'
 feature_image: null

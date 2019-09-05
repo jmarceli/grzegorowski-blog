@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: useful-os-x-apps
-date: '2017-03-19T03:01:57.000Z'
 date_created: '2017-03-19T02:52:18.000Z'
 date_updated: '2017-03-19T03:04:22.000Z'
 feature_image: null

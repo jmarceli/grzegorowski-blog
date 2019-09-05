@@ -10,7 +10,6 @@ meta_description: >-
   Flow annotations for async/await function with Axios based querying.
 meta_title: null
 slug: flow-type-checking-for-axios
-date: '2018-10-07T18:41:00.000Z'
 date_created: '2018-10-17T05:48:40.000Z'
 date_updated: '2018-11-08T00:24:46.000Z'
 feature_image: >-

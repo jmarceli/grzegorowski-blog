@@ -8,7 +8,6 @@ excerpt: >-
 meta_description: null
 meta_title: null
 slug: graphql-yoga-import-graphql-files
-date: '2018-05-05T14:34:55.000Z'
 date_created: '2018-05-12T19:59:43.000Z'
 date_updated: '2018-05-05T14:34:55.000Z'
 feature_image: >-

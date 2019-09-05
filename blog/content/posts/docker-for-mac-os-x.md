@@ -8,7 +8,6 @@ meta_description: >-
   and size of a Docker VM problem.
 meta_title: Setup Docker for Mac OS X
 slug: docker-for-mac-os-x
-date: '2017-06-06T20:09:10.000Z'
 date_created: '2017-05-30T21:51:40.000Z'
 date_updated: '2017-06-11T12:53:10.000Z'
 feature_image: img/containers-2.jpg

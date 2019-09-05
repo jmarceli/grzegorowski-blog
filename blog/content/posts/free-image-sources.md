@@ -8,7 +8,6 @@ meta_description: >-
   commercial projects.
 meta_title: null
 slug: free-image-sources
-date: '2017-06-11T12:00:33.000Z'
 date_created: '2017-06-11T11:49:28.000Z'
 date_updated: '2017-06-11T12:40:34.000Z'
 feature_image: img/pexels-photo-297977.jpeg

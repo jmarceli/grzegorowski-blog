@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: babel-plugin-basics
-date: null
 date_created: '2019-03-09T21:17:28.000Z'
 date_updated: '2019-03-09T18:23:21.000Z'
 feature_image: null

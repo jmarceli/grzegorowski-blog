@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: cross-domain-cookie-sharing
-date: null
 date_created: '2017-12-09T06:22:33.000Z'
 date_updated: '2018-09-15T13:25:21.000Z'
 feature_image: null

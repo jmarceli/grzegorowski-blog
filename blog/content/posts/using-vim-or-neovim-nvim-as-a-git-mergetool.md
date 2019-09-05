@@ -8,7 +8,6 @@ excerpt: >-
 meta_description: null
 meta_title: null
 slug: using-vim-or-neovim-nvim-as-a-git-mergetool
-date: '2018-08-09T09:20:00.000Z'
 date_created: '2018-08-22T21:42:00.000Z'
 date_updated: '2018-09-12T11:16:26.000Z'
 feature_image: >-

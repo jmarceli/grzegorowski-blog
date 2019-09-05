@@ -8,7 +8,6 @@ meta_description: >-
   efficiently copy/paste inside Vim using multiple clipboards.
 meta_title: null
 slug: vim-using-registers
-date: '2017-05-28T18:21:20.000Z'
 date_created: '2017-05-28T18:13:40.000Z'
 date_updated: '2017-10-15T13:58:04.000Z'
 feature_image: img/keyboard-computer-keys-white-1.jpg

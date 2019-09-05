@@ -10,7 +10,6 @@ meta_description: >-
   an Electron based application for InfluxDB administration and querying.
 meta_title: null
 slug: time-series-admin-electron-application-influxdb
-date: "2018-10-14T06:44:00.000Z"
 date_created: "2018-11-04T18:31:42.000Z"
 date_updated: "2018-10-20T17:40:52.000Z"
 feature_image: >-

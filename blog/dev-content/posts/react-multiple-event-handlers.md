@@ -8,7 +8,6 @@ excerpt: >-
 meta_description: null
 meta_title: null
 slug: react-multiple-event-handlers
-date: '2019-03-13T08:38:18.000Z'
 date_created: '2019-03-09T19:49:23.000Z'
 date_updated: '2019-03-13T22:58:17.000Z'
 feature_image: >-

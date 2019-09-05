@@ -6,12 +6,11 @@ excerpt: null
 meta_description: >-
   After adding new records to the DNS you should ensure that your changes works
   as expected. In order to do this without waiting for the DNS propagation you
-  should query modified DNS directly. 
+  should query modified DNS directly.
 meta_title: Adding a CNAME record to the DNS
 slug: adding-a-cname-record-to-dns
-date: '2017-05-23T18:17:21.000Z'
-date_created: '2017-05-23T18:09:33.000Z'
-date_updated: '2017-05-28T19:00:00.000Z'
+date_created: "2017-05-23T18:09:33.000Z"
+date_updated: "2017-05-28T19:00:00.000Z"
 feature_image: img/pexels-photo-325223.jpg
 featured: false
 draft: false
@@ -20,6 +19,7 @@ tags:
   - hostings
   - backend
 ---
+
 In order to check your current DNS records, you may use this tool https://www.samdns.com/
 
 ![DNS records checking tool](img/dns_records_checking_tool.png)
@@ -47,6 +47,7 @@ Here is how results may look like. In case of the CNAME record in the **Answer**
 ![DNS CNAME check result](img/dns_cname_check_results.png)
 
 ### CNAME configuration example
+
 Adding a subdomain CNAME record to the DNS is just adding a record to your main domain DNS records list. For example, if you want to add a CNAME record which will point `blog.grzegorowski.com` to some other domain (let say `example.domain.com`) you would probably add the following line to the main domain records list:
 
 ![CNAME record](img/cname_record.png)

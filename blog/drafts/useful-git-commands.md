@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: useful-git-commands
-date: null
 date_created: '2017-04-07T18:57:45.000Z'
 date_updated: '2017-04-07T19:04:21.000Z'
 feature_image: null

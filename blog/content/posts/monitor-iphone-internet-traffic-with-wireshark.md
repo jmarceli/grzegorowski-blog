@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: monitor-iphone-internet-traffic-with-wireshark
-date: '2018-04-02T23:11:34.000Z'
 date_created: '2017-10-24T04:27:29.000Z'
 date_updated: '2018-04-02T23:11:34.000Z'
 feature_image: img/iphone-wireshark-network-monitoring.jpg

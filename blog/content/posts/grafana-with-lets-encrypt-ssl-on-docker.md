@@ -8,7 +8,6 @@ meta_description: >-
   with auto-renewal support.
 meta_title: Grafana Influx Let's Encrypt SSL on Docker
 slug: grafana-with-lets-encrypt-ssl-on-docker
-date: "2018-03-12T07:59:41.000Z"
 date_created: "2018-02-05T22:37:16.000Z"
 date_updated: "2018-09-15T12:47:40.000Z"
 feature_image: img/grafanadashboard-1.png

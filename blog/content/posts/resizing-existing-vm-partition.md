@@ -6,7 +6,6 @@ excerpt: How to resize existing vagrant disk using vagrant-disksize plugin.
 meta_description: null
 meta_title: null
 slug: resizing-existing-vm-partition
-date: '2018-04-25T03:49:00.000Z'
 date_created: '2018-04-09T14:07:30.000Z'
 date_updated: '2018-05-07T01:53:52.000Z'
 feature_image: >-

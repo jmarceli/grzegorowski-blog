@@ -8,7 +8,6 @@ meta_description: >-
   last Time Machine backup. How to use a Time Machine CLI tmutils.
 meta_title: null
 slug: time-machine-restore-backup
-date: '2017-05-06T22:05:45.000Z'
 date_created: '2017-04-28T18:33:01.000Z'
 date_updated: '2017-05-07T11:57:44.000Z'
 feature_image: img/pexels-photo-121734.jpeg

@@ -8,7 +8,6 @@ meta_description: >-
   project. Automatic path_maps  thanks to the vim-projectroot plugin.
 meta_title: Docker and Vdebug setup for PHP DBGP debugging
 slug: docker-and-vdebug-for-php-debugging
-date: '2017-06-17T17:05:00.000Z'
 date_created: '2017-06-17T17:05:16.000Z'
 date_updated: '2017-06-22T12:13:11.000Z'
 feature_image: img/docker-vdebug-php.jpg

@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: custom-mac-os-x-screenshots-location
-date: '2017-03-19T02:42:08.000Z'
 date_created: '2017-03-19T02:39:20.000Z'
 date_updated: '2017-03-19T03:14:40.000Z'
 feature_image: null

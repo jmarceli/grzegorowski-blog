@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: wordpress-plugins
-date: '2017-04-05T02:45:24.000Z'
 date_created: '2017-04-05T01:41:37.000Z'
 date_updated: '2017-08-21T14:32:40.000Z'
 feature_image: img/cable-541068_1280.jpg

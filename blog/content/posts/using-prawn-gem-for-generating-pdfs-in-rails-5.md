@@ -8,7 +8,6 @@ meta_description: >-
   examples.
 meta_title: ''
 slug: using-prawn-gem-for-generating-pdfs-in-rails-5
-date: '2017-04-05T17:38:51.000Z'
 date_created: '2017-04-05T15:56:08.000Z'
 date_updated: '2018-09-15T19:13:14.000Z'
 feature_image: >-

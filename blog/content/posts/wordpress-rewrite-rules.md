@@ -8,7 +8,6 @@ meta_description: >-
   pagination fixes. Restricting some slugs in Wordpress with wp_unique_post_slug
 meta_title: Wordpress rewrite rules and pagination add_rewrite_rule
 slug: wordpress-rewrite-rules
-date: '2017-07-17T16:54:23.000Z'
 date_created: '2017-07-15T15:13:43.000Z'
 date_updated: '2017-08-30T02:21:57.000Z'
 feature_image: null

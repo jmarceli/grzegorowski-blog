@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: rails-number_to_currency-change-locale-defaults
-date: '2017-04-22T00:23:01.000Z'
 date_created: '2017-04-22T00:09:25.000Z'
 date_updated: '2018-01-15T23:54:45.000Z'
 feature_image: null

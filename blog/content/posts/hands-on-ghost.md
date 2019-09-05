@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: hands-on-ghost
-date: '2017-03-19T06:10:39.000Z'
 date_created: '2017-03-19T01:36:35.000Z'
 date_updated: '2018-03-18T21:35:30.000Z'
 feature_image: >-

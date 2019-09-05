@@ -8,7 +8,6 @@ meta_description: >-
   accounts system).
 meta_title: null
 slug: meteor-node-simple-schema-and-meteor-users-collection
-date: '2017-07-14T15:41:45.000Z'
 date_created: '2017-07-14T15:00:18.000Z'
 date_updated: '2017-07-14T15:48:52.000Z'
 feature_image: img/pexels-photo-30257.jpg

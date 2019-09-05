@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: lerna-monorepos-made-easy
-date: null
 date_created: '2018-10-29T11:49:08.000Z'
 date_updated: '2018-10-29T07:53:16.000Z'
 feature_image: null

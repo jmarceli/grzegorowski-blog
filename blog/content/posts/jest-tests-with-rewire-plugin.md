@@ -12,7 +12,6 @@ meta_description: >-
   that are not exported.
 meta_title: How to run Jest tests with Rewire plugin
 slug: jest-tests-with-rewire-plugin
-date: '2018-07-20T08:33:17.000Z'
 date_created: '2018-07-25T02:36:15.000Z'
 date_updated: '2018-10-17T12:09:33.000Z'
 feature_image: >-

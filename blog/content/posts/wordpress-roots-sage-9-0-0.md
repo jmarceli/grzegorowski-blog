@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: wordpress-roots-sage-9-0-0
-date: '2017-08-24T02:05:40.000Z'
 date_created: '2017-08-24T01:53:35.000Z'
 date_updated: '2018-01-28T11:19:15.000Z'
 feature_image: img/sage_assets_errors_reporting.jpg

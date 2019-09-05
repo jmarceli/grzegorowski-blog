@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: how-to-get-list-of-all-acf-fields
-date: '2017-04-19T21:59:51.000Z'
 date_created: '2017-04-19T21:47:43.000Z'
 date_updated: '2017-10-17T02:13:16.000Z'
 feature_image: null

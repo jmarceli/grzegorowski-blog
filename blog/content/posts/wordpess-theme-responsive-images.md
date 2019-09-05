@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: wordpess-theme-responsive-images
-date: '2017-03-28T19:04:46.000Z'
 date_created: '2017-03-18T19:05:47.000Z'
 date_updated: '2017-03-28T19:07:15.000Z'
 feature_image: img/banner-772x250.png

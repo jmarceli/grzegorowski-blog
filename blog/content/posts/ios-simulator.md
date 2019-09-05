@@ -10,7 +10,6 @@ meta_description: >-
   connections when using an antivirus program
 meta_title: null
 slug: ios-simulator
-date: '2018-04-02T14:35:00.000Z'
 date_created: '2018-04-08T01:11:57.000Z'
 date_updated: '2018-04-02T23:37:15.000Z'
 feature_image: >-

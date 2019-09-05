@@ -8,7 +8,6 @@ meta_description: >-
   site. Use DNSmasq to point every *.dev domain to your development environment.
 meta_title: DNSmasq for custom development domain name
 slug: how-to-use-custom-domain-names-with-localhost-vagrant-docker-dnsmasq
-date: '2017-06-17T16:45:00.000Z'
 date_created: '2017-05-30T10:01:29.000Z'
 date_updated: '2017-06-17T17:03:45.000Z'
 feature_image: img/dnsmasq-custom-local-domain.jpg

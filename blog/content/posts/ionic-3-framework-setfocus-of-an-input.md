@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: ionic-3-framework-setfocus-of-an-input
-date: '2018-04-20T03:41:00.000Z'
 date_created: '2018-04-25T22:59:15.000Z'
 date_updated: '2018-09-15T12:13:23.000Z'
 feature_image: >-

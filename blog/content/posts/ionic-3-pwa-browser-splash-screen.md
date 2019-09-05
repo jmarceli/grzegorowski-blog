@@ -8,7 +8,6 @@ excerpt: >-
 meta_description: null
 meta_title: null
 slug: ionic-3-pwa-browser-splash-screen
-date: '2018-05-14T04:07:00.000Z'
 date_created: '2018-06-05T06:53:30.000Z'
 date_updated: '2018-09-15T13:29:47.000Z'
 feature_image: img/screen-shot-2018-05-14-at-11.46.25.png

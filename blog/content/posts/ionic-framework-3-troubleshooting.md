@@ -8,7 +8,6 @@ meta_description: >-
   problem with descriptive solution
 meta_title: null
 slug: ionic-framework-3-troubleshooting
-date: '2018-04-11T03:03:00.000Z'
 date_created: '2018-04-13T02:00:28.000Z'
 date_updated: '2018-09-15T12:23:50.000Z'
 feature_image: >-

@@ -8,7 +8,6 @@ meta_description: >-
   It won't affect your CLI tools nor your data.
 meta_title: null
 slug: mac-os-x-upgrade-is-it-safe-for-your-tools
-date: '2017-05-06T22:00:09.000Z'
 date_created: '2017-05-06T21:25:15.000Z'
 date_updated: '2017-05-06T22:00:09.000Z'
 feature_image: null

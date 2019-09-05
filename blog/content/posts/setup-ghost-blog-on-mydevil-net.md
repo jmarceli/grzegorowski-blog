@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: setup-ghost-blog-on-mydevil-net
-date: '2017-03-19T02:08:16.000Z'
 date_created: '2017-03-19T00:31:29.000Z'
 date_updated: '2017-03-19T02:33:51.000Z'
 feature_image: null

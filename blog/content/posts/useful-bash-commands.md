@@ -8,7 +8,6 @@ meta_description: >-
   files using regex.
 meta_title: A set of useful bash commands
 slug: useful-bash-commands
-date: '2017-06-28T11:40:53.000Z'
 date_created: '2017-04-11T12:25:28.000Z'
 date_updated: '2017-11-20T21:40:07.000Z'
 feature_image: img/pexels-photo-30193.jpg

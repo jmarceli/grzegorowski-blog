@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: custom-scrollbars-for-html-elements
-date: '2017-03-20T22:34:00.000Z'
 date_created: '2017-03-20T21:43:13.000Z'
 date_updated: '2017-03-30T16:57:43.000Z'
 feature_image: null

@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: ionic-3-pwa-tutorial-with-external-json-as-data-source
-date: null
 date_created: '2017-04-24T23:04:46.000Z'
 date_updated: '2017-04-27T11:41:56.000Z'
 feature_image: null

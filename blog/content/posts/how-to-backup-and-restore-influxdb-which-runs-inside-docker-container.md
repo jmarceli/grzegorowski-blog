@@ -9,7 +9,6 @@ meta_description: >-
   container.
 meta_title: How to backup and restore InfluxDB which runs inside Docker container
 slug: how-to-backup-and-restore-influxdb-which-runs-inside-docker-container
-date: '2017-11-16T17:22:22.000Z'
 date_created: '2017-11-16T15:13:50.000Z'
 date_updated: '2017-12-07T21:24:24.000Z'
 feature_image: img/dockerized-influxdb-restore.png

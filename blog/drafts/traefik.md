@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: traefik
-date: null
 date_created: '2018-10-21T09:59:51.000Z'
 date_updated: '2018-11-06T00:07:28.000Z'
 feature_image: null

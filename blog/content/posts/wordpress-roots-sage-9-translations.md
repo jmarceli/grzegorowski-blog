@@ -8,7 +8,6 @@ meta_description: >-
   Common folders structure and Blade templates support for Poedit.
 meta_title: Wordpress Roots Sage 9 translations (Blade and Poedit)
 slug: wordpress-roots-sage-9-translations
-date: '2017-08-31T01:26:13.000Z'
 date_created: '2017-08-31T00:57:15.000Z'
 date_updated: '2017-09-22T22:17:04.000Z'
 feature_image: img/letters.jpg

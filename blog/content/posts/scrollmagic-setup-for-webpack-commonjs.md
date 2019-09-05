@@ -8,7 +8,6 @@ meta_description: >-
   setup with npm dependency management.
 meta_title: null
 slug: scrollmagic-setup-for-webpack-commonjs
-date: '2017-05-12T12:49:51.000Z'
 date_created: '2017-04-04T05:00:53.000Z'
 date_updated: '2018-12-13T18:51:42.000Z'
 feature_image: null

@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: fullstack-graphql-with-apollographql
-date: null
 date_created: '2018-09-24T21:32:39.000Z'
 date_updated: '2018-09-21T17:57:04.000Z'
 feature_image: null

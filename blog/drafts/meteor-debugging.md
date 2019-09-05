@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: meteor-debugging
-date: null
 date_created: '2018-04-19T12:58:52.000Z'
 date_updated: '2018-06-22T15:59:30.000Z'
 feature_image: null

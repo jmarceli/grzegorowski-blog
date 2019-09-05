@@ -8,7 +8,6 @@ meta_description: >-
   iPhone iOS 10.3.1.
 meta_title: null
 slug: iphone-6s-ios-10-3-1-update-failed
-date: '2017-05-12T10:30:35.000Z'
 date_created: '2017-05-12T10:13:07.000Z'
 date_updated: '2017-05-12T10:31:55.000Z'
 feature_image: img/unable_to_verify_update_error.png

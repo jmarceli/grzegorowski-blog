@@ -8,7 +8,6 @@ meta_description: >-
   hosting provider.
 meta_title: Delegate hosting to other provider without full DNS delegation
 slug: dns-configuration-to-delegate-only-website-to-other-hosting
-date: '2018-03-11T03:01:41.000Z'
 date_created: '2018-01-24T10:14:58.000Z'
 date_updated: '2018-03-11T03:01:41.000Z'
 feature_image: img/deploy.jpg

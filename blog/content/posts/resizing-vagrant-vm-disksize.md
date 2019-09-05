@@ -8,7 +8,6 @@ meta_description: >-
   using vagrant-disksize plugin and fdisk command line utility
 meta_title: ''
 slug: resizing-vagrant-vm-disksize
-date: '2018-04-06T01:00:00.000Z'
 date_created: '2018-04-15T18:50:52.000Z'
 date_updated: '2018-04-06T18:29:00.000Z'
 feature_image: >-

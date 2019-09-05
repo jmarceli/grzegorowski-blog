@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: system-clipboard-simpler-clipboard-js-alternative
-date: null
 date_created: '2018-10-29T19:14:28.000Z'
 date_updated: '2018-10-29T08:18:07.000Z'
 feature_image: null

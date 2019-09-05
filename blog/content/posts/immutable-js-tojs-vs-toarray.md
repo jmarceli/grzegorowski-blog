@@ -10,7 +10,6 @@ meta_description: >-
   consider using .toArray() or any other conversion method.
 meta_title: null
 slug: immutable-js-tojs-vs-toarray
-date: '2018-09-15T17:19:51.000Z'
 date_created: '2018-07-29T11:46:14.000Z'
 date_updated: '2018-09-15T18:41:36.000Z'
 feature_image: >-

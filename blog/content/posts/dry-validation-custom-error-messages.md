@@ -6,7 +6,6 @@ excerpt: dry-validation with custom error messages
 meta_description: null
 meta_title: null
 slug: dry-validation-custom-error-messages
-date: '2017-04-07T03:30:00.000Z'
 date_created: '2017-03-30T22:59:16.000Z'
 date_updated: '2018-11-08T00:31:46.000Z'
 feature_image: img/pexels-photo-210585-1.jpeg

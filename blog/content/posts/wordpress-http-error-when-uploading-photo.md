@@ -8,7 +8,6 @@ meta_description: >-
   photo to the Wordpress Media Library.
 meta_title: Wordpress Media (photo/image) upload HTTP error solutions
 slug: wordpress-http-error-when-uploading-photo
-date: '2017-04-14T16:25:00.000Z'
 date_created: '2017-04-16T15:49:22.000Z'
 date_updated: '2017-04-16T16:32:44.000Z'
 feature_image: null

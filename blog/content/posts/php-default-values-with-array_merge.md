@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: php-default-values-with-array_merge
-date: '2017-08-17T17:49:15.000Z'
 date_created: '2017-08-17T17:36:01.000Z'
 date_updated: '2017-09-22T22:21:01.000Z'
 feature_image: img/keyboard-computer-keys-white-1.jpg

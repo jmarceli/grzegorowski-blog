@@ -6,7 +6,6 @@ excerpt: >-
   How to bind event handlers for multiple React components. Does a shared
   onClick handler have any benefits? How about PureComponents?
 slug: react-multiple-event-handlers
-date: "2019-03-13T08:38:18.000Z"
 date_created: "2019-03-09T19:49:23.000Z"
 date_updated: "2019-07-13T22:58:17.000Z"
 feature_image: >-

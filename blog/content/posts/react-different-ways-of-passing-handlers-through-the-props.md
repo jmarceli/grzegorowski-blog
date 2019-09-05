@@ -10,7 +10,6 @@ meta_description: >-
   unnecessary re-rendering.
 meta_title: null
 slug: react-different-ways-of-passing-handlers-through-the-props
-date: '2019-02-19T22:55:00.000Z'
 date_created: '2019-03-03T23:56:03.000Z'
 date_updated: '2019-02-24T10:36:11.000Z'
 feature_image: >-

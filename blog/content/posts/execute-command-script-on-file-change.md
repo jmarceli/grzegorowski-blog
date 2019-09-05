@@ -8,7 +8,6 @@ meta_description: >-
   entr script. It might be used for any other file tracking task.
 meta_title: Track file changes and automate script execution
 slug: execute-command-script-on-file-change
-date: '2018-03-12T00:05:53.000Z'
 date_created: '2017-12-14T19:34:12.000Z'
 date_updated: '2018-03-18T21:37:33.000Z'
 feature_image: img/dockerized-influxdb-restore.png

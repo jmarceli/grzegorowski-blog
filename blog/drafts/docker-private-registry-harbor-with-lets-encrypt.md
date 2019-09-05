@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: docker-private-registry-harbor-with-lets-encrypt
-date: null
 date_created: '2018-01-19T22:12:45.000Z'
 date_updated: '2018-05-07T02:08:23.000Z'
 feature_image: null

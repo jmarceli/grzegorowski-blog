@@ -8,7 +8,6 @@ meta_description: >-
   tutorial/guide with some tips about troubleshooting.
 meta_title: null
 slug: docker-with-xdebug-and-vdebug
-date: '2017-06-02T02:04:17.000Z'
 date_created: '2017-06-01T22:40:40.000Z'
 date_updated: '2017-06-11T13:04:03.000Z'
 feature_image: img/docker-xdebug-final-setup-1.jpg

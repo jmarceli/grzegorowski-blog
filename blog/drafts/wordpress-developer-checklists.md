@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: wordpress-developer-checklists
-date: null
 date_created: '2017-04-06T03:07:55.000Z'
 date_updated: '2018-07-19T15:35:44.000Z'
 feature_image: null

@@ -8,7 +8,6 @@ meta_description: >-
   plugin to add Jest Flow support.
 meta_title: Running Jest tests on Flow type checked Javascript files
 slug: jest-tests-flow-type
-date: '2018-07-18T09:29:00.000Z'
 date_created: '2018-07-28T14:51:37.000Z'
 date_updated: '2018-10-17T12:12:45.000Z'
 feature_image: >-

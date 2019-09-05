@@ -6,7 +6,6 @@ excerpt: null
 meta_description: A short tutorial about using pdfjs_viewer-rails gem with Rails 5 application.
 meta_title: Using PDF.js inside Rails 5 application
 slug: rails-5-with-pdf-js
-date: '2017-05-30T06:07:04.000Z'
 date_created: '2017-04-16T02:49:13.000Z'
 date_updated: '2018-03-19T02:01:16.000Z'
 feature_image: >-

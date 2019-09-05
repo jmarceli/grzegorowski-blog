@@ -10,7 +10,6 @@ meta_description: >-
   Children property can be used as long as you are using component carefully.
 meta_title: null
 slug: react-purecomponent-children-vs-custom-properties
-date: '2019-02-16T16:00:00.000Z'
 date_created: '2019-02-27T14:11:00.000Z'
 date_updated: '2019-02-23T13:04:06.000Z'
 feature_image: >-

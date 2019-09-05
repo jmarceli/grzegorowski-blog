@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: react-purecomponent
-date: null
 date_created: '2019-02-24T01:07:26.000Z'
 date_updated: '2019-02-23T14:55:01.000Z'
 feature_image: null

@@ -8,7 +8,6 @@ meta_description: >-
   use custom Capistrano tasks defined inside the lib/capistrano/tasks directory.
 meta_title: null
 slug: ruby-on-rails-custom-capistrano-tasks
-date: '2017-06-10T13:15:00.000Z'
 date_created: '2017-06-10T13:15:15.000Z'
 date_updated: '2017-06-10T14:32:58.000Z'
 feature_image: img/deploy.jpg

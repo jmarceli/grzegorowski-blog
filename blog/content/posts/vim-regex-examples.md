@@ -8,7 +8,6 @@ excerpt: >-
 meta_description: null
 meta_title: null
 slug: vim-regex-examples
-date: '2018-03-20T02:10:00.000Z'
 date_created: '2017-04-15T20:14:45.000Z'
 date_updated: '2018-05-07T02:17:02.000Z'
 feature_image: >-

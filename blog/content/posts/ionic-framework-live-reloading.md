@@ -8,7 +8,6 @@ excerpt: >-
 meta_description: null
 meta_title: null
 slug: ionic-framework-live-reloading
-date: '2018-05-09T14:54:00.000Z'
 date_created: '2018-05-13T16:40:46.000Z'
 date_updated: '2018-05-10T10:56:01.000Z'
 feature_image: >-

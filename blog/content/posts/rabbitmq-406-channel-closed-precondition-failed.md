@@ -13,7 +13,6 @@ meta_description: >-
   tag" and what are the reasons for this error message.
 meta_title: Channel closed by server 406 precondition failed unknown delivery tag
 slug: rabbitmq-406-channel-closed-precondition-failed
-date: '2018-08-09T08:25:00.000Z'
 date_created: '2018-07-29T04:59:48.000Z'
 date_updated: '2018-09-20T10:18:10.000Z'
 feature_image: >-

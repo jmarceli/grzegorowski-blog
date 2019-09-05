@@ -8,7 +8,6 @@ excerpt: >-
 meta_description: null
 meta_title: null
 slug: restic-backblaze-b2-backups
-date: '2018-05-01T15:26:00.000Z'
 date_created: '2018-05-15T23:52:23.000Z'
 date_updated: '2018-05-09T22:58:04.000Z'
 feature_image: >-

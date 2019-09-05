@@ -10,7 +10,6 @@ meta_description: >-
   ESLint and Travis CI with a description of each tool used.
 meta_title: null
 slug: publishing-npm-package-with-rollup-babel-and
-date: '2018-10-01T02:57:00.000Z'
 date_created: '2018-11-05T01:31:45.000Z'
 date_updated: '2018-10-02T21:48:08.000Z'
 feature_image: >-

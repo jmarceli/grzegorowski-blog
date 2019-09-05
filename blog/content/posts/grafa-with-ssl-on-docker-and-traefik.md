@@ -6,7 +6,6 @@ excerpt: How to setup free SSL encryption for Grafana dashboards using Traefik 2
 meta_description: How to setup Let's Encrypt SSL for Grafana Docker container using Traefik 2.0 proxy
 meta_title: Secure Docker Grafana container with SSL through Traefik 2.0 proxy
 slug: secure-docker-grafana-container-with-ssl-through-traefik-proxy
-date: 2019-05-18T10:00:00.000Z
 date_created: 2019-07-18T10:00:00.000Z
 date_updated: 2019-07-18T10:00:00.000Z
 feature_image: img/john-salvino-bqGBbLq_yfc-unsplash.jpg

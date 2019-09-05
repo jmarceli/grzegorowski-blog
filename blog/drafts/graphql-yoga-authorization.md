@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: untitled
-date: null
 date_created: '2018-05-08T17:15:40.000Z'
 date_updated: '2018-05-07T09:47:36.000Z'
 feature_image: null

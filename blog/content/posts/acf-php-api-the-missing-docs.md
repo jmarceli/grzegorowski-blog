@@ -6,11 +6,10 @@ excerpt: null
 meta_description: >-
   Documentation for ACF fields which are not described on the official ACF PHP
   API page: ACF Repeater, Google Maps, Date Picker and others.
-meta_title: 'ACF PHP API Repeater, Google Maps, Date Picker'
+meta_title: "ACF PHP API Repeater, Google Maps, Date Picker"
 slug: acf-php-api-the-missing-docs
-date: '2017-05-08T13:28:50.000Z'
-date_created: '2017-04-27T12:05:05.000Z'
-date_updated: '2017-08-18T13:09:10.000Z'
+date_created: "2017-04-27T12:05:05.000Z"
+date_updated: "2017-08-18T13:09:10.000Z"
 feature_image: null
 featured: false
 draft: false
@@ -18,6 +17,7 @@ tags:
   - wordpress
   - acf
 ---
+
 The most useful feature of the ACF Wordpress plugin is its PHP API. Unfortunately, it is not fully documented on the official [page](https://www.advancedcustomfields.com/resources/register-fields-via-php/).
 
 Here are the missing fields:
@@ -94,9 +94,10 @@ array (
   'height' => 400
 ),
 ```
+
 **// TODO: add some comments and improve this documentation**
 
-## hide\_on\_screen
+## hide_on_screen
 
 Hide on screen is an ACF field group option which allows hiding selected admin page elements when the group is active (current page matches group `location` parameter). Here is the list of available `hide_on_screen` values. You may provide one or more value as an array.
 

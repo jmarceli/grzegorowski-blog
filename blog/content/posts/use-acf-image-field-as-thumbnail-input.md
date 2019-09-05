@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: use-acf-image-field-as-thumbnail-input
-date: '2017-03-23T09:23:36.000Z'
 date_created: '2017-03-23T09:13:43.000Z'
 date_updated: '2017-03-23T09:25:05.000Z'
 feature_image: null

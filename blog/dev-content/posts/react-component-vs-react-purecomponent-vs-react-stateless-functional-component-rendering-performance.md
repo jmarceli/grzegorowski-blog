@@ -9,7 +9,6 @@ meta_description: null
 meta_title: null
 slug: >-
   react-component-vs-react-purecomponent-vs-react-stateless-functional-component-rendering-performance
-date: null
 date_created: '2019-03-22T01:48:58.000Z'
 date_updated: '2019-03-21T00:11:01.000Z'
 feature_image: null

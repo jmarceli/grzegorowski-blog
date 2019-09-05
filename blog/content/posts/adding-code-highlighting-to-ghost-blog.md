@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: adding-code-highlighting-to-ghost-blog
-date: "2017-03-23T11:03:34.000Z"
 date_created: "2017-03-23T10:48:25.000Z"
 date_updated: "2019-03-30T21:50:42.000Z"
 feature_image: img/pexels-photo-360591.jpg

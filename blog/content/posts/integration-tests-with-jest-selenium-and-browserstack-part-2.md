@@ -12,7 +12,6 @@ meta_description: >-
   OSes.
 meta_title: null
 slug: integration-tests-with-jest-selenium-and-browserstack-part-2
-date: '2018-11-03T02:58:00.000Z'
 date_created: '2018-11-06T02:33:54.000Z'
 date_updated: '2018-11-04T18:17:34.000Z'
 feature_image: >-

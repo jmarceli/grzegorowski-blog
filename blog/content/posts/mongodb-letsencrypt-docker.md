@@ -6,7 +6,6 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: mongodb-letsencrypt-docker
-date: '2017-12-03T18:19:00.000Z'
 date_created: '2018-02-18T02:01:20.000Z'
 date_updated: '2019-03-03T16:20:05.000Z'
 feature_image: img/docker-containers.jpg

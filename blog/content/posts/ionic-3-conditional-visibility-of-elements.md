@@ -8,7 +8,6 @@ excerpt: >-
 meta_description: null
 meta_title: null
 slug: ionic-3-conditional-visibility-of-elements
-date: '2018-06-12T22:46:00.000Z'
 date_created: '2018-07-02T09:23:24.000Z'
 date_updated: '2018-06-14T10:50:47.000Z'
 feature_image: >-

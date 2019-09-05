@@ -10,7 +10,6 @@ meta_description: >-
   with self-signed SSL certificate.
 meta_title: null
 slug: traefik-proxy-development-server-self-signed-ssl
-date: '2018-11-07T05:25:00.000Z'
 date_created: '2018-11-29T04:08:02.000Z'
 date_updated: '2018-11-08T00:16:57.000Z'
 feature_image: >-

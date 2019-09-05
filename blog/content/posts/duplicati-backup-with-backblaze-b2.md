@@ -6,7 +6,6 @@ excerpt: How to configure custom backup filters in Duplicati application
 meta_description: null
 meta_title: null
 slug: duplicati-backup-with-backblaze-b2
-date: '2018-09-04T00:06:00.000Z'
 date_created: '2018-05-16T11:34:01.000Z'
 date_updated: '2018-09-15T13:21:16.000Z'
 feature_image: >-
