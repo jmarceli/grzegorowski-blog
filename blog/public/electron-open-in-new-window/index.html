@@ -135,20 +135,19 @@ Usually…"/><meta data-react-helmet="true" name="author" content="Jan Grzegorow
 Usually all you have to do is define additional <code class="language-text">target=&quot;_blank&quot;</code> attribute for your <code class="language-text">&lt;a&gt;&lt;/a&gt;</code> element.
 This is a bit different story when it comes to the Electron desktop applications.</p>
 <h2>Problem</h2>
-<p>How to open link in your Electron application in a new window instead of replacing application content?
-I would say that this is a very common requirement if you are referring to any online content like documentation.
-By default every link defined inside Electron application will be opened in the same window replacing your application content which is a bit confusing as a user doesn't know why it is not opened in the browser as usual.
-What is more application content is replaced by the linked website, so it doesn't look like a desktop application anymore.
-Unfortunately, simple <code class="language-text">target=&quot;_blank&quot;</code> attribute added to the <code class="language-text">&lt;a&gt;&lt;/a&gt;</code> element will not work in Electron context.</p>
+<p>How to open link in your Electron application in a system browser instead of replacing the application?</p>
+<p>I would say that this is a very common requirement if you are referring to any online content like documentation.
+By default every link defined inside Electron application will be opened in the same window replacing your application which is a bit confusing as a user doesn't know why it is not opened in the system browser as usual.
+Unfortunately, simple <code class="language-text">target=&quot;_blank&quot;</code> attribute added to the <code class="language-text">&lt;a&gt;&lt;/a&gt;</code> element will not work with Electron.</p>
 <p>The simplest way of solving this issue seems to be:</p>
 <div class="gatsby-highlight" data-language="javascript"><pre style="counter-reset: linenumber NaN" class="language-javascript line-numbers"><code class="language-javascript"><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"electron"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>shell<span class="token punctuation">.</span><span class="token function">openExternal</span><span class="token punctuation">(</span><span class="token constant">YOUR_URL_HERE</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span></span></pre></div>
-<p>In my opinion, it is a bit oversimplified approach.
+<p>This is a bit oversimplified.
 First of all you may not have an access to the <code class="language-text">electron</code> package from your frontend code (e.g. in case of externally loaded React application).
-What is more with that solution you would have to rewrite all the links to use <code class="language-text">onClick</code> event instead of a very convenient <code class="language-text">href</code> based approach.
-Because of those limitations I would rather go with another solution.</p>
+What is more with that solution you would have to rewrite all the links to use <code class="language-text">onClick</code> event instead of a very convenient <code class="language-text">href</code> attribute.</p>
+<p>Because of those limitations I would rather go with another approach.</p>
 <h2>Solution</h2>
 <p>In your <strong>electron.js</strong> file you should be able to define new event handler which will handle all <a href="https://github.com/electron/electron/blob/master/docs/api/web-contents.md#event-new-window"><code class="language-text">new-window</code> events</a>.
-These events are created when user clicks on <code class="language-text">&lt;a&gt;</code> link with <code class="language-text">target=&quot;_blank&quot;</code> attribute.</p>
+These events are dispatched when user clicks on <code class="language-text">&lt;a&gt;</code> link with <code class="language-text">target=&quot;_blank&quot;</code> attribute.</p>
 <p><strong>electron.js</strong></p>
 <div class="gatsby-highlight" data-language="javascript"><pre style="counter-reset: linenumber NaN" class="language-javascript line-numbers"><code class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span> app<span class="token punctuation">,</span> shell<span class="token punctuation">,</span> BrowserWindow <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"electron"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -166,11 +165,12 @@ mainWindow<span class="token punctuation">.</span>webContents<span class="token 
   event<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   shell<span class="token punctuation">.</span><span class="token function">openExternal</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
-<p>At the end we are using the <a href="https://electronjs.org/docs/api/shell#shellopenexternalurl-options">Electron shell API</a> but thanks to the event-based approach there is no need rewrite existing application code.
+<p>Here we are also using mentioned <a href="https://electronjs.org/docs/api/shell#shellopenexternalurl-options">Electron shell API</a> but thanks to the event-based approach there is no need rewrite existing application code.
 What is more it lets you reuse same codebase for desktop and web application.
-Just use a regular <code class="language-text">&lt;a href=&quot;...&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;</code> and a custom handler will open given URL in a new window/tab in a default system browser (Google Chrome in my case).</p>
+With a regular <code class="language-text">&lt;a href=&quot;...&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;</code> and a custom handler Electron will open given URL in a new window/tab in a default system browser (Google Chrome in my case).</p>
 <h2>Possible issues</h2>
-<p>There is one catch, if you add mentioned handler to <code class="language-text">mainWindow</code> instead of <code class="language-text">mainWindow.webContents</code> you will end up with opening new Electron window instead of new tab in the default system browser.</p>
+<p>However there is one catch, if you add mentioned handler to <code class="language-text">mainWindow</code> instead of <code class="language-text">mainWindow.webContents</code> you will end up with opening new Electron window instead of a new tab in the default system browser.
+Electron windows doesn't have any controls or address bar, so effectively they are looking like application pop-ups, which might be not the best option to present external websites.</p>
 <p>Here is the invalid implementation:</p>
 <div class="gatsby-highlight" data-language="javascript"><pre style="counter-reset: linenumber NaN" class="language-javascript line-numbers"><code class="language-javascript"><span class="token comment">// This is an INVALID solution</span>
 mainWindow<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">"new-window"</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">event<span class="token punctuation">,</span> url</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
