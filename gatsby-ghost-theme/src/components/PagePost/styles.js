@@ -178,6 +178,16 @@ export const Content = styled.div`
   .gatsby-resp-image-figure a {
     border-bottom: none;
   }
+  & blockquote {
+    background: #e3f4fd;
+    margin: 1.6rem 0;
+    padding: 1.2rem 1rem 1.2rem 2rem;
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+  }
 `;
 
 export const Comments = styled.div`
