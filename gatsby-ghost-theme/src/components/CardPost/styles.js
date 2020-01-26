@@ -106,8 +106,8 @@ export const Author = styled.span`
 `;
 
 export const Avatar = styled(Img)`
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 `;
 
 export const TimeToRead = styled.div`

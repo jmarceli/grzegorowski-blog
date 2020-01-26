@@ -85,7 +85,7 @@ export const query = graphql`
           profile_image {
             relativePath
             childImageSharp {
-              fixed(width: 30, height: 30) {
+              fixed(width: 60, height: 60) {
                 ...GatsbyImageSharpFixed
               }
             }
