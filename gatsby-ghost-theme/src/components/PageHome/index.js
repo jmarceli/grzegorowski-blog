@@ -1,20 +1,13 @@
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import CardList from "../CardList";
 import Header from "../Header";
 import PageLayout from "../PageLayout";
 import Menu from "../Menu";
-import { MenuWrapper, Content } from "./styles";
+import { MenuWrapper, Content, ButtonWrapper, ButtonMore } from "./styles";
 import { getPostCards } from "../../utils/mappers";
 import Seo from "../Seo";
 
 export default function PageHome({ data, posts, authors }) {
-  const {
-    site: {
-      siteMetadata: { mainMenu },
-    },
-  } = useStaticQuery(query);
-
   const cards = getPostCards(posts, authors);
 
   const author = authors.find(
@@ -36,7 +29,7 @@ export default function PageHome({ data, posts, authors }) {
       />
       <Content>
         <MenuWrapper>
-          <Menu items={mainMenu} />
+          <Menu />
         </MenuWrapper>
         <CardList cards={cards} />
         <ButtonWrapper>
@@ -48,16 +41,3 @@ export default function PageHome({ data, posts, authors }) {
     </PageLayout>
   );
 }
-
-const query = graphql`
-  {
-    site {
-      siteMetadata {
-        mainMenu {
-          label
-          slug
-        }
-      }
-    }
-  }
-`;

@@ -134,6 +134,11 @@ export const Container = styled.div`
   }
 `;
 
+export const MenuWrapper = styled.div`
+  padding: 0 12px;
+  margin: 0 0 -12px;
+`;
+
 export const Content = styled.div`
   a {
     border-bottom: 1px solid #111;

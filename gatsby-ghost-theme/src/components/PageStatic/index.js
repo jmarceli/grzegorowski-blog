@@ -1,5 +1,6 @@
 import React from "react";
 import PageLayout from "../PageLayout";
+import Menu from "../Menu";
 import {
   Wrapper,
   Header,
@@ -9,6 +10,7 @@ import {
   HeaderImage,
   Main,
   Container,
+  MenuWrapper,
   Content,
 } from "./styles";
 import Seo from "../Seo";
@@ -44,6 +46,9 @@ export default function PageStatic({ post, authors }) {
 
         <Main>
           <Container>
+            <MenuWrapper>
+              <Menu />
+            </MenuWrapper>
             <Content
               dangerouslySetInnerHTML={{
                 __html: post.html,

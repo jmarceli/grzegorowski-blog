@@ -1,4 +1,5 @@
 import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
 import {
   Wrapper,
   Scroller,
@@ -10,7 +11,13 @@ import {
 } from "./styles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-export default function Menu({ className, items, socialMedia }) {
+export default function Menu({ className }) {
+  const {
+    site: {
+      siteMetadata: { mainMenu: items, socialMedia },
+    },
+  } = useStaticQuery(query);
+
   return (
     <Wrapper className={className}>
       <Scroller>
@@ -44,3 +51,22 @@ export default function Menu({ className, items, socialMedia }) {
     </Wrapper>
   );
 }
+
+const query = graphql`
+  {
+    site {
+      siteMetadata {
+        title
+        mainMenu {
+          label
+          slug
+        }
+        socialMedia {
+          name
+          url
+          icon
+        }
+      }
+    }
+  }
+`;
