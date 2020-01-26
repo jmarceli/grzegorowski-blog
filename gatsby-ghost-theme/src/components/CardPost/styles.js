@@ -78,7 +78,7 @@ export const Excerpt = styled.p`
 export const Footer = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   font-family: ${ffSans};
   font-size: ${toEm(12)}rem;
   font-weight: 500;
@@ -86,12 +86,23 @@ export const Footer = styled.div`
   color: #666;
 `;
 
-export const Author = styled.div`
+export const Details = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const Date = styled.span`
+  vertical-align: middle;
+`;
+
+export const Author = styled.span`
   height: 30px;
   width: 30px;
   border-radius: 50%;
   overflow: hidden;
   border: 1px solid #eee;
+  margin-right: 6px;
 `;
 
 export const Avatar = styled(Img)`

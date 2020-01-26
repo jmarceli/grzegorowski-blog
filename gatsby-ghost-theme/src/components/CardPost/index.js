@@ -14,7 +14,10 @@ import {
   Author,
   Avatar,
   TimeToRead,
+  Date,
+  Details,
 } from "./styles";
+import dayjs from "dayjs";
 
 export default function CardPost({
   size,
@@ -25,6 +28,7 @@ export default function CardPost({
   image,
   author,
   timeToRead,
+  date,
 }) {
   const { isAmp } = React.useContext(AmpContext);
   const url = "/" + slug + (isAmp ? "/amp/" : "");
@@ -61,27 +65,30 @@ export default function CardPost({
             <Excerpt>{excerpt}</Excerpt>
             {(author || timeToRead) && (
               <Footer>
-                {author && (
-                  <Author>
-                    {isAmp ? (
-                      <amp-img
-                        src={author.image.src}
-                        srcSet={author.image.srcSet}
-                        alt={author.name}
-                        width={author.image.width}
-                        height={author.image.height}
-                        layout="fixed"
-                      />
-                    ) : (
-                      <Avatar
-                        fixed={author.image}
-                        objectFit="cover"
-                        objectPosition="50% 50%"
-                        alt={author.name}
-                      />
-                    )}
-                  </Author>
-                )}
+                <Details>
+                  {author && (
+                    <Author>
+                      {isAmp ? (
+                        <amp-img
+                          src={author.image.src}
+                          srcSet={author.image.srcSet}
+                          alt={author.name}
+                          width={author.image.width}
+                          height={author.image.height}
+                          layout="fixed"
+                        />
+                      ) : (
+                        <Avatar
+                          fixed={author.image}
+                          objectFit="cover"
+                          objectPosition="50% 50%"
+                          alt={author.name}
+                        />
+                      )}
+                    </Author>
+                  )}
+                  <Date>{dayjs(date).format("DD MMM YYYY")}</Date>
+                </Details>
                 {timeToRead && <TimeToRead>{timeToRead} min read</TimeToRead>}
               </Footer>
             )}

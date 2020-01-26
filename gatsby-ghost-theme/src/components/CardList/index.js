@@ -33,6 +33,7 @@ export default ({ cards, allEven }) => (
             image={card.image}
             tag={card.tag}
             author={card.author}
+            date={card.date}
           />
         </Item>
       ))}
