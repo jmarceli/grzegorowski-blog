@@ -9,11 +9,11 @@ export const Placeholder = styled.div`
 `;
 
 export const Wrapper = styled.header`
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 1000;
   width: 100%;
-  background: ${({ opaque }) => (opaque ? "#000" : "none")};
+  background: #000;
   color: #fff;
 `;
 
