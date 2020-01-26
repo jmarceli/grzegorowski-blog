@@ -22,10 +22,7 @@ const postToCard = (postNode, authorNode) => ({
     postNode.frontmatter.feature_image.childImageSharp.fluid,
   excerpt: postNode.frontmatter.excerpt || postNode.excerpt,
   timeToRead: postNode.timeToRead,
-  date:
-    postNode.frontmatter.date_updated ||
-    postNode.frontmatter.date_created ||
-    postNode.date_created,
+  dateCreated: postNode.frontmatter.date_created || postNode.date_created,
   author: authorNode &&
     authorNode.node && {
       name: authorNode.node.name,

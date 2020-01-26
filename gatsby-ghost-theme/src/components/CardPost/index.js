@@ -28,7 +28,7 @@ export default function CardPost({
   image,
   author,
   timeToRead,
-  date,
+  dateCreated,
 }) {
   const { isAmp } = React.useContext(AmpContext);
   const url = "/" + slug + (isAmp ? "/amp/" : "");
@@ -87,7 +87,7 @@ export default function CardPost({
                       )}
                     </Author>
                   )}
-                  <Date>{dayjs(date).format("DD MMM YYYY")}</Date>
+                  <Date>{dayjs(dateCreated).format("DD MMM YYYY")}</Date>
                 </Details>
                 {timeToRead && <TimeToRead>{timeToRead} min read</TimeToRead>}
               </Footer>
