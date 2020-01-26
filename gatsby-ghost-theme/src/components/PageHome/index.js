@@ -39,6 +39,11 @@ export default function PageHome({ data, posts, authors }) {
           <Menu items={mainMenu} />
         </MenuWrapper>
         <CardList cards={cards} />
+        <ButtonWrapper>
+          <ButtonMore to="/archive" title="Show all posts">
+            View All Posts
+          </ButtonMore>
+        </ButtonWrapper>
       </Content>
     </PageLayout>
   );

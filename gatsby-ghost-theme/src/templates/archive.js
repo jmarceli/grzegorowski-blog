@@ -1,19 +1,20 @@
 import React from "react";
-import PageHome from "../components/PageHome";
+import PageWithList from "../components/PageWithList";
 // eslint-disable-next-line no-unused-vars
 import { GatsbyImageSharpFixed, GatsbyImageSharpFluid } from "gatsby-image";
 import { graphql } from "gatsby";
 import { AmpContext } from "../utils/ampContext";
+import { getPostCards } from "../utils/mappers";
 
 export default ({ data, pageContext }) => {
   const ampContext = React.useContext(AmpContext);
   ampContext.setIsAmp(pageContext.isAmp);
 
+  const cards = getPostCards(data.posts.edges, data.authors.edges);
   return (
-    <PageHome
-      data={data.page}
-      posts={data.posts.edges}
-      authors={data.authors.edges}
+    <PageWithList
+      main={{ title: "Archive", description: "List of all posts" }}
+      cardList={cards}
     />
   );
 };
@@ -47,7 +48,6 @@ export const query = graphql`
       filter: {
         frontmatter: { draft: { ne: true }, layout: { nin: ["page", "home"] } }
       }
-      limit: 16
     ) {
       edges {
         node {
@@ -86,7 +86,7 @@ export const query = graphql`
           profile_image {
             relativePath
             childImageSharp {
-              fixed(width: 60, height: 60) {
+              fixed(width: 30, height: 30) {
                 ...GatsbyImageSharpFixed
               }
             }
