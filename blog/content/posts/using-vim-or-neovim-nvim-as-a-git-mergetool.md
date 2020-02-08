@@ -44,7 +44,7 @@ Install [vim-fugitive](https://github.com/tpope/vim-fugitive) plugin and put fol
   prompt = false
 ```
 
-(Thanks Kristijan for sharing updated `cmd` version for latest vim-fugitive plugin version)
+Thanks @Kristijan for sharing updated `cmd` version for the latest vim-fugitive plugin.
 
 It will give you a "nice" view with 3 windows horizontal split.
 
@@ -66,7 +66,7 @@ What is good about that setup (and why I use it all the time)?
 
 ## Hints
 
-You may execute `:Gw!` command in any of the opened windows. The window where you execute that command will be commited and marked as a merge resolution. It is very useful if you want to use just REMOTE or just LOCAL version without any further merge resolution steps.
+You may execute `:Gw!` command in any of the opened windows. The window where you execute that command will be committed and marked as a merge resolution. It is very useful if you want to use just REMOTE or just LOCAL version without any further merge resolution steps.
 
 Want more?
 When in the central window use `d2o` or `d3o` to pull changes from LOCAL or REMOTE file.
