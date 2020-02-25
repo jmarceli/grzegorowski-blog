@@ -1,0 +1,3 @@
+- https://github.com/marketplace/actions/github-pages-deploy
+- https://github.com/crazy-max/ghaction-github-pages - only Personal Token support
+- https://github.com/peaceiris/actions-gh-pages - allows to use Deploy key
