@@ -8,8 +8,8 @@ meta_description: >-
   Analytics UA code.
 meta_title: Grafana Docker container and Google Analytics
 slug: docker-grafana-google-analytics
-date_created: '2017-12-20T12:39:48.000Z'
-date_updated: '2017-12-29T23:30:35.000Z'
+date_created: "2017-12-20T12:39:48.000Z"
+date_updated: "2017-12-29T23:30:35.000Z"
 feature_image: img/docker-containers.jpg
 featured: false
 draft: false
@@ -17,17 +17,19 @@ tags:
   - docker
   - backend
 ---
+
 How easy is adding Google Analytics support to Grafana Docker container?
 
 It's trivial.
 
 Just add an environment variable to the Grafana container:
 
-```sh
+```bash
 GF_ANALYTICS_GOOGLE_ANALYTICS_UA_ID=[YOUR_UA_ID]
 ```
 
 Where:
+
 - `YOUR_UA_ID` is your Google Analytics UA ID code e.g. UA-123123123-1
 
 Of course, it will require container restart.

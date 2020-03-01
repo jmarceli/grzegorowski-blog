@@ -6,37 +6,39 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: mongodb-letsencrypt-docker
-date_created: '2018-02-18T02:01:20.000Z'
-date_updated: '2019-03-03T16:20:05.000Z'
+date_created: "2018-02-18T02:01:20.000Z"
+date_updated: "2019-03-03T16:20:05.000Z"
 feature_image: img/docker-containers.jpg
 featured: false
 draft: false
 tags: []
 ---
+
 How to setup MongoDB Docker container to use Let's Encrypt SSL certificate with autorenewal support?
 That's something which should be much easier to do than it is now.
 
-
 https://docs.docker.com/engine/api/v1.36/#operation/SystemEvents
 Example:
-```sh
+
+```bash
 curl -G -v --unix-socket /var/run/docker.sock http:/events --data-urlencode 'filters={"container":["nginx-mongo"]}'
 ```
 
 Filter **nginx-mongo** container restarts:
 
-```sh
+```bash
 curl -G -v --unix-socket /var/run/docker.sock http:/events --data-urlencode 'filters={"container":["nginx-mongo"],"event":["restart"]}'
 ```
 
 This should work (but doesn't):
 
-```sh
+```bash
 while read l; do echo "OK"; done < <(curl -GET -s --unix-socket /var/run/docker.sock http:/events --data-urlencode 'filters={"container":["nginx-mongo"],"event":["restart"]}')
 ```
 
 Such command may trigger **mongodb.pem** key+cert file generation by:
-```sh
+
+```bash
 awk 1 /etc/nginx/certs/srp.predictail.com.key /etc/nginx/certs/srp.predictail.com.crt > /mongo-ssl/mongodb.pem
 ```
 

@@ -58,7 +58,7 @@ Please note that if you try to mock those variables directly
 (as in the second example e.g. `window.location.href = 'http://my.test/page'`)
 you will get an error message:
 
-```sh
+```bash
 Error: Not implemented: navigation (except hash changes)
 ```
 

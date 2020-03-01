@@ -17,12 +17,6 @@ console.log(`Compiling using ${process.env.CONFIG_ENV} config`);
 console.log(config);
 
 module.exports = {
-  __experimentalThemes: [
-    {
-      resolve: "gatsby-ghost-theme",
-      options: { contentPath: path.join(__dirname, config.contentPath) },
-    },
-  ],
   siteMetadata: {
     siteUrl: config.siteUrl,
     title: app.name,
@@ -46,6 +40,10 @@ module.exports = {
     copyrights: app.author,
   },
   plugins: [
+    {
+      resolve: "gatsby-ghost-theme",
+      options: { contentPath: path.join(__dirname, config.contentPath) },
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

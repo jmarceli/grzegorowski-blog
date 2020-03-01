@@ -129,7 +129,7 @@ exports.createPages = async ({ graphql, actions }, pluginOptions) => {
     const slug = node.frontmatter.slug;
 
     await createPage({
-      path: slug,
+      path: slug + "/",
       component: path.resolve(
         path.join(
           __dirname,

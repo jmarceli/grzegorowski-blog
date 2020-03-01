@@ -2,7 +2,7 @@
 
 ## Quick Start
 
-```sh
+```bash
 mkdir my-site
 cd my-site
 yarn init
@@ -18,15 +18,15 @@ module.exports = {
   __experimentalThemes: [
     {
       resolve: "gatsby-theme-minimal",
-      options: {}
-    }
-  ]
+      options: {},
+    },
+  ],
 };
 ```
 
 That's it, you can now run your gatsby site using
 
-```sh
+```bash
 yarn gatsby develop
 ```
 
