@@ -10,15 +10,14 @@ meta_description: >-
   Flow annotations for async/await function with Axios based querying.
 meta_title: null
 slug: flow-type-checking-for-axios
-date_created: '2018-10-17T05:48:40.000Z'
-date_updated: '2018-11-08T00:24:46.000Z'
-feature_image: >-
-  img/photo-1531815914625-148b9120615c.jpg
+date_created: "2018-10-17T05:48:40.000Z"
+feature_image: img/time-lapse-photography-of-waterfalls-1486902.jpg
 featured: false
 draft: false
 tags:
   - javascript
 ---
+
 Type checking with Flow is a nice addition to your code. Unfortunately, it is not so intuitive to use Flow with libraries like Axios. The main problem is lack of easily available usage examples.
 
 ## Problem
@@ -52,8 +51,8 @@ As usual we have to begin with `// @flow` declaration, import of Axios library a
 
 ```javascript
 // @flow
-import axios from 'axios';
-import type { $AxiosXHR } from 'axios';
+import axios from "axios";
+import type { $AxiosXHR } from "axios";
 ```
 
 Let's define expected Axios response structure type:
@@ -62,7 +61,7 @@ Let's define expected Axios response structure type:
 export type RateLimit = {
   limit: number,
   remaining: number,
-  reset: number
+  reset: number,
 };
 type RateLimitResponse = {
   resources: {
@@ -77,12 +76,11 @@ type RateLimitResponse = {
 Now it's time for a "magical" `$AxiosXHR` type annotation:
 
 ```javascript
-const getRateLimit = async (): Promise<$AxiosXHR<RateLimitResponse>> => (
-  axios(`https://api.github.com/rate_limit`)
-);
+const getRateLimit = async (): Promise<$AxiosXHR<RateLimitResponse>> =>
+  axios(`https://api.github.com/rate_limit`);
 ```
 
-We know that Github API endpoint `/rate_limit` is going to return something which should match `RateLimitResponse`. As we don't have any input data type there is no need to define more than one `$AxiosXHR` parameter (`R` equals `T`  by default).
+We know that Github API endpoint `/rate_limit` is going to return something which should match `RateLimitResponse`. As we don't have any input data type there is no need to define more than one `$AxiosXHR` parameter (`R` equals `T` by default).
 
 What is more, we know that `async` function should return a promise, thus we wrap returned type with `Promise<....>`.
 
@@ -90,13 +88,17 @@ Now we can use Axios with Flow typings.
 
 **NOTE**
 As mentioned by @Joey M. you may replace:
+
 ```javascript
 Promise<$AxiosXHR<RateLimitResponse>>
 ```
+
 with
+
 ```javascript
 AxiosPromise<RateLimitResponse>
 ```
+
 It's a hand wrapper which simplifies typings a bit. Of course it has to be imported before usage: `import type { AxiosPromise } from 'axios';`
 
 ## Another example
@@ -107,15 +109,14 @@ In this case Axios Flow typing for request is going to look like this:
 
 ```javascript
 type StatusRequest = {
-  getStatus: boolean
+  getStatus: boolean,
 };
-const getStatus = async (): AxiosPromise<StatusRequest, string> => (
+const getStatus = async (): AxiosPromise<StatusRequest, string> =>
   axios({
-    method: 'post',
+    method: "post",
     data: { getStatus: true },
-    url: 'http://your-api-enpoint.test',
-  })
-);
+    url: "http://your-api-enpoint.test",
+  });
 ```
 
 That's all?
@@ -125,7 +126,7 @@ Unfortunately, I don't know yet if it is possible to add Flow typings without wr
 Ideally something like this might be possible:
 
 ```javascript
-const response: $AxiosXHR<RateLimitResponse> = await axios(`https://api.github.com/rate_limit`);
+const response: $AxiosXHR<RateLimitResponse> = await axios(
+  `https://api.github.com/rate_limit`,
+);
 ```
-
-
