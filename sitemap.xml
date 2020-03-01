@@ -146,6 +146,7 @@
 <url> <loc>https://www.grzegorowski.com/setup-ghost-blog-on-mydevil-net/amp/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/wordpess-theme-responsive-images</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/wordpess-theme-responsive-images/amp/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.grzegorowski.com/archive</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/author/jan</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/tag/wordpress</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -171,10 +172,6 @@
 <url> <loc>https://www.grzegorowski.com/tag/graphql</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/tag/react</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/^/?404/?$</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.grzegorowski.com/archive/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/author/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.grzegorowski.com/home/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.grzegorowski.com/page/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.grzegorowski.com/post/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/tag/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
