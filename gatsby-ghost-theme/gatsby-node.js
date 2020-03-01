@@ -129,7 +129,7 @@ exports.createPages = async ({ graphql, actions }, pluginOptions) => {
     const slug = node.frontmatter.slug;
 
     await createPage({
-      path: slug + "/",
+      path: slug,
       component: path.resolve(
         path.join(
           __dirname,
@@ -155,7 +155,7 @@ exports.createPages = async ({ graphql, actions }, pluginOptions) => {
     await createPage({
       path: `/author/${author}`,
       component: path.resolve(
-        path.join(__dirname, "src", "templates", "author.js"),
+        path.join(__dirname, "src", "auto-pages", "author.js"),
       ),
       context: {
         author_slug: author,
@@ -173,7 +173,7 @@ exports.createPages = async ({ graphql, actions }, pluginOptions) => {
     await createPage({
       path: `/tag/${tag}`,
       component: path.resolve(
-        path.join(__dirname, "src", "templates", "tag.js"),
+        path.join(__dirname, "src", "auto-pages", "tag.js"),
       ),
       context: {
         tag_slug: tag,
@@ -184,7 +184,9 @@ exports.createPages = async ({ graphql, actions }, pluginOptions) => {
   // 404 page
   await createPage({
     path: `^\/?404\/?$`,
-    component: path.resolve(path.join(__dirname, "src", "templates", "404.js")),
+    component: path.resolve(
+      path.join(__dirname, "src", "auto-pages", "404.js"),
+    ),
   });
 
   // WARNING! While this approach seems to be quite performant there might be some race conditions

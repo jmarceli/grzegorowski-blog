@@ -1,5 +1,18 @@
 # The smallest possible Gatsby theme
 
+## File structure
+
+```bash
+src/
+  auto-pages/ - pages with paths according to file names e.g. author.js -> /author
+  templates/ - used only inside gatsby-node.js inside createPage() function
+  styles/ - global stylings
+  components/ - reusable components which builds pages
+  utils/ - helper methods shared across other files
+```
+
+TODO: Eliminate `auto-pages/` dir and move page creation entirely to `gatsby-node.js` script.
+
 ## Quick Start
 
 ```bash

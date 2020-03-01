@@ -12,7 +12,7 @@ module.exports = ({ contentPath }) => ({
     {
       resolve: "gatsby-plugin-page-creator",
       options: {
-        path: path.join(__dirname, "src", "templates"),
+        path: path.join(__dirname, "src", "auto-pages"),
       },
     },
     {
