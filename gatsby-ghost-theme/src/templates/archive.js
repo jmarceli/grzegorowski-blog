@@ -11,9 +11,14 @@ export default ({ data, pageContext }) => {
   ampContext.setIsAmp(pageContext.isAmp);
 
   const cards = getPostCards(data.posts.edges, data.authors.edges);
+
   return (
     <PageWithList
-      main={{ title: "Archive", description: "List of all posts" }}
+      main={{
+        title: data.page.frontmatter.title,
+        description: data.page.frontmatter.excerpt,
+        image: data.page.frontmatter.feature_image.childImageSharp.fluid,
+      }}
       cardList={cards}
     />
   );
@@ -45,9 +50,7 @@ export const query = graphql`
     }
     posts: allMarkdownRemark(
       sort: { fields: [frontmatter___date_created], order: DESC }
-      filter: {
-        frontmatter: { draft: { ne: true }, layout: { nin: ["page", "home"] } }
-      }
+      filter: { frontmatter: { draft: { ne: true }, layout: { eq: "post" } } }
     ) {
       edges {
         node {

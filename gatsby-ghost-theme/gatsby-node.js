@@ -139,6 +139,7 @@ exports.createPages = async ({ graphql, actions }, pluginOptions) => {
         ),
       ),
       context: {
+        ...node.frontmatter,
         slug,
       },
     });
