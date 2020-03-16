@@ -143,6 +143,23 @@ exports.createPages = async ({ graphql, actions }, pluginOptions) => {
         slug,
       },
     });
+    // AMP pages
+    await createPage({
+      path: `${!slug.startsWith("/") ? "/" : ""}${slug}/amp/`,
+      component: path.resolve(
+        path.join(
+          __dirname,
+          "src",
+          "templates",
+          `${node.frontmatter.layout}.js`,
+        ),
+      ),
+      context: {
+        ...node.frontmatter,
+        slug,
+        isAmp: true,
+      },
+    });
   }
 
   // Author pages
@@ -159,6 +176,17 @@ exports.createPages = async ({ graphql, actions }, pluginOptions) => {
       ),
       context: {
         author_slug: author,
+      },
+    });
+    // AMP pages for authors
+    await createPage({
+      path: `/author/${author}/amp/`,
+      component: path.resolve(
+        path.join(__dirname, "src", "auto-pages", "author.js"),
+      ),
+      context: {
+        author_slug: author,
+        isAmp: true,
       },
     });
   }
