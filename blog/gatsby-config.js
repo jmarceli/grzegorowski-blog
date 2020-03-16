@@ -91,7 +91,7 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-amp",
+      resolve: "gatsby-amp",
       options: {
         // analytics: {
         //   type: "gtag",

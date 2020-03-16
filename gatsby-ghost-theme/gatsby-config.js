@@ -29,6 +29,7 @@ module.exports = ({ contentPath }) => ({
       options: {
         plugins: [
           {
+            // TODO: disable lazy loading from amp-img tags
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 840,
