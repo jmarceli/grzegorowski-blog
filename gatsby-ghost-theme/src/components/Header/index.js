@@ -20,6 +20,7 @@ export default function Header({
   withTopBar = false,
   banner = false,
 }) {
+  // position: "absolute" is required because of gatsby-image
   return (
     <Wrapper withTopBar={withTopBar} white={banner} large={banner}>
       {background ? (
@@ -28,6 +29,7 @@ export default function Header({
           objectFit="cover"
           objectPosition="50% 50%"
           alt="Title"
+          style={{ position: "absolute" }}
         />
       ) : (
         <NoBackground white={banner} />

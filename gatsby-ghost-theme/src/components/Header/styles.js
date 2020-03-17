@@ -21,7 +21,6 @@ export const Wrapper = styled.header`
 `;
 
 export const Background = styled(Img)`
-  position: absolute !important;
   z-index: -1;
   top: 0;
   bottom: 0;
@@ -31,7 +30,7 @@ export const Background = styled(Img)`
 `;
 
 export const NoBackground = styled.div`
-  position: absolute !important;
+  position: absolute;
   z-index: -1;
   top: 0;
   bottom: 0;
