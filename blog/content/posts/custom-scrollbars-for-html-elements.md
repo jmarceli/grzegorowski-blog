@@ -6,9 +6,9 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: custom-scrollbars-for-html-elements
-date_created: '2017-03-20T21:43:13.000Z'
-date_updated: '2017-03-30T16:57:43.000Z'
-feature_image: null
+date_created: "2017-03-20T21:43:13.000Z"
+date_updated: "2017-03-30T16:57:43.000Z"
+feature_image: img/taylor-wilcox-ZHY7-YaGG2U-unsplash.jpg
 featured: false
 draft: false
 tags:
@@ -16,6 +16,7 @@ tags:
   - frontend
   - github-libraries
 ---
+
 Sometimes your website may need inner scrolling for an element with overflowing content. In most cases using simple:
 
 ```css
@@ -29,7 +30,7 @@ Styling scrollbars for overflowing content is a nightmare using pure CSS techniq
 With this awesome library, all you need to do is just initialize it with a wrapper selector for your overflowing content.
 
 ```javascript
-$('.wrapper').perfectScrollbar();
+$(".wrapper").perfectScrollbar();
 ```
 
 `.wrapper` is an element which width or height is smaller than its content and it should have following styles applied (if you don't want to use default `perfect-scrollbar` css):
@@ -48,8 +49,8 @@ The examples provided in the docs should be just enough to get you started, so I
 Here is how it looks on one of my recent projects (real usage example). The website was a simple long page with one horizontally scrolled section which was expanded on mobile to one long column:
 
 ```javascript
-import $ from 'jquery';
-require('perfect-scrollbar/jquery')($);
+import $ from "jquery";
+require("perfect-scrollbar/jquery")($);
 
 export default class HorizontalSection {
   constructor() {
@@ -61,7 +62,7 @@ export default class HorizontalSection {
 
   // initialize after document is ready
   ready() {
-    this.$element = $('.Days-wrapper');
+    this.$element = $(".Days-wrapper");
 
     $(window).resize(this.resize);
 
@@ -70,15 +71,15 @@ export default class HorizontalSection {
 
   // handles scrollbars after resizing screen
   resize() {
-    if ( $('html').hasClass('touchevents') && $(window).width() < 540 ) {
+    if ($("html").hasClass("touchevents") && $(window).width() < 540) {
       // disable for small mobile screens
-      this.$element.perfectScrollbar('destroy');
+      this.$element.perfectScrollbar("destroy");
       return;
     }
 
-    if ( this.$element.hasClass('ps-container') ) {
+    if (this.$element.hasClass("ps-container")) {
       // is already initialized
-      this.$element.perfectScrollbar('update');
+      this.$element.perfectScrollbar("update");
     } else {
       // initialize
       this.init();
@@ -88,11 +89,10 @@ export default class HorizontalSection {
   // initialize scrollbars
   init() {
     this.$element.perfectScrollbar({
-      suppressScrollY: true
+      suppressScrollY: true,
     });
   }
 }
-
 ```
 
 As you may see for smaller screens where horizontal scrolling is not used I've disabled the perfect-scrollbar because it may prevent the user from scrolling vertically (in some edge cases).

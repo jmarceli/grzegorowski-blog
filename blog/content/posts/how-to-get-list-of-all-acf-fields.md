@@ -6,20 +6,22 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: how-to-get-list-of-all-acf-fields
-date_created: '2017-04-19T21:47:43.000Z'
-date_updated: '2017-10-17T02:13:16.000Z'
-feature_image: null
+date_created: "2017-04-19T21:47:43.000Z"
+date_updated: "2017-10-17T02:13:16.000Z"
+feature_image: img/denny-muller-jLjfAWwHdB8-unsplash.jpg
 featured: false
 draft: false
 tags:
   - wordpress
   - acf
 ---
+
 Getting a list of all ACF fields may be useful e.g. if you want the user to select one of them as a data source. In my case, I needed that list to provide a choices list for an ACF select field.
 
 This is an easy task if you know where to look :)
 
 ## Getting a list of all ACF fields (example)
+
 ```php
 $options = array();
 
@@ -46,7 +48,9 @@ foreach ( $field_groups as $group ) {
 As a result in the `$options` variable, you will have an associative array of all the fields, labels keyed by the field name.
 
 ## More details
+
 In the above example, `$field_groups` variable is an array with all field groups. Here is the output of a `var_dump($fied_groups)`:
+
 ```php
 array (size=3)
   0 =>
@@ -72,4 +76,5 @@ array (size=3)
       'description' => string '' (length=0)
   1 => ...
 ```
+
 If you want to get only fields which are defined by user/admin via the ACF editor you may filter all the field groups by `ID`. Groups created with [ACF PHP API](https://www.advancedcustomfields.com/resources/register-fields-via-php/) will have `ID = 0`.

@@ -8,17 +8,18 @@ meta_description: >-
   It won't affect your CLI tools nor your data.
 meta_title: null
 slug: mac-os-x-upgrade-is-it-safe-for-your-tools
-date_created: '2017-05-06T21:25:15.000Z'
-date_updated: '2017-05-06T22:00:09.000Z'
-feature_image: null
+date_created: "2017-05-06T21:25:15.000Z"
+date_updated: "2017-05-06T22:00:09.000Z"
+feature_image: img/patrick-ward-z_dLXnQg0JY-unsplash.jpg
 featured: false
 draft: false
 tags:
   - mac
 ---
+
 Recently minimal system requirements of the new [Sketch App 42](https://www.sketchapp.com/updates/#version-42) forces me to make an OS X upgrade. It turns out that upgrading to the **not most recent OS X** version is quite complicated.
 
-When there is newer OS X available (e.g. Sierra) there is **no way** to download the previous version (e.g. El Capitan) from App Store. The only way is to find someone who has already downloaded required OS version. Such person will have an appropriate download link available inside *Purchased* tab in the App Store. You will have to copy the .app from him to your desktop (e.g. by using a pendrive).
+When there is newer OS X available (e.g. Sierra) there is **no way** to download the previous version (e.g. El Capitan) from App Store. The only way is to find someone who has already downloaded required OS version. Such person will have an appropriate download link available inside _Purchased_ tab in the App Store. You will have to copy the .app from him to your desktop (e.g. by using a pendrive).
 
 ![El Capitan icon on desktop](img/screen-shot-2017-05-06-at-19.48.31.jpg)
 

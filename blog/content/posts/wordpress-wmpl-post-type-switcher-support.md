@@ -8,9 +8,9 @@ meta_description: >-
   post type for all translations in one click.
 meta_title: null
 slug: wordpress-wmpl-post-type-switcher-support
-date_created: '2017-10-05T19:28:03.000Z'
-date_updated: '2017-10-05T19:40:21.000Z'
-feature_image: null
+date_created: "2017-10-05T19:28:03.000Z"
+date_updated: "2017-10-05T19:40:21.000Z"
+feature_image: img/vladislav-klapin-YeO44yVTl20-unsplash.jpg
 featured: false
 draft: false
 tags:
@@ -18,16 +18,22 @@ tags:
   - wordpress-plugins
   - php
 ---
+
 Adding WPML support to PostType Switcher plugin is easy. My solution is based on https://wordpress.org/support/topic/simple-hack-to-add-wpml-support/ posts.
 
 ### Open Post Type Switcher plugin PHP file
+
 It is located at **wp-content/plugins/post-type-switcher/post-type-switcher.php**
+
 ### Find lines
+
 ```
 // Update post type
 $data['post_type'] = $post_type;
 ```
+
 ### Add following code above them
+
 ```
 // Update WPML translations as well
 global $wpdb, $sitepress;

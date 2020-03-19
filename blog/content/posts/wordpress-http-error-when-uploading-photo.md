@@ -8,14 +8,15 @@ meta_description: >-
   photo to the Wordpress Media Library.
 meta_title: Wordpress Media (photo/image) upload HTTP error solutions
 slug: wordpress-http-error-when-uploading-photo
-date_created: '2017-04-16T15:49:22.000Z'
-date_updated: '2017-04-16T16:32:44.000Z'
-feature_image: null
+date_created: "2017-04-16T15:49:22.000Z"
+date_updated: "2017-04-16T16:32:44.000Z"
+feature_image: img/addition-black-and-white-black-and-white-chalk-374918.jpg
 featured: false
 draft: false
 tags:
   - wordpress
 ---
+
 I had a few cases when clients report an "HTTP error" during photo upload. Which looks similar to this:
 
 ![Wordpress photo upload HTTP error](img/wordpress-photo-http-error.png)
@@ -23,7 +24,7 @@ I had a few cases when clients report an "HTTP error" during photo upload. Which
 In all these cases the problem was caused by the thumbnail generation Wordpress script.
 
 First of all check you theme thumbnail sizes if you use a custom theme. Chances are that some of the "non-cropped" image sizes are too big to be generated in a reasonable time or memory limit (these resources may unexpectedly end WP thumbnail generation script which is a direct cause of "HTTP error").
-The easiest way is installing [Simple Image Sizes](https://wordpress.org/plugins/simple-image-sizes/) plugin and checking *Settings > Media* menu tab. Look for thumbnail sizes that are not cropped and/or has very large dimensions restrictions e.g. **1920 x 9999 non-cropped** is a good candidate.
+The easiest way is installing [Simple Image Sizes](https://wordpress.org/plugins/simple-image-sizes/) plugin and checking _Settings > Media_ menu tab. Look for thumbnail sizes that are not cropped and/or has very large dimensions restrictions e.g. **1920 x 9999 non-cropped** is a good candidate.
 
 ![HTTP error too large thumbnail](img/too-large-image-thumbnail.png)
 

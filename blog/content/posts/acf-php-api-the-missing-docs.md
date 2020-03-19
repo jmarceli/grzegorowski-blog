@@ -10,7 +10,7 @@ meta_title: "ACF PHP API Repeater, Google Maps, Date Picker"
 slug: acf-php-api-the-missing-docs
 date_created: "2017-04-27T12:05:05.000Z"
 date_updated: "2017-08-18T13:09:10.000Z"
-feature_image: null
+feature_image: img/jigsaw-puzzle-3482442.jpg
 featured: false
 draft: false
 tags:

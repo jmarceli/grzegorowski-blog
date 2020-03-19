@@ -8,14 +8,15 @@ meta_description: >-
   pagination fixes. Restricting some slugs in Wordpress with wp_unique_post_slug
 meta_title: Wordpress rewrite rules and pagination add_rewrite_rule
 slug: wordpress-rewrite-rules
-date_created: '2017-07-15T15:13:43.000Z'
-date_updated: '2017-08-30T02:21:57.000Z'
-feature_image: null
+date_created: "2017-07-15T15:13:43.000Z"
+date_updated: "2017-08-30T02:21:57.000Z"
+feature_image: img/rewrite-edit-text-on-a-typewriter-3631711.jpg
 featured: false
 draft: false
 tags:
   - wordpress
 ---
+
 If you are making larger Wordpress site at some point you will definitely come across custom rewrite rules configuration.
 
 ## The tools (plugins)
