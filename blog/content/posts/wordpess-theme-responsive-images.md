@@ -6,39 +6,45 @@ excerpt: null
 meta_description: null
 meta_title: null
 slug: wordpess-theme-responsive-images
-date_created: '2017-03-18T19:05:47.000Z'
-date_updated: '2017-03-28T19:07:15.000Z'
-feature_image: img/banner-772x250.png
+date_created: "2017-03-18T19:05:47.000Z"
+date_updated: "2017-03-28T19:07:15.000Z"
+feature_image: img/andrew-neel-acowe0pCVBg-unsplash.jpg
 featured: false
 draft: false
 tags:
   - wordpress
   - wordpress-plugins
 ---
+
 Ensuring good responsive images support in Wordpress can be a quite complicated task. When you try to provide dedicated image size for each supported device your images directory will become far larger than the necessary minimum because of generating even unused images by the default `add_image_size()` function.
 
 The solution of that problem wasn't an easy one, until now!
 
 Thanks to the [Fly Dynamic Image Resizer](https://wordpress.org/plugins/fly-dynamic-image-resizer/) by [Junaid Bhura](http://www.junaidbhura.com/) there is now an option to generate only necessary image sizes "on the fly". You will never need to regenerate thumbnails again and what's more important WordPress `upload/` directory will stay as small as possible.
 
-Fly Dynamic Image Resizer is, of course, a developer plugin so in order to use it your active theme **have to use** `fly_` prefixed functions instead of their `wp_` counterparts. Having said so it's not that hard to convert existing theme to use Fly Dynamic Image Resizer simple *find & replace* will be a helpful tool. The only thing you should take care about is checking the replaced functions results. Fly functions will produce slightly different results e.g. `fly_get_attachment_image_src` outputs an associative array with different keys than the default `wp_get_attachment_image_src`.
+Fly Dynamic Image Resizer is, of course, a developer plugin so in order to use it your active theme **have to use** `fly_` prefixed functions instead of their `wp_` counterparts. Having said so it's not that hard to convert existing theme to use Fly Dynamic Image Resizer simple _find & replace_ will be a helpful tool. The only thing you should take care about is checking the replaced functions results. Fly functions will produce slightly different results e.g. `fly_get_attachment_image_src` outputs an associative array with different keys than the default `wp_get_attachment_image_src`.
 
 One of the biggest advantages of this plugin is a fact that it is available on Github https://github.com/junaidbhura/fly-dynamic-image-resizer, so you can fork it, report issues and get a quick response from the author.
 
 ## Examples
 
 ### Default Wordpress
+
 (probably) your theme configuration:
+
 ```php
 <?php add_image_size('my-custom-size', array(200, 200); ?>
 ```
+
 template:
+
 ```php
 <?php $image = wp_get_attachment_image_src($img_id, 'my-custom-size'); ?>
 <img src="<?= $image[0]; ?>" width="<?= $image[1]; ?>" height="<?= $image[2]; ?>" />
 ```
 
 ### Wordpress with Fly Dynamic Image Resizer
+
 no need for any configuration/initialization!
 template:
 
@@ -100,9 +106,10 @@ Use it exactly the same as the `fly_get_attachment_image_src` you will just get 
 ```
 
 ## responsive background
-Providing good responsive background images (with various sizes) is complicated because it requires generating *CSS* code out of *PHP* (also there is no option to minify this or merge with the rest of your *CSS*). As far as I know there is no option to generate responsive background images in any other way. In order to ease this process I made a custom function (which is of course based on Fly Dynamic Image Resizer plugin):
 
-```php
+Providing good responsive background images (with various sizes) is complicated because it requires generating _CSS_ code out of _PHP_ (also there is no option to minify this or merge with the rest of your _CSS_). As far as I know there is no option to generate responsive background images in any other way. In order to ease this process I made a custom function (which is of course based on Fly Dynamic Image Resizer plugin):
+
+````php
 /**
  * Returns style string with media queries background-image for various screen sizes
  * @param string  $css_selector - Unique CSS selector for element with background image
@@ -144,7 +151,7 @@ function bgImage( $css_selector, $sizes ) {
   }
   return $style;
 }
-```
+````
 
 Usage is simple, just use it inside `wp_head` action like this:
 
@@ -170,28 +177,28 @@ add_action( 'wp_head', function() {
 As a result, you will get following CSS (this is formatted version for better readability):
 
 ```css
-.full-background{
-  background-image:url(http://yourdomain.com/app/uploads/fly-images/46/527528428-0x700.jpeg)
+.full-background {
+  background-image: url(http://yourdomain.com/app/uploads/fly-images/46/527528428-0x700.jpeg);
 }
-@media(min-width:400px) {
-  .full-background{
-    background-image:url(http://yourdomain.com/app/uploads/fly-images/46/527528428-800x0.jpeg)
+@media (min-width: 400px) {
+  .full-background {
+    background-image: url(http://yourdomain.com/app/uploads/fly-images/46/527528428-800x0.jpeg);
   }
 }
-@media(min-width:800px) {
-  .full-background{
-    background-image:url(http://yourdomain.com/app/uploads/fly-images/46/527528428-1400x0.jpeg)
+@media (min-width: 800px) {
+  .full-background {
+    background-image: url(http://yourdomain.com/app/uploads/fly-images/46/527528428-1400x0.jpeg);
   }
 }
-@media(min-width:1400px) {
-  .full-background{
-    background-image:url(http://yourdomain.com/app/uploads/fly-images/46/527528428-1920x0.jpeg)
+@media (min-width: 1400px) {
+  .full-background {
+    background-image: url(http://yourdomain.com/app/uploads/fly-images/46/527528428-1920x0.jpeg);
   }
 }
 ```
 
 Enhanced `.full-background` element will now have four sizes of `background-image` adjusted to the supported screen sizes.
 
-
 ## Note
+
 I would probably try to turn these modifications into a plugin when I will have more spare time.
