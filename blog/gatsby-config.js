@@ -109,7 +109,7 @@ module.exports = {
         // },
         canonicalBaseUrl: config.siteUrl,
         components: [],
-        excludedPaths: ["/404*", "/"],
+        excludedPaths: ["/404*"],
         pathIdentifier: "/amp/",
         relAmpHtmlPattern: "{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}",
         useAmpClientIdApi: true,
