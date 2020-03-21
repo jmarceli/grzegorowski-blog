@@ -207,6 +207,17 @@ exports.createPages = async ({ graphql, actions }, pluginOptions) => {
         tag_slug: tag,
       },
     });
+    // AMP pages for tags
+    await createPage({
+      path: `/tag/${tag}/amp/`,
+      component: path.resolve(
+        path.join(__dirname, "src", "auto-pages", "tag.js"),
+      ),
+      context: {
+        tag_slug: tag,
+        isAmp: true,
+      },
+    });
   }
 
   // 404 page
