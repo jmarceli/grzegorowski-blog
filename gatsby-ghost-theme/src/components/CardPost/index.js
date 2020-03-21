@@ -4,6 +4,7 @@ import { AmpContext } from "../../utils/ampContext";
 import {
   Article,
   Link,
+  ThumbnailMobile,
   Thumbnail,
   NoThumbnail,
   Content,
@@ -39,14 +40,16 @@ export default function CardPost({
         <Link to={url} title={title} size={size}>
           {image ? (
             isAmp ? (
-              <amp-img
-                src={image.src}
-                srcSet={image.srcSet}
-                alt={title}
-                width={image.aspectRatio}
-                height="1"
-                layout="responsive"
-              />
+              <ThumbnailMobile large={size === "large"}>
+                <amp-img
+                  class="cover"
+                  src={image.src}
+                  srcSet={image.srcSet}
+                  sizes={image.sizes}
+                  alt={title}
+                  layout="fill"
+                />
+              </ThumbnailMobile>
             ) : (
               <Thumbnail
                 large={size === "large"}
@@ -72,9 +75,10 @@ export default function CardPost({
                         <amp-img
                           src={author.image.src}
                           srcSet={author.image.srcSet}
+                          sizes={author.image.sizes}
                           alt={author.name}
-                          width={author.image.width}
-                          height={author.image.height}
+                          width={30}
+                          height={30}
                           layout="fixed"
                         />
                       ) : (

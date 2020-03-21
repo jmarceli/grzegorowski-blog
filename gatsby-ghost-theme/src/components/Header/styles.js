@@ -20,6 +20,17 @@ export const Wrapper = styled.header`
   text-align: center;
 `;
 
+export const BackgroundMobile = styled.div`
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+`;
+
 export const Background = styled(Img)`
   z-index: -1;
   top: 0;
@@ -44,6 +55,16 @@ export const Container = styled.div`
   padding: 12px 24px;
   max-width: 900px;
   font-size: ${toEm(15)}rem;
+`;
+
+export const AvatarMobile = styled.div`
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0 6px hsla(0, 0%, 100%, 0.1);
+  width: 100px;
+  height: 100px;
+  display: inline-block;
 `;
 
 export const Avatar = styled(Img)`

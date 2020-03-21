@@ -14,6 +14,7 @@ export default ({ data, pageContext }) => {
       data={data.page}
       posts={data.posts.edges}
       authors={data.authors.edges}
+      isAmp={pageContext.isAmp}
     />
   );
 };

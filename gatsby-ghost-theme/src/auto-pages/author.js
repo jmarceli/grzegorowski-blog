@@ -23,11 +23,18 @@ export default ({ data, pageContext }) => {
       <PageWithList
         main={{ title: "All authors", description: "List of all authors" }}
         cardList={allAuthors}
+        isAmp={pageContext.isAmp}
       />
     );
   }
 
-  return <PageAuthor data={data.author} posts={data.posts.edges} />;
+  return (
+    <PageAuthor
+      data={data.author}
+      posts={data.posts.edges}
+      isAmp={pageContext.isAmp}
+    />
+  );
 };
 
 export const query = graphql`

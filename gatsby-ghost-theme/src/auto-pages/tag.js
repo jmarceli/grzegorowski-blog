@@ -24,6 +24,7 @@ export default ({ data, pageContext }) => {
       <PageWithList
         main={{ title: "All tags", description: "List of all tags" }}
         cardList={allTags}
+        isAmp={pageContext.isAmp}
       />
     );
   }
@@ -41,6 +42,7 @@ export default ({ data, pageContext }) => {
         description: data.tag.description,
       }}
       authors={data.authors.edges}
+      isAmp={pageContext.isAmp}
     />
   );
 };

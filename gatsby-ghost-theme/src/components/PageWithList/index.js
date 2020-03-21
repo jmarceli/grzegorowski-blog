@@ -5,7 +5,7 @@ import PageLayout from "../PageLayout";
 import { Content } from "./styles";
 import Seo from "../Seo";
 
-export default function PageWithList({ main, cardList }) {
+export default function PageWithList({ main, cardList, isAmp = false }) {
   return (
     <PageLayout singlePage>
       <Seo
@@ -17,6 +17,7 @@ export default function PageWithList({ main, cardList }) {
         background={main.image}
         title={main.title}
         description={main.description}
+        isAmp={isAmp}
       />
       <Content>
         <CardList cards={cardList} allEven />

@@ -7,7 +7,7 @@ import { Contact, Posts, Account, Content, Container } from "./styles";
 import { getPostCards } from "../../utils/mappers";
 import Seo from "../Seo/index";
 
-export default function PageAuthor({ data, posts }) {
+export default function PageAuthor({ data, posts, isAmp = false }) {
   const cards = getPostCards(posts, [{ node: data }]);
 
   return (
@@ -30,6 +30,7 @@ export default function PageAuthor({ data, posts }) {
         description={data.bio}
         background={data.cover_image.childImageSharp.fluid}
         profileImage={data.profile_image_large.childImageSharp.fixed}
+        isAmp={isAmp}
       >
         {posts.length && data.links && data.links.length && (
           <Contact>

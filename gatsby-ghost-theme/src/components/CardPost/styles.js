@@ -22,6 +22,16 @@ export const Link = styled(GatsbyLink)`
   }
 `;
 
+export const ThumbnailMobile = styled.div`
+  position: relative;
+  padding-bottom: ${({ large }) => (large ? 0 : "50%")};
+  display: flex;
+  flex: 0 0 250px;
+  @media (min-width: ${BP_SMALL}px) {
+    flex: ${({ large }) => (large ? "1 0 50%" : "0 0 250px")};
+  }
+`;
+
 export const Thumbnail = styled(Img)`
   display: flex;
   flex: 0 0 250px;

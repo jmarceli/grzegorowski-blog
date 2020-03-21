@@ -20,6 +20,7 @@ export default ({ data, pageContext }) => {
         image: data.page.frontmatter.feature_image.childImageSharp.fluid,
       }}
       cardList={cards}
+      isAmp={pageContext.isAmp}
     />
   );
 };

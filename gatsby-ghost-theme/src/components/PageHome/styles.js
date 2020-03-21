@@ -19,6 +19,7 @@ export const Content = styled.div`
   display: block;
   margin: -${CONTENT_OVERLAP_HEIGHT}px auto 0;
   max-width: ${CONTENT_MAX_WIDTH}px;
+  width: 100%;
   flex: 1 0 auto;
 `;
 

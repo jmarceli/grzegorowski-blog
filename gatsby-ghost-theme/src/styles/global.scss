@@ -35,3 +35,12 @@ html {
 html[amp] .gatsby-resp-image-wrapper {
   left: -8px;
 }
+
+// support "cover" behavior for amp images
+amp-img.cover {
+  min-width: 100%;
+  max-width: 100%;
+}
+amp-img.cover img {
+  object-fit: cover;
+}

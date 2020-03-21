@@ -7,6 +7,7 @@ import {
   HeaderContent,
   Title,
   TopImage,
+  HeaderImageMobile,
   HeaderImage,
   Main,
   Container,
@@ -15,7 +16,7 @@ import {
 } from "./styles";
 import Seo from "../Seo";
 
-export default function PageStatic({ post, authors }) {
+export default function PageStatic({ post, authors, isAmp = false }) {
   const frontmatter = post.frontmatter;
   const author =
     authors &&
@@ -33,15 +34,28 @@ export default function PageStatic({ post, authors }) {
         </Header>
 
         <TopImage>
-          {frontmatter.feature_image && (
-            <HeaderImage
-              title={frontmatter.title}
-              alt={frontmatter.title}
-              fluid={frontmatter.feature_image.childImageSharp.fluid}
-              objectFit="cover"
-              objectPosition="50% 50%"
-            />
-          )}
+          {frontmatter.feature_image &&
+            (isAmp ? (
+              <HeaderImageMobile>
+                <amp-img
+                  class="cover"
+                  src={frontmatter.feature_image.childImageSharp.fluid.src}
+                  srcSet={
+                    frontmatter.feature_image.childImageSharp.fluid.srcSet
+                  }
+                  sizes={frontmatter.feature_image.childImageSharp.fluid.sizes}
+                  layout="fill"
+                />
+              </HeaderImageMobile>
+            ) : (
+              <HeaderImage
+                title={frontmatter.title}
+                alt={frontmatter.title}
+                fluid={frontmatter.feature_image.childImageSharp.fluid}
+                objectFit="cover"
+                objectPosition="50% 50%"
+              />
+            ))}
         </TopImage>
 
         <Main>

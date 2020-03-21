@@ -7,7 +7,7 @@ import { MenuWrapper, Content, ButtonWrapper, ButtonMore } from "./styles";
 import { getPostCards } from "../../utils/mappers";
 import Seo from "../Seo";
 
-export default function PageHome({ data, posts, authors }) {
+export default function PageHome({ data, posts, authors, isAmp = false }) {
   const cards = getPostCards(posts, authors);
 
   const author = authors.find(
@@ -26,6 +26,7 @@ export default function PageHome({ data, posts, authors }) {
           data.frontmatter.feature_image.childImageSharp &&
           data.frontmatter.feature_image.childImageSharp.fluid
         }
+        isAmp={isAmp}
       />
       <Content>
         <MenuWrapper>

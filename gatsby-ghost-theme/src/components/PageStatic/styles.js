@@ -73,6 +73,11 @@ export const TopImage = styled.div`
   background: #090a0b;
 `;
 
+export const HeaderImageMobile = styled.div`
+  position: relative;
+  padding-bottom: 100%;
+`;
+
 export const HeaderImage = styled(Img)`
   z-index: -1;
   min-width: 100%;

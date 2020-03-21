@@ -9,7 +9,13 @@ export default ({ data, pageContext }) => {
   const ampContext = React.useContext(AmpContext);
   ampContext.setIsAmp(pageContext.isAmp);
 
-  return <Page404 posts={data.posts.edges} authors={data.authors.edges} />;
+  return (
+    <Page404
+      posts={data.posts.edges}
+      authors={data.authors.edges}
+      isAmp={pageContext.isAmp}
+    />
+  );
 };
 
 export const query = graphql`
