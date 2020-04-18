@@ -16,6 +16,7 @@ tags:
 ---
 
 Here is a tutorial which will show you how to create your own NPM package with React components written in Typescript.
+You can check https://github.com/jmarceli/jmarceli-react-ts-library for fully working project setup.
 
 ## Motivation
 
@@ -92,6 +93,7 @@ Of course you can adjust Prettier configuration however you want, just check ava
 The **parser** key let's us specify that **"typescript"** specific parse will be used instead of the default one **"bablyon"** which will work as well in most cases.
 
 > HINT
+>
 > In order to enable Prettier support in your IDE you should install IDE specific plugin.
 > For VSCode it is [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) and as far as I'm aware every popular IDE has it's own plugin.
 
@@ -133,27 +135,36 @@ git commit -m "Typescript added"
 ## Setup Rollup package bundler
 
 There are actually two possibilities when it comes to the Rollup Typescript support.
-You can either go with the **@rollup/plugin-typescript** or choose **@babel/preset-typescript** way.
+You can either go with the **rollup-plugin-typescript2** or choose **@babel/preset-typescript** way.
 The main difference between those two is the different approach to Typescript interpretation.
 While the former gives you full support with **tsc** under the hood, you can also go with the latter to simply strip the TS types from your code (see more about Babel approach [here](https://babeljs.io/docs/en/next/babel-plugin-transform-typescript)).
-The choice is yours, but because we want to have full TS support I will go with **@rollup/plugin-typescript**.
+The choice is yours, but because we want to have full TS support I will go with **rollup-plugin-typescript2**.
+
+> NOTE
+>
+> There is also an official **@rollup/plugin-typescript**, but I didn't find any way to configure single file output (with multiple targets **esm** and **cjs**) together with types definition generation.
+> In future it sounds like a good idea to switch to the official Typescript plugin but right now **rollup-plugin-typescript2** is a solid and popular choice.
 
 Let's proceed to the configuration. Install required packages with:
 
 ```sh
-npm install --save-dev rollup @rollup/plugin-typescript tslib
+npm install --save-dev rollup rollup-plugin-typescript2
 ```
 
 And create Rollup configuration file **rollup.config.js**:
 
 ```js
-import typescript from "@rollup/plugin-typescript";
+import typescript from "rollup-plugin-typescript2";
 import pkg from "./package.json";
 
 const extensions = [".js", ".jsx", ".ts", ".tsx"];
 const input = "src/index.ts";
 
-const plugins = [typescript()];
+const plugins = [
+  typescript({
+    typescript: require("typescript"),
+  }),
+];
 
 export default [
   {
@@ -178,8 +189,9 @@ export default [
 ```
 
 As you can see we are using **package.json** as a source for our output paths and there will be two versions of our package produced **cjs** (CommonJS) and **esm** (ES Modules).
-What is more for both formats we would like to use same plugins set which currently contains only **@rollup/plugin-typescript**.
-It's now time to ensure **module** and **main** fields inside **package.json** file.
+What is more for both formats we would like to use same plugins set which currently contains only **rollup-plugin-typescript2**.
+Please note plugin configuration which sets one option `typescript: require("typescript")` this ensures that instead of global Typescript a locally installed Typescript version will be used by the plugin.
+In order to make this Rollup configuration valid you will also have to ensure **module** and **main** fields inside **package.json** file.
 I would suggest you to open **package.json** file and add/modify following lines:
 
 ```js
@@ -216,7 +228,23 @@ const test = (): string => {
 console.log(test());
 ```
 
-Finally, the test. Execute:
+Before you will be able to start bundling your code you should also adjust Typescript configuration inside **./tsconfig.json** file:
+
+**./tsconfig.json**
+
+```js
+{
+  "compilerOptions": {
+    // leave other options without changes
+    "module": "es2015", // "es2015" makes Typescript compiler output compatible with Rollup
+    "declararion": true, // generates .d.ts files inside the output directory
+    // remaining options
+  },
+  "include":["src/**/*"] // Only files from ./src/ directory will be processed and generated folder structure will be relative to ./src/
+}
+```
+
+Finally, it's time to test this setup. Execute:
 
 ```sh
 npx rollup -c
@@ -237,10 +265,12 @@ Which means that your Typescript library has been compiled and files are availab
 Go and check them.
 
 > HINT
+>
 > If you are seeing `UnhandledPromiseRejectionWarning: Error: Cannot find module 'tslib/tslib.es6.js'` this is because you forgot to install **tslib** package.
 > Fix that with `npm install --save-dev tslib`.
 
 > HINT
+>
 > If you are seeing `You must specify a --file (-o) option when creating a file with a sourcemap` you probably forgot to add **"main"** and **"module"** keys to your **package.json** file.
 > Go back a few instructions back and adjust your **package.json** content accordingly.
 
@@ -271,10 +301,11 @@ This way you are ignoring files inside the **dist/** directory and avoid trackin
 ## Next steps
 
 Now you have a complete setup for Typescript package build with Rollup and it's probably a good time to add React support.
-Please move to the **part 2 of this tutorial** (it is still Work In Progress please go back later) if you are interested (or leave a comment).
+Please move to the [part 2 of this tutorial](https://grzegorowski.com/react-typescript-library-rollup-jest-part-2) if you are interested (or leave a comment).
 
 ## Sources
 
 - https://prettier.io/docs/en/options.html - Prettier options described
 - https://babeljs.io/docs/en/next/babel-plugin-transform-typescript - Typescript plugin for Babel
-- https://www.npmjs.com/package/@rollup/plugin-typescript - Rollup Typescript plugin
+- https://www.npmjs.com/package/rollup-plugin-typescript2 - Rollup Typescript plugin
+- https://www.typescriptlang.org/docs/handbook/compiler-options.html - available Typescript compiler options
