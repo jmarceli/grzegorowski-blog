@@ -69,8 +69,8 @@ module.exports = {
       options: {
         analytics: {
           dataCredentials: "include",
-          config: "https://www.googletagmanager.com/amp.json?id=GTM-K4KJJKX&gtm.url=SOURCE_URL"
-          },
+          config:
+            "https://www.googletagmanager.com/amp.json?id=GTM-K4KJJKX&gtm.url=SOURCE_URL",
         },
         canonicalBaseUrl: config.siteUrl,
         components: [],
