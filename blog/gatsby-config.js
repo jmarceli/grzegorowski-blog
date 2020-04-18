@@ -70,7 +70,7 @@ module.exports = {
         analytics: {
           dataCredentials: "include",
           config:
-            "https://www.googletagmanager.com/amp.json?id=GTM-K4KJJKX&gtm.url=SOURCE_URL",
+            "https://www.googletagmanager.com/amp.json?id=GTM-WFJVBF7&gtm.url=SOURCE_URL",
         },
         canonicalBaseUrl: config.siteUrl,
         components: [],
