@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: grzegorowski.com
+Token: c980c17b4c44fb673cc6d0eff77a10e2f42def339db324a623fc2f022a754385
