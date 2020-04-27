@@ -16,7 +16,7 @@ export default function PageHome({ data, posts, authors, isAmp = false }) {
 
   return (
     <PageLayout>
-      <Seo data={data} author={author} contentType="website" />
+      <Seo data={data} author={author} contentType="website" isAmp={isAmp} />
 
       <Header
         title={data.frontmatter.title}

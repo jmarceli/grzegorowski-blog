@@ -22,6 +22,7 @@ export default function PageAuthor({ data, posts, isAmp = false }) {
           },
         }}
         contentType="author"
+        isAmp={isAmp}
       />
 
       <Header

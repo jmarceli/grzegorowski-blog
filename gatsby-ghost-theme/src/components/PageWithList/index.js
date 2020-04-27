@@ -11,6 +11,7 @@ export default function PageWithList({ main, cardList, isAmp = false }) {
       <Seo
         data={{ frontmatter: { title: main.title, excerpt: main.description } }}
         contentType="website"
+        isAmp={isAmp}
       />
 
       <Header

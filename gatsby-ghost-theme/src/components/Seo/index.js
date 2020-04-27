@@ -18,7 +18,7 @@ const getCanonicalUrl = (contentType, data) => {
   return "";
 };
 
-export default function Seo({ data, author, contentType }) {
+export default function Seo({ data, author, contentType, isAmp }) {
   const seoData = {
     headline: data.frontmatter.meta_title || data.frontmatter.title,
     description:
@@ -55,7 +55,7 @@ export default function Seo({ data, author, contentType }) {
       <title>{seoData.headline}</title>
       <meta name="description" content={seoData.description} />
       {seoData.author && <meta name="author" content={seoData.author} />}
-      {canonical && <link rel="canonical" href={canonical} />}
+      {!isAmp && canonical && <link rel="canonical" href={canonical} />}
     </Helmet>
   );
 }
