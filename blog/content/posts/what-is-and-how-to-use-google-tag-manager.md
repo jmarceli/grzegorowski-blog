@@ -2,23 +2,17 @@
 layout: post
 author: jan
 title: What is and how to use Google Tag Manager
-excerpt:
+excerpt: Google Tag Manager lets you change you page without touching its codebase with predefined set of available Tags/modifications.
 meta_description: null
 meta_title: null
 slug: what-is-and-how-to-use-google-tag-manager
-date_created: "2020-04-26T14:11:00.000Z"
-feature_image: null
+date_created: "2019-05-12T14:11:00.000Z"
+feature_image: img/rajeshwar-bachu-K4txLik7pnY-unsplash.jpg
 featured: false
-draft: true
 tags:
-  - react
-  - javascript
   - frontend
+  - tools
 ---
-
-What is and how to use Google Tag Manager?
-
-## General info
 
 Google Tag Manager (GTM) is a tool made by Google which lets you modify content of your website without touching its codebase.
 It adds a small Javascript snippet to your page and then you can define what it will do through the GTM administration panel.
