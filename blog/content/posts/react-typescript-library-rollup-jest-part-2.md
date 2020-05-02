@@ -1,11 +1,11 @@
 ---
 layout: post
 author: jan
-title: React Typescript library with Rollup and Jest - part 2
-excerpt:
+title: React Typescript library with Rollup and Jest - adding React
+excerpt: How to setup React and Typescript to build a NPM package
 meta_description: null
 meta_title: null
-slug: react-typescript-library-rollup-jest-part-2
+slug: react-typescript-library-rollup-jest-adding-react
 date_created: "2020-04-18T14:11:00.000Z"
 feature_image: img/susan-yin-2JIvboGLeho-unsplash.jpg
 featured: false
@@ -15,7 +15,7 @@ tags:
   - frontend
 ---
 
-If you are starting from this page I would suggest you to go back to the [part 1 of this tutorial](https://www.grzegorowski.com/react-typescript-library-rollup-jest-part-1) where initial Rollup and Typescript setup is described.
+If you are starting from this page I would suggest you to go back to the [part 1 of this tutorial](https://www.grzegorowski.com/react-typescript-library-rollup-jest-initialization) where initial Rollup and Typescript setup is described.
 You can check https://github.com/jmarceli/jmarceli-react-ts-library for fully working project setup.
 
 ## React with Rollup and Typescript
@@ -144,7 +144,7 @@ It should compile you TS files and place them inside **./dist/** directory toget
 ## Next steps
 
 You should have a working React Typescript library bundled with Rollup, so the main goal was achieved.
-It's probably a good time to enhance a library by adding some tests which will described in the [part 3 of this tutorial](https://grzegorowski.com/react-typescript-library-rollup-jest-part-3).
+It's probably a good time to enhance a library by adding some tests which will described in the [part 3 of this tutorial](https://grzegorowski.com/react-typescript-library-rollup-jest-tests-setup).
 
 ## Sources
 

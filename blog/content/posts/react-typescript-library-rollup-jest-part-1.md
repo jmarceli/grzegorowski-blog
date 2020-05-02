@@ -1,11 +1,11 @@
 ---
 layout: post
 author: jan
-title: React Typescript library with Rollup and Jest - part 1
-excerpt:
+title: React Typescript library with Rollup and Jest - initialization
+excerpt: Initial setup for a Typescript library build with Rollup
 meta_description: null
 meta_title: null
-slug: react-typescript-library-rollup-jest-part-1
+slug: react-typescript-library-rollup-jest-initialization
 date_created: "2020-03-15T14:11:00.000Z"
 feature_image: img/person-s-holds-brown-gift-box-842876.jpg
 featured: false
@@ -301,7 +301,7 @@ This way you are ignoring files inside the **dist/** directory and avoid trackin
 ## Next steps
 
 Now you have a complete setup for Typescript package build with Rollup and it's probably a good time to add React support.
-Please move to the [part 2 of this tutorial](https://grzegorowski.com/react-typescript-library-rollup-jest-part-2) if you are interested (or leave a comment).
+Please move to the [part 2 of this tutorial](https://grzegorowski.com/react-typescript-library-rollup-jest-adding-react) if you are interested (or leave a comment).
 
 ## Sources
 
