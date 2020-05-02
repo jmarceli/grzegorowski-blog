@@ -144,7 +144,7 @@ It should compile you TS files and place them inside **./dist/** directory toget
 ## Next steps
 
 You should have a working React Typescript library bundled with Rollup, so the main goal was achieved.
-It's probably a good time to enhance your library by adding some tests and this will be a part of **the next article** (it is still Work In Progress please go back later).
+It's probably a good time to enhance a library by adding some tests which will described in the [part 3 of this tutorial](https://grzegorowski.com/react-typescript-library-rollup-jest-part-3).
 
 ## Sources
 
