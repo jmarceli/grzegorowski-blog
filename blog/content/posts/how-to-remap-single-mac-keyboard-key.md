@@ -68,6 +68,37 @@ hidutil property --set '{"UserKeyMapping":
 >
 > All changes made with `hidutil` are immediate, so you don't have to restart anything.
 
+## Automatically set custom key mapping after each reboot
+
+Create plist file e.g. **/Library/LaunchDaemons/org.custom.keyboard-remap.plist**:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>org.custom.keyboard-remap</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>hidutil property --set '{"UserKeyMapping": [{"HIDKeyboardModifierMappingSrc":0x700000064, "HIDKeyboardModifierMappingDst":0x700000035}] }'</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <false/>
+  </dict>
+</plist>
+```
+
+Then load it with `sudo launchctl load -w /Library/LaunchDaemons/org.custom.keyboard-remap.plist` so it will be loaded on each system reboot.
+
+If you want to check if your plist file was loaded successfully you can use `sudo launchctl list | grep org.custom.keyboard-remap.plist`.
+
+> NOTE
+> In order to unload plist file from system autostart use
+> `sudo launchctl unload /Library/LaunchDaemons/org.custom.keyboard-remap.plist`
+
 ## Issues
 
 I have only one issue with this problem which was finding an appropriate "Usage ID (hex)" for the section sign **§** key.
@@ -75,8 +106,12 @@ As it turns out it was named in the Apple docs as **Keyboard Non-US \ and |**.
 In order to find that out I've used trial and error approach, so nothing fancy.
 If you will come across any better way of finding "Usage ID (hex)" codes please share.
 
+In case of are receiving `Invalid property list` error message after loading plist file you are most probably trying to use
+the old syntax for plist file with `<key>Program</key>` instead of mentioned `<key>ProgramArguments</key>`.
+
 ## Sources
 
 - https://developer.apple.com/library/archive/technotes/tn2450/_index.html - Apple Technical Note regarding key remapping in macOS X Sierra
 - https://apple.stackexchange.com/questions/283252/how-do-i-remap-a-key-in-macos-sierra-e-g-right-alt-to-right-control - Stack Overflow topic about that
 - https://en.wikipedia.org/wiki/British_and_American_keyboards - possible keyboard layouts
+- https://apple.stackexchange.com/questions/329085/tilde-and-plus-minus-%C2%B1-in-wrong-place-on-keyboard - exact same topic found after writing that post
