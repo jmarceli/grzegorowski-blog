@@ -49,19 +49,20 @@ Next I will go and try to test this function with Jest testing framework.
 
 ## Automated Jest tests
 
-Adding Javascript tests with Jest are extremely simple, the only thing you have to do is install `jest` package in your project.
-Unfortunately if you need a full Typescript support for your tests it won't be enough.
-Once more you will have to choose between Babel and Typescript way of source code transpilation.
-Similarly to the case with project code transpilation this time also Babel gives you limited TS support (https://jestjs.io/docs/en/getting-started#using-typescript) while the other approach `ts-jest` can give you more.
-Once more I will stay with full Typescript support and present the solution based on `ts-jest`, so here is what you will need to install before adding any test files.
+Adding Javascript tests with Jest is extremely simple, the only thing you have to do is installing `jest` package in your project.
+Unfortunately if you need a full Typescript support `jest` package won't be enough.
+Once more you will have to choose from Babel and Typescript for source code transpilation.
+Similarly to the case with project code transpilation this time also Babel will give you limited TS support (https://jestjs.io/docs/en/getting-started#using-typescript) while the other approach `ts-jest` can give you more.
+I will stay with full Typescript support and present the solution based on `ts-jest`.
+Here is what you will need to install before adding any test files.
 
 ```bash
 npm install --save-dev jest ts-jest @types/jest
 ```
 
-The last one step is changing `"test"` script definition in your **package.json** file, so it will run Jest by default.
+Now you should also adjust content of the **package.json** file:
 
-**package.json**
+By adding `"test"` script definition, so it will run Jest by default:
 
 ```js
 // file content...
@@ -72,7 +73,26 @@ The last one step is changing `"test"` script definition in your **package.json*
 // remaining content...
 ```
 
-That's it. Now you can try to run `npm run test` to see that Jest is trying to run your tests.
+Then appending following lines to enable Typescript detection and transpilation:
+
+```js
+  // file content...
+  "jest": {
+    "transform": {
+      ".(ts|tsx)": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ]
+  },
+  // remaining content...
+```
+
+That's it.
+Now you can try to run `npm run test` to see that Jest is trying to run your tests.
 But wait, you are probably getting an error right now similar to this one:
 
 ```bash
