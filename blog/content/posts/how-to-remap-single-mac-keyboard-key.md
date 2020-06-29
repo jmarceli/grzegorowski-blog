@@ -81,7 +81,10 @@ Create plist file e.g. **/Library/LaunchDaemons/org.custom.keyboard-remap.plist*
     <string>org.custom.keyboard-remap</string>
     <key>ProgramArguments</key>
     <array>
-        <string>hidutil property --set '{"UserKeyMapping": [{"HIDKeyboardModifierMappingSrc":0x700000064, "HIDKeyboardModifierMappingDst":0x700000035}] }'</string>
+      <string>/usr/bin/hidutil</string>
+      <string>property</string>
+      <string>--set</string>
+      <string>{"UserKeyMapping": [{"HIDKeyboardModifierMappingSrc":0x700000064, "HIDKeyboardModifierMappingDst":0x700000035}] }</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
