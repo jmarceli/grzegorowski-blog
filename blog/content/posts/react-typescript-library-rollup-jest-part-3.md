@@ -189,7 +189,7 @@ Ran all test suites.
 ## Next steps
 
 After completing tests setup it's probably time to ensure proper documentation of our React components library with Storybook.
-It will be a topic for the next part of this tutorial (it is still a work in progress).
+If you are eager to know how easily you can incorporate Storybook to this library keep on reading [part 4 - Storybook setup for React Typescript library](https://grzegorowski.com/react-typescript-library-rollup-jest-part-storybook-setup).
 
 ## Sources
 
