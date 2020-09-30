@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://www.grzegorowski.com/react-typescript-library-rollup-jest-part-storybook-setup</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.grzegorowski.com/react-typescript-library-rollup-jest-part-storybook-setup/amp/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/react-typescript-library-rollup-jest-tests-setup</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/react-typescript-library-rollup-jest-tests-setup/amp/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/how-to-remap-single-mac-keyboard-key</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -158,9 +160,9 @@
 <url> <loc>https://www.grzegorowski.com/wordpess-theme-responsive-images/amp/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/archive</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/archive/amp/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.grzegorowski.com/cookies/amp/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/amp/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://www.grzegorowski.com/cookies/amp/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/author/jan</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/author/jan/amp/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://www.grzegorowski.com/tag/wordpress</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
