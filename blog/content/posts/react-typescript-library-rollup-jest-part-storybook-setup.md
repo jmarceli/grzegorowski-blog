@@ -174,7 +174,7 @@ I hope you will see something similar to this.
 
 > NOTE: If you were working with some previous versions of the Storybook and @storybook/addon-docs you may have noticed a disappearance of the "view" selector.
 > It was placed in the left top corner and it allows to switch between "Canvas" and "Docs" view.
-> I'm not entirely sure why they have removed it but now the docs are available only inside "Controls" panel - it's not a bug it's a feature.
+> I'm not entirely sure why they have removed it but you may try adding `viewMode: 'docs'` to the **.storybook/preview.js** file or add `--docs` option to your `start-storybook` command inside **package.json**.
 
 ## Next steps
 
