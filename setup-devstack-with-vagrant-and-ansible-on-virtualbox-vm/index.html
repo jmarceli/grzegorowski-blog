@@ -196,7 +196,7 @@ Inside this folder create a file named <strong>Vagrantfile</strong> which will c
 Here is the code that you can copy/paste:</p>
 <div class="gatsby-highlight" data-language="ruby"><pre style="counter-reset: linenumber NaN" class="language-ruby line-numbers"><code class="language-ruby"><span class="token constant">Vagrant</span><span class="token punctuation">.</span>configure<span class="token punctuation">(</span><span class="token string">"2"</span><span class="token punctuation">)</span> <span class="token keyword">do</span> <span class="token operator">|</span>config<span class="token operator">|</span>
   <span class="token comment"># Give a custom name for a VM created by this script for a Vagrant CLI</span>
-  config<span class="token punctuation">.</span>vm<span class="token punctuation">.</span>define <span class="token string">"focal-server-cloudimg-amd64-vagrant"</span>
+  config<span class="token punctuation">.</span>vm<span class="token punctuation">.</span>define <span class="token string">"devstack-vm"</span>
 
   <span class="token comment"># Name for the box image downloaded from the box_url</span>
   <span class="token comment"># it will be used to create a folder inside ~/.vagrant.d/boxes to avoid re-downloading</span>
@@ -211,7 +211,7 @@ Here is the code that you can copy/paste:</p>
 
   config<span class="token punctuation">.</span>vm<span class="token punctuation">.</span>provider <span class="token string">"virtualbox"</span> <span class="token keyword">do</span> <span class="token operator">|</span>v<span class="token operator">|</span>
     <span class="token comment"># Name visible inside your Virtualbox UI</span>
-    v<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"cloud-ubuntu"</span>
+    v<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"devstack-vm"</span>
     <span class="token comment"># Amount of memory assigned for your VM</span>
     v<span class="token punctuation">.</span>memory <span class="token operator">=</span> <span class="token number">8192</span> <span class="token comment"># &lt;--- Adjust this number according to your needs</span>
     <span class="token comment"># Number of CPUs assigned for your VM</span>
