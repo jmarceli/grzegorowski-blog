@@ -58,7 +58,7 @@ Here is the code that you can copy/paste:
 ```ruby
 Vagrant.configure("2") do |config|
   # Give a custom name for a VM created by this script for a Vagrant CLI
-  config.vm.define "focal-server-cloudimg-amd64-vagrant"
+  config.vm.define "devstack-vm"
 
   # Name for the box image downloaded from the box_url
   # it will be used to create a folder inside ~/.vagrant.d/boxes to avoid re-downloading
@@ -73,7 +73,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider "virtualbox" do |v|
     # Name visible inside your Virtualbox UI
-    v.name = "cloud-ubuntu"
+    v.name = "devstack-vm"
     # Amount of memory assigned for your VM
     v.memory = 8192 # <--- Adjust this number according to your needs
     # Number of CPUs assigned for your VM
